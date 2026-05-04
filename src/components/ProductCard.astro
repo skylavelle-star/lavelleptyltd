@@ -1,28 +1,39 @@
 ---
+import { site } from '../config/site';
+
 interface Props {
   name: string;
   description: string;
+  whatsIncluded?: string[];
+  price?: string | null;
   statusBadge: 'Available' | 'Coming Soon';
   ctaText?: string;
   ctaUrl?: string;
   disabled?: boolean;
   id?: string;
+  notifyEnabled?: boolean;
 }
 
 const {
   name,
   description,
+  whatsIncluded,
+  price,
   statusBadge,
   ctaText = 'View Resource',
   ctaUrl,
   disabled = false,
   id,
+  notifyEnabled = true,
 } = Astro.props;
+
+const notifyId = `notify-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+const showNotify = notifyEnabled && statusBadge === 'Coming Soon';
 ---
 
 <div
   id={id}
-  class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all"
+  class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-400 hover:shadow-sm transition-all"
 >
   <div class="flex items-start justify-between gap-4 mb-3">
     <h3 class="text-base font-semibold text-slate-900 leading-snug">{name}</h3>
@@ -38,30 +49,142 @@ const {
     </span>
   </div>
 
-  <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-5">{description}</p>
+  <p class="text-sm text-slate-600 leading-relaxed mb-4">{description}</p>
 
-  <div class="pt-4 border-t border-slate-100">
-    {ctaUrl && !disabled ? (
-      <a
-        href={ctaUrl}
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
-        data-ga-event="product_view"
-        data-ga-label={name}
-      >
-        {ctaText}
-        <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    ) : (
-      <button
-        type="button"
-        disabled
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-400 bg-slate-100 rounded-md cursor-not-allowed"
-        aria-label={`${name} - not yet available`}
-      >
-        {ctaText}
-      </button>
+  {whatsIncluded && whatsIncluded.length > 0 && (
+    <ul class="space-y-1.5 mb-4">
+      {whatsIncluded.map((item) => (
+        <li class="flex items-start gap-2 text-sm text-slate-700">
+          <svg class="w-4 h-4 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          {item}
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <div class="mt-auto pt-4 border-t border-slate-100">
+    {price && (
+      <p class:list={['text-sm mb-3', price === 'Pricing announced soon' ? 'text-slate-500 italic' : 'font-semibold text-slate-900']}>
+        {price}
+      </p>
+    )}
+
+    <div class="flex items-center gap-3 flex-wrap">
+      {ctaUrl && !disabled ? (
+        <a
+          href={ctaUrl}
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-700 hover:bg-navy-800 rounded-md transition-colors"
+          data-ga-event="product_view"
+          data-ga-label={name}
+        >
+          {ctaText}
+          <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      ) : (
+        <button
+          type="button"
+          disabled
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-400 bg-slate-100 rounded-md cursor-not-allowed"
+          aria-label={`${name} - not yet available`}
+        >
+          {ctaText}
+        </button>
+      )}
+
+      {showNotify && (
+        <button
+          type="button"
+          data-notify-toggle={notifyId}
+          class="text-sm font-medium text-navy-600 hover:text-navy-800 transition-colors underline underline-offset-2"
+          aria-expanded="false"
+          aria-controls={`notify-panel-${notifyId}`}
+        >
+          Notify me
+        </button>
+      )}
+    </div>
+
+    {showNotify && (
+      <div id={`notify-panel-${notifyId}`} class="hidden mt-4 pt-4 border-t border-slate-100">
+        <p class="text-xs font-medium text-slate-700 mb-2">Get notified when this becomes available.</p>
+        <form data-notify-form={notifyId} class="space-y-2" novalidate>
+          <input type="hidden" name="access_key" value={site.web3formsKey} />
+          <input type="hidden" name="subject" value={`Notify me: ${name}`} />
+          <input type="hidden" name="from_name" value="Lavelle Pty Ltd - Notify Me" />
+          <input type="hidden" name="message" value={`Please notify me when ${name} becomes available.`} />
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+          <div class="flex gap-2">
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              class="flex-1 min-w-0 px-3 py-2 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent"
+            />
+            <button
+              type="submit"
+              class="shrink-0 px-3 py-2 text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 rounded-md transition-colors"
+            >
+              Notify me
+            </button>
+          </div>
+          <p class="text-xs text-slate-400">No spam. Unsubscribe anytime.</p>
+        </form>
+        <p id={`notify-success-${notifyId}`} class="hidden text-sm text-emerald-700 font-medium">
+          You're on the list. We'll notify you when this becomes available.
+        </p>
+      </div>
     )}
   </div>
 </div>
+
+<script>
+  function initNotifyForms() {
+    document.querySelectorAll<HTMLButtonElement>('[data-notify-toggle]').forEach((btn) => {
+      if (btn.dataset.notifyInitialised) return;
+      btn.dataset.notifyInitialised = 'true';
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.notifyToggle!;
+        const panel = document.getElementById(`notify-panel-${id}`);
+        if (!panel) return;
+        const isHidden = panel.classList.contains('hidden');
+        panel.classList.toggle('hidden', !isHidden);
+        btn.setAttribute('aria-expanded', String(isHidden));
+      });
+    });
+
+    document.querySelectorAll<HTMLFormElement>('[data-notify-form]').forEach((form) => {
+      if (form.dataset.notifyFormInitialised) return;
+      form.dataset.notifyFormInitialised = 'true';
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        const id = form.dataset.notifyForm!;
+        const btn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+        if (btn) btn.disabled = true;
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(form),
+          });
+          const data = await res.json();
+          if (data.success) {
+            form.classList.add('hidden');
+            document.getElementById(`notify-success-${id}`)?.classList.remove('hidden');
+          }
+        } finally {
+          if (btn) btn.disabled = false;
+        }
+      });
+    });
+  }
+
+  initNotifyForms();
+</script>
