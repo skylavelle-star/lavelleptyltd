@@ -1,0 +1,145 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Free Project Recovery Checklist | Lavelle Pty Ltd"
+  description="The Project Recovery Checklist helps identify whether a project has the basic controls needed to recover delivery confidence, including scope, governance, schedule, risks, issues, decisions, financials and stakeholder alignment."
+>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Free Tools</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Free Project Recovery Checklist</h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          A structured checklist for identifying whether a project has the basic controls needed to recover delivery confidence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-8">
+
+          <div>
+            <p class="text-lg text-slate-700 leading-relaxed">
+              The Project Recovery Checklist helps identify whether a project has the basic controls needed to recover delivery confidence, including scope, governance, schedule, risks, issues, decisions, financials and stakeholder alignment.
+            </p>
+          </div>
+
+          <!-- What It Covers -->
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 mb-4">What the Checklist Covers</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { area: 'Scope', detail: 'Is scope documented, agreed and baselined? Are change requests being managed?' },
+                { area: 'Governance', detail: 'Is the project authority structure clear? Are steering committee roles defined?' },
+                { area: 'Schedule', detail: 'Is there a current, realistic delivery roadmap? Are dependencies tracked?' },
+                { area: 'Risks', detail: 'Is there a current risk register? Are high risks escalated and being managed?' },
+                { area: 'Issues', detail: 'Are issues logged and owned? Are blockers being escalated appropriately?' },
+                { area: 'Decisions', detail: 'Is there a decision log? Are pending decisions clearly documented and escalated?' },
+                { area: 'Financials', detail: 'Is spend tracked against budget? Is the financial forecast up to date?' },
+                { area: 'Stakeholder Alignment', detail: 'Are sponsor and key stakeholders aligned on current state and recovery path?' },
+              ].map((item) => (
+                <div class="flex gap-4 p-4 rounded-lg border border-slate-200 bg-white">
+                  <div class="w-1 rounded-full bg-navy-600 shrink-0 self-stretch" aria-hidden="true"></div>
+                  <div>
+                    <p class="text-sm font-semibold text-slate-900 mb-1">{item.area}</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Who It Is For -->
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 mb-4">Who It Is For</h2>
+            <ul class="space-y-2">
+              {[
+                'Senior project managers who have taken over a stalled or failing program',
+                'Program managers preparing an honest assessment for their executive sponsor',
+                'PMO leads conducting a program health review',
+                'Delivery leaders who need to identify the gaps before starting a recovery',
+              ].map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-700">
+                  <svg class="w-4 h-4 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- CTA -->
+          <div class="rounded-lg border border-navy-200 bg-navy-50 p-6">
+            <h2 class="text-base font-semibold text-navy-900 mb-2">Request the Checklist</h2>
+            <p class="text-sm text-navy-800 leading-relaxed mb-4">
+              Use the contact form to request the checklist. Select "PMO Resources" as the enquiry type and mention the Project Recovery Checklist.
+            </p>
+            <a
+              href="/contact"
+              class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+              data-ga-event="free_tool_request"
+              data-ga-label="Project Recovery Checklist"
+            >
+              Request The Checklist
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-5">
+          <div class="rounded-lg border border-slate-200 p-6">
+            <h2 class="text-base font-semibold text-slate-900 mb-3">Free resource</h2>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              This checklist is available free of charge from Lavelle Pty Ltd.
+            </p>
+            <a
+              href="/contact"
+              class="inline-flex items-center w-full justify-center px-4 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+              data-ga-event="free_tool_request"
+            >
+              Request the Checklist
+            </a>
+          </div>
+
+          <div class="rounded-lg border border-slate-200 p-6">
+            <h2 class="text-base font-semibold text-slate-900 mb-3">Need More?</h2>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              The Project Recovery Pack includes the full set of artefacts for a structured recovery.
+            </p>
+            <a
+              href="/templates/project-recovery-pack"
+              class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors"
+            >
+              View Project Recovery Pack
+              <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="rounded-lg border border-slate-200 p-6">
+            <h2 class="text-base font-semibold text-slate-900 mb-3">All Free Tools</h2>
+            <a
+              href="/free-tools"
+              class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors"
+            >
+              Browse free resources
+              <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -2,40 +2,44 @@
 import Layout from '../layouts/Layout.astro';
 import { products } from '../config/site';
 
+const productList = Object.values(products);
+
 const resourceCategories = [
-  { id: 'project-recovery', label: 'Project Recovery Resources' },
-  { id: 'business-case', label: 'Business Case Resources' },
-  { id: 'procurement', label: 'Procurement and RFP Resources' },
-  { id: 'steering-committee', label: 'Steering Committee Resources' },
-  { id: 'governance', label: 'Governance Templates' },
-  { id: 'risk-register', label: 'Risk, Issue and Decision Registers' },
-  { id: 'status-reporting', label: 'Weekly Status Reporting' },
-  { id: 'initiation', label: 'Project Initiation and Planning Artefacts' },
+  { id: 'project-recovery', label: 'Project Recovery Resources', href: '/templates/project-recovery-pack' },
+  { id: 'business-case', label: 'Business Case Resources', href: '/templates/business-case-pack' },
+  { id: 'procurement', label: 'Procurement and RFP Resources', href: '/templates/procurement-pack' },
+  { id: 'steering-committee', label: 'Steering Committee Resources', href: '/templates/steering-committee-pack' },
+  { id: 'governance', label: 'Governance Templates', href: '/templates' },
+  { id: 'risk-register', label: 'Risk, Issue and Decision Registers', href: '/templates' },
+  { id: 'status-reporting', label: 'Weekly Status Reporting', href: '/templates' },
+  { id: 'initiation', label: 'Project Initiation and Planning Artefacts', href: '/templates' },
 ];
 
-const productList = [
+const freeTools = [
   {
-    key: 'projectRecoveryPack',
-    ...products.projectRecoveryPack,
+    label: 'Free Project Recovery Checklist',
+    description: 'A structured checklist for identifying whether a project has the basic controls needed to recover delivery confidence.',
+    href: '/free-tools/project-recovery-checklist',
+    badge: 'Free',
   },
   {
-    key: 'businessCasePack',
-    ...products.businessCasePack,
+    label: 'Business Case Readiness Checklist',
+    description: 'A checklist for reviewing whether a business case is ready for delegate approval.',
+    href: '/free-tools',
+    badge: 'Coming Soon',
   },
   {
-    key: 'procurementPack',
-    ...products.procurementPack,
-  },
-  {
-    key: 'steeringCommitteePack',
-    ...products.steeringCommitteePack,
+    label: 'Procurement Evaluation Checklist',
+    description: 'A checklist for designing a defensible procurement evaluation process.',
+    href: '/free-tools',
+    badge: 'Coming Soon',
   },
 ];
 ---
 
 <Layout
-  title="PMO Resources"
-  description="Practical PMO resources developed by Lavelle Pty Ltd for project managers, delivery leads and organisations that need stronger project control without unnecessary complexity."
+  title="PMO Resources | Lavelle Pty Ltd"
+  description="Practical PMO resources, project templates and delivery tools for project managers, delivery leads, sponsors and organisations that need stronger project control."
 >
   <!-- PAGE HEADER -->
   <section class="page-header">
@@ -64,36 +68,13 @@ const productList = [
     </div>
   </section>
 
-  <!-- RESOURCE CATEGORIES -->
+  <!-- FEATURED - TEMPLATE PACKS -->
   <section class="section-alt">
     <div class="container">
       <div class="max-w-xl mb-10">
-        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Resource Categories</p>
-        <h2 class="text-2xl font-bold text-slate-900">What Is Covered</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {resourceCategories.map((cat) => (
-          <div
-            id={cat.id}
-            class="flex items-start gap-3 p-5 rounded-lg border border-slate-200 bg-white"
-          >
-            <div class="w-1.5 h-1.5 rounded-full bg-navy-600 shrink-0 mt-2" aria-hidden="true"></div>
-            <span class="text-sm font-medium text-slate-800 leading-snug">{cat.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT PACKS -->
-  <section class="section">
-    <div class="container">
-      <div class="max-w-xl mb-10">
-        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Resource Packs</p>
-        <h2 class="text-2xl font-bold text-slate-900">Structured Packs for Specific Needs</h2>
-        <p class="text-slate-600 mt-3">
-          Each pack brings together the templates, artefacts and guidance for a specific delivery challenge.
-        </p>
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Featured PMO Resources</p>
+        <h2 class="text-2xl font-bold text-slate-900">Template Packs</h2>
+        <p class="text-slate-600 mt-3">Structured packs that bring together the templates, artefacts and guidance for a specific delivery challenge.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {productList.map((product) => (
@@ -110,32 +91,139 @@ const productList = [
                 </span>
               )}
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-5">{product.description}</p>
-            <div class="flex flex-wrap gap-3 pt-4 border-t border-slate-100">
-              {product.checkoutUrl ? (
-                <>
-                  <a
-                    href={product.checkoutUrl}
-                    class="lemonsqueezy-button inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
-                    data-ga-event="product_buy_click"
-                    data-ga-label={product.name}
-                  >
-                    View Resource
-                  </a>
-                </>
-              ) : (
-                <a
-                  href="/contact"
-                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-navy-700 border border-navy-300 hover:bg-navy-50 rounded-md transition-colors"
-                  data-ga-event="product_enquiry_click"
-                  data-ga-label={product.name}
-                >
-                  Enquire
-                </a>
-              )}
+            <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-4">{product.description}</p>
+            {product.checkoutUrl && (
+              <p class="text-sm font-bold text-navy-900 mb-3">{product.price} AUD</p>
+            )}
+            <div class="pt-4 border-t border-slate-100">
+              <a
+                href={product.href}
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+                data-ga-event="product_view"
+                data-ga-label={product.name}
+              >
+                View Pack
+                <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </div>
         ))}
+      </div>
+      <div class="mt-6">
+        <a href="/templates" class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors">
+          View all templates
+          <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE TOOLS -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Free Tools</p>
+        <h2 class="text-2xl font-bold text-slate-900">Free Resources</h2>
+        <p class="text-slate-600 mt-3">Free PMO tools, checklists and guides available at no cost.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {freeTools.map((tool) => (
+          <div class="flex flex-col p-5 rounded-lg border border-slate-200 bg-white hover:border-navy-300 transition-all">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="text-sm font-semibold text-slate-900 leading-snug">{tool.label}</h3>
+              <span class:list={[
+                'shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium rounded border',
+                tool.badge === 'Free'
+                  ? 'text-emerald-700 bg-emerald-50 border-emerald-200'
+                  : 'text-slate-500 bg-slate-100 border-slate-200',
+              ]}>
+                {tool.badge}
+              </span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-4">{tool.description}</p>
+            <a
+              href={tool.href}
+              class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors"
+            >
+              {tool.badge === 'Free' ? 'View Checklist' : 'Notify Me'}
+              <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6">
+        <a href="/free-tools" class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors">
+          Browse all free tools
+          <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCE CATEGORIES -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Resource Categories</p>
+        <h2 class="text-2xl font-bold text-slate-900">What Is Covered</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {resourceCategories.map((cat) => (
+          <a
+            href={cat.href}
+            id={cat.id}
+            class="flex items-start gap-3 p-5 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all group"
+          >
+            <div class="w-1.5 h-1.5 rounded-full bg-navy-600 shrink-0 mt-2" aria-hidden="true"></div>
+            <span class="text-sm font-medium text-slate-800 group-hover:text-navy-700 leading-snug transition-colors">{cat.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY FRAMEWORK ARTEFACTS -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Delivery Framework</p>
+        <h2 class="text-2xl font-bold text-slate-900">Delivery Framework Artefacts</h2>
+        <p class="text-slate-600 mt-3">The artefacts used across the Lavelle Pty Ltd delivery framework, from initiation through to project closure.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          'Business Case',
+          'Project Initiation Document',
+          'Project Management Plan',
+          'Project Schedule / Roadmap',
+          'RAID Register',
+          'Decision Log',
+          'Weekly Status Report',
+          'Steering Committee Pack',
+          'Benefits Register',
+          'Closure Report',
+        ].map((artefact) => (
+          <div class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white">
+            <div class="w-1.5 h-1.5 rounded-full bg-navy-500 shrink-0"></div>
+            <span class="text-sm font-medium text-slate-800">{artefact}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6">
+        <a href="/delivery-framework" class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors">
+          View the Delivery Framework
+          <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -146,19 +234,13 @@ const productList = [
       <div class="max-w-2xl">
         <h2 class="text-2xl font-bold text-white mb-3">Need More Than Templates?</h2>
         <p class="text-slate-300 leading-relaxed mb-6">
-          Lavelle Pty Ltd also provides senior consulting and contract project management services for organisations that need hands-on delivery support.
+          Lavelle Pty Ltd provides senior consulting and contract project management services for organisations that need hands-on delivery support.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a
-            href="/consulting"
-            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-700 hover:bg-navy-600 rounded-md transition-colors"
-          >
+          <a href="/consulting" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-700 hover:bg-navy-600 rounded-md transition-colors">
             View Consulting Services
           </a>
-          <a
-            href="/contact"
-            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-300 border border-slate-600 hover:border-slate-400 hover:text-white rounded-md transition-colors"
-          >
+          <a href="/contact" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-300 border border-slate-600 hover:border-slate-400 hover:text-white rounded-md transition-colors">
             Send an Enquiry
           </a>
         </div>

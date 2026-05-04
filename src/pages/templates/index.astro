@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { products } from '../../config/site';
+
+const paidPacks = Object.values(products);
+
+const additionalTemplates = [
+  { name: 'RAID Register', status: 'coming-soon' },
+  { name: 'Decision Log', status: 'coming-soon' },
+  { name: 'Weekly Status Report', status: 'coming-soon' },
+  { name: 'Project Initiation Document', status: 'coming-soon' },
+  { name: 'Project Management Plan', status: 'coming-soon' },
+  { name: 'Benefits Register', status: 'coming-soon' },
+  { name: 'Closure Report', status: 'coming-soon' },
+];
+---
+
+<Layout
+  title="Project Management Templates | Lavelle Pty Ltd"
+  description="Practical project management templates for project recovery, business cases, procurement, steering committee reporting, RAID management and delivery governance."
+>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Lavelle Pty Ltd</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Templates</h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Practical project management templates designed for real delivery environments where artefacts need to support decisions, governance and delivery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <p class="text-lg text-slate-700 leading-relaxed">
+          Lavelle Pty Ltd templates are designed for practical project environments where artefacts need to support decisions, governance and delivery, not just fill a document library.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAID PACKS -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Template Packs</p>
+        <h2 class="text-2xl font-bold text-slate-900">Structured Packs for Specific Needs</h2>
+        <p class="text-slate-600 mt-3">Each pack brings together the templates, artefacts and guidance for a specific delivery challenge.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {paidPacks.map((pack) => (
+          <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="text-base font-semibold text-slate-900 leading-snug">{pack.name}</h3>
+              {pack.checkoutUrl ? (
+                <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded">
+                  Available
+                </span>
+              ) : (
+                <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
+                  Coming Soon
+                </span>
+              )}
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-4">{pack.description}</p>
+            {pack.checkoutUrl && (
+              <p class="text-sm font-bold text-navy-900 mb-4">{pack.price} AUD</p>
+            )}
+            <div class="pt-4 border-t border-slate-100">
+              <a
+                href={pack.href}
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+              >
+                View Pack
+                <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL TEMPLATES -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Individual Templates</p>
+        <h2 class="text-2xl font-bold text-slate-900">Standalone Artefacts</h2>
+        <p class="text-slate-600 mt-3">Individual governance and delivery artefacts, available separately from the packs.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {additionalTemplates.map((t) => (
+          <div class="flex items-center justify-between p-4 rounded-lg border border-slate-200 bg-white">
+            <span class="text-sm font-medium text-slate-800">{t.name}</span>
+            <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
+              Coming Soon
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE TOOLS CTA -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">Not Ready to Purchase?</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Start with the free tools. The Project Recovery Checklist and other free resources are available at no cost.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/free-tools"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+          >
+            Browse Free Tools
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
+          >
+            Send an Enquiry
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

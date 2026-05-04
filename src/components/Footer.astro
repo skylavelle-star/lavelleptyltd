@@ -5,23 +5,24 @@ const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   'PMO Resources': [
-    { label: 'Project Recovery Resources', href: '/pmo-resources#project-recovery' },
-    { label: 'Business Case Resources', href: '/pmo-resources#business-case' },
-    { label: 'Procurement Resources', href: '/pmo-resources#procurement' },
-    { label: 'Steering Committee Resources', href: '/pmo-resources#steering-committee' },
-    { label: 'Governance Templates', href: '/pmo-resources#governance' },
+    { label: 'PMO Resources', href: '/pmo-resources' },
+    { label: 'Free Tools', href: '/free-tools' },
+    { label: 'Templates', href: '/templates' },
+    { label: 'Delivery Framework', href: '/delivery-framework' },
+    { label: 'Free Project Recovery Checklist', href: '/free-tools/project-recovery-checklist' },
   ],
   Consulting: [
     { label: 'Senior Project Management', href: '/consulting' },
     { label: 'Project Recovery', href: '/consulting#project-recovery' },
     { label: 'Business Case Development', href: '/consulting#business-case' },
-    { label: 'Procurement and RFP Support', href: '/consulting#procurement' },
-    { label: 'Delivery Framework Support', href: '/delivery-framework' },
+    { label: 'Procurement and RFP', href: '/consulting#procurement' },
+    { label: 'Delivery Assurance', href: '/consulting#delivery-assurance' },
   ],
   Company: [
     { label: 'About', href: '/about' },
     { label: 'Digital Assets', href: '/digital-assets' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Sky Lavelle (Principal Consultant)', href: site.skyLavelleUrl, external: true },
   ],
 };
 ---
@@ -60,6 +61,7 @@ const footerLinks = {
                 <li>
                   <a
                     href={link.href}
+                    {...('external' in link && link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     class="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {link.label}

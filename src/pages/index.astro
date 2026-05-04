@@ -1,31 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { products } from '../config/site';
+import { products, site } from '../config/site';
+
+const productList = Object.values(products);
 
 const capabilities = [
   {
     title: 'Project Recovery',
     copy: 'Practical tools and consulting support for projects that need stronger control, clearer governance and a credible path back to delivery.',
+    href: '/templates/project-recovery-pack',
   },
   {
     title: 'Business Cases',
     copy: 'Structured business case resources that help define the case for change, expected benefits, delivery costs, risks, dependencies and approval pathways.',
+    href: '/templates/business-case-pack',
   },
   {
     title: 'Procurement Governance',
     copy: 'Templates and guidance for procurement planning, RFP support, evaluation governance, BAFO processes and delegate approvals.',
+    href: '/templates/procurement-pack',
   },
   {
     title: 'Steering Committee Reporting',
     copy: 'Clear reporting structures for project boards and steering committees, including status, risks, issues, decisions, financials and escalation points.',
+    href: '/templates/steering-committee-pack',
   },
   {
     title: 'Delivery Frameworks',
     copy: 'A practical hybrid delivery framework that combines structured governance with Agile execution, using clear artefacts, decision points and delivery rhythms.',
+    href: '/delivery-framework',
   },
   {
     title: 'Risk, Issue and Decision Management',
     copy: 'Registers, reporting structures and escalation practices that make project control visible, consistent and easier to manage.',
+    href: '/pmo-resources',
+  },
+];
+
+const homepageCards = [
+  {
+    label: 'Project Recovery Pack',
+    badge: productList[0].checkoutUrl ? 'Available' : 'Coming Soon',
+    badgeStyle: productList[0].checkoutUrl ? 'emerald' : 'slate',
+    href: '/templates/project-recovery-pack',
+  },
+  {
+    label: 'Business Case Pack',
+    badge: productList[1].checkoutUrl ? 'Available' : 'Coming Soon',
+    badgeStyle: productList[1].checkoutUrl ? 'emerald' : 'slate',
+    href: '/templates/business-case-pack',
+  },
+  {
+    label: 'Procurement Pack',
+    badge: productList[2].checkoutUrl ? 'Available' : 'Coming Soon',
+    badgeStyle: productList[2].checkoutUrl ? 'emerald' : 'slate',
+    href: '/templates/procurement-pack',
+  },
+  {
+    label: 'Steering Committee Pack',
+    badge: productList[3].checkoutUrl ? 'Available' : 'Coming Soon',
+    badgeStyle: productList[3].checkoutUrl ? 'emerald' : 'slate',
+    href: '/templates/steering-committee-pack',
+  },
+  {
+    label: 'Free Project Recovery Checklist',
+    badge: 'Free',
+    badgeStyle: 'emerald',
+    href: '/free-tools/project-recovery-checklist',
+  },
+  {
+    label: 'Delivery Framework',
+    badge: 'Available',
+    badgeStyle: 'emerald',
+    href: '/delivery-framework',
   },
 ];
 
@@ -35,8 +82,6 @@ const trustItems = [
   'Hybrid delivery framework',
   'Australian company',
 ];
-
-const productList = Object.values(products);
 ---
 
 <Layout
@@ -48,10 +93,10 @@ const productList = Object.values(products);
     <div class="container">
       <div class="max-w-3xl">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-          Project Delivery Tools, Templates and Consulting
+          PMO Resources, Project Delivery Consulting and Digital Assets
         </h1>
         <p class="text-lg lg:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-          Lavelle Pty Ltd provides senior project delivery consulting and practical PMO resources for organisations that need stronger governance, clearer artefacts and better control over complex technology and business change initiatives.
+          Lavelle Pty Ltd provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance, clearer project control and commercially useful execution.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -96,16 +141,25 @@ const productList = Object.values(products);
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {capabilities.map((cap) => (
-          <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all">
-            <h3 class="text-base font-semibold text-slate-900 mb-3">{cap.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">{cap.copy}</p>
-          </div>
+          <a
+            href={cap.href}
+            class="group flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all"
+          >
+            <h3 class="text-base font-semibold text-slate-900 mb-3 group-hover:text-navy-700 transition-colors">{cap.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{cap.copy}</p>
+            <span class="inline-flex items-center mt-4 text-xs font-medium text-navy-700 group-hover:text-navy-900">
+              View resource
+              <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- PMO RESOURCES TEASER -->
+  <!-- PMO RESOURCES + PRODUCTS -->
   <section class="section">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -120,32 +174,39 @@ const productList = Object.values(products);
           <p class="text-slate-600 leading-relaxed mb-6">
             The resources are designed for environments where governance, funding, procurement, stakeholder management and execution need to work together.
           </p>
-          <a
-            href="/pmo-resources"
-            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
-          >
-            Browse PMO Resources
-            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/pmo-resources"
+              class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+            >
+              Browse All Resources
+            </a>
+            <a
+              href="/free-tools"
+              class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
+            >
+              Free Tools
+            </a>
+          </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {productList.map((product) => (
-            <div class="flex flex-col p-5 rounded-lg border border-slate-200 bg-slate-50">
-              <h3 class="text-sm font-semibold text-slate-900 leading-snug mb-2">{product.name}</h3>
-              <div class="mt-auto pt-3">
-                {product.checkoutUrl ? (
-                  <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-navy-700 bg-navy-50 border border-navy-200 rounded">
-                    Available now
-                  </span>
-                ) : (
-                  <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
-                    Coming soon
-                  </span>
-                )}
+          {homepageCards.map((card) => (
+            <a
+              href={card.href}
+              class="group flex flex-col p-5 rounded-lg border border-slate-200 bg-slate-50 hover:border-navy-300 hover:bg-white transition-all"
+            >
+              <h3 class="text-sm font-semibold text-slate-900 group-hover:text-navy-700 leading-snug mb-3 transition-colors">{card.label}</h3>
+              <div class="mt-auto">
+                <span class:list={[
+                  'inline-flex items-center px-2.5 py-1 text-xs font-medium rounded border',
+                  card.badgeStyle === 'emerald'
+                    ? 'text-emerald-700 bg-emerald-50 border-emerald-200'
+                    : 'text-slate-500 bg-slate-100 border-slate-200',
+                ]}>
+                  {card.badge}
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -171,47 +232,13 @@ const productList = Object.values(products);
             View Consulting Services
           </a>
           <a
-            href="/contact"
-            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 hover:bg-white rounded-md transition-colors"
+            href={site.skyLavelleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
           >
-            Send an Enquiry
+            Sky Lavelle Profile
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DELIVERY FRAMEWORK TEASER -->
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Delivery Framework</p>
-          <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-            Governance and Delivery Working Together
-          </h2>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            A practical hybrid delivery framework that combines structured governance with Agile execution. Designed for complex projects where funding, procurement, architecture, delivery, testing, change and executive reporting all need to stay aligned.
-          </p>
-          <a
-            href="/delivery-framework"
-            class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors"
-          >
-            View the Delivery Framework
-            <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-        <div class="grid grid-cols-4 gap-2">
-          {['Assess', 'Initiate', 'Plan', 'Deliver', 'Govern', 'Recover', 'Transition'].map((stage, i) => (
-            <div class:list={[
-              'flex flex-col items-center justify-center p-3 rounded-lg text-center',
-              i === 5 ? 'col-span-2 bg-navy-900 text-white' : 'bg-slate-100 text-slate-700',
-            ]}>
-              <span class="text-xs font-semibold uppercase tracking-wide">{stage}</span>
-            </div>
-          ))}
         </div>
       </div>
     </div>

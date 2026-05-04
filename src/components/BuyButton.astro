@@ -1,0 +1,45 @@
+---
+interface Props {
+  checkoutUrl?: string;
+  label?: string;
+  price?: string;
+  fullWidth?: boolean;
+  gaEvent?: string;
+  gaLabel?: string;
+}
+
+const {
+  checkoutUrl,
+  label = 'Buy Now',
+  price,
+  fullWidth = true,
+  gaEvent,
+  gaLabel,
+} = Astro.props;
+
+const widthClass = fullWidth ? 'w-full' : '';
+const baseClass = 'inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md transition-colors';
+---
+
+{
+  checkoutUrl ? (
+    <a
+      href={checkoutUrl}
+      class:list={['lemonsqueezy-button', baseClass, 'text-white bg-navy-800 hover:bg-navy-900', widthClass]}
+      {...(gaEvent ? { 'data-ga-event': gaEvent } : {})}
+      {...(gaLabel ? { 'data-ga-label': gaLabel } : {})}
+    >
+      {label}
+      {price && <span class="ml-2 opacity-80">&middot; {price}</span>}
+    </a>
+  ) : (
+    <button
+      type="button"
+      disabled
+      class:list={[baseClass, 'text-white bg-navy-800 opacity-50 cursor-not-allowed', widthClass]}
+      aria-label="Purchase not yet available"
+    >
+      Coming Soon
+    </button>
+  )
+}
