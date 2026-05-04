@@ -1,5 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const portfolioCategories = [
+  {
+    title: 'Professional services content and digital products',
+    description: 'Information assets, templates and tools serving professional service providers and their clients.',
+  },
+  {
+    title: 'Project management templates, guides and frameworks',
+    description: 'PMO resources, delivery frameworks and project artefacts for project managers and delivery leads.',
+  },
+  {
+    title: 'Local search and business information assets',
+    description: 'Location-based information and business directory assets serving local search intent.',
+  },
+  {
+    title: 'Property, renovation and construction-related content',
+    description: 'Information assets covering property, renovation planning, construction trades and home improvement.',
+  },
+  {
+    title: 'Lead generation and niche information platforms',
+    description: 'Targeted information assets designed to capture commercial intent in specific market niches.',
+  },
+  {
+    title: 'Newsletter, search and analytics-enabled content systems',
+    description: 'Content platforms built with integrated search visibility, newsletter distribution and analytics tracking.',
+  },
+];
 ---
 
 <Layout
@@ -33,49 +60,18 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ASSET CHARACTERISTICS -->
+  <!-- PORTFOLIO CATEGORIES -->
   <section class="section-alt">
     <div class="container">
       <div class="max-w-xl mb-10">
-        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Approach</p>
-        <h2 class="text-2xl font-bold text-slate-900">How the Portfolio Is Built</h2>
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Portfolio</p>
+        <h2 class="text-2xl font-bold text-slate-900">Portfolio Categories</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[
-          {
-            title: 'Search Visibility',
-            description:
-              'Assets are built with a clear view of search intent. Content structures, taxonomy and technical performance are designed to support organic discovery and long-term ranking.',
-          },
-          {
-            title: 'Practical User Value',
-            description:
-              'Content serves a genuine user need. Each asset is built around information that is useful, accurate and well-structured for the target audience.',
-          },
-          {
-            title: 'Commercial Conversion',
-            description:
-              'Assets connect organic traffic to commercial outcomes through clear pathways, commercial intent matching and appropriate conversion structures.',
-          },
-          {
-            title: 'Repeatable Systems',
-            description:
-              'Content, technical and operational systems are designed to be repeatable and scalable across the portfolio rather than bespoke to individual assets.',
-          },
-          {
-            title: 'Long-Term Scalability',
-            description:
-              'Each asset is built with a durable structure that can grow over time through additional content, expanded coverage and improved commercial integration.',
-          },
-          {
-            title: 'Technical Performance',
-            description:
-              'Assets are built on performant, maintainable technical stacks with a focus on page speed, accessibility and crawlability.',
-          },
-        ].map((item) => (
+        {portfolioCategories.map((cat) => (
           <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white">
-            <h3 class="text-base font-semibold text-slate-900 mb-2">{item.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+            <h3 class="text-sm font-semibold text-slate-900 mb-2 leading-snug">{cat.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{cat.description}</p>
           </div>
         ))}
       </div>

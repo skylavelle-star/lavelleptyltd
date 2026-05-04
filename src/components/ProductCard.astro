@@ -1,0 +1,67 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  statusBadge: 'Available' | 'Coming Soon';
+  ctaText?: string;
+  ctaUrl?: string;
+  disabled?: boolean;
+  id?: string;
+}
+
+const {
+  name,
+  description,
+  statusBadge,
+  ctaText = 'View Resource',
+  ctaUrl,
+  disabled = false,
+  id,
+} = Astro.props;
+---
+
+<div
+  id={id}
+  class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all"
+>
+  <div class="flex items-start justify-between gap-4 mb-3">
+    <h3 class="text-base font-semibold text-slate-900 leading-snug">{name}</h3>
+    <span
+      class:list={[
+        'shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium rounded border',
+        statusBadge === 'Available'
+          ? 'text-emerald-700 bg-emerald-50 border-emerald-200'
+          : 'text-slate-500 bg-slate-100 border-slate-200',
+      ]}
+    >
+      {statusBadge}
+    </span>
+  </div>
+
+  <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-5">{description}</p>
+
+  <div class="pt-4 border-t border-slate-100">
+    {ctaUrl && !disabled ? (
+      <a
+        href={ctaUrl}
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+        data-ga-event="product_view"
+        data-ga-label={name}
+      >
+        {ctaText}
+        <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    ) : (
+      <button
+        type="button"
+        disabled
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-400 bg-slate-100 rounded-md cursor-not-allowed"
+        aria-label={`${name} - not yet available`}
+      >
+        {ctaText}
+      </button>
+    )}
+  </div>
+</div>

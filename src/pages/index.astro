@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CapabilityCard from '../components/CapabilityCard.astro';
+import ProductCard from '../components/ProductCard.astro';
 import { products, site } from '../config/site';
 
 const productList = Object.values(products);
@@ -8,22 +10,22 @@ const capabilities = [
   {
     title: 'Project Recovery',
     copy: 'Practical tools and consulting support for projects that need stronger control, clearer governance and a credible path back to delivery.',
-    href: '/templates/project-recovery-pack',
+    href: '/pmo-resources#project-recovery-pack',
   },
   {
     title: 'Business Cases',
     copy: 'Structured business case resources that help define the case for change, expected benefits, delivery costs, risks, dependencies and approval pathways.',
-    href: '/templates/business-case-pack',
+    href: '/pmo-resources#business-case-pack',
   },
   {
     title: 'Procurement Governance',
     copy: 'Templates and guidance for procurement planning, RFP support, evaluation governance, BAFO processes and delegate approvals.',
-    href: '/templates/procurement-pack',
+    href: '/pmo-resources#procurement-pack',
   },
   {
     title: 'Steering Committee Reporting',
     copy: 'Clear reporting structures for project boards and steering committees, including status, risks, issues, decisions, financials and escalation points.',
-    href: '/templates/steering-committee-pack',
+    href: '/pmo-resources#steering-committee-pack',
   },
   {
     title: 'Delivery Frameworks',
@@ -34,45 +36,6 @@ const capabilities = [
     title: 'Risk, Issue and Decision Management',
     copy: 'Registers, reporting structures and escalation practices that make project control visible, consistent and easier to manage.',
     href: '/pmo-resources',
-  },
-];
-
-const homepageCards = [
-  {
-    label: 'Project Recovery Pack',
-    badge: productList[0].checkoutUrl ? 'Available' : 'Coming Soon',
-    badgeStyle: productList[0].checkoutUrl ? 'emerald' : 'slate',
-    href: '/templates/project-recovery-pack',
-  },
-  {
-    label: 'Business Case Pack',
-    badge: productList[1].checkoutUrl ? 'Available' : 'Coming Soon',
-    badgeStyle: productList[1].checkoutUrl ? 'emerald' : 'slate',
-    href: '/templates/business-case-pack',
-  },
-  {
-    label: 'Procurement Pack',
-    badge: productList[2].checkoutUrl ? 'Available' : 'Coming Soon',
-    badgeStyle: productList[2].checkoutUrl ? 'emerald' : 'slate',
-    href: '/templates/procurement-pack',
-  },
-  {
-    label: 'Steering Committee Pack',
-    badge: productList[3].checkoutUrl ? 'Available' : 'Coming Soon',
-    badgeStyle: productList[3].checkoutUrl ? 'emerald' : 'slate',
-    href: '/templates/steering-committee-pack',
-  },
-  {
-    label: 'Free Project Recovery Checklist',
-    badge: 'Free',
-    badgeStyle: 'emerald',
-    href: '/free-tools/project-recovery-checklist',
-  },
-  {
-    label: 'Delivery Framework',
-    badge: 'Available',
-    badgeStyle: 'emerald',
-    href: '/delivery-framework',
   },
 ];
 
@@ -93,10 +56,10 @@ const trustItems = [
     <div class="container">
       <div class="max-w-3xl">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-          PMO Resources, Project Delivery Consulting and Digital Assets
+          Project Delivery Tools, Templates and Consulting
         </h1>
         <p class="text-lg lg:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-          Lavelle Pty Ltd provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance, clearer project control and commercially useful execution.
+          Lavelle Pty Ltd provides senior project delivery consulting and practical PMO resources for organisations that need stronger governance, clearer artefacts and better control over complex technology and business change initiatives.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -141,74 +104,45 @@ const trustItems = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {capabilities.map((cap) => (
-          <a
-            href={cap.href}
-            class="group flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all"
-          >
-            <h3 class="text-base font-semibold text-slate-900 mb-3 group-hover:text-navy-700 transition-colors">{cap.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1">{cap.copy}</p>
-            <span class="inline-flex items-center mt-4 text-xs font-medium text-navy-700 group-hover:text-navy-900">
-              View resource
-              <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </a>
+          <CapabilityCard title={cap.title} copy={cap.copy} href={cap.href} />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- PMO RESOURCES + PRODUCTS -->
+  <!-- PMO RESOURCES PREVIEW -->
   <section class="section">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div>
-          <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">PMO Resources</p>
-          <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-            Practical Resources for Real Delivery Environments
-          </h2>
-          <p class="text-slate-600 leading-relaxed mb-4">
-            Lavelle Pty Ltd develops PMO resources for project managers, delivery leads, sponsors and organisations that need stronger project control without unnecessary complexity.
-          </p>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            The resources are designed for environments where governance, funding, procurement, stakeholder management and execution need to work together.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a
-              href="/pmo-resources"
-              class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
-            >
-              Browse All Resources
-            </a>
-            <a
-              href="/free-tools"
-              class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
-            >
-              Free Tools
-            </a>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {homepageCards.map((card) => (
-            <a
-              href={card.href}
-              class="group flex flex-col p-5 rounded-lg border border-slate-200 bg-slate-50 hover:border-navy-300 hover:bg-white transition-all"
-            >
-              <h3 class="text-sm font-semibold text-slate-900 group-hover:text-navy-700 leading-snug mb-3 transition-colors">{card.label}</h3>
-              <div class="mt-auto">
-                <span class:list={[
-                  'inline-flex items-center px-2.5 py-1 text-xs font-medium rounded border',
-                  card.badgeStyle === 'emerald'
-                    ? 'text-emerald-700 bg-emerald-50 border-emerald-200'
-                    : 'text-slate-500 bg-slate-100 border-slate-200',
-                ]}>
-                  {card.badge}
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">PMO Resources</p>
+        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900">Practical Resources for Real Delivery Environments</h2>
+        <p class="text-slate-600 mt-3">
+          Designed for environments where governance, funding, procurement, stakeholder management and execution need to work together.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {productList.map((product) => (
+          <ProductCard
+            name={product.name}
+            description={product.description}
+            statusBadge={product.checkoutUrl ? 'Available' : 'Coming Soon'}
+            ctaText="View Resource"
+            ctaUrl={product.pmoResourcesHref}
+            disabled={false}
+            id={undefined}
+          />
+        ))}
+      </div>
+      <div class="mt-8">
+        <a
+          href="/pmo-resources"
+          class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors"
+        >
+          Browse all PMO resources
+          <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>

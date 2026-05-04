@@ -18,32 +18,36 @@ export const products = {
     name: 'Project Recovery Pack',
     price: '$297',
     href: '/templates/project-recovery-pack',
+    pmoResourcesHref: '/pmo-resources#project-recovery-pack',
     description:
-      'Structured templates and artefacts for senior project managers taking over or recovering a failing project. Covers health diagnostics, stakeholder reset, risk re-baselining, recovery roadmaps and steering committee reporting.',
+      'For project managers stepping into a project that needs stabilising. Includes recovery assessment, stakeholder alignment, replan, governance reset and steering committee update artefacts.',
     checkoutUrl: import.meta.env.PUBLIC_LS_PROJECT_RECOVERY_PACK || '',
   },
   businessCasePack: {
     name: 'Business Case Pack',
     price: '$247',
     href: '/templates/business-case-pack',
+    pmoResourcesHref: '/pmo-resources#business-case-pack',
     description:
-      'Templates and guidance for building a structured business case for technology or business change investments. Covers options analysis, financial model, benefits mapping, risk, governance and delegate approval documentation.',
+      'End-to-end business case structure including problem definition, options analysis, benefits, costs, risks, dependencies and approval routing.',
     checkoutUrl: import.meta.env.PUBLIC_LS_BUSINESS_CASE_PACK || '',
   },
   procurementPack: {
     name: 'Procurement Pack',
     price: '$297',
     href: '/templates/procurement-pack',
+    pmoResourcesHref: '/pmo-resources#procurement-pack',
     description:
-      'A practical pack of artefacts for planning and managing procurement processes. Covers RFP development, evaluation governance, scoring, BAFO management, clarification processes and delegate approval documentation.',
+      'RFP planning, evaluation criteria, scoring frameworks, BAFO process, recommendation report and delegate approval templates.',
     checkoutUrl: import.meta.env.PUBLIC_LS_PROCUREMENT_PACK || '',
   },
   steeringCommitteePack: {
     name: 'Steering Committee Pack',
     price: '$147',
     href: '/templates/steering-committee-pack',
+    pmoResourcesHref: '/pmo-resources#steering-committee-pack',
     description:
-      'Reporting templates and governance guidance for project boards and steering committees. Covers status reporting, RAG ratings, risk and issue escalation, financial summary, decision log and meeting governance.',
+      'Steering committee charter, meeting cadence, status report template, RAID summary, financials view and decision log.',
     checkoutUrl: import.meta.env.PUBLIC_LS_STEERING_COMMITTEE_PACK || '',
   },
 } as const;

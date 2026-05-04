@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  copy: string;
+  href?: string;
+}
+
+const { title, copy, href } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+  href={href}
+  class:list={[
+    'group flex flex-col p-6 rounded-lg border border-slate-200 bg-white transition-all',
+    href && 'hover:border-navy-300 hover:shadow-sm',
+  ]}
+>
+  <h3 class:list={['text-base font-semibold text-slate-900 mb-3', href && 'group-hover:text-navy-700 transition-colors']}>
+    {title}
+  </h3>
+  <p class="text-sm text-slate-600 leading-relaxed flex-1">{copy}</p>
+  {href && (
+    <span class="inline-flex items-center mt-4 text-xs font-medium text-navy-700 group-hover:text-navy-900">
+      View resource
+      <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </span>
+  )}
+</Tag>
