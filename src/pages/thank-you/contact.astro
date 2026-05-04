@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Enquiry Received" noindex>
+  <section class="section">
+    <div class="container max-w-xl mx-auto text-center">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-100 mb-6">
+        <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h1 class="text-2xl font-bold text-slate-900 mb-3">Enquiry Received</h1>
+      <p class="text-slate-600 mb-2">
+        Your enquiry has been sent to Lavelle Pty Ltd.
+      </p>
+      <p class="text-slate-600 mb-8">
+        You will receive a response within one business day.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/"
+          class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/pmo-resources"
+          class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
+        >
+          Browse PMO Resources
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

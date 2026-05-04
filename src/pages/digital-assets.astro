@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Digital Assets"
+  description="Lavelle Pty Ltd develops and operates a growing portfolio of digital assets across professional services, local business information, property, construction and digital products."
+>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Lavelle Pty Ltd</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Digital Assets</h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          A growing portfolio of digital assets built around useful content, searchable information, commercial intent and repeatable systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Alongside its consulting and PMO resource work, Lavelle Pty Ltd develops and operates a growing portfolio of digital assets. These assets are designed around useful content, searchable information, commercial intent and repeatable systems.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          The portfolio includes assets across professional services, local business information, property and renovation content, construction-related markets and digital products. Each asset is built with a focus on search visibility, practical user value, commercial conversion and long-term scalability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSET CHARACTERISTICS -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Approach</p>
+        <h2 class="text-2xl font-bold text-slate-900">How the Portfolio Is Built</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          {
+            title: 'Search Visibility',
+            description:
+              'Assets are built with a clear view of search intent. Content structures, taxonomy and technical performance are designed to support organic discovery and long-term ranking.',
+          },
+          {
+            title: 'Practical User Value',
+            description:
+              'Content serves a genuine user need. Each asset is built around information that is useful, accurate and well-structured for the target audience.',
+          },
+          {
+            title: 'Commercial Conversion',
+            description:
+              'Assets connect organic traffic to commercial outcomes through clear pathways, commercial intent matching and appropriate conversion structures.',
+          },
+          {
+            title: 'Repeatable Systems',
+            description:
+              'Content, technical and operational systems are designed to be repeatable and scalable across the portfolio rather than bespoke to individual assets.',
+          },
+          {
+            title: 'Long-Term Scalability',
+            description:
+              'Each asset is built with a durable structure that can grow over time through additional content, expanded coverage and improved commercial integration.',
+          },
+          {
+            title: 'Technical Performance',
+            description:
+              'Assets are built on performant, maintainable technical stacks with a focus on page speed, accessibility and crawlability.',
+          },
+        ].map((item) => (
+          <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white">
+            <h3 class="text-base font-semibold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">Digital Asset Enquiries</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          For enquiries related to the Lavelle Pty Ltd digital asset portfolio, use the contact form and select "Digital Asset Enquiry" as the enquiry type.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+        >
+          Send an Enquiry
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

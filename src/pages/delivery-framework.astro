@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stages = [
+  {
+    number: '01',
+    name: 'Assess',
+    description:
+      'Understand the current state of the project or program. Establish a clear baseline for scope, schedule, budget, risks, issues, governance and stakeholder confidence.',
+  },
+  {
+    number: '02',
+    name: 'Initiate',
+    description:
+      'Establish the governance structures, sponsorship arrangements, delivery team and foundational artefacts. Define the operating model, reporting cadence and escalation pathways.',
+  },
+  {
+    number: '03',
+    name: 'Plan',
+    description:
+      'Develop the Project Management Plan, delivery roadmap, RAID register, resource plan, financial plan and benefits register. Align the plan with funding and governance approvals.',
+  },
+  {
+    number: '04',
+    name: 'Deliver',
+    description:
+      'Execute delivery using fit-for-purpose methods. Manage the team, vendors, dependencies, scope changes, testing, change management and release planning through structured sprints and delivery cycles.',
+  },
+  {
+    number: '05',
+    name: 'Govern',
+    description:
+      'Maintain visibility and control across the full delivery lifecycle. Manage the RAID register, steering committee reporting, financial tracking, vendor performance and decision log.',
+  },
+  {
+    number: '06',
+    name: 'Recover',
+    description:
+      'Address delivery failure or confidence breakdown. Re-baseline scope, schedule and budget. Reset stakeholder relationships, governance and reporting before resuming delivery.',
+  },
+  {
+    number: '07',
+    name: 'Transition',
+    description:
+      'Close the project with structured handover to operations, benefits realisation tracking and a formal closure report. Capture lessons learned and confirm delegate sign-off.',
+  },
+];
+
+const artefacts = [
+  {
+    name: 'Business Case',
+    description:
+      'Defines the case for change, investment options, expected benefits, delivery costs, risks, dependencies and the approval pathway.',
+  },
+  {
+    name: 'Project Initiation Document',
+    description:
+      'Establishes the governance structure, delivery approach, team, roles, reporting cadence and operating model for the project.',
+  },
+  {
+    name: 'Project Management Plan',
+    description:
+      'The primary planning artefact covering scope, schedule, resources, budget, quality, communications, risk and change management.',
+  },
+  {
+    name: 'Project Schedule or Roadmap',
+    description:
+      'A clear timeline showing milestones, dependencies, delivery phases and key decision points endorsed by the steering committee.',
+  },
+  {
+    name: 'RAID Register',
+    description:
+      'The central register for risks, assumptions, issues and dependencies. Maintained throughout delivery and reported to the steering committee.',
+  },
+  {
+    name: 'Decision Log',
+    description:
+      'A record of all significant decisions, the authority that made them and the date. Supports governance accountability and audit requirements.',
+  },
+  {
+    name: 'Weekly Status Report',
+    description:
+      'A structured status update covering RAG ratings, progress, risks, issues, actions, financials and escalation items for the project sponsor and delivery team.',
+  },
+  {
+    name: 'Steering Committee Pack',
+    description:
+      'A formal reporting pack for the project board covering health status, financials, risks, issues, decisions required, scope changes and milestone progress.',
+  },
+  {
+    name: 'Benefits Register',
+    description:
+      'Tracks the expected benefits, the measures used to confirm realisation, ownership, and the timeline for benefits delivery after project closure.',
+  },
+  {
+    name: 'Closure Report',
+    description:
+      'Formal project closure documentation covering delivery outcomes, benefits realisation status, outstanding risks, lessons learned and delegate sign-off.',
+  },
+];
+---
+
+<Layout
+  title="Delivery Framework"
+  description="Lavelle Pty Ltd's practical hybrid delivery framework combines structured governance with Agile execution for complex technology and business change projects."
+>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Lavelle Pty Ltd</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Delivery Framework</h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          A practical hybrid framework that combines structured governance with Agile execution for complex technology and business change projects.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Lavelle Pty Ltd uses a practical hybrid delivery framework that combines structured governance with Agile execution. It is designed for complex projects where funding, procurement, architecture, delivery, testing, change and executive reporting all need to stay aligned.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          The framework is intentionally practical. It does not treat governance and delivery as separate worlds. Strategic artefacts such as the Business Case, Project Initiation Document and Project Management Plan sit alongside delivery tools such as Jira timelines, sprint planning, Confluence-based requirements, RAID management and weekly reporting.
+        </p>
+        <p class="text-slate-600 leading-relaxed mt-4">
+          Steering Committee artefacts, financial controls and endorsed project documents are managed through appropriate governance channels, while day-to-day delivery is managed through fit-for-purpose delivery tools.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK STAGES -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Framework</p>
+        <h2 class="text-2xl font-bold text-slate-900">The Seven Stages</h2>
+      </div>
+      <div class="space-y-4">
+        {stages.map((stage) => (
+          <div class="flex gap-6 p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all">
+            <div class="shrink-0">
+              <span class="flex items-center justify-center w-10 h-10 rounded-full bg-navy-950 text-white text-sm font-bold">
+                {stage.number}
+              </span>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-slate-900 mb-2">{stage.name}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{stage.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW ARTEFACTS FIT TOGETHER -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Artefacts</p>
+        <h2 class="text-2xl font-bold text-slate-900">How the Artefacts Fit Together</h2>
+        <p class="text-slate-600 mt-3">
+          Each artefact has a defined purpose and sits at a specific point in the delivery lifecycle.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {artefacts.map((artefact) => (
+          <div class="flex gap-4 p-5 rounded-lg border border-slate-200 bg-white">
+            <div class="w-1 rounded-full bg-navy-600 shrink-0 self-stretch" aria-hidden="true"></div>
+            <div>
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">{artefact.name}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{artefact.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PMO RESOURCES CTA -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">Access the Framework Artefacts</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          The PMO Resources library includes templates for each of the artefacts in this framework. Browse the packs to find what you need.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/pmo-resources"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+          >
+            Browse PMO Resources
+          </a>
+          <a
+            href="/consulting"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 hover:bg-white rounded-md transition-colors"
+          >
+            View Consulting Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

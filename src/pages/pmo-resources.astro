@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { products } from '../config/site';
+
+const resourceCategories = [
+  { id: 'project-recovery', label: 'Project Recovery Resources' },
+  { id: 'business-case', label: 'Business Case Resources' },
+  { id: 'procurement', label: 'Procurement and RFP Resources' },
+  { id: 'steering-committee', label: 'Steering Committee Resources' },
+  { id: 'governance', label: 'Governance Templates' },
+  { id: 'risk-register', label: 'Risk, Issue and Decision Registers' },
+  { id: 'status-reporting', label: 'Weekly Status Reporting' },
+  { id: 'initiation', label: 'Project Initiation and Planning Artefacts' },
+];
+
+const productList = [
+  {
+    key: 'projectRecoveryPack',
+    ...products.projectRecoveryPack,
+  },
+  {
+    key: 'businessCasePack',
+    ...products.businessCasePack,
+  },
+  {
+    key: 'procurementPack',
+    ...products.procurementPack,
+  },
+  {
+    key: 'steeringCommitteePack',
+    ...products.steeringCommitteePack,
+  },
+];
+---
+
+<Layout
+  title="PMO Resources"
+  description="Practical PMO resources developed by Lavelle Pty Ltd for project managers, delivery leads and organisations that need stronger project control without unnecessary complexity."
+>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Lavelle Pty Ltd</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">PMO Resources</h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Practical resources for project managers, delivery leads, sponsors and organisations that need stronger project control without unnecessary complexity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl">
+        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+          Lavelle Pty Ltd develops practical PMO resources for project managers, delivery leads, sponsors and organisations that need stronger project control without unnecessary complexity.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          The resources are designed for real delivery environments where governance, funding, procurement, stakeholder management and execution need to work together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCE CATEGORIES -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Resource Categories</p>
+        <h2 class="text-2xl font-bold text-slate-900">What Is Covered</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {resourceCategories.map((cat) => (
+          <div
+            id={cat.id}
+            class="flex items-start gap-3 p-5 rounded-lg border border-slate-200 bg-white"
+          >
+            <div class="w-1.5 h-1.5 rounded-full bg-navy-600 shrink-0 mt-2" aria-hidden="true"></div>
+            <span class="text-sm font-medium text-slate-800 leading-snug">{cat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PACKS -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-3">Resource Packs</p>
+        <h2 class="text-2xl font-bold text-slate-900">Structured Packs for Specific Needs</h2>
+        <p class="text-slate-600 mt-3">
+          Each pack brings together the templates, artefacts and guidance for a specific delivery challenge.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {productList.map((product) => (
+          <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <h3 class="text-base font-semibold text-slate-900 leading-snug">{product.name}</h3>
+              {product.checkoutUrl ? (
+                <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded">
+                  Available
+                </span>
+              ) : (
+                <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
+                  Coming Soon
+                </span>
+              )}
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-5">{product.description}</p>
+            <div class="flex flex-wrap gap-3 pt-4 border-t border-slate-100">
+              {product.checkoutUrl ? (
+                <>
+                  <a
+                    href={product.checkoutUrl}
+                    class="lemonsqueezy-button inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
+                    data-ga-event="product_buy_click"
+                    data-ga-label={product.name}
+                  >
+                    View Resource
+                  </a>
+                </>
+              ) : (
+                <a
+                  href="/contact"
+                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-navy-700 border border-navy-300 hover:bg-navy-50 rounded-md transition-colors"
+                  data-ga-event="product_enquiry_click"
+                  data-ga-label={product.name}
+                >
+                  Enquire
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTING CTA -->
+  <section class="bg-slate-900 py-14">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl font-bold text-white mb-3">Need More Than Templates?</h2>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          Lavelle Pty Ltd also provides senior consulting and contract project management services for organisations that need hands-on delivery support.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/consulting"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-700 hover:bg-navy-600 rounded-md transition-colors"
+          >
+            View Consulting Services
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-300 border border-slate-600 hover:border-slate-400 hover:text-white rounded-md transition-colors"
+          >
+            Send an Enquiry
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
