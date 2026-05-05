@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import ResourceCategoryCard from '../components/ResourceCategoryCard.astro';
 import { products } from '../config/site';
+import boardroomImage from '../assets/images/steering-committee-boardroom.jpg';
 
 // TODO: Set PUBLIC_LS_PMO_BUNDLE_URL env var when a Lemon Squeezy bundle URL is available
 const bundleUrl = import.meta.env.PUBLIC_LS_PMO_BUNDLE_URL || '';
@@ -107,6 +108,8 @@ const resourceCategories = [
             disabled={!product.checkoutUrl}
             id={product.pmoResourcesHref.split('#')[1]}
             notifyEnabled={true}
+            image={product.href === '/templates/steering-committee-pack' ? boardroomImage : undefined}
+            imageAlt={product.href === '/templates/steering-committee-pack' ? 'An empty boardroom with a long meeting table - the setting where steering committee decisions are made' : undefined}
           />
         ))}
       </div>

@@ -3,48 +3,49 @@ import Layout from '../layouts/Layout.astro';
 import CapabilityCard from '../components/CapabilityCard.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { products, site } from '../config/site';
+import boardroomImage from '../assets/images/steering-committee-boardroom.jpg';
 
 const productList = Object.values(products);
 
 const capabilities = [
   {
     title: 'Project Recovery',
-    copy: 'Practical tools and consulting support for projects that need stronger control, clearer governance and a credible path back to delivery.',
+    copy: 'Stabilise stalled programs with structured assessment, replan and governance reset artefacts.',
     href: '/pmo-resources#project-recovery-pack',
     iconPaths:
       '<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>',
   },
   {
     title: 'Business Cases',
-    copy: 'Structured business case resources that help define the case for change, expected benefits, delivery costs, risks, dependencies and approval pathways.',
+    copy: 'Build defensible business cases with options analysis, financials, benefits and approval routing.',
     href: '/pmo-resources#business-case-pack',
     iconPaths:
       '<path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>',
   },
   {
     title: 'Procurement Governance',
-    copy: 'Templates and guidance for procurement planning, RFP support, evaluation governance, BAFO processes and delegate approvals.',
+    copy: 'Plan, run and document defensible procurement from RFP through to delegate approval.',
     href: '/pmo-resources#procurement-pack',
     iconPaths:
       '<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/>',
   },
   {
     title: 'Steering Committee Reporting',
-    copy: 'Clear reporting structures for project boards and steering committees, including status, risks, issues, decisions, financials and escalation points.',
+    copy: 'Give boards and steering committees decision-ready reports - not status theatre.',
     href: '/pmo-resources#steering-committee-pack',
     iconPaths:
       '<path stroke-linecap="round" stroke-linejoin="round" d="M18 20V10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 20V4"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 20v-6"/>',
   },
   {
     title: 'Delivery Frameworks',
-    copy: 'A practical hybrid delivery framework that combines structured governance with Agile execution, using clear artefacts, decision points and delivery rhythms.',
+    copy: 'Run programs on a hybrid framework that combines structured governance with Agile execution.',
     href: '/delivery-framework',
     iconPaths:
       '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>',
   },
   {
     title: 'Risk, Issue and Decision Management',
-    copy: 'Registers, reporting structures and escalation practices that make project control visible, consistent and easier to manage.',
+    copy: 'Make project control visible with clear registers, escalation paths and decision logs.',
     href: '/pmo-resources',
     iconPaths:
       '<path stroke-linecap="round" stroke-linejoin="round" d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 17h.01"/>',
@@ -52,8 +53,8 @@ const capabilities = [
 ];
 
 const trustItems = [
-  'Senior project delivery consulting',
-  'Practical PMO resources and templates',
+  'Senior delivery consulting',
+  'PMO templates and free tools',
   'Hybrid delivery framework',
   'Australian company',
 ];
@@ -74,7 +75,7 @@ const trustItems = [
             Project Delivery Tools, Templates and Consulting
           </h1>
           <p class="text-lg text-slate-300 leading-relaxed mb-8 max-w-xl">
-            Lavelle Pty Ltd provides senior project delivery consulting and practical PMO resources for organisations that need stronger governance, clearer artefacts and better control over complex technology and business change initiatives.
+            Senior delivery consulting and practical PMO resources for organisations that need stronger governance and better control over complex programs.
           </p>
 
           <!-- Lead magnet block -->
@@ -114,8 +115,7 @@ const trustItems = [
               Checklist on its way - check your inbox.
             </p>
             <p id="lead-magnet-error" class="hidden text-sm text-red-400 mt-3">
-              Something went wrong. Please try again or email
-              <a href={`mailto:${site.email}`} class="underline">{site.email}</a>.
+              Something went wrong. Please try again.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ const trustItems = [
         <p class="text-sm font-semibold text-navy-600 uppercase tracking-wider mb-3">PMO Resources</p>
         <h2 class="text-2xl lg:text-3xl text-slate-900">Practical Resources for Real Delivery Environments</h2>
         <p class="text-slate-600 mt-3">
-          Designed for environments where governance, funding, procurement, stakeholder management and execution need to work together.
+          Built for environments where governance, funding, procurement and execution all have to hold together.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -231,6 +231,8 @@ const trustItems = [
             disabled={false}
             id={undefined}
             notifyEnabled={true}
+            image={product.href === '/templates/steering-committee-pack' ? boardroomImage : undefined}
+            imageAlt={product.href === '/templates/steering-committee-pack' ? 'An empty boardroom with a long meeting table - the setting where steering committee decisions are made' : undefined}
           />
         ))}
       </div>
@@ -257,7 +259,7 @@ const trustItems = [
           Senior Project Delivery Consulting
         </h2>
         <p class="text-lg text-slate-600 leading-relaxed mb-6">
-          Lavelle Pty Ltd provides senior project management and delivery consulting through Sky Lavelle, its principal consultant, director and owner. Sky works with organisations that need experienced delivery leadership across complex technology, digital transformation, procurement, governance, implementation and business change initiatives.
+          Lavelle Pty Ltd provides senior project management and delivery consulting through its principal consultant, Sky Lavelle. Sky leads delivery on complex technology programs, business cases, procurement and program recovery.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -284,7 +286,7 @@ const trustItems = [
     <div class="container max-w-3xl">
       <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">Work With Lavelle Pty Ltd</h2>
       <p class="text-slate-300 leading-relaxed mb-8">
-        For consulting, contract project management, PMO resources, delivery support or digital asset enquiries, contact Lavelle Pty Ltd.
+        Talk to Lavelle Pty Ltd about consulting, contract project management or PMO resource enquiries.
       </p>
       <a
         href="/contact"

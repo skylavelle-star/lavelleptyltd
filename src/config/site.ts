@@ -6,7 +6,7 @@ export const site = {
   email: 'hello@lavelleptyltd.com.au',
   linkedin: 'https://linkedin.com/in/skylavelle',
   skyLavelleUrl: 'https://skylavelle.com.au',
-  web3formsKey: 'dc7b04fa-6e86-415e-8d01-1fe332b4bf21',
+  web3formsKey: '21e468ca-496b-45eb-8313-d1b7d5d229c9',
 } as const;
 
 export const analytics = {
@@ -20,7 +20,7 @@ export const products = {
     href: '/templates/project-recovery-pack',
     pmoResourcesHref: '/pmo-resources#project-recovery-pack',
     description:
-      'For project managers stepping into a project that needs stabilising. Includes recovery assessment, stakeholder alignment, replan, governance reset and steering committee update artefacts.',
+      'For project managers stepping into a program that needs stabilising. Recovery assessment, stakeholder reset, replan and governance artefacts.',
     checkoutUrl: import.meta.env.PUBLIC_LS_PROJECT_RECOVERY_PACK || '',
     whatsIncluded: [
       'Recovery assessment template',
@@ -35,7 +35,7 @@ export const products = {
     href: '/templates/business-case-pack',
     pmoResourcesHref: '/pmo-resources#business-case-pack',
     description:
-      'End-to-end business case structure including problem definition, options analysis, benefits, costs, risks, dependencies and approval routing.',
+      'End-to-end business case structure. Problem definition, options analysis, benefits, costs, risks and approval routing.',
     checkoutUrl: import.meta.env.PUBLIC_LS_BUSINESS_CASE_PACK || '',
     whatsIncluded: [
       'Problem statement and case for change',
@@ -50,7 +50,7 @@ export const products = {
     href: '/templates/procurement-pack',
     pmoResourcesHref: '/pmo-resources#procurement-pack',
     description:
-      'RFP planning, evaluation criteria, scoring frameworks, BAFO process, recommendation report and delegate approval templates.',
+      'RFP planning, evaluation scoring, BAFO process, recommendation report and delegate approval templates.',
     checkoutUrl: import.meta.env.PUBLIC_LS_PROCUREMENT_PACK || '',
     whatsIncluded: [
       'RFP planning and evaluation criteria',
@@ -65,7 +65,7 @@ export const products = {
     href: '/templates/steering-committee-pack',
     pmoResourcesHref: '/pmo-resources#steering-committee-pack',
     description:
-      'Steering committee charter, meeting cadence, status report template, RAID summary, financials view and decision log.',
+      'Charter, meeting cadence, status report template, RAID summary, financials view and decision log.',
     checkoutUrl: import.meta.env.PUBLIC_LS_STEERING_COMMITTEE_PACK || '',
     whatsIncluded: [
       'Steering committee charter',
