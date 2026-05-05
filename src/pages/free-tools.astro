@@ -59,8 +59,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white transition-all">
           <div class="flex items-start justify-between gap-3 mb-3">
             <h3 class="text-base font-semibold text-slate-900">Steering Committee Status Report Template</h3>
-            <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
-              Coming Soon
+            <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 rounded">
+              In development
             </span>
           </div>
           <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-2">
@@ -69,52 +69,39 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-xs text-slate-500 mb-5">
             Covers delivery status, RAID summary, financials, decisions required and next actions.
           </p>
-          <button
-            type="button"
-            data-notify-toggle="notify-sc-status-report"
-            class="inline-flex items-center px-4 py-2 text-sm font-medium text-navy-600 border border-navy-300 hover:bg-navy-50 rounded-md transition-colors"
-            aria-expanded="false"
-            aria-controls="notify-panel-notify-sc-status-report"
-          >
-            Notify me when available
-          </button>
-          <div id="notify-panel-notify-sc-status-report" class="hidden mt-4 pt-4 border-t border-slate-100">
-            <p class="text-xs font-medium text-slate-700 mb-2">Get notified when this becomes available.</p>
-            <form data-notify-form="notify-sc-status-report" novalidate class="space-y-2">
-              <input type="hidden" name="access_key" value="dc7b04fa-6e86-415e-8d01-1fe332b4bf21" />
-              <input type="hidden" name="subject" value="Notify me: Steering Committee Status Report Template" />
-              <input type="hidden" name="from_name" value="Lavelle Pty Ltd - Free Tools Notify Me" />
-              <input type="hidden" name="message" value="Please notify me when the Steering Committee Status Report Template becomes available." />
-              <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
-              <div class="flex gap-2">
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="your@email.com"
-                  class="flex-1 min-w-0 px-3 py-2 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent"
-                />
-                <button
-                  type="submit"
-                  class="shrink-0 px-3 py-2 text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 rounded-md transition-colors"
-                >
-                  Notify me
-                </button>
-              </div>
-              <p class="text-xs text-slate-400">No spam. Unsubscribe anytime.</p>
-            </form>
-            <p id="notify-success-notify-sc-status-report" class="hidden text-sm text-emerald-700 font-medium">
-              You're on the list. We'll notify you when this becomes available.
-            </p>
-          </div>
+          <form data-notify-form="notify-sc-status-report" novalidate class="space-y-2">
+            <input type="hidden" name="access_key" value="21e468ca-496b-45eb-8313-d1b7d5d229c9" />
+            <input type="hidden" name="subject" value="Interest: Steering Committee Status Report Template - lavelleptyltd.com.au" />
+            <input type="hidden" name="from_name" value="Lavelle Pty Ltd Free Tools" />
+            <input type="hidden" name="message" value="Interested in the Steering Committee Status Report Template when available." />
+            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+            <label for="sc-notify-email" class="block text-xs font-medium text-slate-700">Get notified when it ships</label>
+            <div class="flex gap-2">
+              <input
+                id="sc-notify-email"
+                type="email"
+                name="email"
+                required
+                placeholder="your@email.com"
+                autocomplete="email"
+                class="flex-1 min-w-0 px-3 py-2 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent"
+              />
+              <button type="submit" class="shrink-0 px-3 py-2 text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 rounded-md transition-colors">
+                Notify me
+              </button>
+            </div>
+          </form>
+          <p id="notify-success-notify-sc-status-report" class="hidden text-sm text-emerald-700 font-medium mt-2">
+            Done - we will email you when it ships.
+          </p>
         </div>
 
         <!-- Business Case One-Pager -->
         <div class="flex flex-col p-6 rounded-lg border border-slate-200 bg-white transition-all">
           <div class="flex items-start justify-between gap-3 mb-3">
             <h3 class="text-base font-semibold text-slate-900">Business Case One-Pager</h3>
-            <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
-              Coming Soon
+            <span class="shrink-0 inline-flex items-center px-2.5 py-1 text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 rounded">
+              In development
             </span>
           </div>
           <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-2">
@@ -123,44 +110,31 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-xs text-slate-500 mb-5">
             Covers problem statement, options summary, expected benefits, indicative cost and recommended next step.
           </p>
-          <button
-            type="button"
-            data-notify-toggle="notify-bc-one-pager"
-            class="inline-flex items-center px-4 py-2 text-sm font-medium text-navy-600 border border-navy-300 hover:bg-navy-50 rounded-md transition-colors"
-            aria-expanded="false"
-            aria-controls="notify-panel-notify-bc-one-pager"
-          >
-            Notify me when available
-          </button>
-          <div id="notify-panel-notify-bc-one-pager" class="hidden mt-4 pt-4 border-t border-slate-100">
-            <p class="text-xs font-medium text-slate-700 mb-2">Get notified when this becomes available.</p>
-            <form data-notify-form="notify-bc-one-pager" novalidate class="space-y-2">
-              <input type="hidden" name="access_key" value="dc7b04fa-6e86-415e-8d01-1fe332b4bf21" />
-              <input type="hidden" name="subject" value="Notify me: Business Case One-Pager" />
-              <input type="hidden" name="from_name" value="Lavelle Pty Ltd - Free Tools Notify Me" />
-              <input type="hidden" name="message" value="Please notify me when the Business Case One-Pager becomes available." />
-              <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
-              <div class="flex gap-2">
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="your@email.com"
-                  class="flex-1 min-w-0 px-3 py-2 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent"
-                />
-                <button
-                  type="submit"
-                  class="shrink-0 px-3 py-2 text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 rounded-md transition-colors"
-                >
-                  Notify me
-                </button>
-              </div>
-              <p class="text-xs text-slate-400">No spam. Unsubscribe anytime.</p>
-            </form>
-            <p id="notify-success-notify-bc-one-pager" class="hidden text-sm text-emerald-700 font-medium">
-              You're on the list. We'll notify you when this becomes available.
-            </p>
-          </div>
+          <form data-notify-form="notify-bc-one-pager" novalidate class="space-y-2">
+            <input type="hidden" name="access_key" value="21e468ca-496b-45eb-8313-d1b7d5d229c9" />
+            <input type="hidden" name="subject" value="Interest: Business Case One-Pager - lavelleptyltd.com.au" />
+            <input type="hidden" name="from_name" value="Lavelle Pty Ltd Free Tools" />
+            <input type="hidden" name="message" value="Interested in the Business Case One-Pager when available." />
+            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+            <label for="bc-notify-email" class="block text-xs font-medium text-slate-700">Get notified when it ships</label>
+            <div class="flex gap-2">
+              <input
+                id="bc-notify-email"
+                type="email"
+                name="email"
+                required
+                placeholder="your@email.com"
+                autocomplete="email"
+                class="flex-1 min-w-0 px-3 py-2 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent"
+              />
+              <button type="submit" class="shrink-0 px-3 py-2 text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 rounded-md transition-colors">
+                Notify me
+              </button>
+            </div>
+          </form>
+          <p id="notify-success-notify-bc-one-pager" class="hidden text-sm text-emerald-700 font-medium mt-2">
+            Done - we will email you when it ships.
+          </p>
         </div>
 
       </div>
@@ -195,48 +169,31 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  function initNotifyToggles() {
-    document.querySelectorAll<HTMLButtonElement>('[data-notify-toggle]').forEach((btn) => {
-      if (btn.dataset.notifyInitialised) return;
-      btn.dataset.notifyInitialised = 'true';
-      btn.addEventListener('click', () => {
-        const id = btn.dataset.notifyToggle!;
-        const panel = document.getElementById(`notify-panel-${id}`);
-        if (!panel) return;
-        const isHidden = panel.classList.contains('hidden');
-        panel.classList.toggle('hidden', !isHidden);
-        btn.setAttribute('aria-expanded', String(isHidden));
-      });
+  document.querySelectorAll<HTMLFormElement>('[data-notify-form]').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const id = form.dataset.notifyForm!;
+      const btn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+      const botcheck = form.querySelector<HTMLInputElement>('[name="botcheck"]');
+      if (botcheck?.checked) return;
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      let ok = false;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+        });
+        const data = await res.json().catch(() => ({})) as { success?: boolean };
+        ok = data.success === true;
+      } catch { /* silent */ }
+      if (ok) {
+        form.classList.add('hidden');
+        document.getElementById(`notify-success-${id}`)?.classList.remove('hidden');
+      } else {
+        if (btn) { btn.disabled = false; btn.textContent = 'Notify me'; }
+      }
     });
-
-    document.querySelectorAll<HTMLFormElement>('[data-notify-form]').forEach((form) => {
-      if (form.dataset.notifyFormInitialised) return;
-      form.dataset.notifyFormInitialised = 'true';
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
-        const id = form.dataset.notifyForm!;
-        const submitBtn = form.querySelector<HTMLButtonElement>('[type="submit"]');
-        if (submitBtn) submitBtn.disabled = true;
-        try {
-          const res = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: new FormData(form),
-          });
-          const data = await res.json();
-          if (data.success) {
-            form.classList.add('hidden');
-            document.getElementById(`notify-success-${id}`)?.classList.remove('hidden');
-          }
-        } finally {
-          if (submitBtn) submitBtn.disabled = false;
-        }
-      });
-    });
-  }
-
-  initNotifyToggles();
+  });
 </script>
