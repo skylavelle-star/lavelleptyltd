@@ -74,4 +74,19 @@ export const products = {
       'Financials view and decision log',
     ],
   },
+  bundlePack: {
+    name: 'Four-Pack Bundle',
+    price: 'AUD 797',
+    href: '/templates/bundle',
+    pmoResourcesHref: '/pmo-resources',
+    description:
+      'All four PMO packs - Steering Committee, Business Case, Procurement and Project Recovery - at a significant saving versus individual purchase.',
+    checkoutUrl: import.meta.env.PUBLIC_LS_BUNDLE_PACK || '',
+    whatsIncluded: [
+      'Steering Committee Pack (8 documents)',
+      'Business Case Pack',
+      'Procurement Pack',
+      'Project Recovery Pack (9 documents)',
+    ],
+  },
 } as const;

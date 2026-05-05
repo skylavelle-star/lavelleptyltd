@@ -104,6 +104,50 @@ const checkoutUrl = pack.checkoutUrl || undefined;
           </div>
 
           <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
+            <p class="text-sm text-slate-600 mb-4">The Options Analysis Framework is the document most organisations get wrong. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
+            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+              <div class="bg-navy-800 px-4 py-3">
+                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Options Analysis Framework</p>
+              </div>
+              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
+                <p class="font-bold text-slate-900 text-sm not-italic">OPTIONS ANALYSIS</p>
+                <div class="space-y-2">
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Status Quo</p><p class="font-bold text-red-600">Not recommended</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Option A - Build Internal</p><p class="font-bold text-amber-600">Feasible - high cost</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Option B - Procure External</p><p class="font-bold text-green-600">Recommended</p></div>
+                </div>
+                <p class="font-semibold not-italic">Evaluation Criteria</p>
+                <p class="text-slate-400">[ Cost / Risk / Benefit / Feasibility scoring matrix ]</p>
+                <p class="font-semibold not-italic">Financial Summary</p>
+                <p class="text-slate-400">[ NPV / IRR / Payback period / Sensitivity ranges ]</p>
+                <p class="font-semibold not-italic">Recommended Option and Rationale</p>
+                <p class="text-slate-400">[ Structured narrative with approval pathway ]</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Plus structured templates for problem statement, benefits register, risk register, dependency log and delegate approval routing.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+              {[
+                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+                { q: 'Is this suitable for a formal government approval submission?', a: 'Yes. The structure follows common government approval frameworks - problem statement, options analysis, financial model, risk, benefits and recommendation. It is not jurisdiction-specific but adapts well to most government business case requirements.' },
+                { q: 'Does the financial model cover costs and benefits?', a: 'Yes. The pack includes a benefits register, a cost model and a high-level financial summary covering NPV, payback and sensitivity. The financial model is a practical planning tool, not a certified financial statement.' },
+                { q: 'How detailed is the options analysis?', a: 'The pack supports a full options analysis across financial, risk, feasibility and strategic fit dimensions. The evaluation criteria and weightings are editable to reflect your organisation\'s priorities.' },
+                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+                { q: 'What if I need advisory support building the case?', a: 'Lavelle Pty Ltd provides business case development consulting. See the consulting page or contact us directly.' },
+              ].map(({ q, a }) => (
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
+                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
             <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
             <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
           </div>

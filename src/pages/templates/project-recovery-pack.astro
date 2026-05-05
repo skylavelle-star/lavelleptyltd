@@ -113,6 +113,51 @@ const checkoutUrl = pack.checkoutUrl || undefined;
 
           <!-- Format -->
           <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
+            <p class="text-sm text-slate-600 mb-4">The Project Health Diagnostic is where every recovery starts. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
+            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+              <div class="bg-navy-800 px-4 py-3">
+                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Project Health Diagnostic</p>
+              </div>
+              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
+                <p class="font-bold text-slate-900 text-sm not-italic">PROJECT HEALTH DIAGNOSTIC</p>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Delivery Confidence</p><p class="font-bold text-red-600">LOW</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Governance Health</p><p class="font-bold text-amber-600">PARTIAL</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Stakeholder Alignment</p><p class="font-bold text-red-600">BROKEN</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Financial Position</p><p class="font-bold text-amber-600">AT RISK</p></div>
+                </div>
+                <p class="font-semibold not-italic">Findings - Delivery</p>
+                <p class="text-slate-400">[ Evidence-based assessment fields with RAG ]</p>
+                <p class="font-semibold not-italic">Findings - Governance</p>
+                <p class="text-slate-400">[ Governance gap analysis with priority ranking ]</p>
+                <p class="font-semibold not-italic">Preliminary Recommendations</p>
+                <p class="text-slate-400">[ Immediate / Short-term / Medium-term actions ]</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Plus 8 additional documents including stakeholder reset plan, executive briefing template, recovery roadmap, vendor remediation plan and 30/60/90 day recovery plan.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+              {[
+                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+                { q: 'Do I use all 9 documents at once?', a: 'No. Start with the health diagnostic and recovery assessment workbook. The remaining documents are deployed progressively as you move through the stakeholder reset, replanning and governance stages.' },
+                { q: 'Is this for a first-time recovery manager?', a: 'It is designed for experienced project managers who understand program governance. The pack provides structure and artefacts, not a substitute for delivery experience.' },
+                { q: 'Can I use it for a non-technology program?', a: 'Yes. The pack uses delivery-neutral language and works across technology, business change, infrastructure and regulatory programs.' },
+                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+                { q: 'What if I need expert support during a recovery?', a: 'Lavelle Pty Ltd provides project recovery consulting and senior delivery advisory. See the consulting page or contact us directly.' },
+              ].map(({ q, a }) => (
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
+                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
             <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
             <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
           </div>

@@ -104,6 +104,51 @@ const checkoutUrl = pack.checkoutUrl || undefined;
           </div>
 
           <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
+            <p class="text-sm text-slate-600 mb-4">The Evaluation Scoring Matrix is where procurement decisions are made defensible. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
+            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+              <div class="bg-navy-800 px-4 py-3">
+                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Evaluation Scoring Matrix</p>
+              </div>
+              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
+                <p class="font-bold text-slate-900 text-sm not-italic">RFP EVALUATION MATRIX</p>
+                <div class="grid grid-cols-4 gap-1 text-xs">
+                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Criterion</p><p class="font-bold">Technical</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Weight</p><p class="font-bold">35%</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Supplier A</p><p class="font-bold text-green-600">86/100</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Supplier B</p><p class="font-bold text-amber-600">74/100</p></div>
+                </div>
+                <p class="font-semibold not-italic">Evaluation Panel Scoring</p>
+                <p class="text-slate-400">[ Individual and moderated scores per criterion ]</p>
+                <p class="font-semibold not-italic">BAFO Assessment</p>
+                <p class="text-slate-400">[ Revised offers vs original, delta scoring ]</p>
+                <p class="font-semibold not-italic">Delegate Approval Record</p>
+                <p class="text-slate-400">[ Authority / Date / Decision / Conditions ]</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Plus RFP planning template, evaluation criteria library, supplier response register, recommendation report and approval routing templates.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+              {[
+                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+                { q: 'Is this suitable for small and large procurements?', a: 'Yes. The pack scales from a straightforward RFQ to a complex multi-stage RFP with BAFO. Use the documents that are proportionate to the size and risk of your procurement.' },
+                { q: 'Does it cover the BAFO process?', a: 'Yes. The pack includes a structured BAFO process template covering the invitation to BAFO, revised response assessment and updated evaluation scoring.' },
+                { q: 'Do I need procurement experience to use it?', a: 'The templates are structured and self-explanatory, but they assume familiarity with the procurement process. If you are new to formal procurement, consider advisory support alongside the pack.' },
+                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+                { q: 'What if I need support running a procurement?', a: 'Lavelle Pty Ltd provides procurement governance advisory and RFP management support. See the consulting page or contact us directly.' },
+              ].map(({ q, a }) => (
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
+                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
             <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
             <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
           </div>

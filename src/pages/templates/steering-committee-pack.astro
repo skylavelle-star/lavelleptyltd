@@ -105,6 +105,52 @@ const checkoutUrl = pack.checkoutUrl || undefined;
           </div>
 
           <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
+            <p class="text-sm text-slate-600 mb-4">The Status Report Template is the centrepiece of the pack. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
+            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+              <div class="bg-navy-800 px-4 py-3">
+                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Status Report Template</p>
+              </div>
+              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
+                <p class="font-bold text-slate-900 text-sm not-italic">PROJECT STATUS REPORT</p>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Overall RAG</p><p class="font-bold text-amber-600">AMBER</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Schedule</p><p class="font-bold text-green-600">GREEN</p></div>
+                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Budget</p><p class="font-bold text-red-600">RED</p></div>
+                </div>
+                <p class="font-semibold not-italic">Progress This Period</p>
+                <p class="text-slate-400">[ Structured narrative fields with word limits ]</p>
+                <p class="font-semibold not-italic">Key Risks and Issues (from RAID)</p>
+                <p class="text-slate-400">[ ID / Description / Owner / Mitigation / Status ]</p>
+                <p class="font-semibold not-italic">Decisions Required from Committee</p>
+                <p class="text-slate-400">[ Decision / Authority / Date required / Status ]</p>
+                <p class="font-semibold not-italic">Financials</p>
+                <p class="text-slate-400">[ Budget / Actual / Forecast / Variance ]</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Plus 7 additional documents including charter, agenda, RAID register, decision log, escalation paper, RAG guide and action register.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+              {[
+                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+                { q: 'How long does it take to get reporting up and running?', a: 'Most project managers adapt the status report template and agree RAG thresholds within a week of first use. The charter and agenda templates can typically be in place before the first committee meeting.' },
+                { q: 'Is this suitable for a government or enterprise environment?', a: 'Yes. The templates use neutral language and are designed for senior executives, sponsors and formal governance structures. They do not assume any particular methodology.' },
+                { q: 'Does the pack include guidance on running committee meetings?', a: 'The pack includes a structured agenda template and an approach to running decision-focused meetings. It gives you the right artefacts - it is not a facilitation course.' },
+                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+                { q: 'What if I need support implementing this?', a: 'Lavelle Pty Ltd provides governance advisory and consulting support. See the consulting page or contact us directly.' },
+              ].map(({ q, a }) => (
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
+                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
             <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
             <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
           </div>
