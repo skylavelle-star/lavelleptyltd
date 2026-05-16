@@ -220,10 +220,9 @@ import { site } from '../config/site';
   const form = document.getElementById('enquiry-form') as HTMLFormElement;
   const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
   const submitLabel = document.getElementById('submit-label') as HTMLSpanElement;
-  const submitSpinner = document.getElementById('submit-spinner') as SVGElement;
+  const submitSpinner = document.getElementById('submit-spinner') as unknown as SVGElement;
   const successMsg = document.getElementById('form-success') as HTMLDivElement;
   const errorMsg = document.getElementById('form-error') as HTMLDivElement;
-  const errorText = document.getElementById('form-error-text') as HTMLParagraphElement;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();

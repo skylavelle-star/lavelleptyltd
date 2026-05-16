@@ -19,12 +19,11 @@ Vercel project: `lavelle-pty-ltd` under `sky-lavelles-projects`
 ```bash
 npm run dev          # local dev server at localhost:4321
 npm run build        # astro build
+npm run check        # astro check (TypeScript)
 npm run lint         # eslint .
 npm run format       # prettier --write .
 npm run format:check # prettier --check .
 ```
-
-Note: there is no `npm run check` script. Use `npx astro check` for type checking if needed.
 
 ## Directory structure
 
