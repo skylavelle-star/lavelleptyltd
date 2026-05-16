@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import templatesImage from '../../assets/images/templates.jpg';
 import { products } from '../../config/site';
 
 const { bundlePack, ...individualPacks } = products;
@@ -31,6 +33,17 @@ const additionalTemplates = [
       </p>
     </div>
   </section>
+
+  <figure class="image-band">
+    <Image
+      src={templatesImage}
+      alt="Two people sketching project artefacts on paper alongside laptops — the working state these templates are designed to support"
+      widths={[640, 960, 1280, 1600]}
+      sizes="100vw"
+      loading="lazy"
+      class="image-band__img"
+    />
+  </figure>
 
   <section>
     <div class="wrap">

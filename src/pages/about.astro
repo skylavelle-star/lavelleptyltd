@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/images/about.jpg';
 ---
 
 <BaseLayout
@@ -17,6 +19,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </div>
   </section>
+
+  <figure class="image-band">
+    <Image
+      src={aboutImage}
+      alt="A team gathered around a meeting table with laptops while a presenter explains a programme at a screen — the working rhythm Lavelle establishes on engagement"
+      widths={[640, 960, 1280, 1600]}
+      sizes="100vw"
+      loading="lazy"
+      class="image-band__img"
+    />
+  </figure>
 
   <section>
     <div class="wrap">

@@ -721,6 +721,23 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 }
 .sidecard .btn { width: 100%; justify-content: center; }
 
+/* ----------- Full-bleed image band ----------- */
+.image-band {
+  margin: 0;
+  background: var(--ink);
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.image-band__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 70vh;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* ----------- Article body (rendered markdown) ----------- */
 .articles {
   max-width: 64ch;

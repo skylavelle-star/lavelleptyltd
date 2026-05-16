@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero.jpg';
 ---
 
 <BaseLayout
@@ -69,6 +71,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span>Portfolio reporting</span><span>·</span>
     </div>
   </div>
+
+  <!-- FEATURED IMAGE -->
+  <figure class="image-band">
+    <Image
+      src={heroImage}
+      alt="An empty boardroom with a long meeting table, floor-to-ceiling windows and morning light — the setting where steering committee decisions are made"
+      widths={[640, 960, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      class="image-band__img"
+    />
+  </figure>
 
   <!-- CAPABILITIES -->
   <section>

@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import servicesImage from '../assets/images/services.jpg';
 
 const offerings = [
   {
@@ -57,6 +59,17 @@ const offerings = [
       </p>
     </div>
   </section>
+
+  <figure class="image-band">
+    <Image
+      src={servicesImage}
+      alt="Hands mid-explanation at a meeting table next to an open laptop showing programme diagrams — what an advisory conversation actually looks like"
+      widths={[640, 960, 1280, 1600]}
+      sizes="100vw"
+      loading="lazy"
+      class="image-band__img"
+    />
+  </figure>
 
   <section>
     <div class="wrap">
