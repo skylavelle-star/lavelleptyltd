@@ -26,3 +26,7 @@ yarn-error.log*
 *.tsbuildinfo
 .vercel
 .env*.local
+
+# Local-only working files
+.claude/
+SITE_AUDIT.md

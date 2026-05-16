@@ -1,0 +1,41 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Checklist on its way | Lavelle Pty Ltd"
+  description="Your free Project Recovery Checklist is on its way to your inbox."
+  noindex={true}
+>
+  <section class="section">
+    <div class="container">
+      <div class="max-w-xl mx-auto text-center py-12">
+        <div class="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-100">
+          <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+          Checklist on its way
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          The Project Recovery Checklist is heading to your inbox. Check your spam folder if it doesn't arrive within a few minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/free-tools/project-recovery-checklist"
+            class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-navy-700 hover:bg-navy-800 rounded-md transition-colors"
+          >
+            View the Checklist Online
+          </a>
+          <a
+            href="/pmo-resources"
+            class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
+          >
+            Browse PMO Resources
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
