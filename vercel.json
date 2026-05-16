@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/articles", "destination": "/thinking", "permanent": true },
+    { "source": "/articles/:slug*", "destination": "/thinking/:slug*", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|woff|woff2))",
