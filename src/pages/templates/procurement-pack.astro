@@ -1,203 +1,73 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import BuyButton from '../../components/BuyButton.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PackPage from '../../components/PackPage.astro';
 import { products } from '../../config/site';
 
 const pack = products.procurementPack;
 const checkoutUrl = pack.checkoutUrl || undefined;
+
+const audience = [
+  'Project managers and procurement teams running a restricted technology tender',
+  'Evaluation panel chairs who need a structured and defensible evaluation process',
+  'Program managers preparing delegate approval documentation after a BAFO process',
+  'Governance and probity leads who need clear documentation of evaluation decisions',
+];
+
+const helpsWith = [
+  'Technology procurement processes fail on governance when the evaluation is not structured, scoring is inconsistent, or the recommendation cannot be traced back to the evaluation criteria. This pack provides the artefacts needed to run a defensible, probity-sound evaluation.',
+  'The templates are designed for the governance and accountability requirements common in government and regulated sector technology acquisitions.',
+];
+
+const included = [
+  { title: 'RFP Evaluation Plan', desc: 'A structured plan for the evaluation process, including evaluation criteria, scoring approach, panel roles and probity arrangements.' },
+  { title: 'Technical Evaluation Matrix', desc: 'A scoring matrix for assessing supplier technical responses against defined criteria and weightings.' },
+  { title: 'Commercial Evaluation Matrix', desc: 'A scoring matrix for assessing commercial terms, pricing and contract structure.' },
+  { title: 'Supplier Clarification Register', desc: 'A structured register for managing written clarifications during the evaluation period.' },
+  { title: 'BAFO Request Template', desc: 'A formal template for issuing a Best and Final Offer request to shortlisted suppliers.' },
+  { title: 'Evaluation Recommendation Report', desc: 'A structured report template for documenting the evaluation outcome, recommended supplier and supporting rationale.' },
+  { title: 'Probity Checklist', desc: 'A checklist for reviewing probity obligations throughout the evaluation process.' },
+];
+
+const howToUse = 'Start with the evaluation plan before issuing the RFP. Confirm the criteria, weightings and scoring approach with the evaluation panel before any supplier responses are received. This prevents challenges to the evaluation process after the fact and ensures the recommendation can be defended at delegate approval.';
+
+const faqs = [
+  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+  { q: 'Is this suitable for small and large procurements?', a: 'Yes. The pack scales from a straightforward RFQ to a complex multi-stage RFP with BAFO. Use the documents that are proportionate to the size and risk of your procurement.' },
+  { q: 'Does it cover the BAFO process?', a: 'Yes. The pack includes a structured BAFO process template covering the invitation to BAFO, revised response assessment and updated evaluation scoring.' },
+  { q: 'Do I need procurement experience to use it?', a: 'The templates are structured and self-explanatory, but they assume familiarity with the procurement process. If you are new to formal procurement, consider advisory support alongside the pack.' },
+  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+  { q: 'What if I need support running a procurement?', a: 'Lavelle Pty Ltd provides procurement governance advisory and RFP management support. See the consulting page or contact us directly.' },
+];
 ---
 
-<Layout
-  title="Procurement Pack | Lavelle Pty Ltd"
+<BaseLayout
+  title="Procurement Pack — Lavelle Pty Ltd"
   description="A practical procurement governance pack for project teams managing RFPs, evaluation planning, supplier responses, BAFO processes and delegate approval pathways."
 >
-  {checkoutUrl && <script slot="head" src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
 
-  <section class="page-header">
-    <div class="container">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Templates</p>
-        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Procurement Pack</h1>
-        <p class="text-lg text-slate-300 leading-relaxed">
-          A practical procurement governance pack for project teams managing RFPs, evaluation planning, supplier responses, BAFO processes and delegate approval pathways.
-        </p>
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Procurement Pack</span>
       </div>
+      <h1>Procurement Pack. <em>Probity-sound by design.</em></h1>
+      <p class="subhero__lead">
+        A practical procurement governance pack for project teams managing RFPs, evaluation planning, supplier responses, BAFO processes and delegate approval pathways.
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div class="lg:col-span-2 space-y-10">
-
-          {checkoutUrl ? (
-            <div class="flex items-center gap-6 flex-wrap">
-              <div>
-                <span class="text-3xl font-bold text-slate-900">{pack.price}</span>
-                <span class="text-sm text-slate-500 ml-1">AUD</span>
-              </div>
-              <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" fullWidth={false} gaEvent="product_buy_click" gaLabel="Procurement Pack" />
-            </div>
-          ) : (
-            <div class="inline-flex items-center px-4 py-2.5 text-sm font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-md">
-              Coming Soon - <a href="/contact" class="ml-1 text-navy-700 hover:text-navy-900 underline">register your interest</a>
-            </div>
-          )}
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Who It Is For</h2>
-            <ul class="space-y-2.5">
-              {[
-                'Project managers and procurement teams running a restricted technology tender',
-                'Evaluation panel chairs who need a structured and defensible evaluation process',
-                'Program managers preparing delegate approval documentation after a BAFO process',
-                'Governance and probity leads who need clear documentation of evaluation decisions',
-              ].map((item) => (
-                <li class="flex items-start gap-2.5 text-sm text-slate-700">
-                  <svg class="w-4 h-4 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">What It Helps With</h2>
-            <div class="space-y-3 text-slate-600 leading-relaxed">
-              <p>Technology procurement processes fail on governance when the evaluation is not structured, scoring is inconsistent, or the recommendation cannot be traced back to the evaluation criteria. This pack provides the artefacts needed to run a defensible, probity-sound evaluation.</p>
-              <p>The templates are designed for the governance and accountability requirements common in government and regulated sector technology acquisitions.</p>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">What Is Included</h2>
-            <div class="space-y-3">
-              {[
-                { title: 'RFP Evaluation Plan', desc: 'A structured plan for the evaluation process, including evaluation criteria, scoring approach, panel roles and probity arrangements.' },
-                { title: 'Technical Evaluation Matrix', desc: 'A scoring matrix for assessing supplier technical responses against defined criteria and weightings.' },
-                { title: 'Commercial Evaluation Matrix', desc: 'A scoring matrix for assessing commercial terms, pricing and contract structure.' },
-                { title: 'Supplier Clarification Register', desc: 'A structured register for managing written clarifications during the evaluation period.' },
-                { title: 'BAFO Request Template', desc: 'A formal template for issuing a Best and Final Offer request to shortlisted suppliers.' },
-                { title: 'Evaluation Recommendation Report', desc: 'A structured report template for documenting the evaluation outcome, recommended supplier and supporting rationale.' },
-                { title: 'Probity Checklist', desc: 'A checklist for reviewing probity obligations throughout the evaluation process.' },
-              ].map((item) => (
-                <div class="flex gap-4 p-4 rounded-lg border border-slate-200 bg-white">
-                  <svg class="w-5 h-5 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <div>
-                    <p class="text-sm font-semibold text-slate-900 mb-1">{item.title}</p>
-                    <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">How To Use It</h2>
-            <p class="text-slate-600 leading-relaxed">
-              Start with the evaluation plan before issuing the RFP. Confirm the criteria, weightings and scoring approach with the evaluation panel before any supplier responses are received. This prevents challenges to the evaluation process after the fact and ensures the recommendation can be defended at delegate approval.
-            </p>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
-            <p class="text-sm text-slate-600 mb-4">The Evaluation Scoring Matrix is where procurement decisions are made defensible. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
-            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
-              <div class="bg-navy-800 px-4 py-3">
-                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Evaluation Scoring Matrix</p>
-              </div>
-              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
-                <p class="font-bold text-slate-900 text-sm not-italic">RFP EVALUATION MATRIX</p>
-                <div class="grid grid-cols-4 gap-1 text-xs">
-                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Criterion</p><p class="font-bold">Technical</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Weight</p><p class="font-bold">35%</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Supplier A</p><p class="font-bold text-green-600">86/100</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-1.5"><p class="text-slate-500">Supplier B</p><p class="font-bold text-amber-600">74/100</p></div>
-                </div>
-                <p class="font-semibold not-italic">Evaluation Panel Scoring</p>
-                <p class="text-slate-400">[ Individual and moderated scores per criterion ]</p>
-                <p class="font-semibold not-italic">BAFO Assessment</p>
-                <p class="text-slate-400">[ Revised offers vs original, delta scoring ]</p>
-                <p class="font-semibold not-italic">Delegate Approval Record</p>
-                <p class="text-slate-400">[ Authority / Date / Decision / Conditions ]</p>
-              </div>
-            </div>
-            <p class="text-xs text-slate-500 mt-2">Plus RFP planning template, evaluation criteria library, supplier response register, recommendation report and approval routing templates.</p>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-            <div class="space-y-3">
-              {[
-                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-                { q: 'Is this suitable for small and large procurements?', a: 'Yes. The pack scales from a straightforward RFQ to a complex multi-stage RFP with BAFO. Use the documents that are proportionate to the size and risk of your procurement.' },
-                { q: 'Does it cover the BAFO process?', a: 'Yes. The pack includes a structured BAFO process template covering the invitation to BAFO, revised response assessment and updated evaluation scoring.' },
-                { q: 'Do I need procurement experience to use it?', a: 'The templates are structured and self-explanatory, but they assume familiarity with the procurement process. If you are new to formal procurement, consider advisory support alongside the pack.' },
-                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-                { q: 'What if I need support running a procurement?', a: 'Lavelle Pty Ltd provides procurement governance advisory and RFP management support. See the consulting page or contact us directly.' },
-              ].map(({ q, a }) => (
-                <div class="border border-slate-200 rounded-lg p-4">
-                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
-                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
-            <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
-          </div>
-
-          {checkoutUrl && (
-            <div>
-              <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" gaEvent="product_buy_click" gaLabel="Procurement Pack" />
-            </div>
-          )}
-
-        </div>
-
-        <aside class="space-y-5">
-          <div class="rounded-lg border border-navy-200 bg-white p-6 sticky top-24">
-            {checkoutUrl ? (
-              <>
-                <div class="mb-1">
-                  <span class="text-3xl font-bold text-slate-900">{pack.price}</span>
-                  <span class="text-sm text-slate-500 ml-1">AUD</span>
-                </div>
-                <p class="text-sm text-slate-600 mb-5">One-time purchase. Delivered via Lemon Squeezy.</p>
-                <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" gaEvent="product_buy_click" gaLabel="Procurement Pack" />
-                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2">
-                  {['Microsoft Word + Excel format', 'Fully editable templates', 'Australian English', 'Delivered via Lemon Squeezy'].map((f) => (
-                    <div class="flex items-center gap-2 text-sm text-slate-600">
-                      <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {f}
-                    </div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <>
-                <h2 class="text-base font-semibold text-slate-900 mb-2">Coming Soon</h2>
-                <p class="text-sm text-slate-600 mb-4">Register your interest to be notified on launch.</p>
-                <a href="/contact" class="inline-flex items-center w-full justify-center px-4 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors">
-                  Register Interest
-                </a>
-              </>
-            )}
-            <div class="mt-5 pt-4 border-t border-slate-100">
-              <p class="text-xs text-slate-500 mb-2">Need procurement advisory instead?</p>
-              <a href="/consulting#procurement" class="text-xs font-medium text-navy-700 hover:text-navy-900 underline">View procurement consulting</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-</Layout>
+  <PackPage
+    price={pack.price}
+    checkoutUrl={checkoutUrl}
+    gaLabel="Procurement Pack"
+    audience={audience}
+    helpsWith={helpsWith}
+    included={included}
+    howToUse={howToUse}
+    faqs={faqs}
+    relatedConsultingHref="/consulting#procurement"
+    relatedConsultingLabel="View procurement consulting"
+  />
+</BaseLayout>

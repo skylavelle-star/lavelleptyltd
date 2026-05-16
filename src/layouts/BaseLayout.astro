@@ -1,0 +1,175 @@
+---
+import '../styles/global.css';
+import { site, analytics } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  currentNav?: 'services' | 'consulting' | 'pmo-resources' | 'case-studies' | 'thinking' | null;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  currentNav = null,
+  ogType = 'website',
+  ogImage,
+  noindex = false,
+} = Astro.props;
+
+const navItems = [
+  { key: 'services', label: 'Services', href: '/services' },
+  { key: 'consulting', label: 'Consulting', href: '/consulting' },
+  { key: 'pmo-resources', label: 'PMO Resources', href: '/pmo-resources' },
+  { key: 'case-studies', label: 'Case Studies', href: '/case-studies' },
+  { key: 'thinking', label: 'Thinking', href: '/thinking' },
+] as const;
+
+const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
+const fullOgImage = ogImage ? new URL(ogImage, site.url).toString() : undefined;
+const gaId = analytics.gaId;
+
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Lavelle Pty Ltd" />
+    <meta property="og:locale" content="en_AU" />
+    {fullOgImage && <meta property="og:image" content={fullOgImage} />}
+
+    <meta name="twitter:card" content={fullOgImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {fullOgImage && <meta name="twitter:image" content={fullOgImage} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+    />
+
+    {gaId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+        <script is:inline define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(...args) {
+            window.dataLayer.push(args);
+          }
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a href="/" class="brand">
+          <span class="brand__mark"></span>
+          Lavelle
+          <span class="brand__sub">Pty&nbsp;Ltd</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          {navItems.map((item) => (
+            <a href={item.href} class:list={[currentNav === item.key && 'active']}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a href="/engage" class="nav__cta">Engage us</a>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <h3>
+              <span
+                style="display:inline-block; width:10px; height:10px; background:var(--ochre); border-radius:50%; margin-right:0.45rem; vertical-align:middle;"
+              ></span>
+              Lavelle Pty Ltd
+            </h3>
+            <p>
+              Senior project delivery, PMO governance and consulting for complex change environments. Brisbane, Australia.
+            </p>
+          </div>
+          <div class="footer__col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/consulting">Consulting</a></li>
+              <li><a href="/consulting#recovery">Project Recovery</a></li>
+              <li><a href="/consulting#pmo">PMO Stand-up</a></li>
+              <li><a href="/consulting#assurance">Delivery Assurance</a></li>
+              <li><a href="/framework">Delivery Framework</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/pmo-resources">PMO Resources</a></li>
+              <li><a href="/case-studies">Case studies</a></li>
+              <li><a href="/pmo-resources#checklist">Free Recovery Checklist</a></li>
+              <li><a href="/thinking">Thinking &amp; field notes</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/engage">Engage us</a></li>
+              <li><a href="https://skylavelle.com.au">About Sky Lavelle ↗</a></li>
+              <li><a href="/engage">Submit a brief</a></li>
+              <li><a href="/engage">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div>&copy; {year} Lavelle Pty Ltd · ABN 27 651 199 414</div>
+          <div>Brisbane · serving Australia &amp; APAC</div>
+          <div>
+            <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {gaId && (
+      <script is:inline>
+        document.addEventListener('click', (e) => {
+          const el = e.target?.closest?.('[data-ga-event]');
+          if (!el || typeof window.gtag !== 'function') return;
+          const event = el.getAttribute('data-ga-event') || '';
+          const params = {};
+          for (const attr of Array.from(el.attributes)) {
+            if (attr.name.startsWith('data-ga-') && attr.name !== 'data-ga-event') {
+              params[attr.name.replace('data-ga-', '')] = attr.value;
+            }
+          }
+          window.gtag('event', event, params);
+        });
+      </script>
+    )}
+  </body>
+</html>

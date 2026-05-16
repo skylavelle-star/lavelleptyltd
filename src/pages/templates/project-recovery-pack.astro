@@ -1,219 +1,81 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import BuyButton from '../../components/BuyButton.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PackPage from '../../components/PackPage.astro';
 import { products } from '../../config/site';
 
 const pack = products.projectRecoveryPack;
 const checkoutUrl = pack.checkoutUrl || undefined;
+
+const audience = [
+  'Senior project managers who have taken over a stalled or failing program',
+  'Program managers who need to present an honest recovery assessment to their executive',
+  'PMO leads conducting a program health review',
+  'External reviewers asked to assess a troubled technology program',
+];
+
+const helpsWith = [
+  'Programs do not fail suddenly. They accumulate governance debt, missed commitments and eroded stakeholder confidence over months. By the time a program is formally in trouble, the underlying causes are usually several months old.',
+  'This pack gives you the structure to do an honest diagnostic, communicate the findings clearly, and present a recovery roadmap that a sceptical executive or steering committee will accept.',
+];
+
+const included = [
+  { title: 'Project Health Diagnostic', desc: 'A structured assessment covering delivery confidence, governance health, stakeholder alignment, financial position and vendor performance.' },
+  { title: 'Recovery Assessment Workbook', desc: 'A working document for recording findings, evidence and preliminary recommendations during the diagnostic phase.' },
+  { title: 'Stakeholder Reset Plan', desc: 'Templates and guidance for resetting stakeholder expectations with precision and without destroying confidence.' },
+  { title: 'Executive Reset Briefing', desc: 'A template for the first steering committee meeting after a recovery intervention. Covers current state, recovery approach and decisions required.' },
+  { title: 'Re-Baselined Delivery Roadmap', desc: 'A structured template for presenting a recovery plan with credible milestones, dependencies and success criteria.' },
+  { title: 'Vendor Remediation Plan', desc: 'A structured approach to documenting vendor performance issues and the agreed remediation actions.' },
+  { title: 'Risk Re-Baselining Workbook', desc: 'A workbook for rebuilding the risk register from scratch after a recovery assessment.' },
+  { title: '30 / 60 / 90 Day Recovery Plan', desc: 'A structured planning template for the immediate, short-term and medium-term recovery phases.' },
+  { title: 'Steering Committee Recovery Pack', desc: 'A complete reporting reset for the committee, including revised status template and updated escalation thresholds.' },
+];
+
+const howToUse = 'Start with the health diagnostic. Work through each dimension, document the findings honestly, and use the output to prepare the stakeholder reset plan. Present the reset plan before the recovery roadmap. Do not present the roadmap until stakeholders have a shared understanding of the current state.';
+
+const faqs = [
+  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+  { q: 'Do I use all 9 documents at once?', a: 'No. Start with the health diagnostic and recovery assessment workbook. The remaining documents are deployed progressively as you move through the stakeholder reset, replanning and governance stages.' },
+  { q: 'Is this for a first-time recovery manager?', a: 'It is designed for experienced project managers who understand program governance. The pack provides structure and artefacts, not a substitute for delivery experience.' },
+  { q: 'Can I use it for a non-technology program?', a: 'Yes. The pack uses delivery-neutral language and works across technology, business change, infrastructure and regulatory programs.' },
+  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+  { q: 'What if I need expert support during a recovery?', a: 'Lavelle Pty Ltd provides project recovery consulting and senior delivery advisory. See the consulting page or contact us directly.' },
+];
 ---
 
-<Layout
-  title="Project Recovery Pack | Lavelle Pty Ltd"
+<BaseLayout
+  title="Project Recovery Pack — Lavelle Pty Ltd"
   description="A practical template pack for project managers and delivery leads who need to regain control of a project, clarify the recovery path and give sponsors confidence in the plan."
 >
-  {checkoutUrl && <script slot="head" src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
 
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="container">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Templates</p>
-        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Project Recovery Pack</h1>
-        <p class="text-lg text-slate-300 leading-relaxed">
-          A practical template pack for project managers and delivery leads who need to regain control of a project, clarify the recovery path and give sponsors confidence in the plan.
-        </p>
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Project Recovery Pack</span>
       </div>
+      <h1>Project Recovery Pack. <em>For programs in trouble.</em></h1>
+      <p class="subhero__lead">
+        A practical template pack for project managers and delivery leads who need to regain control of a project, clarify the recovery path and give sponsors confidence in the plan.
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div class="lg:col-span-2 space-y-10">
-
-          <!-- Price + CTA -->
-          {checkoutUrl ? (
-            <div class="flex items-center gap-6 flex-wrap">
-              <div>
-                <span class="text-3xl font-bold text-slate-900">{pack.price}</span>
-                <span class="text-sm text-slate-500 ml-1">AUD</span>
-              </div>
-              <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" fullWidth={false} gaEvent="product_buy_click" gaLabel="Project Recovery Pack" />
-            </div>
-          ) : (
-            <div class="inline-flex items-center px-4 py-2.5 text-sm font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-md">
-              Coming Soon - <a href="/contact" class="ml-1 text-navy-700 hover:text-navy-900 underline">register your interest</a>
-            </div>
-          )}
-
-          <!-- Who It Is For -->
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Who It Is For</h2>
-            <ul class="space-y-2.5">
-              {[
-                'Senior project managers who have taken over a stalled or failing program',
-                'Program managers who need to present an honest recovery assessment to their executive',
-                'PMO leads conducting a program health review',
-                'External reviewers asked to assess a troubled technology program',
-              ].map((item) => (
-                <li class="flex items-start gap-2.5 text-sm text-slate-700">
-                  <svg class="w-4 h-4 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <!-- What It Helps With -->
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">What It Helps With</h2>
-            <div class="space-y-3 text-slate-600 leading-relaxed">
-              <p>Programs do not fail suddenly. They accumulate governance debt, missed commitments and eroded stakeholder confidence over months. By the time a program is formally in trouble, the underlying causes are usually several months old.</p>
-              <p>This pack gives you the structure to do an honest diagnostic, communicate the findings clearly, and present a recovery roadmap that a sceptical executive or steering committee will accept.</p>
-            </div>
-          </div>
-
-          <!-- What Is Included -->
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">What Is Included</h2>
-            <div class="space-y-3">
-              {[
-                { title: 'Project Health Diagnostic', desc: 'A structured assessment covering delivery confidence, governance health, stakeholder alignment, financial position and vendor performance.' },
-                { title: 'Recovery Assessment Workbook', desc: 'A working document for recording findings, evidence and preliminary recommendations during the diagnostic phase.' },
-                { title: 'Stakeholder Reset Plan', desc: 'Templates and guidance for resetting stakeholder expectations with precision and without destroying confidence.' },
-                { title: 'Executive Reset Briefing', desc: 'A template for the first steering committee meeting after a recovery intervention. Covers current state, recovery approach and decisions required.' },
-                { title: 'Re-Baselined Delivery Roadmap', desc: 'A structured template for presenting a recovery plan with credible milestones, dependencies and success criteria.' },
-                { title: 'Vendor Remediation Plan', desc: 'A structured approach to documenting vendor performance issues and the agreed remediation actions.' },
-                { title: 'Risk Re-Baselining Workbook', desc: 'A workbook for rebuilding the risk register from scratch after a recovery assessment.' },
-                { title: '30 / 60 / 90 Day Recovery Plan', desc: 'A structured planning template for the immediate, short-term and medium-term recovery phases.' },
-                { title: 'Steering Committee Recovery Pack', desc: 'A complete reporting reset for the committee, including revised status template and updated escalation thresholds.' },
-              ].map((item) => (
-                <div class="flex gap-4 p-4 rounded-lg border border-slate-200 bg-white">
-                  <svg class="w-5 h-5 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <div>
-                    <p class="text-sm font-semibold text-slate-900 mb-1">{item.title}</p>
-                    <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <!-- How To Use It -->
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">How To Use It</h2>
-            <p class="text-slate-600 leading-relaxed">
-              Start with the health diagnostic. Work through each dimension, document the findings honestly, and use the output to prepare the stakeholder reset plan. Present the reset plan before the recovery roadmap. Do not present the roadmap until stakeholders have a shared understanding of the current state.
-            </p>
-          </div>
-
-          <!-- Format -->
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
-            <p class="text-sm text-slate-600 mb-4">The Project Health Diagnostic is where every recovery starts. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
-            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
-              <div class="bg-navy-800 px-4 py-3">
-                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Project Health Diagnostic</p>
-              </div>
-              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
-                <p class="font-bold text-slate-900 text-sm not-italic">PROJECT HEALTH DIAGNOSTIC</p>
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Delivery Confidence</p><p class="font-bold text-red-600">LOW</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Governance Health</p><p class="font-bold text-amber-600">PARTIAL</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Stakeholder Alignment</p><p class="font-bold text-red-600">BROKEN</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Financial Position</p><p class="font-bold text-amber-600">AT RISK</p></div>
-                </div>
-                <p class="font-semibold not-italic">Findings - Delivery</p>
-                <p class="text-slate-400">[ Evidence-based assessment fields with RAG ]</p>
-                <p class="font-semibold not-italic">Findings - Governance</p>
-                <p class="text-slate-400">[ Governance gap analysis with priority ranking ]</p>
-                <p class="font-semibold not-italic">Preliminary Recommendations</p>
-                <p class="text-slate-400">[ Immediate / Short-term / Medium-term actions ]</p>
-              </div>
-            </div>
-            <p class="text-xs text-slate-500 mt-2">Plus 8 additional documents including stakeholder reset plan, executive briefing template, recovery roadmap, vendor remediation plan and 30/60/90 day recovery plan.</p>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-            <div class="space-y-3">
-              {[
-                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-                { q: 'Do I use all 9 documents at once?', a: 'No. Start with the health diagnostic and recovery assessment workbook. The remaining documents are deployed progressively as you move through the stakeholder reset, replanning and governance stages.' },
-                { q: 'Is this for a first-time recovery manager?', a: 'It is designed for experienced project managers who understand program governance. The pack provides structure and artefacts, not a substitute for delivery experience.' },
-                { q: 'Can I use it for a non-technology program?', a: 'Yes. The pack uses delivery-neutral language and works across technology, business change, infrastructure and regulatory programs.' },
-                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-                { q: 'What if I need expert support during a recovery?', a: 'Lavelle Pty Ltd provides project recovery consulting and senior delivery advisory. See the consulting page or contact us directly.' },
-              ].map(({ q, a }) => (
-                <div class="border border-slate-200 rounded-lg p-4">
-                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
-                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
-            <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
-          </div>
-
-          {checkoutUrl && (
-            <div>
-              <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" gaEvent="product_buy_click" gaLabel="Project Recovery Pack" />
-            </div>
-          )}
-
-        </div>
-
-        <!-- Sidebar -->
-        <aside class="space-y-5">
-          <div class="rounded-lg border border-navy-200 bg-white p-6 sticky top-24">
-            {checkoutUrl ? (
-              <>
-                <div class="mb-1">
-                  <span class="text-3xl font-bold text-slate-900">{pack.price}</span>
-                  <span class="text-sm text-slate-500 ml-1">AUD</span>
-                </div>
-                <p class="text-sm text-slate-600 mb-5">One-time purchase. Delivered via Lemon Squeezy.</p>
-                <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" gaEvent="product_buy_click" gaLabel="Project Recovery Pack" />
-                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2">
-                  {['Microsoft Word + Excel format', 'Fully editable templates', 'Australian English', 'Delivered via Lemon Squeezy'].map((f) => (
-                    <div class="flex items-center gap-2 text-sm text-slate-600">
-                      <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {f}
-                    </div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <>
-                <h2 class="text-base font-semibold text-slate-900 mb-2">Coming Soon</h2>
-                <p class="text-sm text-slate-600 mb-4">This pack is in development. Register your interest to be notified on launch.</p>
-                <a href="/contact" class="inline-flex items-center w-full justify-center px-4 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors">
-                  Register Interest
-                </a>
-              </>
-            )}
-            <div class="mt-5 pt-4 border-t border-slate-100">
-              <p class="text-xs text-slate-500 mb-2">Need advisory support instead?</p>
-              <a href="/consulting" class="text-xs font-medium text-navy-700 hover:text-navy-900 underline">View consulting services</a>
-            </div>
-          </div>
-
-          <div class="rounded-lg border border-slate-200 p-5">
-            <h2 class="text-sm font-semibold text-slate-900 mb-2">Start with the free checklist</h2>
-            <p class="text-xs text-slate-600 mb-3">The free Project Recovery Checklist is a good starting point before committing to the full pack.</p>
-            <a href="/free-tools/project-recovery-checklist" class="text-xs font-medium text-navy-700 hover:text-navy-900 underline">View free checklist</a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-</Layout>
+  <PackPage
+    price={pack.price}
+    checkoutUrl={checkoutUrl}
+    gaLabel="Project Recovery Pack"
+    audience={audience}
+    helpsWith={helpsWith}
+    included={included}
+    howToUse={howToUse}
+    faqs={faqs}
+    relatedConsultingHref="/consulting#recovery"
+    relatedConsultingLabel="View recovery consulting"
+    extraSidecard={{
+      heading: 'Start with the free checklist',
+      text: 'The free Project Recovery Checklist is a good starting point before committing to the full pack.',
+      href: '/free-tools/project-recovery-checklist',
+      cta: 'View free checklist',
+    }}
+  />
+</BaseLayout>

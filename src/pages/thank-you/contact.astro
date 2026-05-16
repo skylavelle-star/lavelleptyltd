@@ -1,36 +1,29 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<Layout title="Enquiry Received" noindex>
-  <section class="section">
-    <div class="container max-w-xl mx-auto text-center">
-      <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-100 mb-6">
-        <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-        </svg>
-      </div>
-      <h1 class="text-2xl font-bold text-slate-900 mb-3">Enquiry Received</h1>
-      <p class="text-slate-600 mb-2">
+<BaseLayout
+  title="Enquiry received — Lavelle Pty Ltd"
+  description="Your enquiry has been received by Lavelle Pty Ltd."
+>
+  <section style="padding: clamp(5rem, 10vw, 8rem) 0;">
+    <div class="wrap" style="max-width: 640px; text-align: center;">
+      <div class="eyebrow" style="display:inline-block;">Enquiry received</div>
+      <h1
+        style="font-size:var(--display-md); font-weight:400; margin:1.5rem 0 1rem;"
+      >
+        Thank you. <em>We will be in touch.</em>
+      </h1>
+      <p class="lead" style="margin: 0 auto 1rem;">
         Your enquiry has been sent to Lavelle Pty Ltd.
       </p>
-      <p class="text-slate-600 mb-8">
+      <p class="lead" style="margin: 0 auto 2.5rem;">
         You will receive a response within one business day.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="/"
-          class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors"
-        >
-          Back to Home
-        </a>
-        <a
-          href="/pmo-resources"
-          class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-slate-700 border border-slate-300 hover:border-slate-400 rounded-md transition-colors"
-        >
-          Browse PMO Resources
-        </a>
+      <div class="hero__ctas" style="justify-content:center;">
+        <a href="/" class="btn btn--primary">Back to home <span class="btn__arrow">→</span></a>
+        <a href="/pmo-resources" class="btn btn--ghost">Browse PMO Resources</a>
       </div>
     </div>
   </section>
-</Layout>
+</BaseLayout>

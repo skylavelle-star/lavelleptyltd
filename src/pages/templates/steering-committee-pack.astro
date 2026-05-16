@@ -1,205 +1,74 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import BuyButton from '../../components/BuyButton.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PackPage from '../../components/PackPage.astro';
 import { products } from '../../config/site';
 
 const pack = products.steeringCommitteePack;
 const checkoutUrl = pack.checkoutUrl || undefined;
+
+const audience = [
+  'Program managers who need to reset or establish steering committee reporting',
+  'Project managers whose current reports are not producing governance decisions',
+  'PMO leads standardising reporting across a portfolio of projects',
+  'Sponsors and committee chairs who need better information to govern effectively',
+];
+
+const helpsWith = [
+  'Steering committees govern through information. When that information is too long, poorly structured or avoids difficult truths, the committee cannot make the decisions the program needs.',
+  'This pack provides a reporting framework that surfaces risks, escalations and decisions clearly, and structures committee papers so that meetings produce governance outcomes rather than status updates.',
+];
+
+const included = [
+  { title: 'Status Report Template', desc: 'A structured status report template covering RAG ratings, progress, risks, issues, actions, financials and escalation items.' },
+  { title: 'Executive Dashboard', desc: 'A one-page executive summary for senior audiences who need a clear view of program health at a glance.' },
+  { title: 'RAID Register', desc: 'A combined risks, assumptions, issues and dependencies register designed for steering committee visibility.' },
+  { title: 'Decision Register', desc: 'A structured log of committee decisions, the authority that made them and the date, with space for implementation tracking.' },
+  { title: 'Escalation Paper Template', desc: 'A formal template for escalating a risk or issue to the steering committee for a decision or direction.' },
+  { title: 'RAG Rating Guide', desc: 'A calibrated guide for defining Red, Amber and Green thresholds consistently across the program.' },
+  { title: 'Committee Agenda Template', desc: 'A structured agenda that ensures meetings address governance items and produce decisions.' },
+  { title: 'Action Register', desc: 'A register for tracking committee-level actions with clear owners, due dates and status.' },
+];
+
+const howToUse = 'Start with the RAG rating guide and agree the thresholds with the committee before the first report is issued. Inconsistent RAG ratings erode trust faster than almost anything else. Once the calibration is agreed, use the status report template to establish a reporting rhythm that the committee can rely on.';
+
+const faqs = [
+  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
+  { q: 'How long does it take to get reporting up and running?', a: 'Most project managers adapt the status report template and agree RAG thresholds within a week of first use. The charter and agenda templates can typically be in place before the first committee meeting.' },
+  { q: 'Is this suitable for a government or enterprise environment?', a: 'Yes. The templates use neutral language and are designed for senior executives, sponsors and formal governance structures. They do not assume any particular methodology.' },
+  { q: 'Does the pack include guidance on running committee meetings?', a: 'The pack includes a structured agenda template and an approach to running decision-focused meetings. It gives you the right artefacts — it is not a facilitation course.' },
+  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
+  { q: 'What if I need support implementing this?', a: 'Lavelle Pty Ltd provides governance advisory and consulting support. See the consulting page or contact us directly.' },
+];
 ---
 
-<Layout
-  title="Steering Committee Pack | Lavelle Pty Ltd"
+<BaseLayout
+  title="Steering Committee Pack — Lavelle Pty Ltd"
   description="A governance reporting pack for project managers who need clearer steering committee papers, stronger escalation, better decision records and more useful executive reporting."
 >
-  {checkoutUrl && <script slot="head" src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
 
-  <section class="page-header">
-    <div class="container">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Templates</p>
-        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Steering Committee Pack</h1>
-        <p class="text-lg text-slate-300 leading-relaxed">
-          A governance reporting pack for project managers who need clearer steering committee papers, stronger escalation, better decision records and more useful executive reporting.
-        </p>
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Steering Committee Pack</span>
       </div>
+      <h1>Steering Committee Pack. <em>Governance reporting that works.</em></h1>
+      <p class="subhero__lead">
+        A governance reporting pack for project managers who need clearer steering committee papers, stronger escalation, better decision records and more useful executive reporting.
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div class="lg:col-span-2 space-y-10">
-
-          {checkoutUrl ? (
-            <div class="flex items-center gap-6 flex-wrap">
-              <div>
-                <span class="text-3xl font-bold text-slate-900">{pack.price}</span>
-                <span class="text-sm text-slate-500 ml-1">AUD</span>
-              </div>
-              <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" fullWidth={false} gaEvent="product_buy_click" gaLabel="Steering Committee Pack" />
-            </div>
-          ) : (
-            <div class="inline-flex items-center px-4 py-2.5 text-sm font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-md">
-              Coming Soon - <a href="/contact" class="ml-1 text-navy-700 hover:text-navy-900 underline">register your interest</a>
-            </div>
-          )}
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Who It Is For</h2>
-            <ul class="space-y-2.5">
-              {[
-                'Program managers who need to reset or establish steering committee reporting',
-                'Project managers whose current reports are not producing governance decisions',
-                'PMO leads standardising reporting across a portfolio of projects',
-                'Sponsors and committee chairs who need better information to govern effectively',
-              ].map((item) => (
-                <li class="flex items-start gap-2.5 text-sm text-slate-700">
-                  <svg class="w-4 h-4 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">What It Helps With</h2>
-            <div class="space-y-3 text-slate-600 leading-relaxed">
-              <p>Steering committees govern through information. When that information is too long, poorly structured or avoids difficult truths, the committee cannot make the decisions the program needs.</p>
-              <p>This pack provides a reporting framework that surfaces risks, escalations and decisions clearly, and structures committee papers so that meetings produce governance outcomes rather than status updates.</p>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">What Is Included</h2>
-            <div class="space-y-3">
-              {[
-                { title: 'Status Report Template', desc: 'A structured status report template covering RAG ratings, progress, risks, issues, actions, financials and escalation items.' },
-                { title: 'Executive Dashboard', desc: 'A one-page executive summary for senior audiences who need a clear view of program health at a glance.' },
-                { title: 'RAID Register', desc: 'A combined risks, assumptions, issues and dependencies register designed for steering committee visibility.' },
-                { title: 'Decision Register', desc: 'A structured log of committee decisions, the authority that made them and the date, with space for implementation tracking.' },
-                { title: 'Escalation Paper Template', desc: 'A formal template for escalating a risk or issue to the steering committee for a decision or direction.' },
-                { title: 'RAG Rating Guide', desc: 'A calibrated guide for defining Red, Amber and Green thresholds consistently across the program.' },
-                { title: 'Committee Agenda Template', desc: 'A structured agenda that ensures meetings address governance items and produce decisions.' },
-                { title: 'Action Register', desc: 'A register for tracking committee-level actions with clear owners, due dates and status.' },
-              ].map((item) => (
-                <div class="flex gap-4 p-4 rounded-lg border border-slate-200 bg-white">
-                  <svg class="w-5 h-5 text-navy-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <div>
-                    <p class="text-sm font-semibold text-slate-900 mb-1">{item.title}</p>
-                    <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">How To Use It</h2>
-            <p class="text-slate-600 leading-relaxed">
-              Start with the RAG rating guide and agree the thresholds with the committee before the first report is issued. Inconsistent RAG ratings erode trust faster than almost anything else. Once the calibration is agreed, use the status report template to establish a reporting rhythm that the committee can rely on.
-            </p>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Sample Preview</h2>
-            <p class="text-sm text-slate-600 mb-4">The Status Report Template is the centrepiece of the pack. Below is a representation of its structure - actual documents are fully editable Word and Excel files.</p>
-            <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
-              <div class="bg-navy-800 px-4 py-3">
-                <p class="text-navy-200 font-semibold uppercase tracking-wider">Example - Status Report Template</p>
-              </div>
-              <div class="bg-slate-50 px-5 py-4 space-y-3 font-mono text-slate-700">
-                <p class="font-bold text-slate-900 text-sm not-italic">PROJECT STATUS REPORT</p>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Overall RAG</p><p class="font-bold text-amber-600">AMBER</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Schedule</p><p class="font-bold text-green-600">GREEN</p></div>
-                  <div class="bg-white border border-slate-200 rounded p-2"><p class="text-slate-500 text-xs">Budget</p><p class="font-bold text-red-600">RED</p></div>
-                </div>
-                <p class="font-semibold not-italic">Progress This Period</p>
-                <p class="text-slate-400">[ Structured narrative fields with word limits ]</p>
-                <p class="font-semibold not-italic">Key Risks and Issues (from RAID)</p>
-                <p class="text-slate-400">[ ID / Description / Owner / Mitigation / Status ]</p>
-                <p class="font-semibold not-italic">Decisions Required from Committee</p>
-                <p class="text-slate-400">[ Decision / Authority / Date required / Status ]</p>
-                <p class="font-semibold not-italic">Financials</p>
-                <p class="text-slate-400">[ Budget / Actual / Forecast / Variance ]</p>
-              </div>
-            </div>
-            <p class="text-xs text-slate-500 mt-2">Plus 7 additional documents including charter, agenda, RAID register, decision log, escalation paper, RAG guide and action register.</p>
-          </div>
-
-          <div>
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-            <div class="space-y-3">
-              {[
-                { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-                { q: 'How long does it take to get reporting up and running?', a: 'Most project managers adapt the status report template and agree RAG thresholds within a week of first use. The charter and agenda templates can typically be in place before the first committee meeting.' },
-                { q: 'Is this suitable for a government or enterprise environment?', a: 'Yes. The templates use neutral language and are designed for senior executives, sponsors and formal governance structures. They do not assume any particular methodology.' },
-                { q: 'Does the pack include guidance on running committee meetings?', a: 'The pack includes a structured agenda template and an approach to running decision-focused meetings. It gives you the right artefacts - it is not a facilitation course.' },
-                { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-                { q: 'What if I need support implementing this?', a: 'Lavelle Pty Ltd provides governance advisory and consulting support. See the consulting page or contact us directly.' },
-              ].map(({ q, a }) => (
-                <div class="border border-slate-200 rounded-lg p-4">
-                  <p class="text-sm font-semibold text-slate-900 mb-1.5">{q}</p>
-                  <p class="text-sm text-slate-600 leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 class="text-xl font-bold text-slate-900 mb-2">Format and Delivery</h2>
-            <p class="text-sm text-slate-600">Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.</p>
-          </div>
-
-          {checkoutUrl && (
-            <div>
-              <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" gaEvent="product_buy_click" gaLabel="Steering Committee Pack" />
-            </div>
-          )}
-
-        </div>
-
-        <aside class="space-y-5">
-          <div class="rounded-lg border border-navy-200 bg-white p-6 sticky top-24">
-            {checkoutUrl ? (
-              <>
-                <div class="mb-1">
-                  <span class="text-3xl font-bold text-slate-900">{pack.price}</span>
-                  <span class="text-sm text-slate-500 ml-1">AUD</span>
-                </div>
-                <p class="text-sm text-slate-600 mb-5">One-time purchase. Delivered via Lemon Squeezy.</p>
-                <BuyButton checkoutUrl={checkoutUrl} label="Buy Now" gaEvent="product_buy_click" gaLabel="Steering Committee Pack" />
-                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2">
-                  {['Microsoft Word + Excel format', 'Fully editable templates', 'Australian English', 'Delivered via Lemon Squeezy'].map((f) => (
-                    <div class="flex items-center gap-2 text-sm text-slate-600">
-                      <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {f}
-                    </div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <>
-                <h2 class="text-base font-semibold text-slate-900 mb-2">Coming Soon</h2>
-                <p class="text-sm text-slate-600 mb-4">Register your interest to be notified on launch.</p>
-                <a href="/contact" class="inline-flex items-center w-full justify-center px-4 py-2.5 text-sm font-medium text-white bg-navy-800 hover:bg-navy-900 rounded-md transition-colors">
-                  Register Interest
-                </a>
-              </>
-            )}
-            <div class="mt-5 pt-4 border-t border-slate-100">
-              <p class="text-xs text-slate-500 mb-2">Need governance advisory instead?</p>
-              <a href="/consulting#steering-committee" class="text-xs font-medium text-navy-700 hover:text-navy-900 underline">View governance consulting</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-</Layout>
+  <PackPage
+    price={pack.price}
+    checkoutUrl={checkoutUrl}
+    gaLabel="Steering Committee Pack"
+    audience={audience}
+    helpsWith={helpsWith}
+    included={included}
+    howToUse={howToUse}
+    faqs={faqs}
+    relatedConsultingHref="/consulting#steering"
+    relatedConsultingLabel="View governance consulting"
+  />
+</BaseLayout>
