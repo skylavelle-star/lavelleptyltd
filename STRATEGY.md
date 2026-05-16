@@ -199,7 +199,7 @@ Primary keywords:
 ## Internal Linking Rule
 Lavelle Pty Ltd must:
 - Link to itself for all products and tools
-- Link to skylavelle.com.au only for credibility ("About Sky Lavelle")
+- Link to LinkedIn (linkedin.com/in/skylavelle) for credibility ("About Sky Lavelle")
 
 ---
 

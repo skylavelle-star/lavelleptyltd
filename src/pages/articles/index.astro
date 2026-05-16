@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-AU', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+---
+
+<Layout
+  title="Articles | Lavelle Pty Ltd"
+  description="Practical articles on project delivery, governance, procurement, business case development and steering committee reporting. Written from real enterprise technology delivery experience."
+>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-navy-300 uppercase tracking-wider mb-3">Lavelle Pty Ltd</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">Articles</h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Practical guidance on project delivery, governance, procurement and the senior delivery work that gets enterprise programs across the line.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl space-y-6">
+        {articles.map((article) => (
+          <article class="p-6 rounded-lg border border-slate-200 bg-white hover:border-navy-300 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+              <span class="font-semibold text-navy-700 uppercase tracking-wider">{article.data.category}</span>
+              <span aria-hidden="true">·</span>
+              <time datetime={article.data.pubDate.toISOString()}>{formatDate(article.data.pubDate)}</time>
+            </div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-3">
+              <a
+                href={`/articles/${article.id}`}
+                class="hover:text-navy-700 transition-colors"
+              >
+                {article.data.title}
+              </a>
+            </h2>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              {article.data.description}
+            </p>
+            <a
+              href={`/articles/${article.id}`}
+              class="inline-flex items-center text-sm font-medium text-navy-700 hover:text-navy-900 transition-colors"
+            >
+              Read the article
+              <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy-950 py-14">
+    <div class="container">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl font-bold text-white mb-3">Engage Lavelle Pty Ltd</h2>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          For consulting, contract project management or delivery advisory enquiries, use the contact form to describe your situation and requirements.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center px-6 py-3 text-sm font-medium text-navy-950 bg-white hover:bg-slate-100 rounded-md transition-colors"
+        >
+          Send an Enquiry
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

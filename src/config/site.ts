@@ -5,7 +5,6 @@ export const site = {
     'Lavelle Pty Ltd provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance and clearer project control.',
   email: 'hello@lavelleptyltd.com.au',
   linkedin: 'https://linkedin.com/in/skylavelle',
-  skyLavelleUrl: 'https://skylavelle.com.au',
   web3formsKey: '21e468ca-496b-45eb-8313-d1b7d5d229c9',
 } as const;
 
