@@ -2,12 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero.jpg';
+import { products } from '../config/site';
+
+const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
+const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
+const anyCheckout = Boolean(steeringUrl || recoveryUrl);
 ---
 
 <BaseLayout
   title="Lavelle Pty Ltd — Project delivery, PMO governance and senior consulting"
   description="Lavelle Pty Ltd partners with government, enterprise and program teams to recover at-risk projects, strengthen PMO governance and deliver outcomes that hold."
 >
+  {anyCheckout && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
@@ -284,12 +290,12 @@ import heroImage from '../assets/images/hero.jpg';
               <div class="product__price">$147</div>
               <div class="product__price-sub">single user · AUD</div>
             </div>
-            <a href="#" class="btn btn--primary">Buy now <span class="btn__arrow">→</span></a>
+            <a href={steeringUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Steering Committee Pack">Buy now <span class="btn__arrow">→</span></a>
           </div>
         </article>
 
         <article class="product">
-          <span class="product__tag">Coming soon</span>
+          <span class="product__tag">Available now</span>
           <h3 class="product__title">Project Recovery Pack</h3>
           <p class="product__desc">
             The full 30-day diagnostic and stabilisation playbook for project managers stepping into a red program. Templates, scripts, stakeholder maps and the day-by-day cadence we use on engagement.
@@ -302,10 +308,10 @@ import heroImage from '../assets/images/hero.jpg';
           </ul>
           <div class="product__footer">
             <div>
-              <div class="product__price">$197</div>
+              <div class="product__price">$297</div>
               <div class="product__price-sub">single user · AUD</div>
             </div>
-            <a href="#" class="btn btn--ghost">Join waitlist <span class="btn__arrow">→</span></a>
+            <a href={recoveryUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Project Recovery Pack">Buy now <span class="btn__arrow">→</span></a>
           </div>
         </article>
       </div>
