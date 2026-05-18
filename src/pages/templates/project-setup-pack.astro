@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StubPack from "../../components/StubPack.astro";
+
+// TODO: Pack copy and tagline pending. STRATEGY.md does not quote a tagline
+// for Project Setup Pack. Pricing TBC.
+---
+
+<BaseLayout
+  title="Project Setup Pack — Lavelle Pty Ltd"
+  description="The artefacts a new project manager needs in the first two weeks. Onboarding checklist, project schedule, PMP, scope and high-level requirements, kick-off pack."
+>
+  <StubPack
+    packName="Project Setup Pack"
+    packSlug="project-setup-pack"
+    frameworkStage="Initiation / Mobilisation"
+    frameworkGate="G1 Approve → G2 Discover"
+    subhead="The artefacts a new project manager needs in the first two weeks of mobilisation. The pack that turns a funded mandate into a running project."
+    artefacts={[
+      "Project Manager Onboarding Checklist",
+      "Project Schedule",
+      "Project Management Plan",
+      "Scope & High-Level Requirements",
+      "Kick-off Pack — Project",
+    ]}
+  />
+</BaseLayout>

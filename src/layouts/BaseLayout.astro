@@ -5,7 +5,16 @@ import { site, analytics } from '../config/site';
 interface Props {
   title: string;
   description: string;
-  currentNav?: 'services' | 'consulting' | 'pmo-resources' | 'case-studies' | 'thinking' | null;
+  currentNav?:
+    | 'home'
+    | 'framework'
+    | 'templates'
+    | 'bundles'
+    | 'consulting'
+    | 'free-tools'
+    | 'contact'
+    | 'thinking'
+    | null;
   ogType?: 'website' | 'article';
   ogImage?: string;
   noindex?: boolean;
@@ -21,11 +30,12 @@ const {
 } = Astro.props;
 
 const navItems = [
-  { key: 'services', label: 'Services', href: '/services' },
+  { key: 'framework', label: 'Framework', href: '/framework' },
+  { key: 'templates', label: 'Templates', href: '/templates' },
+  { key: 'bundles', label: 'Bundles', href: '/bundles' },
   { key: 'consulting', label: 'Consulting', href: '/consulting' },
-  { key: 'pmo-resources', label: 'PMO Resources', href: '/pmo-resources' },
-  { key: 'case-studies', label: 'Case Studies', href: '/case-studies' },
-  { key: 'thinking', label: 'Thinking', href: '/thinking' },
+  { key: 'free-tools', label: 'Free Tools', href: '/free-tools' },
+  { key: 'contact', label: 'Contact', href: '/contact' },
 ] as const;
 
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
@@ -117,24 +127,25 @@ const year = new Date().getFullYear();
             </p>
           </div>
           <div class="footer__col">
-            <h4>Services</h4>
+            <h4>Practice</h4>
             <ul>
               <li><a href="/consulting">Consulting</a></li>
               <li><a href="/consulting#recovery">Project Recovery</a></li>
-              <li><a href="/consulting#pmo">PMO Stand-up</a></li>
-              <li><a href="/consulting#assurance">Delivery Assurance</a></li>
-              <li><a href="/delivery-framework">Delivery Framework</a></li>
+              <li><a href="/consulting#governance">PMO Stand-up</a></li>
+              <li><a href="/consulting#assurance">Steering Governance</a></li>
+              <li><a href="/consulting#independence">Delivery Assurance</a></li>
+              <li><a href="/enterprise-licensing">Enterprise Licensing</a></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h4>Resources</h4>
+            <h4>Method &amp; resources</h4>
             <ul>
-              <li><a href="/pmo-resources">PMO Resources</a></li>
+              <li><a href="/framework">Framework</a></li>
               <li><a href="/templates">Templates</a></li>
+              <li><a href="/bundles">Bundles</a></li>
               <li><a href="/free-tools">Free tools</a></li>
               <li><a href="/case-studies">Case studies</a></li>
-              <li><a href="/pmo-resources#checklist">Free Recovery Checklist</a></li>
-              <li><a href="/thinking">Thinking &amp; field notes</a></li>
+              <li><a href="/thinking">Thinking</a></li>
               <li><a href="/digital-assets">Digital assets</a></li>
             </ul>
           </div>
@@ -145,7 +156,6 @@ const year = new Date().getFullYear();
               <li><a href="/contact">Engage us</a></li>
               <li><a href={site.linkedin} rel="noopener">About Sky Lavelle ↗</a></li>
               <li><a href="/contact?topic=brief">Submit a brief</a></li>
-              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
         </div>

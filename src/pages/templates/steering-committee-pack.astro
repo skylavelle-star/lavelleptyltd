@@ -13,7 +13,7 @@ const audience = [
   "Sponsors and committee chairs who need better information to govern effectively",
 ];
 
-const helpsWith = [
+const problemStatement = [
   "Steering committees govern through information. When that information is too long, poorly structured or avoids difficult truths, the committee cannot make the decisions the program needs.",
   "This pack provides a reporting framework that surfaces risks, escalations and decisions clearly, and structures committee papers so that meetings produce governance outcomes rather than status updates.",
 ];
@@ -53,8 +53,23 @@ const included = [
   },
 ];
 
-const howToUse =
-  "Start with the RAG rating guide and agree the thresholds with the committee before the first report is issued. Inconsistent RAG ratings erode trust faster than almost anything else. Once the calibration is agreed, use the status report template to establish a reporting rhythm that the committee can rely on.";
+const howToUse = [
+  {
+    title: "Calibrate RAG thresholds with the committee first",
+    desc: "Start with the RAG rating guide and agree the thresholds with the committee before the first report is issued. Inconsistent RAG ratings erode trust faster than almost anything else.",
+  },
+  {
+    title: "Establish a reporting rhythm the committee can rely on",
+    desc: "Once the calibration is agreed, use the status report template to establish a cadence the committee can read in two minutes and act on in five.",
+  },
+];
+
+const stats = [
+  { num: `${included.length}`, label: "Artefacts included" },
+  { num: `$${pack.price}`, label: "Single-user · AUD" },
+  { num: "Word + Excel", label: "Editable, all formats" },
+  { num: "All gates", label: "Framework anchor" },
+];
 
 const faqs = [
   {
@@ -100,8 +115,9 @@ const faqs = [
         <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
         <span>Steering Committee Pack</span>
       </div>
-      <h1>
-        Steering Committee Pack. <em>Governance reporting that works.</em>
+      <div class="eyebrow">Steering Pack</div>
+      <h1 style="margin-top:1rem;">
+        Governance reporting <em>that works.</em>
       </h1>
       <p class="subhero__lead">
         A governance reporting pack for project managers who need clearer
@@ -112,15 +128,22 @@ const faqs = [
   </section>
 
   <PackPage
+    packName="Steering Pack"
+    packSlug="steering-committee-pack"
     price={pack.price}
     checkoutUrl={checkoutUrl}
     gaLabel="Steering Committee Pack"
+    stats={stats}
     audience={audience}
-    helpsWith={helpsWith}
+    problemStatement={problemStatement}
     included={included}
     howToUse={howToUse}
     faqs={faqs}
-    relatedConsultingHref="/consulting#steering"
+    relatedConsultingHref="/consulting#assurance"
     relatedConsultingLabel="View governance consulting"
+    framework={{
+      stage: "Spans all stages",
+      gate: "All gates (decision papers and SteerCo pack)",
+    }}
   />
 </BaseLayout>

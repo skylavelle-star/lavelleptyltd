@@ -49,13 +49,4 @@ export const products = {
       "RFP planning, evaluation scoring, BAFO process, recommendation report and delegate approval templates.",
     checkoutUrl: import.meta.env.PUBLIC_LS_PROCUREMENT_PACK || "",
   },
-  bundlePack: {
-    name: "Four-Pack Bundle",
-    price: "797",
-    href: "/templates/bundle",
-    pmoResourcesHref: "/pmo-resources",
-    description:
-      "All four PMO packs - Steering Committee, Business Case, Procurement and Project Recovery - at a significant saving versus individual purchase.",
-    checkoutUrl: import.meta.env.PUBLIC_LS_BUNDLE_PACK || "",
-  },
 } as const;

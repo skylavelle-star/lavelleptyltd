@@ -41,6 +41,8 @@ const formattedDate = article.data.pubDate.toLocaleDateString("en-AU", {
         <time datetime={article.data.pubDate.toISOString()}
           >{formattedDate}</time
         >
+        <span aria-hidden="true">·</span>
+        <span>{article.data.readTime} min read</span>
       </div>
       <h1>{article.data.title}</h1>
       <p class="subhero__lead">{article.data.description}</p>

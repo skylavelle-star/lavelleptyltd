@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StubPack from "../../components/StubPack.astro";
+
+// TODO: STRATEGY.md does not quote a tagline for Requirements & Design Pack.
+---
+
+<BaseLayout
+  title="Requirements & Design Pack — Lavelle Pty Ltd"
+  description="The artefact set for the Design stage. Screen requirements, workflow configuration, use case summary, service analysis, solution gap analysis and the requirements traceability matrix."
+>
+  <StubPack
+    packName="Requirements & Design Pack"
+    packSlug="requirements-design-pack"
+    frameworkStage="Design"
+    frameworkGate="G3 Design → G4 Build"
+    subhead="The artefacts a delivery team uses to take an agreed concept and produce a buildable, design-authority-endorsed solution. The pack that holds the line between Discovery and Build."
+    artefacts={[
+      "Screen Requirements",
+      "Workflow Configuration",
+      "Use Case Summary",
+      "Service Analysis",
+      "Solution Gap Analysis",
+      "Requirements Traceability Matrix",
+    ]}
+  />
+</BaseLayout>

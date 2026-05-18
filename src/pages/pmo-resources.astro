@@ -6,17 +6,15 @@ const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
 const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
 const businessCaseUrl = products.businessCasePack.checkoutUrl || undefined;
 const procurementUrl = products.procurementPack.checkoutUrl || undefined;
-const bundleUrl = products.bundlePack.checkoutUrl || undefined;
 
 const anyCheckout = Boolean(
-  steeringUrl || recoveryUrl || businessCaseUrl || procurementUrl || bundleUrl,
+  steeringUrl || recoveryUrl || businessCaseUrl || procurementUrl,
 );
 ---
 
 <BaseLayout
   title="PMO Resources — Lavelle Pty Ltd"
   description="Battle-tested PMO product packs, templates and free tools from Lavelle Pty Ltd. Steering Committee Pack, Project Recovery Pack, Business Case Pack and more."
-  currentNav="pmo-resources"
 >
   {
     anyCheckout && (
@@ -345,170 +343,66 @@ const anyCheckout = Boolean(
         </article>
       </div>
 
-      <!-- BUNDLE -->
+      <!-- BUNDLES TEASER -->
       <div class="bundle">
         <div>
           <div
             class="eyebrow"
             style="color:var(--ochre); border-color:var(--ochre);"
           >
-            Best value · all four packs
+            Tier-based bundles
           </div>
           <h3
             style="font-family:'Fraunces',serif; font-size:2.25rem; font-weight:500; line-height:1.05; margin:1rem 0; color:var(--bone);"
           >
-            The PMO Four-Pack.<br /><em
+            The right bundle for the<br /><em
               style="color:var(--ochre); font-style:italic; font-weight:300;"
-              >Your entire delivery system, one bundle.</em
+              >complexity of the work.</em
             >
           </h3>
           <p
             style="color:rgba(244,239,230,0.78); font-size:var(--body-lg); margin-bottom:1.5rem; max-width:50ch;"
           >
-            All four packs — Steering Committee, Project Recovery, Business Case
-            and Procurement — at a single bundle price. Save $191 over
-            individual purchase.
+            Three tier-based bundles — Tier 3 Light, Tier 2 Standard and Tier
+            1 Major — mirror the Project Tiering Calculator. Plus the
+            consulting-led Project Recovery Bundle.
           </p>
-          <ul
-            style="list-style:none; color:rgba(244,239,230,0.78); font-size:var(--body-sm); display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.5rem;"
-          >
-            <li>· Lifetime access to current and future versions</li>
-            <li>· Free template updates as standards evolve</li>
-            <li>
-              · Enterprise licensing available (5-seat / 25-seat / unlimited)
-            </li>
-          </ul>
         </div>
         <div style="text-align:right;">
-          <div
-            style="font-size:var(--micro); color:rgba(244,239,230,0.55); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.5rem;"
-          >
-            Was $988
-          </div>
-          <div
-            style="font-family:'Fraunces',serif; font-size:clamp(3rem,6vw,5rem); font-weight:300; color:var(--ochre); line-height:1; margin-bottom:1.5rem;"
-          >
-            $797
-          </div>
           <a
-            href={bundleUrl}
-            class="lemonsqueezy-button btn btn--primary"
+            href="/bundles"
+            class="btn btn--primary"
             style="background:var(--ochre); border-color:var(--ochre); color:var(--bone);"
-            data-ga-event="product_buy_click"
-            data-ga-label="Four-Pack Bundle"
           >
-            Buy the bundle <span class="btn__arrow">→</span>
+            See the bundles <span class="btn__arrow">→</span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ENTERPRISE LICENSING -->
+  <!-- ENTERPRISE LICENSING (TEASER) -->
   <section id="enterprise-licensing" style="background:var(--paper);">
     <div class="wrap">
       <header class="section__head">
         <div>
           <div class="eyebrow">Enterprise licensing</div>
           <h2 class="section__title" style="margin-top:1.25rem;">
-            For PMOs.<br />For <em>whole departments.</em>
+            One artefact baseline.<br />Across the <em>whole team.</em>
           </h2>
         </div>
         <p class="lead">
-          Standardise your governance artefacts across an entire team, function
-          or agency. Multi-seat licensing includes branded versions, training
-          sessions and direct support from Lavelle.
+          Multi-seat licensing of the Lavelle pack set for consulting firms,
+          government departments and university PMOs. Three annual tiers —
+          Team, Department and Agency — with co-branded versions, onboarding
+          workshops and direct advisory access.
         </p>
       </header>
 
-      <div class="enterprise-grid">
-        <div
-          style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;"
-        >
-          <div class="eyebrow">Team licence</div>
-          <div
-            style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;"
-          >
-            $3,000<span style="font-size:1rem; color:var(--ink-soft);">/yr</span
-            >
-          </div>
-          <p
-            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
-          >
-            Up to 10 users · all four packs · annual updates
-          </p>
-          <ul
-            style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);"
-          >
-            <li>· All four packs, all updates</li>
-            <li>· 10 named seats</li>
-            <li>· Co-branded option</li>
-            <li>· Email support</li>
-          </ul>
-        </div>
-
-        <div
-          style="background:var(--bone); border:2px solid var(--ochre); padding:2.5rem; position:relative;"
-        >
-          <div
-            style="position:absolute; top:-12px; right:1.5rem; background:var(--ochre); color:var(--bone); font-size:var(--micro); padding:0.3rem 0.8rem; letter-spacing:0.15em; text-transform:uppercase;"
-          >
-            Most popular
-          </div>
-          <div class="eyebrow">Department licence</div>
-          <div
-            style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;"
-          >
-            $5,500<span style="font-size:1rem; color:var(--ink-soft);">/yr</span
-            >
-          </div>
-          <p
-            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
-          >
-            Up to 50 users · all packs · onboarding workshop
-          </p>
-          <ul
-            style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);"
-          >
-            <li>· All four packs, all updates</li>
-            <li>· 50 named seats</li>
-            <li>· Co-branded versions</li>
-            <li>· Half-day onboarding workshop</li>
-            <li>· Priority support</li>
-          </ul>
-        </div>
-
-        <div
-          style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;"
-        >
-          <div class="eyebrow">Agency licence</div>
-          <div
-            style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;"
-          >
-            $8,000<span style="font-size:1rem; color:var(--ink-soft);">/yr</span
-            >
-          </div>
-          <p
-            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
-          >
-            Unlimited users · branded · with quarterly advisory
-          </p>
-          <ul
-            style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);"
-          >
-            <li>· All four packs, all updates</li>
-            <li>· Unlimited seats within agency</li>
-            <li>· Fully branded artefacts</li>
-            <li>· Full-day onboarding workshop</li>
-            <li>· Quarterly advisory call with Sky</li>
-            <li>· Government panel listing eligible</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="text-align:center; margin-top:3rem;">
-        <a href="/contact" class="btn btn--primary"
-          >Request enterprise pricing <span class="btn__arrow">→</span></a
+      <div style="text-align:center; margin-top:1.5rem;">
+        <a href="/enterprise-licensing" class="btn btn--primary"
+          >See enterprise tiers &amp; book a demo
+          <span class="btn__arrow">→</span></a
         >
       </div>
     </div>

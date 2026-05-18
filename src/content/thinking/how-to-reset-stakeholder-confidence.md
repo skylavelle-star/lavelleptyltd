@@ -2,7 +2,8 @@
 title: How to Reset Stakeholder Confidence in a Technology Program
 description: A practical guide to rebuilding executive and steering committee confidence after a technology program has lost credibility. Covers honest assessment, communication strategy and the governance changes that make a reset stick.
 pubDate: 2025-06-23
-category: Stakeholder Management
+category: Recovery
+readTime: 7
 tags:
   - stakeholder management
   - project recovery

@@ -3,6 +3,7 @@ title: How to Build a Steering Committee Report
 description: A practical guide to writing steering committee reports that give decision-makers accurate information in a format they can act on. Covers structure, RAG ratings, risk registers and escalations.
 pubDate: 2025-06-30
 category: Governance
+readTime: 7
 tags:
   - steering committee
   - governance

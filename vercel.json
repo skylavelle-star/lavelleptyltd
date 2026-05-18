@@ -5,6 +5,16 @@
       "source": "/articles/:slug*",
       "destination": "/thinking/:slug*",
       "permanent": true
+    },
+    {
+      "source": "/delivery-framework",
+      "destination": "/framework",
+      "permanent": true
+    },
+    {
+      "source": "/templates/bundle",
+      "destination": "/bundles",
+      "permanent": true
     }
   ],
   "headers": [

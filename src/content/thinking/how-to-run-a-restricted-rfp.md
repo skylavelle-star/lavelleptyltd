@@ -2,7 +2,8 @@
 title: How to Run a Restricted RFP
 description: A practical guide to designing and running a restricted tender process for enterprise technology. Covers invitation criteria, evaluation framework design, probity obligations and BAFO management.
 pubDate: 2025-06-16
-category: Procurement
+category: Sourcing
+readTime: 6
 tags:
   - procurement
   - restricted RFP

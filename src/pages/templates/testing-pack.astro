@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StubPack from "../../components/StubPack.astro";
+
+// TODO: STRATEGY.md does not quote a tagline for Testing Pack.
+---
+
+<BaseLayout
+  title="Testing Pack — Lavelle Pty Ltd"
+  description="The Test stage artefact set. Test strategy, test plan, test summary report and test script — the evidence record that the cutover decision rests on."
+>
+  <StubPack
+    packName="Testing Pack"
+    packSlug="testing-pack"
+    frameworkStage="Test"
+    frameworkGate="G4 Build → G5 Cutover"
+    subhead="The artefacts that prove the solution fits. System, integration and user acceptance testing — through to the evidence record the cutover decision rests on."
+    artefacts={[
+      "Test Strategy",
+      "Test Plan",
+      "Test Summary Report",
+      "Test Script",
+    ]}
+  />
+</BaseLayout>

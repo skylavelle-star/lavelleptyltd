@@ -2,7 +2,8 @@
 title: How to Rescue a Failing IT Project
 description: A structured approach to diagnosing what has gone wrong in a technology program and building a credible recovery plan. Covers assessment, stakeholder reset and the governance decisions that actually matter.
 pubDate: 2025-06-02
-category: Project Recovery
+category: Recovery
+readTime: 7
 tags:
   - project recovery
   - enterprise technology

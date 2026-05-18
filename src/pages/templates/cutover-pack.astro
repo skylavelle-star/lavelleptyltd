@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StubPack from "../../components/StubPack.astro";
+
+// TODO: STRATEGY.md does not quote a tagline for Cutover Pack.
+---
+
+<BaseLayout
+  title="Cutover Pack — Lavelle Pty Ltd"
+  description="The Cutover stage artefact set. Runsheet and Go / No-Go Checklist — executed on a runsheet, evidenced and reversible."
+>
+  <StubPack
+    packName="Cutover Pack"
+    packSlug="cutover-pack"
+    frameworkStage="Cutover"
+    frameworkGate="G5 Cutover (Go / No-Go)"
+    subhead="The runsheet and gate artefacts for the transition to live. Every step on the runsheet, evidenced, and reversible if the rollback is called."
+    artefacts={[
+      "Cutover Runsheet",
+      "Go No-Go Checklist",
+    ]}
+  />
+</BaseLayout>

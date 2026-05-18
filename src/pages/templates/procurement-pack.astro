@@ -13,7 +13,7 @@ const audience = [
   "Governance and probity leads who need clear documentation of evaluation decisions",
 ];
 
-const helpsWith = [
+const problemStatement = [
   "Technology procurement processes fail on governance when the evaluation is not structured, scoring is inconsistent, or the recommendation cannot be traced back to the evaluation criteria. This pack provides the artefacts needed to run a defensible, probity-sound evaluation.",
   "The templates are designed for the governance and accountability requirements common in government and regulated sector technology acquisitions.",
 ];
@@ -49,8 +49,19 @@ const included = [
   },
 ];
 
-const howToUse =
-  "Start with the evaluation plan before issuing the RFP. Confirm the criteria, weightings and scoring approach with the evaluation panel before any supplier responses are received. This prevents challenges to the evaluation process after the fact and ensures the recommendation can be defended at delegate approval.";
+const howToUse = [
+  {
+    title: "Start with the evaluation plan before issuing the RFP",
+    desc: "Confirm the criteria, weightings and scoring approach with the evaluation panel before any supplier responses are received. This prevents challenges to the evaluation process after the fact and ensures the recommendation can be defended at delegate approval.",
+  },
+];
+
+const stats = [
+  { num: `${included.length}`, label: "Artefacts included" },
+  { num: `$${pack.price}`, label: "Single-user · AUD" },
+  { num: "Word + Excel", label: "Editable, all formats" },
+  { num: "G2 → G3", label: "Framework anchor" },
+];
 
 const faqs = [
   {
@@ -96,7 +107,8 @@ const faqs = [
         <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
         <span>Procurement Pack</span>
       </div>
-      <h1>Procurement Pack. <em>Probity-sound by design.</em></h1>
+      <div class="eyebrow">Procurement Pack</div>
+      <h1 style="margin-top:1rem;">Probity-sound <em>by design.</em></h1>
       <p class="subhero__lead">
         A practical procurement governance pack for project teams managing RFPs,
         evaluation planning, supplier responses, BAFO processes and delegate
@@ -106,15 +118,22 @@ const faqs = [
   </section>
 
   <PackPage
+    packName="Procurement Pack"
+    packSlug="procurement-pack"
     price={pack.price}
     checkoutUrl={checkoutUrl}
     gaLabel="Procurement Pack"
+    stats={stats}
     audience={audience}
-    helpsWith={helpsWith}
+    problemStatement={problemStatement}
     included={included}
     howToUse={howToUse}
     faqs={faqs}
-    relatedConsultingHref="/consulting#procurement"
+    relatedConsultingHref="/consulting#sourcing"
+    framework={{
+      stage: "Discovery → Design (Sourcing track)",
+      gate: "G2 Discover → G3 Design",
+    }}
     relatedConsultingLabel="View procurement consulting"
   />
 </BaseLayout>

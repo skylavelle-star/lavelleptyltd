@@ -13,7 +13,7 @@ const audience = [
   "Business analysts authoring or reviewing a formal business case document",
 ];
 
-const helpsWith = [
+const problemStatement = [
   "Investment proposals fail delegate approval when the problem is poorly defined, the options analysis is weak, or the financial model cannot withstand scrutiny. This pack provides a structured approach to building a business case that can survive a rigorous review.",
   "Each section of the template is structured to address the questions that approval authorities, finance reviewers and governance bodies will ask.",
 ];
@@ -49,8 +49,19 @@ const included = [
   },
 ];
 
-const howToUse =
-  "Start with the problem statement and options analysis before building the financial model. The most common mistake is to begin with the preferred option already decided and work backwards. This pack is designed to support a genuine options analysis that will withstand scrutiny from finance teams and approval authorities.";
+const howToUse = [
+  {
+    title: "Start with the problem statement and options analysis",
+    desc: "Define the case for change and run the options analysis before building the financial model. The most common mistake is to begin with the preferred option already decided and work backwards. The pack is designed to support a genuine options analysis that will withstand finance and approval scrutiny.",
+  },
+];
+
+const stats = [
+  { num: `${included.length}`, label: "Artefacts included" },
+  { num: `$${pack.price}`, label: "Single-user · AUD" },
+  { num: "Word + Excel", label: "Editable, all formats" },
+  { num: "G1 → G2", label: "Framework anchor" },
+];
 
 const faqs = [
   {
@@ -96,7 +107,10 @@ const faqs = [
         <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
         <span>Business Case Pack</span>
       </div>
-      <h1>Business Case Pack. <em>Built to survive scrutiny.</em></h1>
+      <div class="eyebrow">Business Case Pack</div>
+      <h1 style="margin-top:1rem;">
+        The version your executive <em>can defend.</em>
+      </h1>
       <p class="subhero__lead">
         A structured business case template pack for defining the case for
         change, investment rationale, options, costs, risks, benefits,
@@ -106,15 +120,19 @@ const faqs = [
   </section>
 
   <PackPage
+    packName="Business Case Pack"
+    packSlug="business-case-pack"
     price={pack.price}
     checkoutUrl={checkoutUrl}
     gaLabel="Business Case Pack"
+    stats={stats}
     audience={audience}
-    helpsWith={helpsWith}
+    problemStatement={problemStatement}
     included={included}
     howToUse={howToUse}
     faqs={faqs}
-    relatedConsultingHref="/consulting#business-case"
+    relatedConsultingHref="/consulting#investment"
     relatedConsultingLabel="View business case consulting"
+    framework={{ stage: "Initiation", gate: "G1 Approve → G2 Discover" }}
   />
 </BaseLayout>

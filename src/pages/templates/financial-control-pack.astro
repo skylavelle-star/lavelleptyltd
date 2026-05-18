@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StubPack from "../../components/StubPack.astro";
+
+// Tagline lifted from STRATEGY.md §"Voice".
+---
+
+<BaseLayout
+  title="Financial Control Pack — Lavelle Pty Ltd"
+  description="The financial artefact set that spans every stage. Cost estimate, estimation guidelines, budget phasing, financial control tracker, contingency, asset labour, minor assets, journal, RAID."
+>
+  <StubPack
+    packName="Financial Control Pack"
+    packSlug="financial-control-pack"
+    frameworkStage="Spans all stages"
+    frameworkGate="Active from G2 Discover onwards; live tracker from G3"
+    tagline='Approved, committed, accrued, spent — <em>on one workbook.</em>'
+    subhead="The financial control artefact set that keeps the books defensible from business case through to closure. The workbook the CFO actually trusts."
+    artefacts={[
+      "Project Cost Estimate",
+      "Estimation Guidelines & Worksheet",
+      "Budget Phasing",
+      "Financial Control Tracker",
+      "Contingency Calculator",
+      "Asset Labour Calculations",
+      "Minor Assets Register",
+      "Journal Template",
+      "RAID Register",
+    ]}
+  />
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StubPack from "../../components/StubPack.astro";
+
+// Tagline lifted from STRATEGY.md §"Voice".
+---
+
+<BaseLayout
+  title="Discovery Pack — Lavelle Pty Ltd"
+  description="The artefact set for the Discovery stage. BA Discovery, Change Discovery, Delivery Methodology, Project Assurance, and the Project Tiering Calculator."
+>
+  <StubPack
+    packName="Discovery Pack"
+    packSlug="discovery-pack"
+    frameworkStage="Discovery"
+    frameworkGate="G2 Discover → G3 Design"
+    tagline='Make the change visible <em>before you make it.</em>'
+    subhead="The diagnostic and assessment artefacts that frame the problem and produce a defensible recommendation. Includes the workbooks that sit behind the email-gated Project Tiering Calculator."
+    artefacts={[
+      "BA Discovery Assessment",
+      "Change Discovery Assessment",
+      "Delivery Methodology Assessment",
+      "Project Assurance Checklist",
+      "Project Tiering Calculator (paid workbook)",
+    ]}
+  />
+</BaseLayout>

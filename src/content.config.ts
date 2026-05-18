@@ -7,7 +7,15 @@ const thinking = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    category: z.string(),
+    category: z.enum([
+      "Recovery",
+      "Governance",
+      "Investment",
+      "Sourcing",
+      "Assurance",
+      "Independence",
+    ]),
+    readTime: z.number().int().positive(),
     tags: z.array(z.string()),
   }),
 });

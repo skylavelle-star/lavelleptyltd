@@ -1,12 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import heroImage from "../assets/images/hero.jpg";
 import { products } from "../config/site";
 
 const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
 const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
 const anyCheckout = Boolean(steeringUrl || recoveryUrl);
+
+const featuredThinking = (await getCollection("thinking"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <BaseLayout
@@ -145,7 +150,7 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
             artefact set, cadence, reporting line, and the day-to-day discipline
             that makes governance real instead of theatrical.
           </p>
-          <a href="/consulting#pmo" class="cap__link"
+          <a href="/consulting#governance" class="cap__link"
             >Learn more <span>→</span></a
           >
         </article>
@@ -158,7 +163,7 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
             write the case the executive actually needs to defend, not the one
             the template asks for.
           </p>
-          <a href="/consulting#business-case" class="cap__link"
+          <a href="/consulting#investment" class="cap__link"
             >Learn more <span>→</span></a
           >
         </article>
@@ -171,7 +176,7 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
             handover. We help you procure the right outcome — not just the
             lowest price or the loudest pitch.
           </p>
-          <a href="/consulting#procurement" class="cap__link"
+          <a href="/consulting#sourcing" class="cap__link"
             >Learn more <span>→</span></a
           >
         </article>
@@ -184,7 +189,7 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
             decision papers and reporting cadence that surface the right issues
             to the right people at the right time.
           </p>
-          <a href="/consulting#steering" class="cap__link"
+          <a href="/consulting#assurance" class="cap__link"
             >Learn more <span>→</span></a
           >
         </article>
@@ -197,7 +202,7 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
             second pair of senior eyes on your most consequential programs —
             before the board asks for one.
           </p>
-          <a href="/consulting#assurance" class="cap__link"
+          <a href="/consulting#independence" class="cap__link"
             >Learn more <span>→</span></a
           >
         </article>
@@ -223,52 +228,18 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
       </header>
 
       <div class="thinking__grid">
-        <a
-          href="/thinking/how-to-rescue-a-failing-it-project"
-          class="think-card"
-        >
-          <div class="think-card__kicker">Recovery</div>
-          <h3 class="think-card__title">How to rescue a failing IT project.</h3>
-          <p class="think-card__desc">
-            A structured approach to diagnosing what has gone wrong in a
-            technology program and building a credible recovery plan.
-            Assessment, stakeholder reset and the governance decisions that
-            actually matter.
-          </p>
-          <div class="think-card__meta">Article · Project Recovery</div>
-        </a>
-
-        <a
-          href="/thinking/how-to-build-a-steering-committee-report"
-          class="think-card"
-        >
-          <div class="think-card__kicker">Governance</div>
-          <h3 class="think-card__title">
-            How to build a steering committee report.
-          </h3>
-          <p class="think-card__desc">
-            A practical guide to writing steering committee reports that give
-            decision-makers accurate information in a format they can act on.
-            Covers structure, RAG ratings, risk registers and escalations.
-          </p>
-          <div class="think-card__meta">Article · Governance</div>
-        </a>
-
-        <a
-          href="/thinking/how-to-write-a-technology-business-case"
-          class="think-card"
-        >
-          <div class="think-card__kicker">Investment</div>
-          <h3 class="think-card__title">
-            How to write a technology business case.
-          </h3>
-          <p class="think-card__desc">
-            A practical guide to building a technology investment proposal that
-            survives scrutiny. Problem definition, options analysis, financial
-            modelling and delegate approval requirements.
-          </p>
-          <div class="think-card__meta">Article · Business Case</div>
-        </a>
+        {
+          featuredThinking.map((article) => (
+            <a href={`/thinking/${article.id}`} class="think-card">
+              <div class="think-card__kicker">{article.data.category}</div>
+              <h3 class="think-card__title">{article.data.title}.</h3>
+              <p class="think-card__desc">{article.data.description}</p>
+              <div class="think-card__meta">
+                Article · {article.data.readTime} min read
+              </div>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>

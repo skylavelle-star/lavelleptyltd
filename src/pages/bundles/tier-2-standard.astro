@@ -1,0 +1,236 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../config/site";
+
+// TODO: pricing not yet set in STRATEGY.md. Wire to PUBLIC_LS_TIER_2_STANDARD
+// when the Lemon Squeezy product is created.
+
+const included = [
+  "Business Case Template",
+  "Project Management Plan",
+  "Scope & High-Level Requirements",
+  "RAID Register",
+  "Steering Committee Charter (Detailed)",
+  "Steering Committee Pack",
+  "Project Cost Estimate",
+  "Budget Phasing",
+  "Financial Control Tracker",
+];
+---
+
+<BaseLayout
+  title="Tier 2 Standard Bundle — Lavelle Pty Ltd"
+  description="The standard mid-complexity delivery artefact set. Tiering score 15–24. Most enterprise projects land here."
+>
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp;
+        <a href="/bundles">Bundles</a> &nbsp;/&nbsp;
+        <span>Tier 2 Standard</span>
+      </div>
+      <div class="eyebrow">Tier 2 Standard · Tiering score 15–24</div>
+      <h1 style="margin-top:1rem;">
+        Where most enterprise delivery lands. <em>The standard baseline.</em>
+      </h1>
+      <p class="subhero__lead">
+        For projects that score 15–24 on the Project Tiering Calculator. The
+        artefact set the majority of enterprise programmes need — full
+        business case, PMP, RAID, detailed SteerCo, financial control.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="max-width:64rem;">
+      <h2 class="section__title">What is included</h2>
+      <ul class="artefact-list">
+        {included.map((item) => <li>{item}</li>)}
+      </ul>
+
+      <div class="callout">
+        <div class="eyebrow">Coming online</div>
+        <p>
+          This bundle is being finalised. Use the notify form below to be told
+          when it ships.
+        </p>
+        <form
+          data-notify-form="notify-tier-2-standard"
+          class="callout__form"
+          novalidate
+        >
+          <input type="hidden" name="access_key" value={site.web3formsKey} />
+          <input
+            type="hidden"
+            name="subject"
+            value="Interest: Tier 2 Standard Bundle — lavelleptyltd.com.au"
+          />
+          <input
+            type="hidden"
+            name="from_name"
+            value="Lavelle Pty Ltd Bundles"
+          />
+          <input
+            type="hidden"
+            name="message"
+            value="Interested in the Tier 2 Standard Bundle when available."
+          />
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="callout__bot"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <label class="visually-hidden" for="notify-tier-2-standard-email">
+            Your email
+          </label>
+          <input
+            id="notify-tier-2-standard-email"
+            type="email"
+            name="email"
+            required
+            placeholder="your@email.com"
+            autocomplete="email"
+          />
+          <button type="submit" class="btn btn--primary">
+            Notify me <span class="btn__arrow">→</span>
+          </button>
+          <p
+            id="notify-success-notify-tier-2-standard"
+            class="callout__success"
+            hidden
+          >
+            Done — we will email you when it ships.
+          </p>
+        </form>
+      </div>
+
+      <div class="framework-note">
+        <strong>Framework anchor:</strong> covers Initiation through Closure
+        with the artefacts most enterprise programmes need at every gate.
+        <a href="/framework">See the framework →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .artefact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .artefact-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+  }
+  .callout {
+    padding: 1.75rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ochre);
+    margin-bottom: 2rem;
+  }
+  .callout p {
+    color: var(--ink-soft);
+    margin: 0.5rem 0 1rem;
+  }
+  .callout__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    max-width: 28rem;
+  }
+  .callout__form input[type="email"] {
+    flex: 1 1 14rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--rule);
+    background: var(--bone);
+    font-family: inherit;
+    font-size: var(--body-sm);
+  }
+  .callout__bot {
+    display: none;
+  }
+  .callout__success {
+    font-size: var(--body-sm);
+    color: var(--ochre);
+    width: 100%;
+  }
+  .callout__success[hidden] {
+    display: none;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .framework-note {
+    padding: 1.25rem 1.5rem;
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    font-size: var(--body-sm);
+    color: var(--ink-soft);
+  }
+  .framework-note a {
+    color: var(--ochre);
+    margin-left: 0.5rem;
+  }
+</style>
+
+<script>
+  document
+    .querySelectorAll<HTMLFormElement>("[data-notify-form]")
+    .forEach((form) => {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        const id = form.dataset.notifyForm!;
+        const btn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+        const botcheck =
+          form.querySelector<HTMLInputElement>('[name="botcheck"]');
+        if (botcheck?.checked) return;
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = "Sending…";
+        }
+        let ok = false;
+        try {
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(
+              Object.fromEntries(new FormData(form).entries()),
+            ),
+          });
+          const data = (await res.json().catch(() => ({}))) as {
+            success?: boolean;
+          };
+          ok = data.success === true;
+        } catch {
+          /* silent */
+        }
+        if (ok) {
+          form.querySelectorAll("input, button, label").forEach((el) => {
+            (el as HTMLElement).hidden = true;
+          });
+          const success = document.getElementById(`notify-success-${id}`);
+          if (success) success.hidden = false;
+        } else if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = 'Notify me <span class="btn__arrow">→</span>';
+        }
+      });
+    });
+</script>

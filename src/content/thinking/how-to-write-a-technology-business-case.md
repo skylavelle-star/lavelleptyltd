@@ -2,7 +2,8 @@
 title: How to Write a Technology Business Case
 description: A practical guide to building a technology investment proposal that survives scrutiny. Covers problem definition, options analysis, financial modelling and delegate approval requirements.
 pubDate: 2025-06-09
-category: Business Case
+category: Investment
+readTime: 6
 tags:
   - business case
   - investment proposal

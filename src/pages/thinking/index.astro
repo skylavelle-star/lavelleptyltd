@@ -46,6 +46,8 @@ const formatDate = (date: Date) =>
                 <time datetime={article.data.pubDate.toISOString()}>
                   {formatDate(article.data.pubDate)}
                 </time>
+                <span aria-hidden="true">·</span>
+                <span>{article.data.readTime} min read</span>
               </div>
               <h2 class="article-list__title">
                 <a href={`/thinking/${article.id}`}>{article.data.title}</a>

@@ -13,7 +13,7 @@ const audience = [
   "External reviewers asked to assess a troubled technology program",
 ];
 
-const helpsWith = [
+const problemStatement = [
   "Programs do not fail suddenly. They accumulate governance debt, missed commitments and eroded stakeholder confidence over months. By the time a program is formally in trouble, the underlying causes are usually several months old.",
   "This pack gives you the structure to do an honest diagnostic, communicate the findings clearly, and present a recovery roadmap that a sceptical executive or steering committee will accept.",
 ];
@@ -57,8 +57,23 @@ const included = [
   },
 ];
 
-const howToUse =
-  "Start with the health diagnostic. Work through each dimension, document the findings honestly, and use the output to prepare the stakeholder reset plan. Present the reset plan before the recovery roadmap. Do not present the roadmap until stakeholders have a shared understanding of the current state.";
+const howToUse = [
+  {
+    title: "Start with the health diagnostic",
+    desc: "Work through each dimension, document the findings honestly, and use the output to prepare the stakeholder reset plan.",
+  },
+  {
+    title: "Present the reset before the roadmap",
+    desc: "Do not present the recovery roadmap until stakeholders have a shared understanding of the current state. Reset first; replan second.",
+  },
+];
+
+const stats = [
+  { num: `${included.length}`, label: "Artefacts included" },
+  { num: `$${pack.price}`, label: "Single-user · AUD" },
+  { num: "Word + Excel", label: "Editable, all formats" },
+  { num: "G2–G5", label: "Reapplied across stabilisation" },
+];
 
 const faqs = [
   {
@@ -104,7 +119,10 @@ const faqs = [
         <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
         <span>Project Recovery Pack</span>
       </div>
-      <h1>Project Recovery Pack. <em>For programs in trouble.</em></h1>
+      <div class="eyebrow">Project Recovery Pack</div>
+      <h1 style="margin-top:1rem;">
+        For programs <em>in trouble.</em>
+      </h1>
       <p class="subhero__lead">
         A practical template pack for project managers and delivery leads who
         need to regain control of a project, clarify the recovery path and give
@@ -114,16 +132,23 @@ const faqs = [
   </section>
 
   <PackPage
+    packName="Project Recovery Pack"
+    packSlug="project-recovery-pack"
     price={pack.price}
     checkoutUrl={checkoutUrl}
     gaLabel="Project Recovery Pack"
+    stats={stats}
     audience={audience}
-    helpsWith={helpsWith}
+    problemStatement={problemStatement}
     included={included}
     howToUse={howToUse}
     faqs={faqs}
     relatedConsultingHref="/consulting#recovery"
     relatedConsultingLabel="View recovery consulting"
+    framework={{
+      stage: "Spans the framework (consulting offer, not a stage)",
+      gate: "Reapplied across G2–G5 during stabilisation",
+    }}
     extraSidecard={{
       heading: "Start with the free checklist",
       text: "The free Project Recovery Checklist is a good starting point before committing to the full pack.",
