@@ -17,7 +17,7 @@ It is the revenue engine of the wider portfolio.
 
 ## Positioning Statement
 
-Senior project delivery and PMO consulting for media, higher education and government-adjacent research organisations — recovering at-risk programs, strengthening PMO governance, and leading complex enterprise technology delivery in environments where previous attempts have failed and stakeholder confidence has collapsed.
+Senior project delivery and PMO consulting for media, higher education and government-adjacent research organisations — recovering at-risk programs, strengthening PMO governance and leading complex enterprise technology delivery in environments where previous attempts have failed and stakeholder confidence has collapsed.
 
 Productised PMO packs, tier-based bundles, multi-seat enterprise licensing and free practitioner tools run alongside the consulting practice as a secondary revenue layer.
 
@@ -336,11 +336,14 @@ No product, checkout, or template link should point to `skylavelle.com.au`. The 
 
 ## Known Gaps
 
-Three gaps remain between the strategy named here and the artefacts currently in `/templates/`:
+One gap remains between the strategy named here and the artefacts currently shipped:
 
-- **Procurement Pack not built.** Referenced by the Procurement Templates Index in `11-asset-specialist`, but the underlying pack (Procurement Strategy, Sourcing Options Analysis, RFP Template, Evaluation Plan, Probity Plan, Scoring Workbook, Evaluation Report, etc.) does not yet exist. Decide whether to build it as a standalone Procurement Pack (anchored to Sourcing) or fold the procurement artefacts into Project Setup and Closure.
-- **Project Recovery Checklist named as a lead magnet but absent.** The prior strategy named the Project Recovery Checklist as the flagship free lead magnet. It is not in `/templates/`. Either build the checklist or drop the reference and rely on Framework One-Page + Tiering Calculator as the lead magnets.
-- **Recovery framing doc required.** If the Project Recovery Bundle proceeds as a constructed bundle (Project Assurance Checklist + RAID Register + Sponsor Update + Project Change Request + framing doc), the framing doc — the one new artefact that ties the bundle together — has to be written. Not yet drafted.
+- **Recovery framing doc required.** The Project Recovery Bundle is a constructed bundle (Project Assurance Checklist + RAID Register + Sponsor Update + Project Change Request + framing doc). The framing doc — the one new artefact that ties the bundle together — has not yet been drafted.
+
+Previously open gaps now closed:
+
+- **Procurement Pack** — live at `/templates/procurement-pack/` with a seven-artefact set (RFP Evaluation Plan, Technical Evaluation Matrix, Commercial Evaluation Matrix, Supplier Clarification Register, BAFO Request Template, Evaluation Recommendation Report, Probity Checklist). The shipped artefact list differs from the legacy reference list (Procurement Strategy / Sourcing Options Analysis / RFP Template / Evaluation Plan / Probity Plan / Scoring Workbook / Evaluation Report); reconcile in a future content pass if the legacy list is still the desired baseline.
+- **Project Recovery Checklist** — live at `/free-tools/project-recovery-checklist/` as a supplementary free download. It sits alongside the strategy's primary lead magnets (Framework One-Page + Tiering Calculator) rather than replacing them.
 
 ---
 
