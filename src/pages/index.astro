@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-import heroImage from '../assets/images/hero.jpg';
-import { products } from '../config/site';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/hero.jpg";
+import { products } from "../config/site";
 
 const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
 const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
@@ -13,7 +13,11 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
   title="Lavelle Pty Ltd — Project delivery, PMO governance and senior consulting"
   description="Lavelle Pty Ltd partners with government, enterprise and program teams to recover at-risk projects, strengthen PMO governance and deliver outcomes that hold."
 >
-  {anyCheckout && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {
+    anyCheckout && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
@@ -25,7 +29,11 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
             to <em>shipped outcomes.</em>
           </h1>
           <p class="hero__sub">
-            We partner with media, higher education and government-adjacent research organisations to recover at-risk programs, strengthen PMO governance, and lead complex enterprise technology delivery — particularly where previous attempts have failed and stakeholder confidence has collapsed.
+            We partner with media, higher education and government-adjacent
+            research organisations to recover at-risk programs, strengthen PMO
+            governance, and lead complex enterprise technology delivery —
+            particularly where previous attempts have failed and stakeholder
+            confidence has collapsed.
           </p>
           <div class="hero__ctas">
             <a href="/contact" class="btn btn--primary">
@@ -40,16 +48,24 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
         <aside class="hero__panel">
           <div class="hero__signal">Now booking Q3 engagements</div>
           <div>
-            <div class="hero__stat-num">20<span style="font-size:0.4em;">yrs</span></div>
+            <div class="hero__stat-num">
+              20<span style="font-size:0.4em;">yrs</span>
+            </div>
             <p class="hero__stat-label">
-              Senior delivery experience across media, higher education and cyber-security research — including the ABC, Griffith University, CQUniversity and the Cyber Security CRC.
+              Senior delivery experience across media, higher education and
+              cyber-security research — including the ABC, Griffith University,
+              CQUniversity and the Cyber Security CRC.
             </p>
           </div>
           <div style="border-top:1px solid var(--rule); padding-top:1.5rem;">
-            <div style="font-family:'Fraunces',serif; font-size:1.15rem; font-style:italic; color:var(--ink); margin-bottom:0.5rem;">
+            <div
+              style="font-family:'Fraunces',serif; font-size:1.15rem; font-style:italic; color:var(--ink); margin-bottom:0.5rem;"
+            >
               Recipient, Griffith University Senior Leadership Award.
             </div>
-            <div style="font-size:var(--micro); letter-spacing:0.18em; text-transform:uppercase; color:var(--sage);">
+            <div
+              style="font-size:var(--micro); letter-spacing:0.18em; text-transform:uppercase; color:var(--sage);"
+            >
               For positive change across individuals, teams &amp; business
             </div>
           </div>
@@ -101,7 +117,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           </h2>
         </div>
         <p class="lead">
-          Six closely related capabilities, drawn from twenty years of running complex programs. Engaged singly to fix a specific problem, or together to lift overall delivery confidence across a portfolio.
+          Six closely related capabilities, drawn from twenty years of running
+          complex programs. Engaged singly to fix a specific problem, or
+          together to lift overall delivery confidence across a portfolio.
         </p>
       </header>
 
@@ -110,54 +128,78 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           <div class="cap__num">01 / Recovery</div>
           <h3 class="cap__title">Project recovery</h3>
           <p class="cap__desc">
-            Diagnose what's actually broken — scope, schedule, governance or capability — and stabilise delivery within the first 30 days. Independent, calm, and politically aware.
+            Diagnose what's actually broken — scope, schedule, governance or
+            capability — and stabilise delivery within the first 30 days.
+            Independent, calm, and politically aware.
           </p>
-          <a href="/consulting#recovery" class="cap__link">Learn more <span>→</span></a>
+          <a href="/consulting#recovery" class="cap__link"
+            >Learn more <span>→</span></a
+          >
         </article>
 
         <article class="cap">
           <div class="cap__num">02 / Governance</div>
           <h3 class="cap__title">PMO stand-up &amp; uplift</h3>
           <p class="cap__desc">
-            Establish or remediate the PMO that complex delivery actually needs: artefact set, cadence, reporting line, and the day-to-day discipline that makes governance real instead of theatrical.
+            Establish or remediate the PMO that complex delivery actually needs:
+            artefact set, cadence, reporting line, and the day-to-day discipline
+            that makes governance real instead of theatrical.
           </p>
-          <a href="/consulting#pmo" class="cap__link">Learn more <span>→</span></a>
+          <a href="/consulting#pmo" class="cap__link"
+            >Learn more <span>→</span></a
+          >
         </article>
 
         <article class="cap">
           <div class="cap__num">03 / Investment</div>
           <h3 class="cap__title">Business case development</h3>
           <p class="cap__desc">
-            Treasury-grade and ICT business cases that survive scrutiny. We write the case the executive actually needs to defend, not the one the template asks for.
+            Treasury-grade and ICT business cases that survive scrutiny. We
+            write the case the executive actually needs to defend, not the one
+            the template asks for.
           </p>
-          <a href="/consulting#business-case" class="cap__link">Learn more <span>→</span></a>
+          <a href="/consulting#business-case" class="cap__link"
+            >Learn more <span>→</span></a
+          >
         </article>
 
         <article class="cap">
           <div class="cap__num">04 / Sourcing</div>
           <h3 class="cap__title">Procurement &amp; RFP advisory</h3>
           <p class="cap__desc">
-            RFP design, evaluation governance, vendor selection, and contract handover. We help you procure the right outcome — not just the lowest price or the loudest pitch.
+            RFP design, evaluation governance, vendor selection, and contract
+            handover. We help you procure the right outcome — not just the
+            lowest price or the loudest pitch.
           </p>
-          <a href="/consulting#procurement" class="cap__link">Learn more <span>→</span></a>
+          <a href="/consulting#procurement" class="cap__link"
+            >Learn more <span>→</span></a
+          >
         </article>
 
         <article class="cap">
           <div class="cap__num">05 / Assurance</div>
           <h3 class="cap__title">Steering committee governance</h3>
           <p class="cap__desc">
-            Make the boardroom 30 minutes count. We design steering packs, decision papers and reporting cadence that surface the right issues to the right people at the right time.
+            Make the boardroom 30 minutes count. We design steering packs,
+            decision papers and reporting cadence that surface the right issues
+            to the right people at the right time.
           </p>
-          <a href="/consulting#steering" class="cap__link">Learn more <span>→</span></a>
+          <a href="/consulting#steering" class="cap__link"
+            >Learn more <span>→</span></a
+          >
         </article>
 
         <article class="cap">
           <div class="cap__num">06 / Independence</div>
           <h3 class="cap__title">Delivery assurance</h3>
           <p class="cap__desc">
-            Independent health checks, gate reviews and red-team analysis. A second pair of senior eyes on your most consequential programs — before the board asks for one.
+            Independent health checks, gate reviews and red-team analysis. A
+            second pair of senior eyes on your most consequential programs —
+            before the board asks for one.
           </p>
-          <a href="/consulting#assurance" class="cap__link">Learn more <span>→</span></a>
+          <a href="/consulting#assurance" class="cap__link"
+            >Learn more <span>→</span></a
+          >
         </article>
       </div>
     </div>
@@ -174,36 +216,58 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           </h2>
         </div>
         <p class="lead">
-          Practical writing for the people doing the work. No frameworks for their own sake — only the patterns, artefacts and decisions that hold up under board scrutiny.
+          Practical writing for the people doing the work. No frameworks for
+          their own sake — only the patterns, artefacts and decisions that hold
+          up under board scrutiny.
         </p>
       </header>
 
       <div class="thinking__grid">
-        <a href="/thinking/why-projects-stall" class="think-card">
+        <a
+          href="/thinking/how-to-rescue-a-failing-it-project"
+          class="think-card"
+        >
           <div class="think-card__kicker">Recovery</div>
-          <h3 class="think-card__title">The seven signals a project is about to stall — and what to do at each one.</h3>
+          <h3 class="think-card__title">How to rescue a failing IT project.</h3>
           <p class="think-card__desc">
-            Most program failure is visible 90 days out, if you know what to look for. A practical diagnostic from twenty years of stepping into broken delivery.
+            A structured approach to diagnosing what has gone wrong in a
+            technology program and building a credible recovery plan.
+            Assessment, stakeholder reset and the governance decisions that
+            actually matter.
           </p>
-          <div class="think-card__meta">Perspective · 9 min read</div>
+          <div class="think-card__meta">Article · Project Recovery</div>
         </a>
 
-        <a href="/thinking/30-minute-steerco" class="think-card">
+        <a
+          href="/thinking/how-to-build-a-steering-committee-report"
+          class="think-card"
+        >
           <div class="think-card__kicker">Governance</div>
-          <h3 class="think-card__title">Making 60-minute decisions in 30-minute steering meetings.</h3>
+          <h3 class="think-card__title">
+            How to build a steering committee report.
+          </h3>
           <p class="think-card__desc">
-            The structural changes to the steering committee pack that we make in week one — and why they change executive behaviour by month two.
+            A practical guide to writing steering committee reports that give
+            decision-makers accurate information in a format they can act on.
+            Covers structure, RAG ratings, risk registers and escalations.
           </p>
-          <div class="think-card__meta">Article · 6 min read</div>
+          <div class="think-card__meta">Article · Governance</div>
         </a>
 
-        <a href="/thinking/recover-vs-reset" class="think-card">
+        <a
+          href="/thinking/how-to-write-a-technology-business-case"
+          class="think-card"
+        >
           <div class="think-card__kicker">Investment</div>
-          <h3 class="think-card__title">Recover, or reset? A decision frame for stalled programs.</h3>
+          <h3 class="think-card__title">
+            How to write a technology business case.
+          </h3>
           <p class="think-card__desc">
-            Some programs are worth recovering. Others need to be quietly closed and the value re-baselined. Here's how we tell the difference inside the first fortnight.
+            A practical guide to building a technology investment proposal that
+            survives scrutiny. Problem definition, options analysis, financial
+            modelling and delegate approval requirements.
           </p>
-          <div class="think-card__meta">Perspective · 7 min read</div>
+          <div class="think-card__meta">Article · Business Case</div>
         </a>
       </div>
     </div>
@@ -220,39 +284,62 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           </h2>
         </div>
         <p class="lead">
-          A career is built on the moments where everyone else has lost confidence and you have to find a way to deliver anyway. Griffith University's WCMS transformation is one of those. Four more are documented in the case study library.
+          A career is built on the moments where everyone else has lost
+          confidence and you have to find a way to deliver anyway. Griffith
+          University's WCMS transformation is one of those. Four more are
+          documented in the case study library.
         </p>
       </header>
 
       <div class="case__grid">
         <div>
           <p class="case__quote">
-            "Politically charged. Forecast at three years. Organised resistance from architecture, security, development and the business simultaneously. <em>Delivered in twelve months</em> — with every previously-resistant group standing behind the outcome."
+            "Politically charged. Forecast at three years. Organised resistance
+            from architecture, security, development and the business
+            simultaneously. <em>Delivered in twelve months</em> — with every previously-resistant
+            group standing behind the outcome."
           </p>
-          <div class="case__attr">Griffith University WCMS · Senior Leadership Award · 2015–2016</div>
+          <div class="case__attr">
+            Griffith University WCMS · Senior Leadership Award · 2015–2016
+          </div>
         </div>
         <div class="case__metrics">
           <div>
-            <div class="case__metric-num">36<span style="font-size:0.5em;">→12</span></div>
-            <div class="case__metric-label">Months forecast versus actual delivery.</div>
+            <div class="case__metric-num">
+              36<span style="font-size:0.5em;">→12</span>
+            </div>
+            <div class="case__metric-label">
+              Months forecast versus actual delivery.
+            </div>
           </div>
           <div>
             <div class="case__metric-num">1</div>
-            <div class="case__metric-label">Senior Leadership Award awarded post-delivery.</div>
+            <div class="case__metric-label">
+              Senior Leadership Award awarded post-delivery.
+            </div>
           </div>
           <div>
             <div class="case__metric-num">4</div>
-            <div class="case__metric-label">Stakeholder groups: organised resistance to active endorsement.</div>
+            <div class="case__metric-label">
+              Stakeholder groups: organised resistance to active endorsement.
+            </div>
           </div>
           <div>
-            <div class="case__metric-num">5<span style="font-size:0.5em;">yr</span></div>
-            <div class="case__metric-label">Follow-on mandate at Griffith across three further transformation programs.</div>
+            <div class="case__metric-num">
+              5<span style="font-size:0.5em;">yr</span>
+            </div>
+            <div class="case__metric-label">
+              Follow-on mandate at Griffith across three further transformation
+              programs.
+            </div>
           </div>
         </div>
       </div>
 
       <div style="margin-top:3rem; text-align:center;">
-        <a href="/case-studies" class="btn btn--ghost">Read four more case studies <span class="btn__arrow">→</span></a>
+        <a href="/case-studies" class="btn btn--ghost"
+          >Read four more case studies <span class="btn__arrow">→</span></a
+        >
       </div>
     </div>
   </section>
@@ -268,7 +355,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           </h2>
         </div>
         <p class="lead">
-          The exact packs Lavelle uses on engagement, packaged for download. Built for project managers, PMO leads and program directors who need something solid in front of the steering committee by Monday.
+          The exact packs Lavelle uses on engagement, packaged for download.
+          Built for project managers, PMO leads and program directors who need
+          something solid in front of the steering committee by Monday.
         </p>
       </header>
 
@@ -277,10 +366,12 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           <span class="product__tag">Flagship · ships first</span>
           <h3 class="product__title">Steering Committee Pack</h3>
           <p class="product__desc">
-            A complete steering committee toolkit — decision papers, status dashboards, escalation logs and meeting protocols — built to surface the right issue to the right person at the right time.
+            A complete steering committee toolkit — decision papers, status
+            dashboards, escalation logs and meeting protocols — built to surface
+            the right issue to the right person at the right time.
           </p>
           <ul class="product__list">
-            <li>12 board-ready templates</li>
+            <li>8 board-ready templates</li>
             <li>Decision-paper writing guide</li>
             <li>Pre-read protocol &amp; agenda framework</li>
             <li>RAID escalation thresholds</li>
@@ -290,7 +381,13 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
               <div class="product__price">$147</div>
               <div class="product__price-sub">single user · AUD</div>
             </div>
-            <a href={steeringUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Steering Committee Pack">Buy now <span class="btn__arrow">→</span></a>
+            <a
+              href={steeringUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Steering Committee Pack"
+              >Buy now <span class="btn__arrow">→</span></a
+            >
           </div>
         </article>
 
@@ -298,7 +395,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
           <span class="product__tag">Available now</span>
           <h3 class="product__title">Project Recovery Pack</h3>
           <p class="product__desc">
-            The full 30-day diagnostic and stabilisation playbook for project managers stepping into a red program. Templates, scripts, stakeholder maps and the day-by-day cadence we use on engagement.
+            The full 30-day diagnostic and stabilisation playbook for project
+            managers stepping into a red program. Templates, scripts,
+            stakeholder maps and the day-by-day cadence we use on engagement.
           </p>
           <ul class="product__list">
             <li>30-day recovery roadmap</li>
@@ -311,7 +410,13 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
               <div class="product__price">$297</div>
               <div class="product__price-sub">single user · AUD</div>
             </div>
-            <a href={recoveryUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Project Recovery Pack">Buy now <span class="btn__arrow">→</span></a>
+            <a
+              href={recoveryUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Project Recovery Pack"
+              >Buy now <span class="btn__arrow">→</span></a
+            >
           </div>
         </article>
       </div>
@@ -320,15 +425,25 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
         style="margin-top:3rem; padding:2.5rem; border:1px solid var(--rule); background:var(--paper); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;"
       >
         <div>
-          <div class="eyebrow" style="margin-bottom:0.75rem;">Free · for delivery leads</div>
-          <h3 style="font-family:'Fraunces',serif; font-size:1.6rem; font-weight:500; margin-bottom:0.5rem;">
+          <div class="eyebrow" style="margin-bottom:0.75rem;">
+            Free · for delivery leads
+          </div>
+          <h3
+            style="font-family:'Fraunces',serif; font-size:1.6rem; font-weight:500; margin-bottom:0.5rem;"
+          >
             The Project Recovery Checklist
           </h3>
-          <p style="font-size:var(--body-sm); color:var(--ink-soft); max-width:50ch;">
-            Twenty-three questions we ask in the first 48 hours of any recovery engagement. Print it, take it into your steering meeting, and you'll know within an hour where the real problems are.
+          <p
+            style="font-size:var(--body-sm); color:var(--ink-soft); max-width:50ch;"
+          >
+            Twenty-three questions we ask in the first 48 hours of any recovery
+            engagement. Print it, take it into your steering meeting, and you'll
+            know within an hour where the real problems are.
           </p>
         </div>
-        <a href="/pmo-resources#checklist" class="btn btn--primary">Download free <span class="btn__arrow">→</span></a>
+        <a href="/pmo-resources#checklist" class="btn btn--primary"
+          >Download free <span class="btn__arrow">→</span></a
+        >
       </div>
     </div>
   </section>
@@ -339,23 +454,46 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
       <div class="engage__grid">
         <div>
           <div class="eyebrow">Engage Lavelle</div>
-          <h2 style="margin-top:1.25rem;">Let's talk about <em>what's not moving.</em></h2>
+          <h2 style="margin-top:1.25rem;">
+            Let's talk about <em>what's not moving.</em>
+          </h2>
           <p class="lead" style="margin-top:1.5rem;">
-            Whether you need a confidential second opinion on a stalled program, a senior delivery lead to take the helm for ninety days, or a PMO stood up from scratch — start with a thirty-minute conversation. No pitch deck, no obligation, no sales call disguised as a workshop.
+            Whether you need a confidential second opinion on a stalled program,
+            a senior delivery lead to take the helm for ninety days, or a PMO
+            stood up from scratch — start with a thirty-minute conversation. No
+            pitch deck, no obligation, no sales call disguised as a workshop.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
             <a href="/contact" class="btn btn--primary">
-              Request an engagement conversation <span class="btn__arrow">→</span>
+              Request an engagement conversation <span class="btn__arrow"
+                >→</span
+              >
             </a>
           </div>
         </div>
 
         <ul class="engage__list">
-          <li><a href="#"><span>Submit a brief (RFP / EOI)</span><span>→</span></a></li>
-          <li><a href="#"><span>Book a 30-minute call with Sky</span><span>→</span></a></li>
-          <li><a href="#"><span>Request a capability statement</span><span>→</span></a></li>
-          <li><a href="#"><span>Speaking &amp; advisory enquiries</span><span>→</span></a></li>
-          <li><a href="#"><span>Government panel &amp; supplier listing</span><span>→</span></a></li>
+          <li>
+            <a href="/contact?topic=brief"
+              ><span>Submit a brief (RFP / EOI)</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=call"
+              ><span>Book a 30-minute call with Sky</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=capability"
+              ><span>Request a capability statement</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=speaking"
+              ><span>Speaking &amp; advisory enquiries</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=panel"
+              ><span>Government panel &amp; supplier listing</span><span>→</span
+              ></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -367,15 +505,17 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl);
     (entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
-          e.target.classList.add('in');
+          e.target.classList.add("in");
           io.unobserve(e.target);
         }
       });
     },
     { threshold: 0.12 },
   );
-  document.querySelectorAll('.cap, .think-card, .product, .case__metrics > div').forEach((el) => {
-    el.classList.add('reveal');
-    io.observe(el);
-  });
+  document
+    .querySelectorAll(".cap, .think-card, .product, .case__metrics > div")
+    .forEach((el) => {
+      el.classList.add("reveal");
+      io.observe(el);
+    });
 </script>

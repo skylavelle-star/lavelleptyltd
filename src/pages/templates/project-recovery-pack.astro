@@ -1,44 +1,90 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PackPage from '../../components/PackPage.astro';
-import { products } from '../../config/site';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PackPage from "../../components/PackPage.astro";
+import { products } from "../../config/site";
 
 const pack = products.projectRecoveryPack;
 const checkoutUrl = pack.checkoutUrl || undefined;
 
 const audience = [
-  'Senior project managers who have taken over a stalled or failing program',
-  'Program managers who need to present an honest recovery assessment to their executive',
-  'PMO leads conducting a program health review',
-  'External reviewers asked to assess a troubled technology program',
+  "Senior project managers who have taken over a stalled or failing program",
+  "Program managers who need to present an honest recovery assessment to their executive",
+  "PMO leads conducting a program health review",
+  "External reviewers asked to assess a troubled technology program",
 ];
 
 const helpsWith = [
-  'Programs do not fail suddenly. They accumulate governance debt, missed commitments and eroded stakeholder confidence over months. By the time a program is formally in trouble, the underlying causes are usually several months old.',
-  'This pack gives you the structure to do an honest diagnostic, communicate the findings clearly, and present a recovery roadmap that a sceptical executive or steering committee will accept.',
+  "Programs do not fail suddenly. They accumulate governance debt, missed commitments and eroded stakeholder confidence over months. By the time a program is formally in trouble, the underlying causes are usually several months old.",
+  "This pack gives you the structure to do an honest diagnostic, communicate the findings clearly, and present a recovery roadmap that a sceptical executive or steering committee will accept.",
 ];
 
 const included = [
-  { title: 'Project Health Diagnostic', desc: 'A structured assessment covering delivery confidence, governance health, stakeholder alignment, financial position and vendor performance.' },
-  { title: 'Recovery Assessment Workbook', desc: 'A working document for recording findings, evidence and preliminary recommendations during the diagnostic phase.' },
-  { title: 'Stakeholder Reset Plan', desc: 'Templates and guidance for resetting stakeholder expectations with precision and without destroying confidence.' },
-  { title: 'Executive Reset Briefing', desc: 'A template for the first steering committee meeting after a recovery intervention. Covers current state, recovery approach and decisions required.' },
-  { title: 'Re-Baselined Delivery Roadmap', desc: 'A structured template for presenting a recovery plan with credible milestones, dependencies and success criteria.' },
-  { title: 'Vendor Remediation Plan', desc: 'A structured approach to documenting vendor performance issues and the agreed remediation actions.' },
-  { title: 'Risk Re-Baselining Workbook', desc: 'A workbook for rebuilding the risk register from scratch after a recovery assessment.' },
-  { title: '30 / 60 / 90 Day Recovery Plan', desc: 'A structured planning template for the immediate, short-term and medium-term recovery phases.' },
-  { title: 'Steering Committee Recovery Pack', desc: 'A complete reporting reset for the committee, including revised status template and updated escalation thresholds.' },
+  {
+    title: "Project Health Diagnostic",
+    desc: "A structured assessment covering delivery confidence, governance health, stakeholder alignment, financial position and vendor performance.",
+  },
+  {
+    title: "Recovery Assessment Workbook",
+    desc: "A working document for recording findings, evidence and preliminary recommendations during the diagnostic phase.",
+  },
+  {
+    title: "Stakeholder Reset Plan",
+    desc: "Templates and guidance for resetting stakeholder expectations with precision and without destroying confidence.",
+  },
+  {
+    title: "Executive Reset Briefing",
+    desc: "A template for the first steering committee meeting after a recovery intervention. Covers current state, recovery approach and decisions required.",
+  },
+  {
+    title: "Re-Baselined Delivery Roadmap",
+    desc: "A structured template for presenting a recovery plan with credible milestones, dependencies and success criteria.",
+  },
+  {
+    title: "Vendor Remediation Plan",
+    desc: "A structured approach to documenting vendor performance issues and the agreed remediation actions.",
+  },
+  {
+    title: "Risk Re-Baselining Workbook",
+    desc: "A workbook for rebuilding the risk register from scratch after a recovery assessment.",
+  },
+  {
+    title: "30 / 60 / 90 Day Recovery Plan",
+    desc: "A structured planning template for the immediate, short-term and medium-term recovery phases.",
+  },
+  {
+    title: "Steering Committee Recovery Pack",
+    desc: "A complete reporting reset for the committee, including revised status template and updated escalation thresholds.",
+  },
 ];
 
-const howToUse = 'Start with the health diagnostic. Work through each dimension, document the findings honestly, and use the output to prepare the stakeholder reset plan. Present the reset plan before the recovery roadmap. Do not present the roadmap until stakeholders have a shared understanding of the current state.';
+const howToUse =
+  "Start with the health diagnostic. Work through each dimension, document the findings honestly, and use the output to prepare the stakeholder reset plan. Present the reset plan before the recovery roadmap. Do not present the roadmap until stakeholders have a shared understanding of the current state.";
 
 const faqs = [
-  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-  { q: 'Do I use all 9 documents at once?', a: 'No. Start with the health diagnostic and recovery assessment workbook. The remaining documents are deployed progressively as you move through the stakeholder reset, replanning and governance stages.' },
-  { q: 'Is this for a first-time recovery manager?', a: 'It is designed for experienced project managers who understand program governance. The pack provides structure and artefacts, not a substitute for delivery experience.' },
-  { q: 'Can I use it for a non-technology program?', a: 'Yes. The pack uses delivery-neutral language and works across technology, business change, infrastructure and regulatory programs.' },
-  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-  { q: 'What if I need expert support during a recovery?', a: 'Lavelle Pty Ltd provides project recovery consulting and senior delivery advisory. See the consulting page or contact us directly.' },
+  {
+    q: "What format are the templates in?",
+    a: "Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.",
+  },
+  {
+    q: "Do I use all 9 documents at once?",
+    a: "No. Start with the health diagnostic and recovery assessment workbook. The remaining documents are deployed progressively as you move through the stakeholder reset, replanning and governance stages.",
+  },
+  {
+    q: "Is this for a first-time recovery manager?",
+    a: "It is designed for experienced project managers who understand program governance. The pack provides structure and artefacts, not a substitute for delivery experience.",
+  },
+  {
+    q: "Can I use it for a non-technology program?",
+    a: "Yes. The pack uses delivery-neutral language and works across technology, business change, infrastructure and regulatory programs.",
+  },
+  {
+    q: "Can I share this with my team?",
+    a: "Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.",
+  },
+  {
+    q: "What if I need expert support during a recovery?",
+    a: "Lavelle Pty Ltd provides project recovery consulting and senior delivery advisory. See the consulting page or contact us directly.",
+  },
 ];
 ---
 
@@ -46,16 +92,23 @@ const faqs = [
   title="Project Recovery Pack — Lavelle Pty Ltd"
   description="A practical template pack for project managers and delivery leads who need to regain control of a project, clarify the recovery path and give sponsors confidence in the plan."
 >
-  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {
+    checkoutUrl && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
 
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
-        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Project Recovery Pack</span>
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
+        <span>Project Recovery Pack</span>
       </div>
       <h1>Project Recovery Pack. <em>For programs in trouble.</em></h1>
       <p class="subhero__lead">
-        A practical template pack for project managers and delivery leads who need to regain control of a project, clarify the recovery path and give sponsors confidence in the plan.
+        A practical template pack for project managers and delivery leads who
+        need to regain control of a project, clarify the recovery path and give
+        sponsors confidence in the plan.
       </p>
     </div>
   </section>
@@ -72,10 +125,10 @@ const faqs = [
     relatedConsultingHref="/consulting#recovery"
     relatedConsultingLabel="View recovery consulting"
     extraSidecard={{
-      heading: 'Start with the free checklist',
-      text: 'The free Project Recovery Checklist is a good starting point before committing to the full pack.',
-      href: '/free-tools/project-recovery-checklist',
-      cta: 'View free checklist',
+      heading: "Start with the free checklist",
+      text: "The free Project Recovery Checklist is a good starting point before committing to the full pack.",
+      href: "/free-tools/project-recovery-checklist",
+      cta: "View free checklist",
     }}
   />
 </BaseLayout>

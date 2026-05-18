@@ -1,19 +1,29 @@
 {
   "redirects": [
     { "source": "/articles", "destination": "/thinking", "permanent": true },
-    { "source": "/articles/:slug*", "destination": "/thinking/:slug*", "permanent": true }
+    {
+      "source": "/articles/:slug*",
+      "destination": "/thinking/:slug*",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|woff|woff2))",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/_astro/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
@@ -21,8 +31,14 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     }
   ]

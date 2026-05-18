@@ -1,16 +1,16 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
-const articles = (await getCollection('thinking')).sort(
+const articles = (await getCollection("thinking")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-AU', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
+  date.toLocaleDateString("en-AU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 ---
 
@@ -26,7 +26,8 @@ const formatDate = (date: Date) =>
       </div>
       <h1>Thinking. <em>Field notes from delivery.</em></h1>
       <p class="subhero__lead">
-        Practical guidance on project delivery, governance, procurement and the senior delivery work that gets enterprise programs across the line.
+        Practical guidance on project delivery, governance, procurement and the
+        senior delivery work that gets enterprise programs across the line.
       </p>
     </div>
   </section>
@@ -34,22 +35,28 @@ const formatDate = (date: Date) =>
   <section>
     <div class="wrap">
       <div class="article-list">
-        {articles.map((article) => (
-          <article class="article-list__item">
-            <div class="article-list__meta">
-              <span class="article-list__category">{article.data.category}</span>
-              <span aria-hidden="true">·</span>
-              <time datetime={article.data.pubDate.toISOString()}>{formatDate(article.data.pubDate)}</time>
-            </div>
-            <h2 class="article-list__title">
-              <a href={`/thinking/${article.id}`}>{article.data.title}</a>
-            </h2>
-            <p class="article-list__desc">{article.data.description}</p>
-            <a href={`/thinking/${article.id}`} class="article-list__link">
-              Read it <span class="btn__arrow">→</span>
-            </a>
-          </article>
-        ))}
+        {
+          articles.map((article) => (
+            <article class="article-list__item">
+              <div class="article-list__meta">
+                <span class="article-list__category">
+                  {article.data.category}
+                </span>
+                <span aria-hidden="true">·</span>
+                <time datetime={article.data.pubDate.toISOString()}>
+                  {formatDate(article.data.pubDate)}
+                </time>
+              </div>
+              <h2 class="article-list__title">
+                <a href={`/thinking/${article.id}`}>{article.data.title}</a>
+              </h2>
+              <p class="article-list__desc">{article.data.description}</p>
+              <a href={`/thinking/${article.id}`} class="article-list__link">
+                Read it <span class="btn__arrow">→</span>
+              </a>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -59,12 +66,18 @@ const formatDate = (date: Date) =>
       <div class="engage__grid">
         <div>
           <div class="eyebrow">Engage Lavelle</div>
-          <h2 style="margin-top:1.25rem;">Need help with a <em>specific situation?</em></h2>
+          <h2 style="margin-top:1.25rem;">
+            Need help with a <em>specific situation?</em>
+          </h2>
           <p class="lead" style="margin-top:1.5rem;">
-            For consulting, contract project management or delivery advisory enquiries, use the contact form to describe your situation and requirements.
+            For consulting, contract project management or delivery advisory
+            enquiries, use the contact form to describe your situation and
+            requirements.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
-            <a href="/contact" class="btn btn--primary">Send an enquiry <span class="btn__arrow">→</span></a>
+            <a href="/contact" class="btn btn--primary"
+              >Send an enquiry <span class="btn__arrow">→</span></a
+            >
           </div>
         </div>
       </div>
@@ -105,7 +118,7 @@ const formatDate = (date: Date) =>
     font-weight: 500;
   }
   .article-list__title {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 500;
     line-height: 1.1;

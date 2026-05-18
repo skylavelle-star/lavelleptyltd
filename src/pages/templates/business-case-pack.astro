@@ -1,42 +1,82 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PackPage from '../../components/PackPage.astro';
-import { products } from '../../config/site';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PackPage from "../../components/PackPage.astro";
+import { products } from "../../config/site";
 
 const pack = products.businessCasePack;
 const checkoutUrl = pack.checkoutUrl || undefined;
 
 const audience = [
-  'Senior project managers preparing a business case for a technology investment',
-  'Program managers building the investment proposal for delegate approval',
-  'Technology leaders who need to present a rigorous options analysis to executives',
-  'Business analysts authoring or reviewing a formal business case document',
+  "Senior project managers preparing a business case for a technology investment",
+  "Program managers building the investment proposal for delegate approval",
+  "Technology leaders who need to present a rigorous options analysis to executives",
+  "Business analysts authoring or reviewing a formal business case document",
 ];
 
 const helpsWith = [
-  'Investment proposals fail delegate approval when the problem is poorly defined, the options analysis is weak, or the financial model cannot withstand scrutiny. This pack provides a structured approach to building a business case that can survive a rigorous review.',
-  'Each section of the template is structured to address the questions that approval authorities, finance reviewers and governance bodies will ask.',
+  "Investment proposals fail delegate approval when the problem is poorly defined, the options analysis is weak, or the financial model cannot withstand scrutiny. This pack provides a structured approach to building a business case that can survive a rigorous review.",
+  "Each section of the template is structured to address the questions that approval authorities, finance reviewers and governance bodies will ask.",
 ];
 
 const included = [
-  { title: 'Business Case Template', desc: 'A structured template covering executive summary, problem statement, options analysis, recommended option, financial model, benefits, risks and governance.' },
-  { title: 'Executive Summary Guide', desc: 'Guidance and examples for writing an executive summary that clearly states the ask, the rationale and the recommendation.' },
-  { title: 'Options Analysis Framework', desc: 'A structured approach to defining, assessing and comparing investment options, including the status quo option.' },
-  { title: 'Financial Model Structure', desc: 'A template for presenting costs, benefits and investment returns in a format suitable for delegate approval and finance review.' },
-  { title: 'Benefits Register', desc: 'A structured register for mapping expected benefits to delivery activities and identifying who will be accountable for realisation.' },
-  { title: 'Risk Register', desc: 'A risk register template structured for inclusion in the business case approval documentation.' },
-  { title: 'Approval Checklist', desc: 'A checklist for reviewing business case readiness against common delegate approval criteria.' },
+  {
+    title: "Business Case Template",
+    desc: "A structured template covering executive summary, problem statement, options analysis, recommended option, financial model, benefits, risks and governance.",
+  },
+  {
+    title: "Executive Summary Guide",
+    desc: "Guidance and examples for writing an executive summary that clearly states the ask, the rationale and the recommendation.",
+  },
+  {
+    title: "Options Analysis Framework",
+    desc: "A structured approach to defining, assessing and comparing investment options, including the status quo option.",
+  },
+  {
+    title: "Financial Model Structure",
+    desc: "A template for presenting costs, benefits and investment returns in a format suitable for delegate approval and finance review.",
+  },
+  {
+    title: "Benefits Register",
+    desc: "A structured register for mapping expected benefits to delivery activities and identifying who will be accountable for realisation.",
+  },
+  {
+    title: "Risk Register",
+    desc: "A risk register template structured for inclusion in the business case approval documentation.",
+  },
+  {
+    title: "Approval Checklist",
+    desc: "A checklist for reviewing business case readiness against common delegate approval criteria.",
+  },
 ];
 
-const howToUse = 'Start with the problem statement and options analysis before building the financial model. The most common mistake is to begin with the preferred option already decided and work backwards. This pack is designed to support a genuine options analysis that will withstand scrutiny from finance teams and approval authorities.';
+const howToUse =
+  "Start with the problem statement and options analysis before building the financial model. The most common mistake is to begin with the preferred option already decided and work backwards. This pack is designed to support a genuine options analysis that will withstand scrutiny from finance teams and approval authorities.";
 
 const faqs = [
-  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-  { q: 'Is this suitable for a formal government approval submission?', a: 'Yes. The structure follows common government approval frameworks — problem statement, options analysis, financial model, risk, benefits and recommendation. It is not jurisdiction-specific but adapts well to most government business case requirements.' },
-  { q: 'Does the financial model cover costs and benefits?', a: 'Yes. The pack includes a benefits register, a cost model and a high-level financial summary covering NPV, payback and sensitivity. The financial model is a practical planning tool, not a certified financial statement.' },
-  { q: 'How detailed is the options analysis?', a: "The pack supports a full options analysis across financial, risk, feasibility and strategic fit dimensions. The evaluation criteria and weightings are editable to reflect your organisation's priorities." },
-  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-  { q: 'What if I need advisory support building the case?', a: 'Lavelle Pty Ltd provides business case development consulting. See the consulting page or contact us directly.' },
+  {
+    q: "What format are the templates in?",
+    a: "Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.",
+  },
+  {
+    q: "Is this suitable for a formal government approval submission?",
+    a: "Yes. The structure follows common government approval frameworks — problem statement, options analysis, financial model, risk, benefits and recommendation. It is not jurisdiction-specific but adapts well to most government business case requirements.",
+  },
+  {
+    q: "Does the financial model cover costs and benefits?",
+    a: "Yes. The pack includes a benefits register, a cost model and a high-level financial summary covering NPV, payback and sensitivity. The financial model is a practical planning tool, not a certified financial statement.",
+  },
+  {
+    q: "How detailed is the options analysis?",
+    a: "The pack supports a full options analysis across financial, risk, feasibility and strategic fit dimensions. The evaluation criteria and weightings are editable to reflect your organisation's priorities.",
+  },
+  {
+    q: "Can I share this with my team?",
+    a: "Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.",
+  },
+  {
+    q: "What if I need advisory support building the case?",
+    a: "Lavelle Pty Ltd provides business case development consulting. See the consulting page or contact us directly.",
+  },
 ];
 ---
 
@@ -44,16 +84,23 @@ const faqs = [
   title="Business Case Pack — Lavelle Pty Ltd"
   description="A structured business case template pack for defining the case for change, investment rationale, options, costs, risks, benefits, dependencies and approval pathways."
 >
-  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {
+    checkoutUrl && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
 
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
-        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Business Case Pack</span>
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
+        <span>Business Case Pack</span>
       </div>
       <h1>Business Case Pack. <em>Built to survive scrutiny.</em></h1>
       <p class="subhero__lead">
-        A structured business case template pack for defining the case for change, investment rationale, options, costs, risks, benefits, dependencies and approval pathways.
+        A structured business case template pack for defining the case for
+        change, investment rationale, options, costs, risks, benefits,
+        dependencies and approval pathways.
       </p>
     </div>
   </section>

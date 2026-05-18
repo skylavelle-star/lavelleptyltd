@@ -1,43 +1,86 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PackPage from '../../components/PackPage.astro';
-import { products } from '../../config/site';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PackPage from "../../components/PackPage.astro";
+import { products } from "../../config/site";
 
 const pack = products.steeringCommitteePack;
 const checkoutUrl = pack.checkoutUrl || undefined;
 
 const audience = [
-  'Program managers who need to reset or establish steering committee reporting',
-  'Project managers whose current reports are not producing governance decisions',
-  'PMO leads standardising reporting across a portfolio of projects',
-  'Sponsors and committee chairs who need better information to govern effectively',
+  "Program managers who need to reset or establish steering committee reporting",
+  "Project managers whose current reports are not producing governance decisions",
+  "PMO leads standardising reporting across a portfolio of projects",
+  "Sponsors and committee chairs who need better information to govern effectively",
 ];
 
 const helpsWith = [
-  'Steering committees govern through information. When that information is too long, poorly structured or avoids difficult truths, the committee cannot make the decisions the program needs.',
-  'This pack provides a reporting framework that surfaces risks, escalations and decisions clearly, and structures committee papers so that meetings produce governance outcomes rather than status updates.',
+  "Steering committees govern through information. When that information is too long, poorly structured or avoids difficult truths, the committee cannot make the decisions the program needs.",
+  "This pack provides a reporting framework that surfaces risks, escalations and decisions clearly, and structures committee papers so that meetings produce governance outcomes rather than status updates.",
 ];
 
 const included = [
-  { title: 'Status Report Template', desc: 'A structured status report template covering RAG ratings, progress, risks, issues, actions, financials and escalation items.' },
-  { title: 'Executive Dashboard', desc: 'A one-page executive summary for senior audiences who need a clear view of program health at a glance.' },
-  { title: 'RAID Register', desc: 'A combined risks, assumptions, issues and dependencies register designed for steering committee visibility.' },
-  { title: 'Decision Register', desc: 'A structured log of committee decisions, the authority that made them and the date, with space for implementation tracking.' },
-  { title: 'Escalation Paper Template', desc: 'A formal template for escalating a risk or issue to the steering committee for a decision or direction.' },
-  { title: 'RAG Rating Guide', desc: 'A calibrated guide for defining Red, Amber and Green thresholds consistently across the program.' },
-  { title: 'Committee Agenda Template', desc: 'A structured agenda that ensures meetings address governance items and produce decisions.' },
-  { title: 'Action Register', desc: 'A register for tracking committee-level actions with clear owners, due dates and status.' },
+  {
+    title: "Status Report Template",
+    desc: "A structured status report template covering RAG ratings, progress, risks, issues, actions, financials and escalation items.",
+  },
+  {
+    title: "Executive Dashboard",
+    desc: "A one-page executive summary for senior audiences who need a clear view of program health at a glance.",
+  },
+  {
+    title: "RAID Register",
+    desc: "A combined risks, assumptions, issues and dependencies register designed for steering committee visibility.",
+  },
+  {
+    title: "Decision Register",
+    desc: "A structured log of committee decisions, the authority that made them and the date, with space for implementation tracking.",
+  },
+  {
+    title: "Escalation Paper Template",
+    desc: "A formal template for escalating a risk or issue to the steering committee for a decision or direction.",
+  },
+  {
+    title: "RAG Rating Guide",
+    desc: "A calibrated guide for defining Red, Amber and Green thresholds consistently across the program.",
+  },
+  {
+    title: "Committee Agenda Template",
+    desc: "A structured agenda that ensures meetings address governance items and produce decisions.",
+  },
+  {
+    title: "Action Register",
+    desc: "A register for tracking committee-level actions with clear owners, due dates and status.",
+  },
 ];
 
-const howToUse = 'Start with the RAG rating guide and agree the thresholds with the committee before the first report is issued. Inconsistent RAG ratings erode trust faster than almost anything else. Once the calibration is agreed, use the status report template to establish a reporting rhythm that the committee can rely on.';
+const howToUse =
+  "Start with the RAG rating guide and agree the thresholds with the committee before the first report is issued. Inconsistent RAG ratings erode trust faster than almost anything else. Once the calibration is agreed, use the status report template to establish a reporting rhythm that the committee can rely on.";
 
 const faqs = [
-  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-  { q: 'How long does it take to get reporting up and running?', a: 'Most project managers adapt the status report template and agree RAG thresholds within a week of first use. The charter and agenda templates can typically be in place before the first committee meeting.' },
-  { q: 'Is this suitable for a government or enterprise environment?', a: 'Yes. The templates use neutral language and are designed for senior executives, sponsors and formal governance structures. They do not assume any particular methodology.' },
-  { q: 'Does the pack include guidance on running committee meetings?', a: 'The pack includes a structured agenda template and an approach to running decision-focused meetings. It gives you the right artefacts — it is not a facilitation course.' },
-  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-  { q: 'What if I need support implementing this?', a: 'Lavelle Pty Ltd provides governance advisory and consulting support. See the consulting page or contact us directly.' },
+  {
+    q: "What format are the templates in?",
+    a: "Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.",
+  },
+  {
+    q: "How long does it take to get reporting up and running?",
+    a: "Most project managers adapt the status report template and agree RAG thresholds within a week of first use. The charter and agenda templates can typically be in place before the first committee meeting.",
+  },
+  {
+    q: "Is this suitable for a government or enterprise environment?",
+    a: "Yes. The templates use neutral language and are designed for senior executives, sponsors and formal governance structures. They do not assume any particular methodology.",
+  },
+  {
+    q: "Does the pack include guidance on running committee meetings?",
+    a: "The pack includes a structured agenda template and an approach to running decision-focused meetings. It gives you the right artefacts — it is not a facilitation course.",
+  },
+  {
+    q: "Can I share this with my team?",
+    a: "Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.",
+  },
+  {
+    q: "What if I need support implementing this?",
+    a: "Lavelle Pty Ltd provides governance advisory and consulting support. See the consulting page or contact us directly.",
+  },
 ];
 ---
 
@@ -45,16 +88,25 @@ const faqs = [
   title="Steering Committee Pack — Lavelle Pty Ltd"
   description="A governance reporting pack for project managers who need clearer steering committee papers, stronger escalation, better decision records and more useful executive reporting."
 >
-  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {
+    checkoutUrl && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
 
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
-        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Steering Committee Pack</span>
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
+        <span>Steering Committee Pack</span>
       </div>
-      <h1>Steering Committee Pack. <em>Governance reporting that works.</em></h1>
+      <h1>
+        Steering Committee Pack. <em>Governance reporting that works.</em>
+      </h1>
       <p class="subhero__lead">
-        A governance reporting pack for project managers who need clearer steering committee papers, stronger escalation, better decision records and more useful executive reporting.
+        A governance reporting pack for project managers who need clearer
+        steering committee papers, stronger escalation, better decision records
+        and more useful executive reporting.
       </p>
     </div>
   </section>

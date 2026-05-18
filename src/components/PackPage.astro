@@ -41,27 +41,31 @@ const {
   <div class="wrap">
     <div class="split">
       <div class="prose">
-        {checkoutUrl ? (
-          <div class="pack-price-row">
-            <div>
-              <span class="pack-price">{price}</span>
-              <span class="pack-price-sub">AUD</span>
+        {
+          checkoutUrl ? (
+            <div class="pack-price-row">
+              <div>
+                <span class="pack-price">${price}</span>
+                <span class="pack-price-sub">single user · AUD</span>
+              </div>
+              <a
+                href={checkoutUrl}
+                class="lemonsqueezy-button btn btn--primary"
+                data-ga-event="product_buy_click"
+                data-ga-label={gaLabel}
+              >
+                Buy now <span class="btn__arrow">→</span>
+              </a>
             </div>
-            <a
-              href={checkoutUrl}
-              class="lemonsqueezy-button btn btn--primary"
-              data-ga-event="product_buy_click"
-              data-ga-label={gaLabel}
-            >
-              Buy now <span class="btn__arrow">→</span>
-            </a>
-          </div>
-        ) : (
-          <div class="pack-coming">
-            Coming soon —
-            <a href="/contact" class="pack-coming__link">register your interest</a>
-          </div>
-        )}
+          ) : (
+            <div class="pack-coming">
+              Coming soon —
+              <a href="/contact" class="pack-coming__link">
+                register your interest
+              </a>
+            </div>
+          )
+        }
 
         <h2>Who it is for</h2>
         <ul>
@@ -73,12 +77,14 @@ const {
 
         <h2>What is included</h2>
         <div class="included-grid">
-          {included.map((item) => (
-            <div class="included">
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          ))}
+          {
+            included.map((item) => (
+              <div class="included">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))
+          }
         </div>
 
         <h2>How to use it</h2>
@@ -86,86 +92,100 @@ const {
 
         <h2>Frequently asked questions</h2>
         <div class="faq-list">
-          {faqs.map((item) => (
-            <details class="faq">
-              <summary>{item.q}</summary>
-              <p>{item.a}</p>
-            </details>
-          ))}
+          {
+            faqs.map((item) => (
+              <details class="faq">
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))
+          }
         </div>
 
         <h2>Format and delivery</h2>
         <p>
-          Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All documents are fully editable. Delivered via Lemon Squeezy after purchase.
+          Microsoft Word templates (.docx) and Excel workbooks (.xlsx). All
+          documents are fully editable. Delivered via Lemon Squeezy after
+          purchase.
         </p>
 
-        {checkoutUrl && (
-          <div style="margin-top:2.5rem;">
-            <a
-              href={checkoutUrl}
-              class="lemonsqueezy-button btn btn--primary"
-              data-ga-event="product_buy_click"
-              data-ga-label={gaLabel}
-            >
-              Buy now <span class="btn__arrow">→</span>
-            </a>
-          </div>
-        )}
+        {
+          checkoutUrl && (
+            <div style="margin-top:2.5rem;">
+              <a
+                href={checkoutUrl}
+                class="lemonsqueezy-button btn btn--primary"
+                data-ga-event="product_buy_click"
+                data-ga-label={gaLabel}
+              >
+                Buy now <span class="btn__arrow">→</span>
+              </a>
+            </div>
+          )
+        }
       </div>
 
       <aside class="sidecard">
-        {checkoutUrl ? (
-          <>
-            <h4>One-time purchase</h4>
-            <div class="pack-price" style="margin-bottom:1rem;">{price} <span class="pack-price-sub">AUD</span></div>
-            <a
-              href={checkoutUrl}
-              class="lemonsqueezy-button btn btn--primary"
-              data-ga-event="product_buy_click"
-              data-ga-label={gaLabel}
-              style="margin-bottom:1.5rem;"
-            >
-              Buy now <span class="btn__arrow">→</span>
-            </a>
-            <ul>
-              <li>Microsoft Word + Excel format</li>
-              <li>Fully editable templates</li>
-              <li>Australian English</li>
-              <li>Delivered via Lemon Squeezy</li>
-            </ul>
-          </>
-        ) : (
-          <>
-            <h4>Coming soon</h4>
-            <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;">
-              Register your interest to be notified on launch.
-            </p>
-            <a href="/contact" class="btn btn--primary">
-              Register interest <span class="btn__arrow">→</span>
-            </a>
-          </>
-        )}
+        {
+          checkoutUrl ? (
+            <>
+              <h4>One-time purchase</h4>
+              <div class="pack-price" style="margin-bottom:1rem;">
+                ${price} <span class="pack-price-sub">single user · AUD</span>
+              </div>
+              <a
+                href={checkoutUrl}
+                class="lemonsqueezy-button btn btn--primary"
+                data-ga-event="product_buy_click"
+                data-ga-label={gaLabel}
+                style="margin-bottom:1.5rem;"
+              >
+                Buy now <span class="btn__arrow">→</span>
+              </a>
+              <ul>
+                <li>Microsoft Word + Excel format</li>
+                <li>Fully editable templates</li>
+                <li>Australian English</li>
+                <li>Delivered via Lemon Squeezy</li>
+              </ul>
+            </>
+          ) : (
+            <>
+              <h4>Coming soon</h4>
+              <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;">
+                Register your interest to be notified on launch.
+              </p>
+              <a href="/contact" class="btn btn--primary">
+                Register interest <span class="btn__arrow">→</span>
+              </a>
+            </>
+          )
+        }
 
-        {relatedConsultingHref && relatedConsultingLabel && (
-          <>
-            <h4 style="margin-top:2rem;">Advisory option</h4>
-            <a href={relatedConsultingHref} class="cap__link">
-              {relatedConsultingLabel} <span>→</span>
-            </a>
-          </>
-        )}
+        {
+          relatedConsultingHref && relatedConsultingLabel && (
+            <>
+              <h4 style="margin-top:2rem;">Advisory option</h4>
+              <a href={relatedConsultingHref} class="cap__link">
+                {relatedConsultingLabel} <span>→</span>
+              </a>
+            </>
+          )
+        }
 
-        {extraSidecard && (
-          <>
-            <h4 style="margin-top:2rem;">{extraSidecard.heading}</h4>
-            <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1rem;">
-              {extraSidecard.text}
-            </p>
-            <a href={extraSidecard.href} class="cap__link">
-              {extraSidecard.cta} <span>→</span>
-            </a>
-          </>
-        )}
+        {
+          extraSidecard && (
+            <>
+              <h4 style="margin-top:2rem;">{extraSidecard.heading}</h4>
+              <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1rem;">
+                {extraSidecard.text}
+              </p>
+              <a href={extraSidecard.href} class="cap__link">
+                {extraSidecard.cta} <span>→</span>
+              </a>
+            </>
+          )
+        }
       </aside>
     </div>
   </div>
@@ -182,7 +202,7 @@ const {
     margin-bottom: 1rem;
   }
   .pack-price {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 2rem;
     font-weight: 500;
     color: var(--ink);
@@ -224,7 +244,7 @@ const {
     padding: 1rem 1.25rem;
   }
   .included h3 {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 1.05rem;
     font-weight: 500;
     color: var(--ink);
@@ -249,7 +269,7 @@ const {
     padding: 1rem 1.25rem;
   }
   .faq summary {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 1.05rem;
     font-weight: 500;
     color: var(--ink);
@@ -260,7 +280,7 @@ const {
     display: none;
   }
   .faq summary::before {
-    content: '+';
+    content: "+";
     display: inline-block;
     color: var(--ochre);
     font-weight: 400;
@@ -268,7 +288,7 @@ const {
     transition: transform 0.2s;
   }
   .faq[open] summary::before {
-    content: '−';
+    content: "−";
   }
   .faq p {
     font-size: var(--body-sm);

@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { products } from '../config/site';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { products, site } from "../config/site";
 
 const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
 const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
@@ -8,7 +8,9 @@ const businessCaseUrl = products.businessCasePack.checkoutUrl || undefined;
 const procurementUrl = products.procurementPack.checkoutUrl || undefined;
 const bundleUrl = products.bundlePack.checkoutUrl || undefined;
 
-const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || procurementUrl || bundleUrl);
+const anyCheckout = Boolean(
+  steeringUrl || recoveryUrl || businessCaseUrl || procurementUrl || bundleUrl,
+);
 ---
 
 <BaseLayout
@@ -16,7 +18,11 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
   description="Battle-tested PMO product packs, templates and free tools from Lavelle Pty Ltd. Steering Committee Pack, Project Recovery Pack, Business Case Pack and more."
   currentNav="pmo-resources"
 >
-  {anyCheckout && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {
+    anyCheckout && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
   <!-- SUB-PAGE HERO -->
   <section class="subhero">
     <div class="wrap">
@@ -25,74 +31,173 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
       </div>
       <h1>The PMO artefacts we use on engagement. <em>Now packaged.</em></h1>
       <p class="subhero__lead">
-        Project managers, PMO leads and program directors don't need another framework — they need a steering committee pack that's ready for Monday. These are the exact artefact sets Lavelle deploys on engagement, structured for download and immediate use. Built by senior practitioners, tested on real programs, written in language an executive will actually read.
+        Project managers, PMO leads and program directors don't need another
+        framework — they need a steering committee pack that's ready for Monday.
+        These are the exact artefact sets Lavelle deploys on engagement,
+        structured for download and immediate use. Built by senior
+        practitioners, tested on real programs, written in language an executive
+        will actually read.
       </p>
       <div class="hero__ctas" style="margin-top:2.5rem;">
-        <a href="#packs" class="btn btn--primary">View the product packs <span class="btn__arrow">→</span></a>
-        <a href="#checklist" class="btn btn--ghost">Download the free checklist</a>
+        <a href="#packs" class="btn btn--primary"
+          >View the product packs <span class="btn__arrow">→</span></a
+        >
+        <a href="#checklist" class="btn btn--ghost"
+          >Download the free checklist</a
+        >
       </div>
     </div>
   </section>
 
   <!-- FREE TOOL -->
-  <section id="checklist" style="background:var(--paper); padding:clamp(3rem,6vw,5rem) 0;">
+  <section
+    id="checklist"
+    style="background:var(--paper); padding:clamp(3rem,6vw,5rem) 0;"
+  >
     <div class="wrap">
       <div class="checklist-grid">
         <div>
           <div class="eyebrow">Free · for delivery leads</div>
-          <h2 style="font-size:var(--display-md); margin:1.25rem 0 1rem; font-weight:500;">
+          <h2
+            style="font-size:var(--display-md); margin:1.25rem 0 1rem; font-weight:500;"
+          >
             The <em style="color:var(--ochre);">Project Recovery Checklist.</em>
           </h2>
           <p class="lead" style="margin-bottom:1.5rem;">
-            Twenty-three diagnostic questions we ask in the first forty-eight hours of any recovery engagement. Print it, take it into your next steering meeting, and you'll know within an hour where the real problems live — and which ones can wait.
+            Twenty-three diagnostic questions we ask in the first forty-eight
+            hours of any recovery engagement. Print it, take it into your next
+            steering meeting, and you'll know within an hour where the real
+            problems live — and which ones can wait.
           </p>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.6rem; margin-bottom:2rem;">
-            <li style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;">
-              <span style="position:absolute; left:0; color:var(--ochre); font-weight:700;">✓</span>23 diagnostic questions across 5 categories
+          <ul
+            style="list-style:none; display:flex; flex-direction:column; gap:0.6rem; margin-bottom:2rem;"
+          >
+            <li
+              style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;"
+            >
+              <span
+                style="position:absolute; left:0; color:var(--ochre); font-weight:700;"
+                >✓</span
+              >23 diagnostic questions across 5 categories
             </li>
-            <li style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;">
-              <span style="position:absolute; left:0; color:var(--ochre); font-weight:700;">✓</span>Scoring rubric &amp; severity matrix
+            <li
+              style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;"
+            >
+              <span
+                style="position:absolute; left:0; color:var(--ochre); font-weight:700;"
+                >✓</span
+              >Scoring rubric &amp; severity matrix
             </li>
-            <li style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;">
-              <span style="position:absolute; left:0; color:var(--ochre); font-weight:700;">✓</span>Stakeholder interview prompts
+            <li
+              style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;"
+            >
+              <span
+                style="position:absolute; left:0; color:var(--ochre); font-weight:700;"
+                >✓</span
+              >Stakeholder interview prompts
             </li>
-            <li style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;">
-              <span style="position:absolute; left:0; color:var(--ochre); font-weight:700;">✓</span>One-page summary template
+            <li
+              style="font-size:var(--body-sm); color:var(--ink-soft); padding-left:1.25rem; position:relative;"
+            >
+              <span
+                style="position:absolute; left:0; color:var(--ochre); font-weight:700;"
+                >✓</span
+              >One-page summary template
             </li>
           </ul>
         </div>
 
-        <form style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;">
-          <h3 style="font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500; margin-bottom:0.5rem;">
+        <form
+          id="checklist-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;"
+          novalidate
+        >
+          <input type="hidden" name="access_key" value={site.web3formsKey} />
+          <input
+            type="hidden"
+            name="subject"
+            value="Project Recovery Checklist request - lavelleptyltd.com.au"
+          />
+          <input
+            type="hidden"
+            name="from_name"
+            value="Lavelle Pty Ltd PMO Resources"
+          />
+          <input
+            type="checkbox"
+            name="botcheck"
+            style="display:none;"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <h3
+            style="font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500; margin-bottom:0.5rem;"
+          >
             Send it to me.
           </h3>
-          <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;">
-            No newsletter signup wall. We'll send the PDF and one email a fortnight with new field notes. Unsubscribe anytime.
+          <p
+            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
+          >
+            No newsletter signup wall. We'll send the PDF and one email a
+            fortnight with new field notes. Unsubscribe anytime.
           </p>
           <label
+            for="checklist-name"
             style="display:block; font-size:var(--micro); letter-spacing:0.15em; text-transform:uppercase; color:var(--sage); margin-bottom:0.5rem;"
           >
             First name
           </label>
           <input
+            id="checklist-name"
+            name="name"
             type="text"
+            required
+            autocomplete="given-name"
             placeholder="Your name"
             style="width:100%; padding:0.85rem 1rem; border:1px solid var(--rule); background:var(--paper); font-family:inherit; font-size:var(--body); margin-bottom:1.25rem;"
           />
           <label
+            for="checklist-email"
             style="display:block; font-size:var(--micro); letter-spacing:0.15em; text-transform:uppercase; color:var(--sage); margin-bottom:0.5rem;"
           >
             Work email
           </label>
           <input
+            id="checklist-email"
+            name="email"
             type="email"
+            required
+            autocomplete="email"
             placeholder="you@organisation.gov.au"
             style="width:100%; padding:0.85rem 1rem; border:1px solid var(--rule); background:var(--paper); font-family:inherit; font-size:var(--body); margin-bottom:1.5rem;"
           />
-          <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">
+          <button
+            id="checklist-submit"
+            type="submit"
+            class="btn btn--primary"
+            style="width:100%; justify-content:center;"
+          >
             Send me the checklist <span class="btn__arrow">→</span>
           </button>
         </form>
+        <div
+          id="checklist-success"
+          hidden
+          style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;"
+        >
+          <h3
+            style="font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500; margin-bottom:0.5rem;"
+          >
+            Thanks — it's on the way.
+          </h3>
+          <p style="font-size:var(--body-sm); color:var(--ink-soft);">
+            We'll email the Project Recovery Checklist to the address you
+            provided shortly. If it doesn't arrive within a few minutes, check
+            your spam folder or get in touch.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -108,7 +213,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           </h2>
         </div>
         <p class="lead">
-          Each pack is a self-contained artefact set for one decision-critical moment in delivery. Buy individually, or take the four-pack bundle and run your entire program governance from a single, coherent system.
+          Each pack is a self-contained artefact set for one decision-critical
+          moment in delivery. Buy individually, or take the four-pack bundle and
+          run your entire program governance from a single, coherent system.
         </p>
       </header>
 
@@ -117,10 +224,12 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           <span class="product__tag">Available now · v1.2</span>
           <h3 class="product__title">Steering Committee Pack</h3>
           <p class="product__desc">
-            A complete steering committee toolkit. Decision papers, status dashboards, escalation logs and meeting protocols, built to make the boardroom 30 minutes count.
+            A complete steering committee toolkit. Decision papers, status
+            dashboards, escalation logs and meeting protocols, built to make the
+            boardroom 30 minutes count.
           </p>
           <ul class="product__list">
-            <li>12 board-ready templates (.docx, .xlsx, .pptx)</li>
+            <li>8 board-ready templates (.docx, .xlsx, .pptx)</li>
             <li>Decision-paper writing guide</li>
             <li>Pre-read protocol &amp; agenda framework</li>
             <li>RAID escalation thresholds</li>
@@ -132,7 +241,13 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
               <div class="product__price">$147</div>
               <div class="product__price-sub">single user · AUD · GST inc.</div>
             </div>
-            <a href={steeringUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Steering Committee Pack">Buy now <span class="btn__arrow">→</span></a>
+            <a
+              href={steeringUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Steering Committee Pack"
+              >Buy now <span class="btn__arrow">→</span></a
+            >
           </div>
         </article>
 
@@ -140,7 +255,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           <span class="product__tag">Available now</span>
           <h3 class="product__title">Project Recovery Pack</h3>
           <p class="product__desc">
-            The full 30-day diagnostic and stabilisation playbook for project managers stepping into a red program. The exact cadence Lavelle uses on recovery engagement.
+            The full 30-day diagnostic and stabilisation playbook for project
+            managers stepping into a red program. The exact cadence Lavelle uses
+            on recovery engagement.
           </p>
           <ul class="product__list">
             <li>30-day recovery roadmap</li>
@@ -155,7 +272,13 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
               <div class="product__price">$297</div>
               <div class="product__price-sub">single user · AUD · GST inc.</div>
             </div>
-            <a href={recoveryUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Project Recovery Pack">Buy now <span class="btn__arrow">→</span></a>
+            <a
+              href={recoveryUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Project Recovery Pack"
+              >Buy now <span class="btn__arrow">→</span></a
+            >
           </div>
         </article>
 
@@ -163,7 +286,10 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           <span class="product__tag">Available now</span>
           <h3 class="product__title">Business Case Pack</h3>
           <p class="product__desc">
-            Treasury-grade and ICT business case templates and supporting models. Strategic, outline and full business case stages, with the benefits logic and risk articulation a board can actually interrogate.
+            Treasury-grade and ICT business case templates and supporting
+            models. Strategic, outline and full business case stages, with the
+            benefits logic and risk articulation a board can actually
+            interrogate.
           </p>
           <ul class="product__list">
             <li>Strategic, outline and full business case templates</li>
@@ -178,7 +304,13 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
               <div class="product__price">$247</div>
               <div class="product__price-sub">single user · AUD · GST inc.</div>
             </div>
-            <a href={businessCaseUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Business Case Pack">Buy now <span class="btn__arrow">→</span></a>
+            <a
+              href={businessCaseUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Business Case Pack"
+              >Buy now <span class="btn__arrow">→</span></a
+            >
           </div>
         </article>
 
@@ -186,7 +318,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           <span class="product__tag">Available now</span>
           <h3 class="product__title">Procurement Pack</h3>
           <p class="product__desc">
-            RFP design, evaluation governance and vendor onboarding artefacts. Built for procurement events where probity, capability assessment and speed have to coexist.
+            RFP design, evaluation governance and vendor onboarding artefacts.
+            Built for procurement events where probity, capability assessment
+            and speed have to coexist.
           </p>
           <ul class="product__list">
             <li>RFP &amp; EOI templates with evaluation criteria library</li>
@@ -200,7 +334,13 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
               <div class="product__price">$297</div>
               <div class="product__price-sub">single user · AUD · GST inc.</div>
             </div>
-            <a href={procurementUrl} class="lemonsqueezy-button btn btn--primary" data-ga-event="product_buy_click" data-ga-label="Procurement Pack">Buy now <span class="btn__arrow">→</span></a>
+            <a
+              href={procurementUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Procurement Pack"
+              >Buy now <span class="btn__arrow">→</span></a
+            >
           </div>
         </article>
       </div>
@@ -208,27 +348,55 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
       <!-- BUNDLE -->
       <div class="bundle">
         <div>
-          <div class="eyebrow" style="color:var(--ochre); border-color:var(--ochre);">Best value · all four packs</div>
-          <h3 style="font-family:'Fraunces',serif; font-size:2.25rem; font-weight:500; line-height:1.05; margin:1rem 0; color:var(--bone);">
-            The PMO Four-Pack.<br /><em style="color:var(--ochre); font-style:italic; font-weight:300;">Your entire delivery system, one bundle.</em>
+          <div
+            class="eyebrow"
+            style="color:var(--ochre); border-color:var(--ochre);"
+          >
+            Best value · all four packs
+          </div>
+          <h3
+            style="font-family:'Fraunces',serif; font-size:2.25rem; font-weight:500; line-height:1.05; margin:1rem 0; color:var(--bone);"
+          >
+            The PMO Four-Pack.<br /><em
+              style="color:var(--ochre); font-style:italic; font-weight:300;"
+              >Your entire delivery system, one bundle.</em
+            >
           </h3>
-          <p style="color:rgba(244,239,230,0.78); font-size:var(--body-lg); margin-bottom:1.5rem; max-width:50ch;">
-            All four packs — Steering Committee, Project Recovery, Business Case and Procurement — at a single bundle price. Save $191 over individual purchase.
+          <p
+            style="color:rgba(244,239,230,0.78); font-size:var(--body-lg); margin-bottom:1.5rem; max-width:50ch;"
+          >
+            All four packs — Steering Committee, Project Recovery, Business Case
+            and Procurement — at a single bundle price. Save $191 over
+            individual purchase.
           </p>
-          <ul style="list-style:none; color:rgba(244,239,230,0.78); font-size:var(--body-sm); display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.5rem;">
+          <ul
+            style="list-style:none; color:rgba(244,239,230,0.78); font-size:var(--body-sm); display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.5rem;"
+          >
             <li>· Lifetime access to current and future versions</li>
             <li>· Free template updates as standards evolve</li>
-            <li>· Enterprise licensing available (5-seat / 25-seat / unlimited)</li>
+            <li>
+              · Enterprise licensing available (5-seat / 25-seat / unlimited)
+            </li>
           </ul>
         </div>
         <div style="text-align:right;">
-          <div style="font-size:var(--micro); color:rgba(244,239,230,0.55); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.5rem;">
+          <div
+            style="font-size:var(--micro); color:rgba(244,239,230,0.55); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.5rem;"
+          >
             Was $988
           </div>
-          <div style="font-family:'Fraunces',serif; font-size:clamp(3rem,6vw,5rem); font-weight:300; color:var(--ochre); line-height:1; margin-bottom:1.5rem;">
+          <div
+            style="font-family:'Fraunces',serif; font-size:clamp(3rem,6vw,5rem); font-weight:300; color:var(--ochre); line-height:1; margin-bottom:1.5rem;"
+          >
             $797
           </div>
-          <a href={bundleUrl} class="lemonsqueezy-button btn btn--primary" style="background:var(--ochre); border-color:var(--ochre); color:var(--bone);" data-ga-event="product_buy_click" data-ga-label="Four-Pack Bundle">
+          <a
+            href={bundleUrl}
+            class="lemonsqueezy-button btn btn--primary"
+            style="background:var(--ochre); border-color:var(--ochre); color:var(--bone);"
+            data-ga-event="product_buy_click"
+            data-ga-label="Four-Pack Bundle"
+          >
             Buy the bundle <span class="btn__arrow">→</span>
           </a>
         </div>
@@ -237,7 +405,7 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
   </section>
 
   <!-- ENTERPRISE LICENSING -->
-  <section style="background:var(--paper);">
+  <section id="enterprise-licensing" style="background:var(--paper);">
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -247,20 +415,31 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           </h2>
         </div>
         <p class="lead">
-          Standardise your governance artefacts across an entire team, function or agency. Multi-seat licensing includes branded versions, training sessions and direct support from Lavelle.
+          Standardise your governance artefacts across an entire team, function
+          or agency. Multi-seat licensing includes branded versions, training
+          sessions and direct support from Lavelle.
         </p>
       </header>
 
       <div class="enterprise-grid">
-        <div style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;">
+        <div
+          style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;"
+        >
           <div class="eyebrow">Team licence</div>
-          <div style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;">
-            $3,000<span style="font-size:1rem; color:var(--ink-soft);">/yr</span>
+          <div
+            style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;"
+          >
+            $3,000<span style="font-size:1rem; color:var(--ink-soft);">/yr</span
+            >
           </div>
-          <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;">
+          <p
+            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
+          >
             Up to 10 users · all four packs · annual updates
           </p>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);">
+          <ul
+            style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);"
+          >
             <li>· All four packs, all updates</li>
             <li>· 10 named seats</li>
             <li>· Co-branded option</li>
@@ -268,20 +447,29 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           </ul>
         </div>
 
-        <div style="background:var(--bone); border:2px solid var(--ochre); padding:2.5rem; position:relative;">
+        <div
+          style="background:var(--bone); border:2px solid var(--ochre); padding:2.5rem; position:relative;"
+        >
           <div
             style="position:absolute; top:-12px; right:1.5rem; background:var(--ochre); color:var(--bone); font-size:var(--micro); padding:0.3rem 0.8rem; letter-spacing:0.15em; text-transform:uppercase;"
           >
             Most popular
           </div>
           <div class="eyebrow">Department licence</div>
-          <div style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;">
-            $5,500<span style="font-size:1rem; color:var(--ink-soft);">/yr</span>
+          <div
+            style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;"
+          >
+            $5,500<span style="font-size:1rem; color:var(--ink-soft);">/yr</span
+            >
           </div>
-          <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;">
+          <p
+            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
+          >
             Up to 50 users · all packs · onboarding workshop
           </p>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);">
+          <ul
+            style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);"
+          >
             <li>· All four packs, all updates</li>
             <li>· 50 named seats</li>
             <li>· Co-branded versions</li>
@@ -290,15 +478,24 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
           </ul>
         </div>
 
-        <div style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;">
+        <div
+          style="background:var(--bone); border:1px solid var(--rule); padding:2.5rem;"
+        >
           <div class="eyebrow">Agency licence</div>
-          <div style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;">
-            $8,000<span style="font-size:1rem; color:var(--ink-soft);">/yr</span>
+          <div
+            style="font-family:'Fraunces',serif; font-size:3rem; font-weight:300; color:var(--ochre); margin:1rem 0 0.5rem; line-height:1;"
+          >
+            $8,000<span style="font-size:1rem; color:var(--ink-soft);">/yr</span
+            >
           </div>
-          <p style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;">
+          <p
+            style="font-size:var(--body-sm); color:var(--ink-soft); margin-bottom:1.5rem;"
+          >
             Unlimited users · branded · with quarterly advisory
           </p>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);">
+          <ul
+            style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:var(--body-sm); color:var(--ink-soft);"
+          >
             <li>· All four packs, all updates</li>
             <li>· Unlimited seats within agency</li>
             <li>· Fully branded artefacts</li>
@@ -310,7 +507,9 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
       </div>
 
       <div style="text-align:center; margin-top:3rem;">
-        <a href="/contact" class="btn btn--primary">Request enterprise pricing <span class="btn__arrow">→</span></a>
+        <a href="/contact" class="btn btn--primary"
+          >Request enterprise pricing <span class="btn__arrow">→</span></a
+        >
       </div>
     </div>
   </section>
@@ -321,23 +520,47 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
       <div class="engage__grid">
         <div>
           <div class="eyebrow">Need more than templates?</div>
-          <h2 style="margin-top:1.25rem;">When the artefact isn't enough, <em>bring us in.</em></h2>
+          <h2 style="margin-top:1.25rem;">
+            When the artefact isn't enough, <em>bring us in.</em>
+          </h2>
           <p class="lead" style="margin-top:1.5rem;">
-            The packs are designed to be self-serve. But sometimes a program needs a senior practitioner in the room — not another document. If that's where you are, the next conversation is the consulting team's.
+            The packs are designed to be self-serve. But sometimes a program
+            needs a senior practitioner in the room — not another document. If
+            that's where you are, the next conversation is the consulting
+            team's.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
-            <a href="/consulting" class="btn btn--primary">See consulting services <span class="btn__arrow">→</span></a>
-            <a href="/contact" class="btn" style="background:transparent; color:var(--bone); border:1px solid var(--bone);">
+            <a href="/consulting" class="btn btn--primary"
+              >See consulting services <span class="btn__arrow">→</span></a
+            >
+            <a
+              href="/contact"
+              class="btn"
+              style="background:transparent; color:var(--bone); border:1px solid var(--bone);"
+            >
               Talk to Sky directly
             </a>
           </div>
         </div>
 
         <ul class="engage__list">
-          <li><a href="#"><span>Bulk &amp; enterprise licensing</span><span>→</span></a></li>
-          <li><a href="#"><span>Government panel arrangements</span><span>→</span></a></li>
-          <li><a href="#"><span>Co-branded artefact packs</span><span>→</span></a></li>
-          <li><a href="#"><span>Training &amp; onboarding workshops</span><span>→</span></a></li>
+          <li>
+            <a href="/contact?topic=enterprise"
+              ><span>Bulk &amp; enterprise licensing</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=panel"
+              ><span>Government panel arrangements</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=branding"
+              ><span>Co-branded artefact packs</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact?topic=training"
+              ><span>Training &amp; onboarding workshops</span><span>→</span
+              ></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -381,3 +604,56 @@ const anyCheckout = Boolean(steeringUrl || recoveryUrl || businessCaseUrl || pro
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById(
+    "checklist-form",
+  ) as HTMLFormElement | null;
+  const success = document.getElementById("checklist-success");
+  const submitBtn = document.getElementById(
+    "checklist-submit",
+  ) as HTMLButtonElement | null;
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const botcheck =
+        form.querySelector<HTMLInputElement>('[name="botcheck"]');
+      if (botcheck?.checked) return;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+      let ok = false;
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(
+            Object.fromEntries(new FormData(form).entries()),
+          ),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          success?: boolean;
+        };
+        ok = data.success === true;
+      } catch {
+        /* silent */
+      }
+      if (ok) {
+        form.hidden = true;
+        if (success) success.hidden = false;
+      } else if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML =
+          'Send me the checklist <span class="btn__arrow">→</span>';
+      }
+    });
+  }
+</script>

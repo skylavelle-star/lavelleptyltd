@@ -1,42 +1,82 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PackPage from '../../components/PackPage.astro';
-import { products } from '../../config/site';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PackPage from "../../components/PackPage.astro";
+import { products } from "../../config/site";
 
 const pack = products.procurementPack;
 const checkoutUrl = pack.checkoutUrl || undefined;
 
 const audience = [
-  'Project managers and procurement teams running a restricted technology tender',
-  'Evaluation panel chairs who need a structured and defensible evaluation process',
-  'Program managers preparing delegate approval documentation after a BAFO process',
-  'Governance and probity leads who need clear documentation of evaluation decisions',
+  "Project managers and procurement teams running a restricted technology tender",
+  "Evaluation panel chairs who need a structured and defensible evaluation process",
+  "Program managers preparing delegate approval documentation after a BAFO process",
+  "Governance and probity leads who need clear documentation of evaluation decisions",
 ];
 
 const helpsWith = [
-  'Technology procurement processes fail on governance when the evaluation is not structured, scoring is inconsistent, or the recommendation cannot be traced back to the evaluation criteria. This pack provides the artefacts needed to run a defensible, probity-sound evaluation.',
-  'The templates are designed for the governance and accountability requirements common in government and regulated sector technology acquisitions.',
+  "Technology procurement processes fail on governance when the evaluation is not structured, scoring is inconsistent, or the recommendation cannot be traced back to the evaluation criteria. This pack provides the artefacts needed to run a defensible, probity-sound evaluation.",
+  "The templates are designed for the governance and accountability requirements common in government and regulated sector technology acquisitions.",
 ];
 
 const included = [
-  { title: 'RFP Evaluation Plan', desc: 'A structured plan for the evaluation process, including evaluation criteria, scoring approach, panel roles and probity arrangements.' },
-  { title: 'Technical Evaluation Matrix', desc: 'A scoring matrix for assessing supplier technical responses against defined criteria and weightings.' },
-  { title: 'Commercial Evaluation Matrix', desc: 'A scoring matrix for assessing commercial terms, pricing and contract structure.' },
-  { title: 'Supplier Clarification Register', desc: 'A structured register for managing written clarifications during the evaluation period.' },
-  { title: 'BAFO Request Template', desc: 'A formal template for issuing a Best and Final Offer request to shortlisted suppliers.' },
-  { title: 'Evaluation Recommendation Report', desc: 'A structured report template for documenting the evaluation outcome, recommended supplier and supporting rationale.' },
-  { title: 'Probity Checklist', desc: 'A checklist for reviewing probity obligations throughout the evaluation process.' },
+  {
+    title: "RFP Evaluation Plan",
+    desc: "A structured plan for the evaluation process, including evaluation criteria, scoring approach, panel roles and probity arrangements.",
+  },
+  {
+    title: "Technical Evaluation Matrix",
+    desc: "A scoring matrix for assessing supplier technical responses against defined criteria and weightings.",
+  },
+  {
+    title: "Commercial Evaluation Matrix",
+    desc: "A scoring matrix for assessing commercial terms, pricing and contract structure.",
+  },
+  {
+    title: "Supplier Clarification Register",
+    desc: "A structured register for managing written clarifications during the evaluation period.",
+  },
+  {
+    title: "BAFO Request Template",
+    desc: "A formal template for issuing a Best and Final Offer request to shortlisted suppliers.",
+  },
+  {
+    title: "Evaluation Recommendation Report",
+    desc: "A structured report template for documenting the evaluation outcome, recommended supplier and supporting rationale.",
+  },
+  {
+    title: "Probity Checklist",
+    desc: "A checklist for reviewing probity obligations throughout the evaluation process.",
+  },
 ];
 
-const howToUse = 'Start with the evaluation plan before issuing the RFP. Confirm the criteria, weightings and scoring approach with the evaluation panel before any supplier responses are received. This prevents challenges to the evaluation process after the fact and ensures the recommendation can be defended at delegate approval.';
+const howToUse =
+  "Start with the evaluation plan before issuing the RFP. Confirm the criteria, weightings and scoring approach with the evaluation panel before any supplier responses are received. This prevents challenges to the evaluation process after the fact and ensures the recommendation can be defended at delegate approval.";
 
 const faqs = [
-  { q: 'What format are the templates in?', a: 'Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.' },
-  { q: 'Is this suitable for small and large procurements?', a: 'Yes. The pack scales from a straightforward RFQ to a complex multi-stage RFP with BAFO. Use the documents that are proportionate to the size and risk of your procurement.' },
-  { q: 'Does it cover the BAFO process?', a: 'Yes. The pack includes a structured BAFO process template covering the invitation to BAFO, revised response assessment and updated evaluation scoring.' },
-  { q: 'Do I need procurement experience to use it?', a: 'The templates are structured and self-explanatory, but they assume familiarity with the procurement process. If you are new to formal procurement, consider advisory support alongside the pack.' },
-  { q: 'Can I share this with my team?', a: 'Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.' },
-  { q: 'What if I need support running a procurement?', a: 'Lavelle Pty Ltd provides procurement governance advisory and RFP management support. See the consulting page or contact us directly.' },
+  {
+    q: "What format are the templates in?",
+    a: "Microsoft Word (.docx) and Excel (.xlsx). All documents are fully editable and work in Google Docs and Google Sheets, though some conditional formatting may not carry across.",
+  },
+  {
+    q: "Is this suitable for small and large procurements?",
+    a: "Yes. The pack scales from a straightforward RFQ to a complex multi-stage RFP with BAFO. Use the documents that are proportionate to the size and risk of your procurement.",
+  },
+  {
+    q: "Does it cover the BAFO process?",
+    a: "Yes. The pack includes a structured BAFO process template covering the invitation to BAFO, revised response assessment and updated evaluation scoring.",
+  },
+  {
+    q: "Do I need procurement experience to use it?",
+    a: "The templates are structured and self-explanatory, but they assume familiarity with the procurement process. If you are new to formal procurement, consider advisory support alongside the pack.",
+  },
+  {
+    q: "Can I share this with my team?",
+    a: "Your purchase gives you a single-user licence. If you need multi-seat access for a team or organisation, see our enterprise licensing options.",
+  },
+  {
+    q: "What if I need support running a procurement?",
+    a: "Lavelle Pty Ltd provides procurement governance advisory and RFP management support. See the consulting page or contact us directly.",
+  },
 ];
 ---
 
@@ -44,16 +84,23 @@ const faqs = [
   title="Procurement Pack — Lavelle Pty Ltd"
   description="A practical procurement governance pack for project teams managing RFPs, evaluation planning, supplier responses, BAFO processes and delegate approval pathways."
 >
-  {checkoutUrl && <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>}
+  {
+    checkoutUrl && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
 
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
-        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp; <span>Procurement Pack</span>
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
+        <span>Procurement Pack</span>
       </div>
       <h1>Procurement Pack. <em>Probity-sound by design.</em></h1>
       <p class="subhero__lead">
-        A practical procurement governance pack for project teams managing RFPs, evaluation planning, supplier responses, BAFO processes and delegate approval pathways.
+        A practical procurement governance pack for project teams managing RFPs,
+        evaluation planning, supplier responses, BAFO processes and delegate
+        approval pathways.
       </p>
     </div>
   </section>

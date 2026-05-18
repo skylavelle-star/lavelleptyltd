@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
+---
+
+<BaseLayout
+  title="Terms — Lavelle Pty Ltd"
+  description="Terms of use for the Lavelle Pty Ltd website and PMO Resource packs. Single-user licensing, refunds and governing law."
+>
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp; <span>Terms</span>
+      </div>
+      <h1>Terms. <em>Short version.</em></h1>
+      <p class="subhero__lead">
+        These are the terms that apply to using this website and to purchasing
+        PMO Resource packs from Lavelle Pty Ltd (ABN 27 651 199 414). Consulting
+        engagements are governed by a separate written agreement.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        <h2>Website use</h2>
+        <p>
+          The content on this site is published in good faith for general
+          information. It is not professional advice for any specific situation.
+          If you need advice for a specific program or organisation, engage
+          Lavelle Pty Ltd directly.
+        </p>
+
+        <h2>PMO Resource pack licence</h2>
+        <p>
+          Each paid pack — Steering Committee Pack, Project Recovery Pack,
+          Business Case Pack, Procurement Pack and the Four-Pack Bundle — is
+          sold under a single-user licence. The licence permits the named
+          purchaser to use, adapt and modify the artefacts for projects in their
+          own organisation. The licence does not permit redistribution, onward
+          sale or use as part of a third-party consulting deliverable.
+        </p>
+        <p>
+          Teams, departments and agencies that need broader access should
+          request an Enterprise Licence rather than purchasing multiple
+          single-user licences.
+        </p>
+
+        <h2>Refunds</h2>
+        <p>
+          Pack purchases are processed by Lemon Squeezy. Their standard refund
+          policy applies and is the canonical reference for refund requests —
+          see <a
+            href="https://www.lemonsqueezy.com/refund-policy"
+            rel="nofollow noopener">lemonsqueezy.com/refund-policy</a
+          >. If you have a problem with a pack you have purchased, email <a
+            href={`mailto:${site.email}`}>{site.email}</a
+          > and we will work to resolve it.
+        </p>
+
+        <h2>Free tools</h2>
+        <p>
+          Free tools, checklists and templates are provided without warranty of
+          any kind. You are welcome to use, adapt and share them.
+        </p>
+
+        <h2>Governing law</h2>
+        <p>
+          These terms are governed by the laws of Queensland, Australia. Any
+          dispute will be resolved in the courts of Queensland.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For any question about these terms, email <a
+            href={`mailto:${site.email}`}>{site.email}</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

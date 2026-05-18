@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
+---
+
+<BaseLayout
+  title="Privacy — Lavelle Pty Ltd"
+  description="How Lavelle Pty Ltd handles personal information collected through this website. Short, honest summary covering forms, analytics and the contact email."
+>
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp; <span>Privacy</span>
+      </div>
+      <h1>Privacy. <em>Plain English.</em></h1>
+      <p class="subhero__lead">
+        Lavelle Pty Ltd (ABN 27 651 199 414) operates this website. This page
+        describes what personal information the site collects, how it is used
+        and who has access to it.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        <h2>What we collect</h2>
+        <p>
+          Two narrow categories of personal information are collected through
+          this site.
+        </p>
+        <p>
+          <strong>Form submissions.</strong> The contact form, free-tool request forms
+          and the Project Recovery Checklist signup are all handled by Web3Forms.
+          When you submit a form we receive your name, work email and the message
+          body. Web3Forms relays the submission to <a
+            href={`mailto:${site.email}`}>{site.email}</a
+          >. The submission and any subsequent email correspondence are stored
+          in our email system. We do not maintain a separate customer database.
+        </p>
+        <p>
+          <strong>Analytics.</strong> If Google Analytics 4 is enabled on a given
+          page, it collects anonymised browsing data — pages viewed, approximate location,
+          device and referrer. We use this only to understand which content is useful.
+          We do not run advertising, retargeting or third-party tracking pixels.
+        </p>
+
+        <h2>What we don't collect</h2>
+        <p>
+          We do not sell, rent or share personal information with third parties
+          beyond the two tools above (Web3Forms for form delivery, Google
+          Analytics for usage measurement). We do not build advertising
+          profiles. We do not track you across other sites.
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+          The site sets only the cookies required by Google Analytics 4 (when
+          enabled). No advertising or social-media cookies are set.
+        </p>
+
+        <h2>Your data</h2>
+        <p>
+          You can ask for a copy of any personal information we hold about you,
+          or ask us to delete it. Email <a href={`mailto:${site.email}`}
+            >{site.email}</a
+          > and we will respond within a reasonable period.
+        </p>
+
+        <h2>Changes</h2>
+        <p>
+          This page may be updated from time to time. The current version is the
+          one published here. For substantive changes we will note the change at
+          the top of this page.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For any privacy question, email <a href={`mailto:${site.email}`}
+            >{site.email}</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

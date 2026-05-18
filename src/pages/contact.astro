@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { site } from '../config/site';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
 ---
 
 <BaseLayout
@@ -14,7 +14,9 @@ import { site } from '../config/site';
       </div>
       <h1>Work with <em>Lavelle Pty Ltd.</em></h1>
       <p class="subhero__lead">
-        For consulting, contract project management, PMO resources, delivery support or digital asset enquiries, send an enquiry below. All messages receive a response within one business day.
+        For consulting, contract project management, PMO resources, delivery
+        support or digital asset enquiries, send an enquiry below. All messages
+        receive a response within one business day.
       </p>
     </div>
   </section>
@@ -23,26 +25,72 @@ import { site } from '../config/site';
     <div class="wrap">
       <div class="split">
         <div>
-          <form id="enquiry-form" action="https://api.web3forms.com/submit" method="POST" class="enquiry-form" novalidate>
+          <form
+            id="enquiry-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="enquiry-form"
+            novalidate
+          >
             <input type="hidden" name="access_key" value={site.web3formsKey} />
-            <input type="hidden" name="subject" value="New business enquiry - lavelleptyltd.com.au" />
-            <input type="hidden" name="from_name" value="Lavelle Pty Ltd Contact Form" />
-            <input type="checkbox" name="botcheck" class="hidden-bot" tabindex="-1" autocomplete="off" />
+            <input
+              type="hidden"
+              name="subject"
+              value="New business enquiry - lavelleptyltd.com.au"
+            />
+            <input
+              type="hidden"
+              name="from_name"
+              value="Lavelle Pty Ltd Contact Form"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              class="hidden-bot"
+              tabindex="-1"
+              autocomplete="off"
+            />
 
             <div class="row">
               <div>
-                <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
-                <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your full name" />
+                <label for="name"
+                  >Name <span class="required" aria-hidden="true">*</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  placeholder="Your full name"
+                />
               </div>
               <div>
-                <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@organisation.com.au" />
+                <label for="email"
+                  >Email <span class="required" aria-hidden="true">*</span
+                  ></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@organisation.com.au"
+                />
               </div>
             </div>
 
             <div>
               <label for="organisation">Organisation</label>
-              <input type="text" id="organisation" name="organisation" autocomplete="organization" placeholder="Your organisation" />
+              <input
+                type="text"
+                id="organisation"
+                name="organisation"
+                autocomplete="organization"
+                placeholder="Your organisation"
+              />
             </div>
 
             <div>
@@ -53,20 +101,58 @@ import { site } from '../config/site';
                 <option value="contract-pm">Contract Project Management</option>
                 <option value="pmo-resources">PMO Resources</option>
                 <option value="project-recovery">Project Recovery</option>
+                <option value="brief">Submit a brief (RFP / EOI)</option>
+                <option value="call">Book a 30-minute call with Sky</option>
+                <option value="capability"
+                  >Request a capability statement</option
+                >
+                <option value="speaking"
+                  >Speaking &amp; advisory enquiries</option
+                >
+                <option value="panel"
+                  >Government panel &amp; supplier listing</option
+                >
+                <option value="enterprise"
+                  >Bulk &amp; enterprise licensing</option
+                >
+                <option value="branding">Co-branded artefact packs</option>
+                <option value="training"
+                  >Training &amp; onboarding workshops</option
+                >
                 <option value="digital-asset">Digital Asset Enquiry</option>
                 <option value="general">General Business Enquiry</option>
               </select>
             </div>
 
             <div>
-              <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="6" required placeholder="Describe your situation and what you need. The more specific, the better."></textarea>
+              <label for="message"
+                >Message <span class="required" aria-hidden="true">*</span
+                ></label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                placeholder="Describe your situation and what you need. The more specific, the better."
+              ></textarea>
             </div>
 
-            <div id="form-success" class="form-alert form-alert--success" role="alert" hidden>
-              <strong>Enquiry sent.</strong> You will receive a response within one business day.
+            <div
+              id="form-success"
+              class="form-alert form-alert--success"
+              role="alert"
+              hidden
+            >
+              <strong>Enquiry sent.</strong> You will receive a response within one
+              business day.
             </div>
-            <div id="form-error" class="form-alert form-alert--error" role="alert" hidden>
+            <div
+              id="form-error"
+              class="form-alert form-alert--error"
+              role="alert"
+              hidden
+            >
               Something went wrong. Please try again.
             </div>
 
@@ -78,7 +164,8 @@ import { site } from '../config/site';
             </div>
 
             <p class="form-fineprint">
-              Fields marked with * are required. Your information will not be shared with third parties.
+              Fields marked with * are required. Your information will not be
+              shared with third parties.
             </p>
           </form>
         </div>
@@ -95,11 +182,13 @@ import { site } from '../config/site';
           </ul>
           <h4 style="margin-top:2rem;">Response time</h4>
           <p style="font-size:var(--body-sm); color:var(--ink-soft);">
-            All enquiries receive a response within one business day. For urgent situations, note that in your message.
+            All enquiries receive a response within one business day. For urgent
+            situations, note that in your message.
           </p>
           <h4 style="margin-top:2rem;">Based in Australia</h4>
           <p style="font-size:var(--body-sm); color:var(--ink-soft);">
-            Lavelle Pty Ltd is an Australian company. Consulting engagements are available remotely and on-site across Australia.
+            Lavelle Pty Ltd is an Australian company. Consulting engagements are
+            available remotely and on-site across Australia.
           </p>
         </aside>
       </div>
@@ -193,13 +282,26 @@ import { site } from '../config/site';
 </style>
 
 <script>
-  const form = document.getElementById('enquiry-form') as HTMLFormElement;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-  const submitLabel = document.getElementById('submit-label') as HTMLSpanElement;
-  const successMsg = document.getElementById('form-success') as HTMLDivElement;
-  const errorMsg = document.getElementById('form-error') as HTMLDivElement;
+  const form = document.getElementById("enquiry-form") as HTMLFormElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const submitLabel = document.getElementById(
+    "submit-label",
+  ) as HTMLSpanElement;
+  const successMsg = document.getElementById("form-success") as HTMLDivElement;
+  const errorMsg = document.getElementById("form-error") as HTMLDivElement;
 
-  form?.addEventListener('submit', async (e) => {
+  const params = new URLSearchParams(window.location.search);
+  const topic = params.get("topic");
+  if (topic) {
+    const select = document.getElementById(
+      "enquiry-type",
+    ) as HTMLSelectElement | null;
+    if (select && Array.from(select.options).some((o) => o.value === topic)) {
+      select.value = topic;
+    }
+  }
+
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     if (!form.checkValidity()) {
@@ -208,21 +310,22 @@ import { site } from '../config/site';
     }
 
     submitBtn.disabled = true;
-    submitLabel.textContent = 'Sending…';
+    submitLabel.textContent = "Sending…";
     successMsg.hidden = true;
     errorMsg.hidden = true;
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         body: new FormData(form),
       });
 
       const data = await res.json();
 
       if (data.success) {
-        if (typeof window.gtag === 'function') window.gtag('event', 'contact_form_submit');
-        window.location.href = '/thank-you/contact/';
+        if (typeof window.gtag === "function")
+          window.gtag("event", "contact_form_submit");
+        window.location.href = "/thank-you/contact/";
         return;
       } else {
         errorMsg.hidden = false;
@@ -231,7 +334,7 @@ import { site } from '../config/site';
       errorMsg.hidden = false;
     } finally {
       submitBtn.disabled = false;
-      submitLabel.textContent = 'Send enquiry';
+      submitLabel.textContent = "Send enquiry";
     }
   });
 </script>

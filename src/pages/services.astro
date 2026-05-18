@@ -1,44 +1,53 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-import servicesImage from '../assets/images/services.jpg';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import servicesImage from "../assets/images/services.jpg";
 
 const offerings = [
   {
-    num: '01',
-    eyebrow: 'Advisory',
-    title: 'Consulting',
+    num: "01",
+    eyebrow: "Advisory",
+    title: "Consulting",
     description:
-      'Project recovery, PMO stand-up, business case development, procurement advisory, steering committee governance and delivery assurance — engaged personally by Sky Lavelle.',
-    href: '/consulting',
-    cta: 'View the six capabilities',
+      "Project recovery, PMO stand-up, business case development, procurement advisory, steering committee governance and delivery assurance — engaged personally by Sky Lavelle.",
+    href: "/consulting",
+    cta: "View the six capabilities",
   },
   {
-    num: '02',
-    eyebrow: 'Productised',
-    title: 'PMO Resources',
+    num: "02",
+    eyebrow: "Productised",
+    title: "PMO Resources",
     description:
-      'The exact artefact sets Lavelle deploys on engagement, packaged for download. Steering Committee, Project Recovery, Business Case and Procurement packs — plus the free Project Recovery Checklist.',
-    href: '/pmo-resources',
-    cta: 'Browse the product packs',
+      "The exact artefact sets Lavelle deploys on engagement, packaged for download. Steering Committee, Project Recovery, Business Case and Procurement packs — plus the free Project Recovery Checklist.",
+    href: "/pmo-resources",
+    cta: "Browse the product packs",
   },
   {
-    num: '03',
-    eyebrow: 'Evidence',
-    title: 'Case Studies',
+    num: "03",
+    eyebrow: "Evidence",
+    title: "Case Studies",
     description:
-      'Five recent engagements drawn from twenty years across media, higher education and cybersecurity research — Griffith, the ABC, CQUniversity and the Cyber Security CRC.',
-    href: '/case-studies',
-    cta: 'Read the case studies',
+      "Five recent engagements drawn from twenty years across media, higher education and cybersecurity research — Griffith, the ABC, CQUniversity and the Cyber Security CRC.",
+    href: "/case-studies",
+    cta: "Read the case studies",
   },
   {
-    num: '04',
-    eyebrow: 'Method',
-    title: 'Delivery Framework',
+    num: "04",
+    eyebrow: "Method",
+    title: "Delivery Framework",
     description:
-      'A practical hybrid framework that combines structured governance with Agile execution for complex technology and business change. Seven stages, ten artefacts.',
-    href: '/delivery-framework',
-    cta: 'View the framework',
+      "A practical hybrid framework that combines structured governance with Agile execution for complex technology and business change. Seven stages, ten artefacts.",
+    href: "/delivery-framework",
+    cta: "View the framework",
+  },
+  {
+    num: "05",
+    eyebrow: "Multi-seat",
+    title: "Enterprise Licensing",
+    description:
+      "Standardise the PMO artefact set across a team, department or agency. Three tiers — Team ($3,000/yr), Department ($5,500/yr) and Agency ($8,000/yr) — with co-branded versions, onboarding workshops and direct advisory access.",
+    href: "/pmo-resources#enterprise-licensing",
+    cta: "View licensing options",
   },
 ];
 ---
@@ -55,7 +64,10 @@ const offerings = [
       </div>
       <h1>One firm. <em>Four ways to engage.</em></h1>
       <p class="subhero__lead">
-        Whether you need senior delivery in the room, a structured artefact set to standardise your PMO, evidence that we have done this before, or the method behind it — start here. Each route below leads to the deeper page for that capability.
+        Whether you need senior delivery in the room, a structured artefact set
+        to standardise your PMO, evidence that we have done this before, or the
+        method behind it — start here. Each route below leads to the deeper page
+        for that capability.
       </p>
     </div>
   </section>
@@ -81,19 +93,28 @@ const offerings = [
           </h2>
         </div>
         <p class="lead">
-          Most engagements start in one place and draw on another within the first month. Consulting clients often adopt the PMO packs. PMO-pack buyers regularly come back for an advisory conversation. The framework underpins both.
+          Most engagements start in one place and draw on another within the
+          first month. Consulting clients often adopt the PMO packs. PMO-pack
+          buyers regularly come back for an advisory conversation. The framework
+          underpins both.
         </p>
       </header>
 
       <div class="capabilities">
-        {offerings.map((offering) => (
-          <article class="cap">
-            <div class="cap__num">{offering.num} / {offering.eyebrow}</div>
-            <h3 class="cap__title">{offering.title}</h3>
-            <p class="cap__desc">{offering.description}</p>
-            <a href={offering.href} class="cap__link">{offering.cta} <span>→</span></a>
-          </article>
-        ))}
+        {
+          offerings.map((offering) => (
+            <article class="cap">
+              <div class="cap__num">
+                {offering.num} / {offering.eyebrow}
+              </div>
+              <h3 class="cap__title">{offering.title}</h3>
+              <p class="cap__desc">{offering.description}</p>
+              <a href={offering.href} class="cap__link">
+                {offering.cta} <span>→</span>
+              </a>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -103,34 +124,65 @@ const offerings = [
       <div class="case__grid">
         <div>
           <div class="eyebrow">Not sure where to start?</div>
-          <h2 style="font-family:'Fraunces',serif; font-size:var(--display-md); font-weight:500; line-height:1.1; margin:1.25rem 0 1.5rem;">
-            Most conversations begin the <em style="color:var(--ochre);">same way.</em>
+          <h2
+            style="font-family:'Fraunces',serif; font-size:var(--display-md); font-weight:500; line-height:1.1; margin:1.25rem 0 1.5rem;"
+          >
+            Most conversations begin the <em style="color:var(--ochre);"
+              >same way.</em
+            >
           </h2>
-          <p style="font-size:var(--body-lg); color:var(--ink-soft); line-height:1.55; max-width:50ch;">
-            A thirty-minute confidential conversation about what is not moving. From there, we agree whether the right next step is consulting, a productised pack, an independent gate review, or simply a written diagnostic.
+          <p
+            style="font-size:var(--body-lg); color:var(--ink-soft); line-height:1.55; max-width:50ch;"
+          >
+            A thirty-minute confidential conversation about what is not moving.
+            From there, we agree whether the right next step is consulting, a
+            productised pack, an independent gate review, or simply a written
+            diagnostic.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
             <a href="/contact" class="btn btn--primary">
               Send an enquiry <span class="btn__arrow">→</span>
             </a>
-            <a href="/case-studies" class="btn btn--ghost">Read the case studies</a>
+            <a href="/case-studies" class="btn btn--ghost"
+              >Read the case studies</a
+            >
           </div>
         </div>
         <ul class="engage__list" style="border-top-color:var(--rule);">
           <li style="border-bottom-color:var(--rule);">
-            <a href="/consulting" style="color:var(--ink);"><span>Consulting capabilities</span><span style="font-family:'Fraunces',serif; font-style:italic;">→</span></a>
+            <a href="/consulting" style="color:var(--ink);"
+              ><span>Consulting capabilities</span><span
+                style="font-family:'Fraunces',serif; font-style:italic;">→</span
+              ></a
+            >
           </li>
           <li style="border-bottom-color:var(--rule);">
-            <a href="/pmo-resources" style="color:var(--ink);"><span>PMO Resources catalogue</span><span style="font-family:'Fraunces',serif; font-style:italic;">→</span></a>
+            <a href="/pmo-resources" style="color:var(--ink);"
+              ><span>PMO Resources catalogue</span><span
+                style="font-family:'Fraunces',serif; font-style:italic;">→</span
+              ></a
+            >
           </li>
           <li style="border-bottom-color:var(--rule);">
-            <a href="/case-studies" style="color:var(--ink);"><span>Five recent engagements</span><span style="font-family:'Fraunces',serif; font-style:italic;">→</span></a>
+            <a href="/case-studies" style="color:var(--ink);"
+              ><span>Five recent engagements</span><span
+                style="font-family:'Fraunces',serif; font-style:italic;">→</span
+              ></a
+            >
           </li>
           <li style="border-bottom-color:var(--rule);">
-            <a href="/delivery-framework" style="color:var(--ink);"><span>Seven-stage delivery framework</span><span style="font-family:'Fraunces',serif; font-style:italic;">→</span></a>
+            <a href="/delivery-framework" style="color:var(--ink);"
+              ><span>Seven-stage delivery framework</span><span
+                style="font-family:'Fraunces',serif; font-style:italic;">→</span
+              ></a
+            >
           </li>
           <li style="border-bottom-color:var(--rule);">
-            <a href="/thinking" style="color:var(--ink);"><span>Thinking &amp; field notes</span><span style="font-family:'Fraunces',serif; font-style:italic;">→</span></a>
+            <a href="/thinking" style="color:var(--ink);"
+              ><span>Thinking &amp; field notes</span><span
+                style="font-family:'Fraunces',serif; font-style:italic;">→</span
+              ></a
+            >
           </li>
         </ul>
       </div>
@@ -142,9 +194,12 @@ const offerings = [
       <div class="engage__grid">
         <div>
           <div class="eyebrow">Engage Lavelle</div>
-          <h2 style="margin-top:1.25rem;">Let's talk about <em>what's not moving.</em></h2>
+          <h2 style="margin-top:1.25rem;">
+            Let's talk about <em>what's not moving.</em>
+          </h2>
           <p class="lead" style="margin-top:1.5rem;">
-            Confidential thirty-minute conversation. No pitch deck, no obligation, no sales call disguised as a workshop.
+            Confidential thirty-minute conversation. No pitch deck, no
+            obligation, no sales call disguised as a workshop.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
             <a href="/contact" class="btn btn--primary">
@@ -153,10 +208,22 @@ const offerings = [
           </div>
         </div>
         <ul class="engage__list">
-          <li><a href="/contact"><span>Submit a brief (RFP / EOI)</span><span>→</span></a></li>
-          <li><a href="/contact"><span>Book a 30-minute call with Sky</span><span>→</span></a></li>
-          <li><a href="/contact"><span>Request a capability statement</span><span>→</span></a></li>
-          <li><a href="/contact"><span>Government panel listing</span><span>→</span></a></li>
+          <li>
+            <a href="/contact"
+              ><span>Submit a brief (RFP / EOI)</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact"
+              ><span>Book a 30-minute call with Sky</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact"
+              ><span>Request a capability statement</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/contact"
+              ><span>Government panel listing</span><span>→</span></a>
+          </li>
         </ul>
       </div>
     </div>

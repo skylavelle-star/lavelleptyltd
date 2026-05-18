@@ -1,42 +1,147 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const stages = [
-  { number: '01', name: 'Assess', description: 'Understand the current state, sponsor intent, scope boundaries and delivery risks.' },
-  { number: '02', name: 'Initiate', description: 'Establish governance, funding pathway, project structure and approval routes.' },
-  { number: '03', name: 'Plan', description: 'Define scope, schedule, resourcing, dependencies and the delivery approach.' },
-  { number: '04', name: 'Deliver', description: 'Execute through fit-for-purpose delivery tools and structured working rhythms.' },
-  { number: '05', name: 'Govern', description: 'Maintain steering committee oversight, RAID control and financial discipline.' },
-  { number: '06', name: 'Recover', description: 'Apply structured intervention when projects need stabilising or replanning.' },
-  { number: '07', name: 'Transition', description: 'Hand over to operations with benefits tracking and closure artefacts.' },
+  {
+    number: "01",
+    name: "Initiate",
+    subtitle: "Initiation",
+    description:
+      "Establish sponsor intent, governance structure, funding pathway and approval routes.",
+  },
+  {
+    number: "02",
+    name: "Discover",
+    subtitle: "Discovery",
+    description:
+      "Frame the problem, test options, shape the business case and align stakeholders.",
+  },
+  {
+    number: "03",
+    name: "Design",
+    subtitle: "Part of Deliver",
+    description:
+      "Define the solution. Architecture, detailed design and design authority endorsement.",
+  },
+  {
+    number: "04",
+    name: "Build",
+    subtitle: "Part of Deliver",
+    description:
+      "Construct the solution. Configure, integrate and verify against design intent.",
+  },
+  {
+    number: "05",
+    name: "Test",
+    subtitle: "Part of Deliver",
+    description:
+      "Prove the solution. System, integration and user acceptance through to go-live readiness.",
+  },
+  {
+    number: "06",
+    name: "Cutover",
+    subtitle: "Cutover",
+    description:
+      "Transition to live. Go/no-go decision, deployment and operational stand-up.",
+  },
+  {
+    number: "07",
+    name: "Close",
+    subtitle: "Closure",
+    description:
+      "Closure report, financial close, benefits handover and lessons learned.",
+  },
 ];
 
-const artefacts = [
-  { name: 'Business Case', description: 'Defines the case for change, investment options, expected benefits, delivery costs, risks, dependencies and the approval pathway.' },
-  { name: 'Project Initiation Document', description: 'Establishes the governance structure, delivery approach, team, roles, reporting cadence and operating model for the project.' },
-  { name: 'Project Management Plan', description: 'The primary planning artefact covering scope, schedule, resources, budget, quality, communications, risk and change management.' },
-  { name: 'Project Schedule or Roadmap', description: 'A clear timeline showing milestones, dependencies, delivery phases and key decision points endorsed by the steering committee.' },
-  { name: 'RAID Register', description: 'The central register for risks, assumptions, issues and dependencies. Maintained throughout delivery and reported to the steering committee.' },
-  { name: 'Decision Log', description: 'A record of all significant decisions, the authority that made them and the date. Supports governance accountability and audit requirements.' },
-  { name: 'Weekly Status Report', description: 'A structured status update covering RAG ratings, progress, risks, issues, actions, financials and escalation items.' },
-  { name: 'Steering Committee Pack', description: 'A formal reporting pack for the project board covering health status, financials, risks, issues, decisions required, scope changes and milestone progress.' },
-  { name: 'Benefits Register', description: 'Tracks the expected benefits, measures used to confirm realisation, ownership and the timeline for benefits delivery after project closure.' },
-  { name: 'Closure Report', description: 'Formal project closure documentation covering delivery outcomes, benefits realisation status, outstanding risks, lessons learned and delegate sign-off.' },
+const iterativeMilestones = [
+  "Problem hypothesis",
+  "Concept brief",
+  "Strategic fit & options",
+  "Business case approved",
+  "Solution integrity",
+  "Release & deploy",
+  "Outcomes & next bets",
+];
+
+const predictiveMilestones = [
+  "Mandate",
+  "Concept brief",
+  "Define scope",
+  "Estimate",
+  "Benefits framed",
+  "Mobilise",
+  "Design",
+  "Build",
+  "Test",
+  "Go-live readiness",
+  "Deploy & launch",
+  "PIR & closure",
+];
+
+const gates = [
+  {
+    id: "G1",
+    name: "Approve",
+    decisions: [
+      "Concept brief sign-off",
+      "Tech feasibility",
+      "Seed funding (if applicable)",
+    ],
+  },
+  {
+    id: "G2",
+    name: "Discover",
+    decisions: [
+      "High-level plan sign-off",
+      "Procurement approvals",
+      "Business case signed off",
+    ],
+  },
+  {
+    id: "G3",
+    name: "Design",
+    decisions: [
+      "Detailed plan sign-off",
+      "Design authority endorsement",
+      "Financial control tracker live",
+    ],
+  },
+  {
+    id: "G4",
+    name: "Build",
+    decisions: ["Build complete sign-off", "Integration verified"],
+  },
+  {
+    id: "G5",
+    name: "Cutover",
+    decisions: ["Go / No-Go sign-off", "Transition plan sign-off"],
+  },
+  {
+    id: "G6",
+    name: "Close",
+    decisions: ["Closure report sign-off", "Financial close", "Project closed"],
+  },
 ];
 ---
 
 <BaseLayout
   title="Delivery Framework — Lavelle Pty Ltd"
-  description="Lavelle Pty Ltd's practical hybrid delivery framework combines structured governance with Agile execution for complex technology and business change projects."
+  description="The Lavelle Delivery Framework v1.0. Seven stages, six gates, two ways through. A practical structure for governing and executing complex technology and business change."
 >
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
         <a href="/">Home</a> &nbsp;/&nbsp; <span>Delivery Framework</span>
       </div>
-      <h1>A practical hybrid framework. <em>Governance plus execution.</em></h1>
+      <h1>
+        The Lavelle Delivery Framework. <em
+          >Seven stages. Six gates. Two ways through.</em>
+      </h1>
       <p class="subhero__lead">
-        Combines structured governance with Agile execution for complex technology and business change projects. Designed for environments where funding, procurement, architecture, delivery, testing, change and executive reporting all need to stay aligned.
+        A practical structure for delivering complex technology and business
+        change. Seven stages give the work shape. Six gates give it assurance.
+        Two ways through — iterative or predictive — let the approach fit the
+        work rather than the other way around.
       </p>
     </div>
   </section>
@@ -46,21 +151,29 @@ const artefacts = [
       <header class="section__head">
         <div>
           <div class="eyebrow">Framework</div>
-          <h2 class="section__title" style="margin-top:1.25rem;">The seven <em>stages.</em></h2>
+          <h2 class="section__title" style="margin-top:1.25rem;">
+            The seven <em>stages.</em>
+          </h2>
         </div>
         <p class="lead">
-          Strategic artefacts such as the Business Case, Project Initiation Document and Project Management Plan sit alongside delivery tools such as Jira timelines, sprint planning, Confluence-based requirements, RAID management and weekly reporting.
+          Initiate and Discover set up the work. Design, Build and Test sit
+          together under the Deliver label. Cutover and Close return the work to
+          the organisation with the right artefacts and accountability.
         </p>
       </header>
 
       <div class="capabilities">
-        {stages.map((stage) => (
-          <article class="cap">
-            <div class="cap__num">{stage.number} / Stage</div>
-            <h3 class="cap__title">{stage.name}</h3>
-            <p class="cap__desc">{stage.description}</p>
-          </article>
-        ))}
+        {
+          stages.map((stage) => (
+            <article class="cap">
+              <div class="cap__num">
+                {stage.number} / {stage.subtitle}
+              </div>
+              <h3 class="cap__title">{stage.name}</h3>
+              <p class="cap__desc">{stage.description}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -69,21 +182,106 @@ const artefacts = [
     <div class="wrap">
       <header class="section__head">
         <div>
-          <div class="eyebrow">Artefacts</div>
-          <h2 class="section__title" style="margin-top:1.25rem;">How the artefacts <em>fit together.</em></h2>
+          <div class="eyebrow">Two ways through</div>
+          <h2 class="section__title" style="margin-top:1.25rem;">
+            Iterative or <em>predictive.</em>
+          </h2>
         </div>
         <p class="lead">
-          Each artefact has a defined purpose and sits at a specific point in the delivery lifecycle. Steering Committee artefacts, financial controls and endorsed project documents are managed through appropriate governance channels, while day-to-day delivery is managed through fit-for-purpose delivery tools.
+          The stages stay the same. The path through them changes with the work.
+          Choose iterative where requirements will move and the team runs to
+          cadence. Choose predictive where requirements are stable and a paper
+          trail is needed. Most enterprise delivery runs hybrid — predictive at
+          the programme layer, iterative at the team layer.
         </p>
       </header>
 
-      <div class="artefact-grid">
-        {artefacts.map((artefact) => (
-          <div class="artefact-card">
-            <h3>{artefact.name}</h3>
-            <p>{artefact.description}</p>
-          </div>
-        ))}
+      <div class="tracks">
+        <article class="track">
+          <div class="track__label">Iterative</div>
+          <h3 class="track__title">Plan · build · review · refine.</h3>
+          <p class="track__desc">
+            Sprint cycle. Best where requirements will move and the team runs to
+            cadence.
+          </p>
+          <ol class="track__milestones">
+            {
+              iterativeMilestones.map((m, i) => (
+                <li>
+                  <span class="track__step">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span class="track__name">{m}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </article>
+        <article class="track">
+          <div class="track__label">Predictive</div>
+          <h3 class="track__title">Phase by phase. Gated. Paper trail.</h3>
+          <p class="track__desc">
+            Best where requirements are stable and a defensible paper trail is
+            needed.
+          </p>
+          <ol class="track__milestones">
+            {
+              predictiveMilestones.map((m, i) => (
+                <li>
+                  <span class="track__step">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span class="track__name">{m}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </article>
+      </div>
+
+      <div class="hybrid">
+        <div class="hybrid__label">Hybrid</div>
+        <p>
+          Predictive at the programme layer. Iterative at the team layer. Best
+          for most enterprise delivery — funding, procurement and assurance run
+          on cadence, while delivery teams work in cycles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <header class="section__head">
+        <div>
+          <div class="eyebrow">Governance Assurance</div>
+          <h2 class="section__title" style="margin-top:1.25rem;">
+            The six <em>gates.</em>
+          </h2>
+        </div>
+        <p class="lead">
+          Each gate is a named decision with a named decider. Gates exist to
+          confirm the work is fit to continue — not to slow it down. The same
+          six gates apply whether the work runs iterative, predictive or hybrid.
+        </p>
+      </header>
+
+      <div class="gates">
+        {
+          gates.map((gate) => (
+            <article class="gate">
+              <div class="gate__head">
+                <span class="gate__id">{gate.id}</span>
+                <span class="gate__name">{gate.name}</span>
+              </div>
+              <ul class="gate__decisions">
+                {gate.decisions.map((d) => (
+                  <li>{d}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -95,21 +293,35 @@ const artefacts = [
           <div class="eyebrow">Apply this framework</div>
           <h2 style="margin-top:1.25rem;">Need help <em>applying it?</em></h2>
           <p class="lead" style="margin-top:1.5rem;">
-            Lavelle Pty Ltd provides consulting and contract project management support for organisations applying structured delivery frameworks to complex programs.
+            Lavelle Pty Ltd provides consulting and contract project management
+            support for organisations applying structured delivery frameworks to
+            complex programmes.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
             <a href="/contact" class="btn btn--primary">
               Engage Lavelle Pty Ltd <span class="btn__arrow">→</span>
             </a>
-            <a href="/pmo-resources" class="btn" style="background:transparent; color:var(--bone); border:1px solid var(--bone);">
+            <a
+              href="/pmo-resources"
+              class="btn"
+              style="background:transparent; color:var(--bone); border:1px solid var(--bone);"
+            >
               Browse PMO Resources
             </a>
           </div>
         </div>
         <ul class="engage__list">
-          <li><a href="/consulting"><span>Consulting services</span><span>→</span></a></li>
-          <li><a href="/pmo-resources"><span>PMO Resources</span><span>→</span></a></li>
-          <li><a href="/case-studies"><span>Case studies</span><span>→</span></a></li>
+          <li>
+            <a href="/consulting"
+              ><span>Consulting services</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/pmo-resources"
+              ><span>PMO Resources</span><span>→</span></a>
+          </li>
+          <li>
+            <a href="/case-studies"><span>Case studies</span><span>→</span></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -117,33 +329,160 @@ const artefacts = [
 </BaseLayout>
 
 <style>
-  .artefact-grid {
+  .tracks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 860px) {
+    .tracks {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .track {
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--ochre);
+    padding: 1.75rem;
+  }
+  .track__label {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    margin-bottom: 1rem;
+  }
+  .track__title {
+    font-family: "Fraunces", serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+  .track__desc {
+    font-size: var(--body-sm);
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+  .track__milestones {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .track__milestones li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .track__milestones li:first-child {
+    border-top: none;
+  }
+  .track__step {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--ochre);
+    min-width: 1.75rem;
+  }
+  .track__name {
+    font-family: "Fraunces", serif;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .hybrid {
+    margin-top: 2rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--ink);
+  }
+  .hybrid__label {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .hybrid p {
+    font-size: var(--body-sm);
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 64ch;
+  }
+
+  .gates {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
   @media (min-width: 760px) {
-    .artefact-grid {
+    .gates {
       grid-template-columns: 1fr 1fr;
     }
   }
-  .artefact-card {
+  @media (min-width: 1080px) {
+    .gates {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .gate {
     background: var(--bone);
     border: 1px solid var(--rule);
     padding: 1.5rem;
     border-left: 3px solid var(--ochre);
   }
-  .artefact-card h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem;
+  .gate__head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .gate__id {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    color: var(--ochre);
+  }
+  .gate__name {
+    font-family: "Fraunces", serif;
+    font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
     color: var(--ink);
   }
-  .artefact-card p {
+  .gate__decisions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .gate__decisions li {
     font-size: var(--body-sm);
     color: var(--ink-soft);
-    line-height: 1.55;
-    max-width: none;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .gate__decisions li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 1px;
+    background: var(--ochre);
   }
 </style>
