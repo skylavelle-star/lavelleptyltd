@@ -85,45 +85,52 @@ const paths = [
 const gates = [
   {
     id: "G1",
-    name: "Approve",
+    name: "Authorise Initiation",
     decisions: [
-      "Concept brief sign-off",
-      "Tech feasibility",
-      "Seed funding (if applicable)",
+      "Seed Funding Case received",
+      "Project Brief sign-off",
+      "Lite Business Case approved",
     ],
   },
   {
     id: "G2",
-    name: "Discover",
+    name: "Authorise the Project",
     decisions: [
-      "High-level plan sign-off",
-      "Procurement approvals",
-      "Business case signed off",
+      "SteerCo Charter sign-off",
+      "Procurement Management Approach approved",
+      "Business Case signed off",
     ],
   },
   {
     id: "G3",
-    name: "Design",
+    name: "Authorise Stage — Design",
     decisions: [
-      "Detailed plan sign-off",
+      "Stage Plan — Design sign-off",
       "Design authority endorsement",
-      "Financial control tracker live",
+      "Cost Tolerance Tracker live",
     ],
   },
   {
     id: "G4",
-    name: "Build",
-    decisions: ["Build complete sign-off", "Integration verified"],
+    name: "Authorise Stage — Build",
+    decisions: ["Stage Plan — Build complete sign-off", "Integration verified"],
   },
   {
     id: "G5",
-    name: "Cutover",
-    decisions: ["Go / No-Go sign-off", "Transition plan sign-off"],
+    name: "Authorise Release",
+    decisions: [
+      "Go No-Go Checklist sign-off",
+      "Release Plan sign-off",
+    ],
   },
   {
     id: "G6",
-    name: "Close",
-    decisions: ["Closure report sign-off", "Financial close", "Project closed"],
+    name: "Authorise Project Closure",
+    decisions: [
+      "End Project Report sign-off",
+      "Lessons Report captured",
+      "Project closed",
+    ],
   },
 ];
 ---
@@ -273,7 +280,7 @@ const gates = [
           <h2 style="margin-top:1.25rem;">Need help <em>applying it?</em></h2>
           <p class="lead" style="margin-top:1.5rem;">
             Every template, pack and bundle on this site is wired to a stage
-            and a gate of the framework. The Tiering Calculator routes you to
+            and a gate of the framework. The Tailoring Calculator routes you to
             the right bundle for your project's complexity. Consulting picks
             up where templates leave off.
           </p>
@@ -305,7 +312,7 @@ const gates = [
           </li>
           <li>
             <a href="/free-tools"
-              ><span>Free tools &amp; Tiering Calculator</span><span>→</span></a>
+              ><span>Free tools &amp; Tailoring Calculator</span><span>→</span></a>
           </li>
         </ul>
       </div>

@@ -15,7 +15,7 @@ const stagePacks = [
     href: "/templates/business-case-pack",
     stage: "Initiation (G1 → G2)",
     description:
-      "Business Case Template, Rapid Business Case, Discovery Funding Case, Seed Funding Case, Kick-off Pack — Business Case.",
+      "Business Case, Lite Business Case, Project Brief, Seed Funding Case, Business Case Workshop Pack.",
     status: "live" as const,
   },
   {
@@ -23,7 +23,7 @@ const stagePacks = [
     href: "/templates/project-setup-pack",
     stage: "Initiation / Mobilisation",
     description:
-      "Project Manager Onboarding Checklist, Project Schedule, PMP, Scope & High-Level Requirements, Kick-off Pack — Project.",
+      "Project Initiation Checklist, Project Plan Schedule, Project Plan, Scope & High-Level Requirements, Initiation Stage Kick-off Pack.",
     status: "stub" as const,
   },
   {
@@ -31,7 +31,7 @@ const stagePacks = [
     href: "/templates/discovery-pack",
     stage: "Discovery (G2 → G3)",
     description:
-      "BA Discovery, Change Discovery, Delivery Methodology, Project Assurance Checklist, Project Tiering Calculator.",
+      "BA Discovery Assessment, Change Impact Assessment, Project Approach Selector, Project Assurance Checklist, Project Tailoring Calculator.",
     status: "stub" as const,
   },
   {
@@ -39,7 +39,7 @@ const stagePacks = [
     href: "/templates/requirements-design-pack",
     stage: "Design (G3 → G4)",
     description:
-      "Screen Requirements, Workflow Configuration, Use Case Summary, Service Analysis, Solution Gap Analysis, Requirements Traceability Matrix.",
+      "Product Description — UI, Workflow, Use Case and Service; Product Gap Analysis; Requirements Traceability Matrix.",
     status: "stub" as const,
   },
   {
@@ -47,7 +47,7 @@ const stagePacks = [
     href: "/templates/financial-control-pack",
     stage: "Spans all stages",
     description:
-      "Cost Estimate, Estimation Guidelines, Budget Phasing, Financial Control Tracker, Contingency Calculator, Asset Labour, Minor Assets, Journal, RAID.",
+      "Cost Plan, Estimation Approach Guide, Stage Plan Budget, Cost Tolerance Tracker, Risk Budget Calculator, Labour Capitalisation Workbook, Configuration Item Register, Finance Journal Request, RAID Log.",
     status: "stub" as const,
   },
   {
@@ -55,14 +55,14 @@ const stagePacks = [
     href: "/templates/testing-pack",
     stage: "Test (G4 → G5)",
     description:
-      "Test Strategy, Test Plan, Test Summary Report, Test Script.",
+      "Quality Management Approach, Quality Plan, Product Status Account, Quality Inspection Sheet.",
     status: "stub" as const,
   },
   {
     name: "Cutover Pack",
     href: "/templates/cutover-pack",
     stage: "Cutover (G5)",
-    description: "Cutover Runsheet, Go / No-Go Checklist.",
+    description: "Release Plan Runsheet, Go No-Go Checklist.",
     status: "stub" as const,
   },
   {
@@ -70,7 +70,7 @@ const stagePacks = [
     href: "/templates/steering-committee-pack",
     stage: "Spans all stages",
     description:
-      "Charter (Detailed), Charter (One Page), SteerCo Pack, Sponsor Update (One Page), Portfolio Pulse, Project Change Request, Report Specification.",
+      "SteerCo Charter, Lite Project Initiation Documentation, Steering Committee Pack, Highlight Report, Portfolio Highlight Report, Request for Change, Report Specification.",
     status: "live" as const,
   },
   {
@@ -78,19 +78,19 @@ const stagePacks = [
     href: "/templates/training-change-pack",
     stage: "Cutover → Closure (G5 → G6)",
     description:
-      "Training Plan, Operational Level Agreement, Change Templates Review.",
+      "Communication & Training Approach, Operational Acceptance Criteria, Change Control Approach Review.",
     status: "stub" as const,
   },
 ];
 
 const additionalTemplates = [
-  { name: "RAID Register", slug: "raid-register" },
-  { name: "Decision Log", slug: "decision-log" },
-  { name: "Weekly Status Report", slug: "weekly-status-report" },
-  { name: "Project Initiation Document", slug: "project-initiation-document" },
-  { name: "Project Management Plan", slug: "project-management-plan" },
-  { name: "Benefits Register", slug: "benefits-register" },
-  { name: "Closure Report", slug: "closure-report" },
+  { name: "RAID Log", slug: "raid-log" },
+  { name: "Daily Log", slug: "daily-log" },
+  { name: "Highlight Report", slug: "highlight-report" },
+  { name: "SteerCo Charter", slug: "project-initiation-documentation" },
+  { name: "Project Plan", slug: "project-plan" },
+  { name: "Benefits Management Approach", slug: "benefits-management-approach" },
+  { name: "End Project Report", slug: "end-project-report" },
 ];
 ---
 
@@ -134,7 +134,7 @@ const additionalTemplates = [
         </div>
         <p class="lead">
           Each pack is anchored to a stage and gate of the Lavelle Delivery
-          Framework. Buy individually, or use the Tiering Calculator to find
+          Framework. Buy individually, or use the Tailoring Calculator to find
           the tier-based bundle that matches the complexity of your work.
         </p>
       </header>
@@ -181,7 +181,7 @@ const additionalTemplates = [
             style="font-size:var(--body); color:var(--ink-soft); margin-bottom:1.5rem; max-width:50ch;"
           >
             Three tier-based bundles — Tier 3 Light, Tier 2 Standard and Tier
-            1 Major — mirror the Project Tiering Calculator. Score the
+            1 Major — mirror the Project Tailoring Calculator. Score the
             project, get the matching bundle.
           </p>
         </div>

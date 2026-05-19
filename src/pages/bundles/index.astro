@@ -5,13 +5,13 @@ const bundles = [
   {
     slug: "tier-3-light",
     label: "Tier 3 Light",
-    scoreRange: "Tiering score 7–14",
+    scoreRange: "Tailoring score 7–14",
     summary: "The minimum viable artefact set for a small, contained delivery.",
     includes: [
-      "Rapid Business Case",
-      "Project Schedule (lightweight)",
-      "Steering Committee Charter (One Page)",
-      "Sponsor Update (One Page)",
+      "Lite Business Case",
+      "Project Plan Schedule (lightweight)",
+      "Lite Project Initiation Documentation",
+      "Highlight Report (One Page)",
       "Single-page status",
     ],
     featured: false,
@@ -19,37 +19,37 @@ const bundles = [
   {
     slug: "tier-2-standard",
     label: "Tier 2 Standard",
-    scoreRange: "Tiering score 15–24",
+    scoreRange: "Tailoring score 15–24",
     summary:
       "The standard mid-complexity delivery artefact set. Most enterprise projects land here.",
     includes: [
-      "Business Case Template",
-      "Project Management Plan",
+      "Business Case",
+      "Project Plan",
       "Scope & High-Level Requirements",
-      "RAID Register",
-      "Steering Committee Charter (Detailed)",
+      "RAID Log",
+      "SteerCo Charter",
       "Steering Committee Pack",
-      "Project Cost Estimate",
-      "Budget Phasing",
-      "Financial Control Tracker",
+      "Cost Plan",
+      "Stage Plan Budget",
+      "Cost Tolerance Tracker",
     ],
     featured: true,
   },
   {
     slug: "tier-1-major",
     label: "Tier 1 Major",
-    scoreRange: "Tiering score 25–35",
+    scoreRange: "Tailoring score 25–35",
     summary:
       "The full programme artefact set for high-complexity, high-scrutiny delivery.",
     includes: [
       "Everything in Tier 2 Standard, plus:",
       "Project Assurance Checklist",
-      "Portfolio Pulse",
-      "Cutover Runsheet",
-      "Go / No-Go Checklist",
-      "Test Strategy + Test Plan + Test Summary Report",
-      "Contingency Calculator",
-      "Asset Labour Calculations",
+      "Portfolio Highlight Report",
+      "Release Plan Runsheet",
+      "Go No-Go Checklist",
+      "Quality Management Approach + Quality Plan + Product Status Account",
+      "Risk Budget Calculator",
+      "Labour Capitalisation Workbook",
     ],
     featured: false,
   },
@@ -62,9 +62,9 @@ const recoveryBundle = {
     "A consulting-led bundle. The supporting artefact set behind the Project Recovery consulting offer.",
   includes: [
     "Project Assurance Checklist",
-    "RAID Register",
-    "Sponsor Update (One Page)",
-    "Project Change Request",
+    "RAID Log",
+    "Highlight Report (One Page)",
+    "Request for Change",
     "Recovery framing doc (in development)",
   ],
 };
@@ -72,7 +72,7 @@ const recoveryBundle = {
 
 <BaseLayout
   title="Bundles — Lavelle Pty Ltd"
-  description="Tier-based bundles of the Lavelle pack set: Tier 3 Light, Tier 2 Standard, Tier 1 Major. Plus the consulting-led Project Recovery Bundle. The Tiering Calculator routes you to the right one."
+  description="Tier-based bundles of the Lavelle pack set: Tier 3 Light, Tier 2 Standard, Tier 1 Major. Plus the consulting-led Project Recovery Bundle. The Tailoring Calculator routes you to the right one."
 >
   <section class="subhero">
     <div class="wrap">
@@ -84,7 +84,7 @@ const recoveryBundle = {
         The right artefact set <em>for the complexity of the work.</em>
       </h1>
       <p class="subhero__lead">
-        Three tier-based bundles mirror the Project Tiering Calculator's
+        Three tier-based bundles mirror the Project Tailoring Calculator's
         recommended artefact sets. Score the project, get the matching
         bundle. A fourth bundle — Project Recovery — sits alongside the
         consulting offer.
@@ -110,8 +110,8 @@ const recoveryBundle = {
           </h2>
         </div>
         <p class="lead">
-          Each bundle is built around the artefacts that match a tiering
-          score band. Run the Tiering Calculator if you are not sure where
+          Each bundle is built around the artefacts that match a tailoring
+          score band. Run the Tailoring Calculator if you are not sure where
           your project lands.
         </p>
       </header>
@@ -188,13 +188,13 @@ const recoveryBundle = {
             Not sure which bundle <em>fits the work?</em>
           </h2>
           <p class="lead" style="margin-top:1.5rem;">
-            The Project Tiering Calculator scores the project across
+            The Project Tailoring Calculator scores the project across
             complexity dimensions and recommends the matching bundle. If you
             would rather talk it through, start with a thirty-minute call.
           </p>
           <div class="hero__ctas" style="margin-top:2.5rem;">
             <a href="/free-tools#tiering-calculator" class="btn btn--primary">
-              Use the Tiering Calculator <span class="btn__arrow">→</span>
+              Use the Tailoring Calculator <span class="btn__arrow">→</span>
             </a>
             <a href="/contact" class="btn btn--ghost">Talk to Sky</a>
           </div>
