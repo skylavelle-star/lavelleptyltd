@@ -116,6 +116,6 @@ Design the reporting to be producible in a reasonable time from information the 
 
 ---
 
-The Lavelle Pty Ltd Steering Committee Pack includes a status report template, executive dashboard format, risk register structure, RAG rating criteria guide and escalation pack template. See [PMO Resources](/pmo-resources#steering-committee-pack) for details.
+The Lavelle Pty Ltd Steering Committee Pack includes a status report template, executive dashboard format, risk register structure, RAG rating criteria guide and escalation pack template. See the [Steering Committee Pack](/templates/steering-committee-pack) for details.
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.

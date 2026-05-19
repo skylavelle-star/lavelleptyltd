@@ -40,9 +40,8 @@ src/
     BaseLayout.astro  # base layout (head, header nav, footer all integrated)
   pages/
     index.astro
-    services.astro          # umbrella for Consulting / PMO Resources / Case Studies / Delivery Framework
+    services.astro          # umbrella for Consulting / Templates / Case Studies / Delivery Framework
     consulting.astro        # six capabilities + operating principles
-    pmo-resources.astro     # product packs + enterprise licensing + free checklist
     case-studies.astro
     thinking/
       index.astro           # article index, sorted by pubDate desc
@@ -72,7 +71,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes five destinations (Services, Consulting, PMO Resources, Case Studies, Thinking). Other pages — `/templates/`, `/free-tools/`, `/delivery-framework/`, `/digital-assets/`, `/about/` — are reached via footer or in-page CTAs.
+Header nav exposes six destinations (Framework, Templates, Bundles, Consulting, Free Tools, Contact). Other pages — `/services/`, `/case-studies/`, `/thinking/`, `/digital-assets/`, `/about/` — are reached via footer or in-page CTAs.
 
 ## Config and environment
 
@@ -107,8 +106,6 @@ Web3Forms handles contact form submissions. Access key: `21e468ca-496b-45eb-8313
 Pages that use the overlay (and conditionally load `lemon.js`):
 
 - `src/pages/index.astro` (homepage product teasers)
-- `src/pages/pmo-resources.astro`
-- `src/pages/templates/bundle.astro`
 - `src/pages/templates/project-recovery-pack.astro`
 - `src/pages/templates/business-case-pack.astro`
 - `src/pages/templates/procurement-pack.astro`

@@ -89,6 +89,6 @@ The recommendation should follow from the evaluation. If it does not - if there 
 
 ---
 
-The Lavelle Pty Ltd Procurement Pack includes a weighted evaluation scorecard, evaluator guidance, probity checklist, BAFO request template and recommendation report structure. See [PMO Resources](/pmo-resources#procurement-pack) for details.
+The Lavelle Pty Ltd Procurement Pack includes a weighted evaluation scorecard, evaluator guidance, probity checklist, BAFO request template and recommendation report structure. See the [Procurement Pack](/templates/procurement-pack) for details.
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.
