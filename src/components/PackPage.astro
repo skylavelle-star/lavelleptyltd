@@ -39,6 +39,7 @@ interface Props {
   included: IncludedItem[];
   howToUse: HowToStep[];
   faqs: FAQ[];
+  roiBlock?: string;
   relatedPacks?: RelatedPack[];
   relatedConsultingHref?: string;
   relatedConsultingLabel?: string;
@@ -58,6 +59,7 @@ const {
   included,
   howToUse,
   faqs,
+  roiBlock,
   relatedPacks = [],
   relatedConsultingHref,
   relatedConsultingLabel,
@@ -335,6 +337,15 @@ const sections = [
         </section>
 
         {
+          roiBlock && (
+            <aside class="pack-roi" aria-label="What this saves you">
+              <div class="eyebrow">What this saves you</div>
+              <p>{roiBlock}</p>
+            </aside>
+          )
+        }
+
+        {
           checkoutUrl && (
             <div class="pack-prose__cta">
               <a
@@ -475,7 +486,7 @@ const sections = [
             <div class="eyebrow">Tier-based bundles</div>
             <p>
               The right bundle depends on the complexity of your work. Score
-              the project with the Tiering Calculator, then choose from Tier
+              the project with the Tailoring Calculator, then choose from Tier
               3 Light, Tier 2 Standard or Tier 1 Major.
             </p>
           </div>
@@ -971,8 +982,28 @@ const sections = [
     max-width: none;
   }
 
+  .pack-roi {
+    margin-top: clamp(2.5rem, 4vw, 3.5rem);
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.25rem);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ochre);
+  }
+  .pack-roi .eyebrow {
+    margin-bottom: 0.85rem;
+  }
+  .pack-roi p {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+    max-width: 62ch;
+  }
+
   .pack-prose__cta {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   /* SIDECARD */

@@ -14,8 +14,8 @@ export const analytics = {
 
 export const products = {
   steeringCommitteePack: {
-    name: "Steering Committee Pack",
-    price: "147",
+    name: "Steering Pack",
+    price: "897",
     href: "/templates/steering-committee-pack",
     pmoResourcesHref: "/pmo-resources#steering-committee-pack",
     description:
@@ -24,7 +24,7 @@ export const products = {
   },
   projectRecoveryPack: {
     name: "Project Recovery Pack",
-    price: "297",
+    price: "1,247",
     href: "/templates/project-recovery-pack",
     pmoResourcesHref: "/pmo-resources#project-recovery-pack",
     description:
@@ -33,7 +33,7 @@ export const products = {
   },
   businessCasePack: {
     name: "Business Case Pack",
-    price: "247",
+    price: "1,197",
     href: "/templates/business-case-pack",
     pmoResourcesHref: "/pmo-resources#business-case-pack",
     description:
@@ -42,7 +42,7 @@ export const products = {
   },
   procurementPack: {
     name: "Procurement Pack",
-    price: "297",
+    price: "1,197",
     href: "/templates/procurement-pack",
     pmoResourcesHref: "/pmo-resources#procurement-pack",
     description:
