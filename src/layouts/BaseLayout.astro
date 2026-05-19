@@ -30,10 +30,10 @@ const {
 } = Astro.props;
 
 const navItems = [
+  { key: 'consulting', label: 'Consulting', href: '/consulting' },
   { key: 'framework', label: 'Framework', href: '/framework' },
   { key: 'templates', label: 'Templates', href: '/templates' },
   { key: 'bundles', label: 'Bundles', href: '/bundles' },
-  { key: 'consulting', label: 'Consulting', href: '/consulting' },
   { key: 'free-tools', label: 'Free Tools', href: '/free-tools' },
   { key: 'contact', label: 'Contact', href: '/contact' },
 ] as const;
@@ -134,7 +134,6 @@ const year = new Date().getFullYear();
               <li><a href="/consulting#governance">PMO Stand-up</a></li>
               <li><a href="/consulting#assurance">Steering Governance</a></li>
               <li><a href="/consulting#independence">Delivery Assurance</a></li>
-              <li><a href="/enterprise-licensing">Enterprise Licensing</a></li>
             </ul>
           </div>
           <div class="footer__col">
