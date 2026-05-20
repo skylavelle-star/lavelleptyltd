@@ -937,10 +937,10 @@ section {
 }
 
 /* ----------- Full-bleed image band -----------
-   Frame holds a fixed aspect-ratio/max-height so the image inside can
-   parallax-shift vertically as the section scrolls through the viewport.
-   Image starts framed showing its top portion and ends showing the
-   bottom — i.e. moves up within the pane as you scroll down. */
+   Frame holds a fixed aspect-ratio/max-height. The image inside is taller
+   than the frame (130% height, top -15%) so a scroll-driven JS handler
+   in index.astro can translate it from +15% to -15%, shifting the image
+   up within the pane as the user scrolls down. */
 .image-band {
   margin: 0;
   background: var(--ink);
@@ -954,38 +954,20 @@ section {
 }
 .image-band__img {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: -15%;
+  width: 100%;
+  height: 130%;
   display: block;
   object-fit: cover;
   object-position: center;
-}
-
-/* Parallax — requires scroll-driven animations (Chrome/Edge 115+, Safari 26+).
-   Firefox without the flag falls back to the static centered image above. */
-@supports (animation-timeline: view()) {
-  .image-band__img {
-    height: 124%;
-    top: -12%;
-    bottom: auto;
-    animation: image-band-parallax linear both;
-    animation-timeline: view();
-    animation-range: cover;
-    will-change: transform;
-  }
-  @keyframes image-band-parallax {
-    from {
-      transform: translateY(12%);
-    }
-    to {
-      transform: translateY(-12%);
-    }
-  }
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .image-band__img {
-    animation: none;
-    transform: none;
+    transform: none !important;
   }
 }
 
