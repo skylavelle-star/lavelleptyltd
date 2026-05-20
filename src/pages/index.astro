@@ -497,47 +497,4 @@ const featuredThinking = (await getCollection("thinking"))
     );
     reveals.forEach((el) => io.observe(el));
   }
-
-  // Banner parallax: shift the image-band img up within its frame as the
-  // band scrolls through the viewport. Range ±15% of image height.
-  const band = document.querySelector<HTMLElement>(".image-band");
-  const bandImg = band?.querySelector<HTMLElement>(".image-band__img");
-  if (band && bandImg && !reduce) {
-    let ticking = false;
-    let active = false;
-    const RANGE = 15;
-
-    const update = () => {
-      const rect = band.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const track = vh + rect.height;
-      const consumed = vh - rect.top;
-      const progress = Math.max(0, Math.min(1, consumed / track));
-      const ty = (0.5 - progress) * (RANGE * 2);
-      bandImg.style.transform = `translate3d(0, ${ty}%, 0)`;
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (!ticking && active) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    };
-
-    const visibility = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          active = entry.isIntersecting;
-          if (active) update();
-        }
-      },
-      { rootMargin: "100px 0px 100px 0px" },
-    );
-    visibility.observe(band);
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
-    update();
-  }
 </script>
