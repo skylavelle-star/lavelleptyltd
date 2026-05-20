@@ -516,9 +516,9 @@ const featuredThinking = (await getCollection("thinking"))
       const track = vh + rect.height;
       const consumed = vh - rect.top;
       const progress = Math.max(0, Math.min(1, consumed / track));
-      // 2× speed: parallax completes by the time the band reaches the
-      // midpoint of its scroll travel, then holds at -slack.
-      const eased = Math.min(progress * 2, 1);
+      // 1.5× speed: parallax completes once the band reaches ~67% of its
+      // scroll travel (33% earlier than the full distance), then holds.
+      const eased = Math.min(progress * 1.5, 1);
       const ty = -eased * slack;
       bandImg.style.transform = `translate3d(0, ${ty}px, 0)`;
       ticking = false;
