@@ -329,7 +329,7 @@ const sections = [
               faqs.map((item) => (
                 <details class="pack-faq__item">
                   <summary>{item.q}</summary>
-                  <p>{item.a}</p>
+                  <p set:html={item.a} />
                 </details>
               ))
             }

@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PackPage from "../../components/PackPage.astro";
+import { products } from "../../config/site";
+
+const pack = products.completePractitionerLibrary;
+const checkoutUrl = pack.checkoutUrl || undefined;
+
+const audience = [
+  "Senior project managers who have decided to standardise on a single opinionated artefact set across their engagements",
+  "PMO leads building a baseline that every PM in the practice can adopt without re-templating",
+  "Independent consultants who want the full library on day one, not assembled over six engagements",
+  "Contracting firms standardising a delivery baseline before tender response",
+];
+
+const problemStatement = [
+  "Most practitioners assemble their artefact library one pack at a time, picking up a template here and inheriting one from an old engagement there. The result is a folder of inconsistent documents, mismatched voice and no single source of truth — the worst possible position when the next program asks for a baseline.",
+  "The Complete Practitioner Library is the single-transaction alternative. Every stage pack, every bundle, the Framework documentation and twelve months of artefact updates — all in one opinionated house voice, anchored to a named framework, delivered the moment you buy.",
+];
+
+const included = [
+  {
+    title: "All nine stage-based packs",
+    desc: "Business Case, Project Setup, Discovery, Requirements & Design, Financial Control, Testing, Cutover, Steering, Training / Change. Every artefact in the framework.",
+  },
+  {
+    title: "Procurement Pack",
+    desc: "The full restricted-RFP evaluation set — evaluation plan, technical and commercial matrices, BAFO, recommendation report and probity checklist.",
+  },
+  {
+    title: "Project Recovery Bundle",
+    desc: "The consulting-led recovery set — recovery framing doc, Project Assurance Checklist, RAID Register, Sponsor Update One-Page and Project Change Request.",
+  },
+  {
+    title: "Framework documentation",
+    desc: "The full Lavelle Delivery Framework — six gates, four delivery paths, the Tailoring Calculator and the operating principles that hold the artefacts together.",
+  },
+  {
+    title: "Twelve months of artefact updates",
+    desc: "Quarterly updates pushed for twelve months from purchase. New artefacts added to the library inside that window are included at no extra cost.",
+  },
+  {
+    title: "Single named-user licence",
+    desc: "One practitioner, unlimited engagements. Use the library across every client and every program you run.",
+  },
+];
+
+const howToUse = [
+  {
+    title: "Download once, baseline once",
+    desc: "Set the library as your standard at the start of your next engagement. Stop picking artefacts up piecemeal — work from one coherent set in one voice from day one.",
+  },
+  {
+    title: "Tailor at the engagement level, not the artefact level",
+    desc: "Use the Tailoring Calculator on each new project to choose which packs apply at what depth. The library is the universe; the calculator decides which slice you draw from.",
+  },
+  {
+    title: "Push updates quarterly",
+    desc: "When a quarterly update lands, replace the matching files in your working copy. The voice and structure stay consistent across the twelve-month window.",
+  },
+];
+
+const stats = [
+  { num: "50+", label: "Artefacts included" },
+  { num: `$${pack.price}`, label: "Single user · AUD" },
+  { num: "12 months", label: "Of artefact updates" },
+  { num: "All stages", label: "Framework coverage" },
+];
+
+const faqs = [
+  {
+    q: "Is this a single-user licence?",
+    a: "Yes. One named practitioner, unlimited engagements. If you need multi-seat coverage for a firm or department, contact Sky directly — pricing for those is bespoke.",
+  },
+  {
+    q: "What happens after twelve months of updates?",
+    a: "The library is yours to keep forever. After twelve months, you stop receiving quarterly updates and any new artefacts added to the library after that window. You can renew the update window at the time, at a discounted renewal rate.",
+  },
+  {
+    q: "Do new artefacts added during the twelve-month window cost extra?",
+    a: "No. Anything added to the library inside the twelve-month window is included in the original purchase — that is the point of buying once.",
+  },
+  {
+    q: "Is there a refund window?",
+    a: "Yes — 14 days from purchase, no questions asked, full refund. The library is opinionated and may not suit everyone; the refund window exists so you can confirm fit before committing.",
+  },
+  {
+    q: "How does this compare to buying the packs individually?",
+    a: "Adding every stage pack, Procurement and the Project Recovery Bundle individually comes to ~$13,000 at list price. The library is priced to remove the maths and add the framework documentation and twelve months of updates on top.",
+  },
+  {
+    q: "Can I share this with my team?",
+    a: "Single-user licence — please do not redistribute. If you need a multi-seat arrangement for a team or department, contact Sky directly for bespoke pricing.",
+  },
+  {
+    q: "What format are the artefacts in?",
+    a: "Microsoft Word (.docx) and Excel (.xlsx). All fully editable; work in Google Docs and Google Sheets, though some conditional formatting may not carry across.",
+  },
+];
+---
+
+<BaseLayout
+  title="Complete Practitioner Library — Lavelle Pty Ltd"
+  description="Every Lavelle artefact in a single purchase. Nine stage-based packs, Procurement Pack, Project Recovery Bundle, Framework documentation and twelve months of artefact updates. Designed for the practitioner who has decided to standardise."
+>
+  {
+    checkoutUrl && (
+      <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+    )
+  }
+
+  <section class="subhero">
+    <div class="wrap">
+      <div class="subhero__crumb">
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/templates">Templates</a> &nbsp;/&nbsp;
+        <span>Complete Practitioner Library</span>
+      </div>
+      <div class="eyebrow">Complete Practitioner Library</div>
+      <h1 style="margin-top:1rem;">
+        Everything. Once. <em>Designed for the practitioner who has decided to standardise.</em>
+      </h1>
+      <p class="subhero__lead">
+        Every stage pack, every bundle, the Framework documentation and twelve
+        months of artefact updates — in one opinionated house voice, in a single
+        transaction, delivered the moment you buy.
+      </p>
+    </div>
+  </section>
+
+  <PackPage
+    packName="Complete Practitioner Library"
+    packSlug="complete-practitioner-library"
+    price={pack.price}
+    checkoutUrl={checkoutUrl}
+    gaLabel="Complete Practitioner Library"
+    stats={stats}
+    audience={audience}
+    problemStatement={problemStatement}
+    included={included}
+    howToUse={howToUse}
+    faqs={faqs}
+    roiBlock="About thirty days of senior PM work assembling the full opinionated library from scratch — $45,000 at $1,500/day contractor rates. Library: $12,997. ROI: ~3.5×. Plus the system effect — fifty-plus artefacts in a single house voice, anchored to a named framework. That is the part you can't outsource. Designed for the practitioner who has decided to standardise."
+    framework={{
+      stage: "Spans every stage of the Lavelle Delivery Framework",
+      gate: "All gates (G1 → G6)",
+    }}
+    relatedConsultingHref="/consulting"
+    relatedConsultingLabel="View consulting services"
+  />
+</BaseLayout>
