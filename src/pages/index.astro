@@ -104,8 +104,8 @@ const featuredThinking = (await getCollection("thinking"))
     <Image
       src={heroImage}
       alt="An empty boardroom with a long meeting table, floor-to-ceiling windows and morning light — the setting where steering committee decisions are made"
-      widths={[640, 960, 1280, 1920]}
-      sizes="100vw"
+      widths={[640, 960, 1280, 1536]}
+      sizes="(min-width: 1536px) 1536px, 100vw"
       loading="lazy"
       decoding="async"
       class="image-band__img"
@@ -496,5 +496,52 @@ const featuredThinking = (await getCollection("thinking"))
       { rootMargin: "0px 0px -15% 0px", threshold: 0.1 },
     );
     reveals.forEach((el) => io.observe(el));
+  }
+
+  // Banner parallax: image is rendered at its native aspect ratio (taller
+  // than the band), so we slide it vertically by up to `slack` pixels as
+  // the band scrolls through the viewport. Top edge visible at the start
+  // (progress 0), bottom edge visible at the end (progress 1).
+  const band = document.querySelector<HTMLElement>(".image-band");
+  const bandImg = band?.querySelector<HTMLImageElement>(".image-band__img");
+  if (band && bandImg && !reduce) {
+    let ticking = false;
+    let active = false;
+
+    const update = () => {
+      const rect = band.getBoundingClientRect();
+      const imgH = bandImg.getBoundingClientRect().height;
+      const slack = Math.max(0, imgH - rect.height);
+      const vh = window.innerHeight;
+      const track = vh + rect.height;
+      const consumed = vh - rect.top;
+      const progress = Math.max(0, Math.min(1, consumed / track));
+      const ty = -progress * slack;
+      bandImg.style.transform = `translate3d(0, ${ty}px, 0)`;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking && active) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    const visibility = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          active = entry.isIntersecting;
+          if (active) update();
+        }
+      },
+      { rootMargin: "100px 0px 100px 0px" },
+    );
+    visibility.observe(band);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    if (bandImg.complete) update();
+    else bandImg.addEventListener("load", update, { once: true });
   }
 </script>

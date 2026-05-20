@@ -937,10 +937,13 @@ section {
 }
 
 /* ----------- Full-bleed image band -----------
-   Frame is full-bleed with a clamped height that spans the viewport
-   edge-to-edge. The image is fit with object-fit: contain so the entire
-   original frame is visible — any spare space is filled by the band's
-   ink background, which reads as an intentional letterbox surround. */
+   Band is a 600px-tall full-width window. The image is rendered at its
+   native 1536-wide proportions (3:2 → 1024 tall at full size), centered
+   horizontally. Because the image is taller than the window (1024 > 600),
+   there's 424px of vertical slack that the parallax handler in
+   index.astro slides through as the band scrolls past the viewport. On
+   viewports narrower than 1536px the image scales proportionally; on
+   viewports < 900px the band height matches the image so no gutter. */
 .image-band {
   margin: 0;
   background: var(--ink);
@@ -949,16 +952,29 @@ section {
   border-bottom: 1px solid var(--rule);
   position: relative;
   width: 100%;
-  height: clamp(330px, 54vh, 600px);
+  height: 600px;
+}
+@media (max-width: 899px) {
+  .image-band {
+    height: calc(100vw * 2 / 3);
+  }
 }
 .image-band__img {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: min(1536px, 100%);
+  height: auto;
   display: block;
-  object-fit: contain;
-  object-position: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-band__img {
+    transform: none !important;
+  }
 }
 
 /* ----------- Article body (rendered markdown) ----------- */
