@@ -32,7 +32,8 @@ npm run format:check # prettier --check .
 src/
   assets/images/      # hero, about, services, templates etc. (optimised by Astro at build)
   components/
-    PackPage.astro    # shared product-detail layout for the four pack pages
+    PackPage.astro    # shared product-detail layout for the five PackPage users
+    StubPack.astro    # shared layout for the seven in-development stub packs (with notify-me form + ROI block)
   config/site.ts      # ALL site config and env var reads — import from here, not import.meta.env
   content/
     thinking/         # Astro content collection — editorial articles in markdown
@@ -40,24 +41,41 @@ src/
     BaseLayout.astro  # base layout (head, header nav, footer all integrated)
   pages/
     index.astro
-    services.astro          # umbrella for Consulting / Templates / Case Studies / Delivery Framework
-    consulting.astro        # six capabilities + operating principles
+    framework.astro            # seven stages, six gates, three paths
+    consulting.astro           # six capabilities + Lavelle Recovery Protocol™
     case-studies.astro
+    services.astro             # LEGACY / orphan — to be retired via /retire-services
+    privacy.astro
+    terms.astro
     thinking/
-      index.astro           # article index, sorted by pubDate desc
-      [...slug].astro       # individual article renderer
-    delivery-framework.astro
+      index.astro              # article index, sorted by pubDate desc
+      [...slug].astro          # individual article renderer
     templates/
-      index.astro           # browse-only index of packs + standalone artefacts
-      bundle.astro
-      project-recovery-pack.astro
-      business-case-pack.astro
-      procurement-pack.astro
-      steering-committee-pack.astro
-    free-tools.astro
+      index.astro                            # browse: flagship + nine stage packs + additional packs + standalone
+      complete-practitioner-library.astro    # $12,997 flagship (uses PackPage)
+      business-case-pack.astro               # live PackPage
+      project-recovery-pack.astro            # live PackPage
+      steering-committee-pack.astro          # live PackPage (display name "Steering Pack")
+      procurement-pack.astro                 # live PackPage
+      project-setup-pack.astro               # stub
+      discovery-pack.astro                   # stub
+      requirements-design-pack.astro         # stub
+      financial-control-pack.astro           # stub
+      testing-pack.astro                     # stub
+      cutover-pack.astro                     # stub
+      training-change-pack.astro             # stub
+    bundles/
+      index.astro                            # tier-bundle index + Project Recovery callout
+      tier-1-major.astro
+      tier-2-standard.astro
+      tier-3-light.astro
+      project-recovery-bundle.astro          # gated on framingDocReady flag — see below
+    free-tools.astro                         # Framework One-Page + Tailoring Calculator + supplementary
     free-tools/
       project-recovery-checklist.astro
-    digital-assets.astro    # category-level descriptions only — no named properties
+      project-recovery-checklist/
+        thanks.astro
+    digital-assets.astro                     # category-level descriptions only — no named properties
     about.astro
     contact.astro
     thank-you/
@@ -71,7 +89,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes six destinations (Framework, Templates, Bundles, Consulting, Free Tools, Contact). Other pages — `/services/`, `/case-studies/`, `/thinking/`, `/digital-assets/`, `/about/` — are reached via footer or in-page CTAs.
+Header nav exposes six destinations (Consulting, Framework, Templates, Bundles, Free Tools, Contact) plus a persistent "Engage us" CTA → `/contact`. Brand mark routes to home. Other pages — `/case-studies/`, `/thinking/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
 
 ## Config and environment
 
@@ -81,19 +99,34 @@ Header nav exposes six destinations (Framework, Templates, Bundles, Consulting, 
 import { site, products } from "../config/site";
 ```
 
-**Current env vars** (set in `.env` and Vercel project settings):
+**Current env vars** (set in `.env` and Vercel project settings; `.env.example` documents the shape):
 
-| Variable                            | Notes                                               |
-| ----------------------------------- | --------------------------------------------------- |
-| `PUBLIC_GA_ID`                      | Google Analytics 4                                  |
-| `PUBLIC_SITE_URL`                   | `https://lavelleptyltd.com.au`                      |
-| `PUBLIC_LS_PROJECT_RECOVERY_PACK`   | Lemon Squeezy checkout URL                          |
-| `PUBLIC_LS_BUSINESS_CASE_PACK`      | Lemon Squeezy checkout URL                          |
-| `PUBLIC_LS_PROCUREMENT_PACK`        | Lemon Squeezy checkout URL                          |
-| `PUBLIC_LS_STEERING_COMMITTEE_PACK` | Lemon Squeezy checkout URL                          |
-| `PUBLIC_LS_BUNDLE_PACK`             | Lemon Squeezy checkout URL for the four-pack bundle |
+| Variable                              | Notes                                                |
+| ------------------------------------- | ---------------------------------------------------- |
+| `PUBLIC_GA_ID`                        | Google Analytics 4                                   |
+| `PUBLIC_SITE_URL`                     | `https://lavelleptyltd.com.au`                       |
+| **Live packs (Tier 1)**               |                                                      |
+| `PUBLIC_LS_STEERING_COMMITTEE_PACK`   | LS checkout URL — Steering Pack ($897)               |
+| `PUBLIC_LS_PROJECT_RECOVERY_PACK`     | LS checkout URL — Project Recovery Pack ($1,247)     |
+| `PUBLIC_LS_BUSINESS_CASE_PACK`        | LS checkout URL — Business Case Pack ($1,197)        |
+| `PUBLIC_LS_PROCUREMENT_PACK`          | LS checkout URL — Procurement Pack ($1,197)          |
+| **Stage packs (stubs until variants exist)** |                                               |
+| `PUBLIC_LS_PROJECT_SETUP_PACK`        | Project Setup Pack ($847)                            |
+| `PUBLIC_LS_DISCOVERY_PACK`            | Discovery Pack ($947)                                |
+| `PUBLIC_LS_REQUIREMENTS_DESIGN_PACK`  | Requirements & Design Pack ($947)                    |
+| `PUBLIC_LS_FINANCIAL_CONTROL_PACK`    | Financial Control Pack ($1,247)                      |
+| `PUBLIC_LS_TESTING_PACK`              | Testing Pack ($747)                                  |
+| `PUBLIC_LS_CUTOVER_PACK`              | Cutover Pack ($747)                                  |
+| `PUBLIC_LS_TRAINING_CHANGE_PACK`      | Training / Change Pack ($747)                        |
+| **Flagship**                          |                                                      |
+| `PUBLIC_LS_COMPLETE_LIBRARY`          | Complete Practitioner Library ($12,997)              |
+| **Bundles**                           |                                                      |
+| `PUBLIC_LS_TIER_3_LIGHT`              | Tier 3 Light Bundle ($1,997)                         |
+| `PUBLIC_LS_TIER_2_STANDARD`           | Tier 2 Standard Bundle ($4,497)                      |
+| `PUBLIC_LS_TIER_1_MAJOR`              | Tier 1 Major Bundle ($7,997)                         |
+| `PUBLIC_LS_PROJECT_RECOVERY_BUNDLE`   | Project Recovery Bundle ($2,997) — also gated on `framingDocReady` |
 
-Lemon Squeezy URL format is `https://lavelleptyltd.lemonsqueezy.com/checkout/buy/{variant_id}`. Keep `.env.example` in sync when adding new variables.
+Lemon Squeezy URL format: `https://lavelleptyltd.lemonsqueezy.com/checkout/buy/{variant_id}`. When a variable is unset, the page renders a notify-me Web3Forms fallback instead of a buy button. Keep `.env.example` in sync when adding new variables.
 
 ## Contact form
 
@@ -103,15 +136,22 @@ Web3Forms handles contact form submissions. Access key: `21e468ca-496b-45eb-8313
 
 `lemon.js` overlay is loaded on pages that use buy buttons. All buy links need `class="lemonsqueezy-button"` for the overlay to trigger. Checkout URLs are read from `src/config/site.ts` via env vars.
 
-Pages that use the overlay (and conditionally load `lemon.js`):
+Pages that conditionally load `lemon.js`:
 
 - `src/pages/index.astro` (homepage product teasers)
-- `src/pages/templates/project-recovery-pack.astro`
-- `src/pages/templates/business-case-pack.astro`
-- `src/pages/templates/procurement-pack.astro`
-- `src/pages/templates/steering-committee-pack.astro`
+- The five PackPage users: `templates/business-case-pack.astro`, `procurement-pack.astro`, `project-recovery-pack.astro`, `steering-committee-pack.astro`, `complete-practitioner-library.astro`
+- The four bundle pages: `bundles/tier-1-major.astro`, `tier-2-standard.astro`, `tier-3-light.astro`, `project-recovery-bundle.astro` — each gated on its own `PUBLIC_LS_*` variable
 
-The pack pages all render through the shared `src/components/PackPage.astro` component, which takes price, audience, helpsWith, included artefacts, FAQ and CTA props.
+The PackPage component (`src/components/PackPage.astro`) takes price, audience, helpsWith, included artefacts, FAQ, ROI block and CTA props. The seven in-development stub packs render through `src/components/StubPack.astro` instead — same visual shape, but with a Web3Forms notify-me form in place of the buy button.
+
+### Project Recovery Bundle gating
+
+`src/pages/bundles/project-recovery-bundle.astro` carries a `framingDocReady` boolean (currently `false`). The buy button stays gated behind the notify-me fallback until both:
+
+1. The recovery framing doc (`recovery-framing-doc.md` at the repo root) is reviewed end-to-end and signed off as production-ready, **and**
+2. The framing doc is wired into the post-purchase download so buyers actually receive it.
+
+When both are true: flip `framingDocReady` to `true`, set `PUBLIC_LS_PROJECT_RECOVERY_BUNDLE`, and update `/bundles/index.astro` to drop the "(in development)" qualifier from the framing-doc bullet.
 
 ## Deployment
 
