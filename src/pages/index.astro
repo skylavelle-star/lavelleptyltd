@@ -100,19 +100,20 @@ const featuredThinking = (await getCollection("thinking"))
   </div>
 
   <!-- FEATURED IMAGE -->
-  <figure class="image-band">
+  <figure class="image-band" data-reveal>
     <Image
       src={heroImage}
       alt="An empty boardroom with a long meeting table, floor-to-ceiling windows and morning light — the setting where steering committee decisions are made"
       widths={[640, 960, 1280, 1920]}
       sizes="100vw"
-      loading="eager"
+      loading="lazy"
+      decoding="async"
       class="image-band__img"
     />
   </figure>
 
   <!-- CAPABILITIES -->
-  <section>
+  <section data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -128,7 +129,7 @@ const featuredThinking = (await getCollection("thinking"))
         </p>
       </header>
 
-      <div class="capabilities">
+      <div class="capabilities" data-reveal data-reveal-stagger>
         <article class="cap">
           <div class="cap__num">01 / Recovery</div>
           <h3 class="cap__title">Project recovery</h3>
@@ -211,7 +212,7 @@ const featuredThinking = (await getCollection("thinking"))
   </section>
 
   <!-- FEATURED THINKING -->
-  <section class="thinking">
+  <section class="thinking" data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -227,7 +228,7 @@ const featuredThinking = (await getCollection("thinking"))
         </p>
       </header>
 
-      <div class="thinking__grid">
+      <div class="thinking__grid" data-reveal data-reveal-stagger>
         {
           featuredThinking.map((article) => (
             <a href={`/thinking/${article.id}`} class="think-card">
@@ -245,7 +246,7 @@ const featuredThinking = (await getCollection("thinking"))
   </section>
 
   <!-- CASE STUDY / QUOTE -->
-  <section class="case">
+  <section class="case" data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -274,7 +275,7 @@ const featuredThinking = (await getCollection("thinking"))
             Griffith University WCMS · Senior Leadership Award · 2015–2016
           </div>
         </div>
-        <div class="case__metrics">
+        <div class="case__metrics" data-reveal data-reveal-stagger>
           <div>
             <div class="case__metric-num">
               36<span style="font-size:0.5em;">→12</span>
@@ -316,7 +317,7 @@ const featuredThinking = (await getCollection("thinking"))
   </section>
 
   <!-- PMO RESOURCES TEASER -->
-  <section>
+  <section data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -332,7 +333,7 @@ const featuredThinking = (await getCollection("thinking"))
         </p>
       </header>
 
-      <div class="products">
+      <div class="products" data-reveal data-reveal-stagger>
         <article class="product">
           <span class="product__tag">Flagship · ships first</span>
           <h3 class="product__title">Steering Pack</h3>
@@ -420,7 +421,7 @@ const featuredThinking = (await getCollection("thinking"))
   </section>
 
   <!-- ENGAGE / FINAL CTA -->
-  <section class="engage">
+  <section class="engage" data-reveal>
     <div class="wrap">
       <div class="engage__grid">
         <div>
@@ -443,7 +444,7 @@ const featuredThinking = (await getCollection("thinking"))
           </div>
         </div>
 
-        <ul class="engage__list">
+        <ul class="engage__list" data-reveal data-reveal-stagger>
           <li>
             <a href="/contact?topic=brief"
               ><span>Submit a brief (RFP / EOI)</span><span>→</span></a>
@@ -472,21 +473,28 @@ const featuredThinking = (await getCollection("thinking"))
 </BaseLayout>
 
 <script>
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
+  const reveals = document.querySelectorAll<HTMLElement>("[data-reveal]");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!("IntersectionObserver" in window) || reduce) {
+    reveals.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const el = entry.target as HTMLElement;
+          if (el.hasAttribute("data-reveal-stagger")) {
+            Array.from(el.children).forEach((child, i) => {
+              (child as HTMLElement).style.transitionDelay = `${i * 80}ms`;
+            });
+          }
+          el.classList.add("is-visible");
+          obs.unobserve(el);
         }
-      });
-    },
-    { threshold: 0.12 },
-  );
-  document
-    .querySelectorAll(".cap, .think-card, .product, .case__metrics > div")
-    .forEach((el) => {
-      el.classList.add("reveal");
-      io.observe(el);
-    });
+      },
+      { rootMargin: "0px 0px -15% 0px", threshold: 0.1 },
+    );
+    reveals.forEach((el) => io.observe(el));
+  }
 </script>
