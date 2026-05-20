@@ -26,7 +26,7 @@ Productised PMO packs, tier-based bundles, the Complete Practitioner Library and
 
 1. Convert senior consulting and contract project management engagements at a $1,500/day floor and effective rates of $1,650–$3,200/day on scoped engagements
 2. Sell productised templates along three axes — stage-based packs, tier-based bundles, and the Complete Practitioner Library flagship SKU
-3. Generate qualified leads via the free Framework One-Page and the gated Tiering Calculator, captured into the Project Recovery Brief newsletter
+3. Generate qualified leads via the free Framework One-Page and the gated Tailoring Calculator, captured into the Project Recovery Brief newsletter
 4. Build editorial credibility via the Thinking content collection
 5. Operate digital asset portfolio activity as a secondary revenue stream
 
@@ -172,7 +172,7 @@ Nine packs mirror the framework. Each pack is sold individually at high-end pric
 | -------------------------- | ---------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Business Case Pack         | Initiation (G1 → G2)         | **$1,197**     | Business Case Template; Rapid Business Case; Discovery Funding Case; Seed Funding Case; Kick-off Pack — Business Case                                                                                                              |
 | Project Setup Pack         | Initiation / Mobilisation    | **$847**       | Project Manager Onboarding Checklist; Project Schedule; Project Management Plan; Scope & High-Level Requirements; Kick-off Pack — Project                                                                                          |
-| Discovery Pack             | Discovery (G2 → G3)          | **$947**       | BA Discovery Assessment; Change Discovery Assessment; Delivery Methodology Assessment; Project Assurance Checklist; Project Tiering Calculator                                                                                     |
+| Discovery Pack             | Discovery (G2 → G3)          | **$947**       | BA Discovery Assessment; Change Discovery Assessment; Delivery Methodology Assessment; Project Assurance Checklist; Project Tailoring Calculator                                                                                     |
 | Requirements & Design Pack | Design (G3 → G4)             | **$947**       | Screen Requirements; Workflow Configuration; Use Case Summary; Service Analysis; Solution Gap Analysis; Requirements Traceability Matrix                                                                                           |
 | Financial Control Pack     | Spans all stages             | **$1,247**     | Project Cost Estimate; Estimation Guidelines & Worksheet; Budget Phasing; Financial Control Tracker; Contingency Calculator; Asset Labour Calculations; Minor Assets Register; Journal Template; RAID Register                     |
 | Testing Pack               | Test (G4 → G5)               | **$747**       | Test Strategy; Test Plan; Test Summary Report; Test Script                                                                                                                                                                         |
@@ -199,16 +199,16 @@ Each pack page must include:
 
 ### 4. Bundles — Tier-based
 
-Three bundles mirror the Project Tiering Calculator's recommended artefact sets, plus a fourth consulting-led bundle. Pricing reflects high-end positioning — each bundle is doing what would otherwise take a senior PM a week or more to assemble from first principles, and is discounted against the equivalent stack of individual packs.
+Three bundles mirror the Project Tailoring Calculator's recommended artefact sets, plus a fourth consulting-led bundle. Pricing reflects high-end positioning — each bundle is doing what would otherwise take a senior PM a week or more to assemble from first principles, and is discounted against the equivalent stack of individual packs.
 
-| Bundle                                       | Tiering score | High-end price | Effective discount vs separate packs | Includes                                                                                                                                                                                                                                                                                                                        |
+| Bundle                                       | Tailoring score | High-end price | Effective discount vs separate packs | Includes                                                                                                                                                                                                                                                                                                                        |
 | -------------------------------------------- | ------------- | -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Tier 3 Light                                 | 7–14          | **$1,997**     | ~30%                                 | Rapid Business Case; Project Schedule (lightweight); Steering Committee Charter (One Page); Sponsor Update (One Page); single-page status                                                                                                                                                                                       |
 | Tier 2 Standard (featured as "most common")  | 15–24         | **$4,497**     | ~35%                                 | Business Case Template; Project Management Plan; Scope & High-Level Requirements; RAID Register; Steering Committee Charter (Detailed); Steering Committee Pack; Project Cost Estimate; Budget Phasing; Financial Control Tracker                                                                                               |
 | Tier 1 Major                                 | 25–35         | **$7,997**     | ~40%                                 | Everything in Tier 2 Standard; plus Project Assurance Checklist; Portfolio Pulse; Cutover Runsheet; Go No-Go Checklist; Test Strategy + Test Plan + Test Summary Report; Contingency Calculator; Asset Labour Calculations                                                                                                       |
 | Project Recovery Bundle (consulting-led)     | n/a           | **$2,997**     | n/a                                  | Project Assurance Checklist; RAID Register; Sponsor Update (One Page); Project Change Request; *recovery framing doc (TODO — not yet built).* Sold alongside the Project Recovery consulting offer; not a framework stage.                                                                                                       |
 
-The Tiering Calculator itself is the entry point — a free, email-gated diagnostic that scores the project and recommends the matching bundle. Conversion path: download calculator → enter score → matched bundle CTA, pre-filled with the buyer's own answers. This is a materially higher-conversion path than browsing single packs, and the central commercial reason to ship the Tiering Calculator scoring logic ahead of any other product work.
+The Tailoring Calculator itself is the entry point — a free, email-gated diagnostic that scores the project and recommends the matching bundle. Conversion path: download calculator → enter score → matched bundle CTA, pre-filled with the buyer's own answers. This is a materially higher-conversion path than browsing single packs, and the central commercial reason to ship the Tailoring Calculator scoring logic ahead of any other product work.
 
 ### 5. Complete Practitioner Library (Flagship SKU)
 
@@ -233,7 +233,7 @@ Position on the homepage as an entry card alongside the Steering Pack and the Ti
 Three free-tool tiers, each with a different gating logic:
 
 - **Framework One-Page** — *free and ungated.* The single-slide visual version of the Lavelle Delivery Framework. The top-of-funnel hook; visitors download it without giving an email and learn what stages, gates and paths the framework names.
-- **Project Tiering Calculator** — *gated behind email.* The diagnostic; produces a tier recommendation and routes to the matching bundle. The primary lead magnet.
+- **Project Tailoring Calculator** — *gated behind email.* The diagnostic; produces a tier recommendation and routes to the matching bundle. The primary lead magnet.
 - **Diagnostic workbooks** (BA Discovery, Change Discovery, Delivery Methodology, Project Assurance Checklist) — *paid;* sit inside the Discovery Pack, not free.
 
 Pattern: never use "Coming Soon" with no fallback. Items not yet shippable must be paired with a notify-me Web3Forms form (the actionable-fallback pattern). See CLAUDE.md writing rules.
@@ -318,7 +318,7 @@ Primary keywords, expanded to the artefact level:
 - test plan template
 - discovery funding case
 - seed funding case
-- project tiering calculator
+- project tailoring calculator
 - requirements traceability matrix
 - steering committee pack / steering committee governance
 - business case template / business case development
@@ -352,7 +352,7 @@ One gap remains between the strategy named here and the artefacts currently ship
 Previously open gaps now closed:
 
 - **Procurement Pack** — live at `/templates/procurement-pack/` with a seven-artefact set (RFP Evaluation Plan, Technical Evaluation Matrix, Commercial Evaluation Matrix, Supplier Clarification Register, BAFO Request Template, Evaluation Recommendation Report, Probity Checklist). The shipped artefact list differs from the legacy reference list (Procurement Strategy / Sourcing Options Analysis / RFP Template / Evaluation Plan / Probity Plan / Scoring Workbook / Evaluation Report); reconcile in a future content pass if the legacy list is still the desired baseline.
-- **Project Recovery Checklist** — live at `/free-tools/project-recovery-checklist/` as a supplementary free download. It sits alongside the strategy's primary lead magnets (Framework One-Page + Tiering Calculator) rather than replacing them.
+- **Project Recovery Checklist** — live at `/free-tools/project-recovery-checklist/` as a supplementary free download. It sits alongside the strategy's primary lead magnets (Framework One-Page + Tailoring Calculator) rather than replacing them.
 
 ---
 
@@ -360,7 +360,7 @@ Previously open gaps now closed:
 
 - Consulting and contract project management engagements generate the majority of revenue, at $1,500/day floor with effective rates of $1,650–$3,200/day
 - Stage-based packs, tier-based bundles and the Complete Practitioner Library generate a steady secondary revenue line in the high-end $747–$12,997 band
-- Free Framework One-Page and gated Tiering Calculator generate qualified consulting leads into the Project Recovery Brief newsletter (2,500+ subscribers by month 12)
+- Free Framework One-Page and gated Tailoring Calculator generate qualified consulting leads into the Project Recovery Brief newsletter (2,500+ subscribers by month 12)
 - Thinking articles drive long-form SEO and credibility — 24+ articles published in year 1, two per month cadence
 - Digital assets build long-term passive traffic and a portfolio narrative
 - 12-month base case revenue target: ~$970k (conservative $557k, stretch $1.71m — see business plan §12)

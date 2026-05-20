@@ -106,8 +106,8 @@ const supplementary = [
     </div>
   </section>
 
-  <!-- TIERING CALCULATOR: EMAIL-GATED -->
-  <section id="tiering-calculator" style="background:var(--paper);">
+  <!-- TAILORING CALCULATOR: EMAIL-GATED -->
+  <section id="tailoring-calculator" style="background:var(--paper);">
     <div class="wrap" style="max-width:64rem;">
       <header class="section__head">
         <div>
@@ -124,7 +124,7 @@ const supplementary = [
       </header>
 
       <form
-        id="tiering-calculator-form"
+        id="tailoring-calculator-form"
         class="calc-form"
         action="https://api.web3forms.com/submit"
         method="POST"
@@ -537,9 +537,9 @@ const supplementary = [
 </style>
 
 <script>
-  // Tiering Calculator form (gated)
+  // Tailoring Calculator form (gated)
   const calcForm = document.getElementById(
-    "tiering-calculator-form",
+    "tailoring-calculator-form",
   ) as HTMLFormElement | null;
   if (calcForm) {
     calcForm.addEventListener("submit", async (e) => {
