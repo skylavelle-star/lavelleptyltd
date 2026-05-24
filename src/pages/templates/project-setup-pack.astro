@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StubPack from "../../components/StubPack.astro";
+import { products } from "../../config/site";
 
-// TODO: Pack copy and tagline pending. STRATEGY.md does not quote a tagline
-// for Project Setup Pack. Pricing TBC.
+const pack = products.projectSetupPack;
+
+// TODO: Pack copy and tagline pending.
 ---
 
 <BaseLayout
@@ -23,7 +25,7 @@ import StubPack from "../../components/StubPack.astro";
       "Scope & High-Level Requirements",
       "Initiation Stage Kick-off Pack",
     ]}
-    price="847"
+    price={pack.price}
     roiBlock="About two days of senior PM work covering onboarding, scheduling, the plan, the scope and the kick-off — $3,000 of bespoke artefact development at $1,500/day contractor rates. Pack: $847. ROI: ~3.5×. The opinionated thinking and the framework lineage are the part you can't outsource."
   />
 </BaseLayout>

@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StubPack from "../../components/StubPack.astro";
+import { products } from "../../config/site";
+
+const pack = products.discoveryPack;
 
 // Tagline lifted from STRATEGY.md §"Voice".
 ---
@@ -23,7 +26,7 @@ import StubPack from "../../components/StubPack.astro";
       "Project Assurance Checklist",
       "Project Tailoring Calculator (paid workbook)",
     ]}
-    price="947"
+    price={pack.price}
     roiBlock="About two days of senior PM work — $3,000 of bespoke artefact development at $1,500/day contractor rates. Pack: $947. ROI: ~3.2×. The opinionated thinking and the framework lineage are the part you can't outsource."
   />
 </BaseLayout>

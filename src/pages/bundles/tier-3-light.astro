@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { site } from "../../config/site";
+import { site, products } from "../../config/site";
 
-// TODO: pricing not yet set in STRATEGY.md. Wire to PUBLIC_LS_TIER_3_LIGHT
-// when the Lemon Squeezy product is created.
+const bundle = products.tier3LightBundle;
+const checkoutUrl = bundle.checkoutUrl || undefined;
 
 const included = [
   "Lite Business Case",
@@ -44,8 +44,37 @@ const included = [
         {included.map((item) => <li>{item}</li>)}
       </ul>
 
+      <aside class="roi-block" aria-label="What this saves you">
+        <div class="eyebrow">What this saves you</div>
+        <p>
+          About three days of senior PM work assembling a coherent lightweight
+          artefact set for a small project — $4,500 at $1,500/day contractor
+          rates. Bundle: ${bundle.price}. ROI: ~2.3×. Plus the bundle effect —
+          five artefacts that already work together. That is the part you can't
+          outsource.
+        </p>
+      </aside>
+
+      {
+        checkoutUrl ? (
+          <div class="callout">
+            <div class="eyebrow">Available now</div>
+            <div class="callout__price-row">
+              <span class="callout__price">${bundle.price}</span>
+              <span class="callout__sub">single user · AUD</span>
+            </div>
+            <a
+              href={checkoutUrl}
+              class="lemonsqueezy-button btn btn--primary"
+              data-ga-event="product_buy_click"
+              data-ga-label="Tier 3 Light Bundle"
+            >
+              Buy now <span class="btn__arrow">→</span>
+            </a>
+          </div>
+        ) : (
       <div class="callout">
-        <div class="eyebrow">Coming online</div>
+        <div class="eyebrow">Coming online · ${bundle.price}</div>
         <p>
           This bundle is being finalised. Use the notify form below to be told
           when it ships, or score your project now with the Tailoring Calculator
@@ -102,6 +131,14 @@ const included = [
           </p>
         </form>
       </div>
+        )
+      }
+
+      {
+        checkoutUrl && (
+          <script src="https://assets.lemonsqueezy.com/lemon.js" defer />
+        )
+      }
 
       <div class="framework-note">
         <strong>Framework anchor:</strong> covers Initiation and the
@@ -125,12 +162,50 @@ const included = [
     border-bottom: 1px solid var(--rule);
     color: var(--ink-soft);
   }
+  .roi-block {
+    margin: 0 0 2rem;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.25rem);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ochre);
+  }
+  .roi-block .eyebrow {
+    margin-bottom: 0.85rem;
+  }
+  .roi-block p {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+    max-width: 62ch;
+  }
   .callout {
     padding: 1.75rem;
     background: var(--paper);
     border: 1px solid var(--rule);
     border-left: 4px solid var(--ochre);
     margin-bottom: 2rem;
+  }
+  .callout__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .callout__price {
+    font-family: "Fraunces", serif;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .callout__sub {
+    font-size: var(--micro);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
   }
   .callout p {
     color: var(--ink-soft);

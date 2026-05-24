@@ -30,7 +30,7 @@ yarn-error.log*
 # Local-only working files
 .claude/
 SITE_AUDIT.md
-BUSINESS_PLAN.md
-pack-roi-blocks.md
-recovery-framing-doc.md
-templates/
+/BUSINESS_PLAN.md
+/pack-roi-blocks.md
+/recovery-framing-doc.md
+/templates/

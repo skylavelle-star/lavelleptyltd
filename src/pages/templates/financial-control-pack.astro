@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StubPack from "../../components/StubPack.astro";
+import { products } from "../../config/site";
+
+const pack = products.financialControlPack;
 
 // Tagline lifted from STRATEGY.md §"Voice".
 ---
@@ -27,7 +30,7 @@ import StubPack from "../../components/StubPack.astro";
       "Finance Journal Request",
       "RAID Log",
     ]}
-    price="1,247"
+    price={pack.price}
     roiBlock="About three days of senior PM work across nine workbooks — cost estimate, estimation guidelines, budget phasing, financial control tracker, contingency calculator and more. $4,500 of bespoke development at $1,500/day contractor rates. Pack: $1,247. ROI: ~3.6×. The opinionated thinking and the framework lineage are the part you can't outsource."
   />
 </BaseLayout>

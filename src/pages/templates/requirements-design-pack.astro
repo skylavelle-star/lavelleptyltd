@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StubPack from "../../components/StubPack.astro";
+import { products } from "../../config/site";
+
+const pack = products.requirementsDesignPack;
 
 // TODO: STRATEGY.md does not quote a tagline for Requirements & Design Pack.
 ---
@@ -23,7 +26,7 @@ import StubPack from "../../components/StubPack.astro";
       "Product Gap Analysis",
       "Requirements Traceability Matrix",
     ]}
-    price="947"
+    price={pack.price}
     roiBlock="About two days of senior PM work covering screens, workflow, use cases, service analysis, gap analysis and a working traceability matrix — $3,000 of bespoke artefact development at $1,500/day contractor rates. Pack: $947. ROI: ~3.2×. The opinionated thinking and the framework lineage are the part you can't outsource."
   />
 </BaseLayout>
