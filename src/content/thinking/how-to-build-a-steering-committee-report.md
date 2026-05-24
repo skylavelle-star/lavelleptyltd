@@ -65,7 +65,7 @@ Define RAG status criteria clearly:
 
 Amber is not a softened version of Red. Amber means there is a problem being managed. Red means the problem is not being managed adequately and the committee needs to act.
 
-The common calibration failure is rating programs Amber when they are Red. This happens due to the cultural discomfort of reporting Red status and because of pressure from program sponsors to present the program positively. The consequence is that the committee cannot respond appropriately because the actual status has been obscured.
+The common calibration failure is rating programs Amber when they are Red. This happens, due to the cultural discomfort of reporting Red status and because of pressure from program sponsors to present the program positively. The consequence is that the committee cannot respond appropriately because the actual status has been obscured.
 
 ## The risk register in a steering committee report
 

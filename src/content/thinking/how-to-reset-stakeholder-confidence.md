@@ -44,7 +44,7 @@ This conversation acknowledges that the program has not delivered what it commit
 
 This conversation is not easy. Stakeholders who have been receiving filtered information for months will be sceptical and some will be angry. The response to both is to be straightforward: the previous reporting was not as accurate as it should have been, the situation is being presented honestly now and this is what the realistic path forward looks like.
 
-What destroys this conversation is hedging. Statements like "we are largely on track but there have been some challenges" or "we remain confident in the overall timeline" in a situation where neither of those things is true will further erode confidence, not restore it.
+What destroys this conversation is hedging. Statements like "we are largely on track, but there have been some challenges" or "we remain confident in the overall timeline" in a situation where neither of those things is true will further erode confidence, not restore it.
 
 ## What accurate reporting looks like after a reset
 

@@ -64,7 +64,7 @@ The risk section should also address delivery capability honestly. Does the orga
 
 ## Know your approval audience
 
-A business case that is technically correct but structured incorrectly for its audience will be returned for revision, which is expensive and demoralising.
+A business case that is technically correct, but structured incorrectly for its audience will be returned for revision, which is expensive and demoralising.
 
 Understand the approver's specific requirements before you write:
 
