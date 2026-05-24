@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import heroImage from "../assets/images/hero.jpg";
-import { products } from "../config/site";
+import { site, products } from "../config/site";
 
 const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
 const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
@@ -353,13 +353,76 @@ const featuredThinking = (await getCollection("thinking"))
               <div class="product__price">${products.steeringCommitteePack.price}</div>
               <div class="product__price-sub">single user · AUD</div>
             </div>
-            <a
-              href={steeringUrl}
-              class="lemonsqueezy-button btn btn--primary"
-              data-ga-event="product_buy_click"
-              data-ga-label="Steering Committee Pack"
-              >Buy now <span class="btn__arrow">→</span></a
-            >
+            {
+              steeringUrl ? (
+                <a
+                  href={steeringUrl}
+                  class="lemonsqueezy-button btn btn--primary"
+                  data-ga-event="product_buy_click"
+                  data-ga-label="Steering Committee Pack"
+                >
+                  Buy now <span class="btn__arrow">→</span>
+                </a>
+              ) : (
+                <form
+                  data-notify-form="notify-home-steering"
+                  class="product__notify"
+                  novalidate
+                >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value={site.web3formsKey}
+                  />
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Interest: Steering Pack — lavelleptyltd.com.au"
+                  />
+                  <input
+                    type="hidden"
+                    name="from_name"
+                    value="Lavelle Pty Ltd Templates"
+                  />
+                  <input
+                    type="hidden"
+                    name="message"
+                    value="Interested in the Steering Pack when available."
+                  />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    class="product__notify-bot"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="visually-hidden"
+                    for="notify-home-steering-email"
+                  >
+                    Your email
+                  </label>
+                  <input
+                    id="notify-home-steering-email"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="your@email.com"
+                    autocomplete="email"
+                  />
+                  <button type="submit" class="btn btn--primary">
+                    Notify me <span class="btn__arrow">→</span>
+                  </button>
+                  <p
+                    id="notify-success-notify-home-steering"
+                    class="product__notify-success"
+                    hidden
+                  >
+                    Done — we will email you when it ships.
+                  </p>
+                </form>
+              )
+            }
           </div>
         </article>
 
@@ -382,13 +445,76 @@ const featuredThinking = (await getCollection("thinking"))
               <div class="product__price">${products.projectRecoveryPack.price}</div>
               <div class="product__price-sub">single user · AUD</div>
             </div>
-            <a
-              href={recoveryUrl}
-              class="lemonsqueezy-button btn btn--primary"
-              data-ga-event="product_buy_click"
-              data-ga-label="Project Recovery Pack"
-              >Buy now <span class="btn__arrow">→</span></a
-            >
+            {
+              recoveryUrl ? (
+                <a
+                  href={recoveryUrl}
+                  class="lemonsqueezy-button btn btn--primary"
+                  data-ga-event="product_buy_click"
+                  data-ga-label="Project Recovery Pack"
+                >
+                  Buy now <span class="btn__arrow">→</span>
+                </a>
+              ) : (
+                <form
+                  data-notify-form="notify-home-recovery"
+                  class="product__notify"
+                  novalidate
+                >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value={site.web3formsKey}
+                  />
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Interest: Project Recovery Pack — lavelleptyltd.com.au"
+                  />
+                  <input
+                    type="hidden"
+                    name="from_name"
+                    value="Lavelle Pty Ltd Templates"
+                  />
+                  <input
+                    type="hidden"
+                    name="message"
+                    value="Interested in the Project Recovery Pack when available."
+                  />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    class="product__notify-bot"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="visually-hidden"
+                    for="notify-home-recovery-email"
+                  >
+                    Your email
+                  </label>
+                  <input
+                    id="notify-home-recovery-email"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="your@email.com"
+                    autocomplete="email"
+                  />
+                  <button type="submit" class="btn btn--primary">
+                    Notify me <span class="btn__arrow">→</span>
+                  </button>
+                  <p
+                    id="notify-success-notify-home-recovery"
+                    class="product__notify-success"
+                    hidden
+                  >
+                    Done — we will email you when it ships.
+                  </p>
+                </form>
+              )
+            }
           </div>
         </article>
       </div>
@@ -471,6 +597,99 @@ const featuredThinking = (await getCollection("thinking"))
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .product__notify {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    flex: 1 1 18rem;
+    max-width: 22rem;
+    justify-content: flex-end;
+  }
+  .product__notify input[type="email"] {
+    flex: 1 1 12rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--rule);
+    background: var(--bone);
+    font-family: inherit;
+    font-size: var(--body-sm);
+  }
+  .product__notify .btn {
+    flex: 0 0 auto;
+  }
+  .product__notify-bot {
+    display: none;
+  }
+  .product__notify-success {
+    font-size: var(--body-sm);
+    color: var(--ochre);
+    width: 100%;
+    margin: 0;
+  }
+  .product__notify-success[hidden] {
+    display: none;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+</style>
+
+<script>
+  document
+    .querySelectorAll<HTMLFormElement>("[data-notify-form]")
+    .forEach((form) => {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        const id = form.dataset.notifyForm!;
+        const btn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+        const botcheck =
+          form.querySelector<HTMLInputElement>('[name="botcheck"]');
+        if (botcheck?.checked) return;
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = "Sending…";
+        }
+        let ok = false;
+        try {
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(
+              Object.fromEntries(new FormData(form).entries()),
+            ),
+          });
+          const data = (await res.json().catch(() => ({}))) as {
+            success?: boolean;
+          };
+          ok = data.success === true;
+        } catch {
+          /* silent */
+        }
+        if (ok) {
+          form.querySelectorAll("input, button, label").forEach((el) => {
+            (el as HTMLElement).hidden = true;
+          });
+          const success = document.getElementById(`notify-success-${id}`);
+          if (success) success.hidden = false;
+        } else if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = 'Notify me <span class="btn__arrow">→</span>';
+        }
+      });
+    });
+</script>
 
 <script>
   const reveals = document.querySelectorAll<HTMLElement>("[data-reveal]");
