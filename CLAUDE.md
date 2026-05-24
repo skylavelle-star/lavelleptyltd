@@ -166,6 +166,22 @@ When both are true: flip `framingDocReady` to `true`, set `PUBLIC_LS_PROJECT_REC
 
 Deploy by committing changes and running `git push origin main`. Vercel builds and publishes automatically (~9s). Never use `vercel --prod --yes` — the GitHub integration handles all deploys.
 
+## Performance — what is already in place
+
+- **HTML CDN cache:** `vercel.json` sets `Cache-Control: s-maxage=300, stale-while-revalidate=86400` on `/(.*)`. The edge revalidates every 5 minutes; visitors never wait for the origin thanks to the 24-hour SWR window. Vercel auto-purges the CDN on every deployment.
+- **API routes:** `/api/(.*)` is forced to `no-store, max-age=0`. Lavelle has no API routes today; the rule is defensive insurance.
+- **Fingerprinted bundles:** `/_astro/(.*)` is cached for 1 year (`immutable`). Astro regenerates the hash on every build that changes the source.
+- **Static images and fonts:** anything matching `*.{jpg,jpeg,png,webp,avif,gif,svg,ico,woff,woff2}` is cached for 1 year (`immutable`). **Convention: rename rather than overwrite** any file under `public/` — same filename means the CDN serves the old bytes for up to a year. Add a `-v2` or date suffix, update references.
+- **Async fonts:** `BaseLayout.astro` loads Fraunces + DM Sans via `rel="preload" as="style" onload="..."` so they don't render-block.
+- **Link prefetch:** `astro.config.mjs` sets `prefetch: { prefetchAll: true, defaultStrategy: 'hover' }` so internal navigation feels instant.
+- **`npm run refresh`:** POSTs to `VERCEL_DEPLOY_HOOK_URL` to trigger an empty redeploy → CDN purge. Use when you need to force-bust the 5-minute HTML window. `/refresh-site` is the diagnose-then-act version.
+
+## Things that look weird but are intentional
+
+- **`VERCEL_DEPLOY_HOOK_URL` is empty after `vercel env pull`.** It's marked Sensitive in Vercel project settings, which means `vercel env pull --environment=production .env.local` writes it back as an empty string. Paste the hook URL into `.env.local` by hand after every pull. Same caveat applies to any future Sensitive env vars.
+- **Order of `headers` rules in `vercel.json` matters.** `/api/(.*)` sits first; the global `/(.*)` rule sits last and only sets `Cache-Control` for paths that aren't already matched by a more specific rule. Don't reorder without re-checking that asset and HTML cache lifetimes still resolve correctly.
+- **`.claude/` is gitignored.** Slash commands and Claude settings are local-only. Share them by copy-paste, not by committing.
+
 ## Writing rules
 
 **Canonical style guide:** `/Users/skylavelle/Claude/Portfolio/Sky_Lavelle_Writing_Style_and_Voice.md` — read this before writing any user-facing copy. It is the source of truth for voice, tone, and style across all Sky Lavelle portfolio projects.

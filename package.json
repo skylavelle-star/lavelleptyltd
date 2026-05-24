@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "refresh": "set -a; [ -f .env.local ] && . ./.env.local; set +a; if [ -z \"$VERCEL_DEPLOY_HOOK_URL\" ]; then echo 'Error: VERCEL_DEPLOY_HOOK_URL not set. Paste it into .env.local — it lives in Vercel project settings as Sensitive, so vercel env pull leaves it empty.'; exit 1; fi; curl -fsSL -X POST \"$VERCEL_DEPLOY_HOOK_URL\" && echo '\\nDeploy triggered. Vercel will purge the CDN when the build finishes (~30s).'",
     "astro": "astro",
     "check": "astro check",
     "lint": "eslint .",
