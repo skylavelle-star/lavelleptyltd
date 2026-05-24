@@ -14,7 +14,7 @@ tags:
 
 A steering committee report has one purpose: to give the committee the information it needs to govern the program.
 
-Most steering committee reports do not do this. They are too long, structured in the wrong order, use RAG ratings that have no consistent definition, bury the important information in narrative text, and end with a vague "the program remains on track" conclusion that tells the committee nothing useful.
+Most steering committee reports do not do this. They are too long, structured in the wrong order, use RAG ratings that have no consistent definition, bury the important information in narrative text and end with a vague "the program remains on track" conclusion that tells the committee nothing useful.
 
 The consequence is that steering committees cannot provide effective governance. They cannot identify problems early because the reporting does not surface them. They cannot make timely decisions because the information they need is not in the report. And they cannot maintain accountability because they cannot tell whether the program is actually delivering what it committed to.
 
@@ -25,7 +25,7 @@ Before writing a steering committee report, be clear about what the committee is
 To do that job, a committee member needs to know:
 
 - Is the program on track to deliver the agreed scope, on time and within budget?
-- What are the most significant risks and issues, and what is being done about them?
+- What are the most significant risks and issues and what is being done about them?
 - Are there any decisions the committee needs to make?
 - Are there any matters the committee needs to be aware of that may require future decisions?
 
@@ -94,7 +94,7 @@ A well-written escalation includes:
 
 **The options.** What are the realistic options for resolving or mitigating the issue? At least two options, each with its implications.
 
-**The recommendation.** What does the delivery team recommend, and why?
+**The recommendation.** What does the delivery team recommend and why?
 
 **The decision required.** What specifically is the committee being asked to approve, note or direct?
 

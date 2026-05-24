@@ -55,7 +55,7 @@ The honest options are usually three:
 
 **Stop.** Acknowledge that the program has failed, close it down in a controlled manner, preserve what value can be preserved and decide whether the underlying business need still exists and how to address it differently.
 
-None of these options is easy. But they are the real options, and a recovery plan that does not acknowledge them is not a recovery plan, it is a continuation of the wishful thinking that created the problem.
+None of these options is easy. But they are the real options and a recovery plan that does not acknowledge them is not a recovery plan, it is a continuation of the wishful thinking that created the problem.
 
 ## Reset stakeholder confidence
 
@@ -77,7 +77,7 @@ Program recovery requires governance decisions, not just delivery decisions. The
 
 The governance decisions that are typically needed in a recovery situation:
 
-**Scope decisions.** What is in scope for the recovery plan? What has been deferred or removed? Who has the authority to make this decision, and has it been formally made?
+**Scope decisions.** What is in scope for the recovery plan? What has been deferred or removed? Who has the authority to make this decision and has it been formally made?
 
 **Contract decisions.** Does the vendor contract need to be renegotiated? Are there contractual remedies that should be exercised? Does a contract extension need to be approved?
 

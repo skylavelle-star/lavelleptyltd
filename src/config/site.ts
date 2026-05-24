@@ -82,7 +82,7 @@ export const products = {
     price: "747",
     href: "/templates/testing-pack",
     description:
-      "Quality Management Approach, Quality Plan, Product Status Account and Quality Inspection Sheet — the test stage artefact set.",
+      "Quality Management Approach, Quality Plan, Product Status Account and Quality Inspection Sheet - the test stage artefact set.",
     checkoutUrl: import.meta.env.PUBLIC_LS_TESTING_PACK || "",
   },
   cutoverPack: {
@@ -90,7 +90,7 @@ export const products = {
     price: "747",
     href: "/templates/cutover-pack",
     description:
-      "Release Plan Runsheet and Go / No-Go Checklist — every cutover step evidenced and reversible.",
+      "Release Plan Runsheet and Go / No-Go Checklist - every cutover step evidenced and reversible.",
     checkoutUrl: import.meta.env.PUBLIC_LS_CUTOVER_PACK || "",
   },
   trainingChangePack: {
@@ -106,7 +106,7 @@ export const products = {
     price: "12,997",
     href: "/templates/complete-practitioner-library",
     description:
-      "The entire opinionated library in a single transaction. Every stage pack, every bundle, the Framework documentation and twelve months of artefact updates — single named user.",
+      "The entire opinionated library in a single transaction. Every stage pack, every bundle, the Framework documentation and twelve months of artefact updates - single named user.",
     checkoutUrl: import.meta.env.PUBLIC_LS_COMPLETE_LIBRARY || "",
   },
   tier3LightBundle: {
@@ -114,7 +114,7 @@ export const products = {
     price: "1,997",
     href: "/bundles/tier-3-light",
     description:
-      "Lightweight artefact set for small, contained delivery. Tailoring score 7–14.",
+      "Lightweight artefact set for small, contained delivery. Tailoring score 7-14.",
     checkoutUrl: import.meta.env.PUBLIC_LS_TIER_3_LIGHT || "",
   },
   tier2StandardBundle: {
@@ -122,7 +122,7 @@ export const products = {
     price: "4,497",
     href: "/bundles/tier-2-standard",
     description:
-      "Standard mid-complexity artefact set — most enterprise projects land here. Tailoring score 15–24.",
+      "Standard mid-complexity artefact set - most enterprise projects land here. Tailoring score 15-24.",
     checkoutUrl: import.meta.env.PUBLIC_LS_TIER_2_STANDARD || "",
   },
   tier1MajorBundle: {
@@ -130,7 +130,7 @@ export const products = {
     price: "7,997",
     href: "/bundles/tier-1-major",
     description:
-      "Full programme artefact set for high-complexity, high-scrutiny delivery. Tailoring score 25–35.",
+      "Full programme artefact set for high-complexity, high-scrutiny delivery. Tailoring score 25-35.",
     checkoutUrl: import.meta.env.PUBLIC_LS_TIER_1_MAJOR || "",
   },
   projectRecoveryBundle: {

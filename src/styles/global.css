@@ -1,5 +1,5 @@
 /* ============================================================
-   Lavelle Pty Ltd — Editorial consultancy aesthetic
+   Lavelle Pty Ltd - Editorial consultancy aesthetic
    Inspired by PwC / KPMG / Deloitte information design,
    recoloured for an Australian boutique sensibility.
    ============================================================ */
@@ -666,7 +666,7 @@ section {
   position: relative;
 }
 .product__list li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--ochre);
@@ -1023,7 +1023,7 @@ section {
   line-height: 1.6;
 }
 .articles ul li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--ochre);

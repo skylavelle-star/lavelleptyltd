@@ -25,7 +25,7 @@ The organisations invited to participate in a restricted RFP should be selected 
 
 Invitation criteria typically cover demonstrated capability and experience with the specific technology type and scale, financial standing, references from comparable engagements and any mandatory compliance requirements such as security clearances, data sovereignty or certifications.
 
-The criteria should be applied consistently across all organisations being considered for invitation. The decision on who to invite, and who not to invite, should be documented with the reasoning recorded against the criteria.
+The criteria should be applied consistently across all organisations being considered for invitation. The decision on who to invite and who not to invite, should be documented with the reasoning recorded against the criteria.
 
 The number of respondents invited should be sufficient to create genuine competition. As a rough guide, three to five respondents is usually the right range for a restricted technology RFP. Fewer than three removes competition; more than five creates evaluation overhead that may not produce proportionally better outcomes.
 
@@ -81,7 +81,7 @@ The BAFO must be run carefully to maintain probity. The key requirements:
 
 ## The recommendation report
 
-The procurement recommendation report is the document that supports the delegate approval decision. It must be written to address the questions a decision-maker will have: who won, why, and is the process sound?
+The procurement recommendation report is the document that supports the delegate approval decision. It must be written to address the questions a decision-maker will have: who won, why and is the process sound?
 
 A complete recommendation report covers the procurement process summary, the evaluation methodology, the evaluation outcome and rankings, the recommended vendor and the basis for the recommendation, the commercial terms, the implementation risk and any conditions or requirements attached to the recommendation.
 

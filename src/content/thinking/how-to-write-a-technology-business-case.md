@@ -56,7 +56,7 @@ The financial model needs to be transparent. The assumptions should be documente
 
 ## Address implementation risk
 
-Implementation risk is where most technology business cases fall short. The risk section tends to present generic risks such as vendor risk, change management risk and data migration risk without specificity, and presents mitigations that are more aspiration than plan.
+Implementation risk is where most technology business cases fall short. The risk section tends to present generic risks such as vendor risk, change management risk and data migration risk without specificity and presents mitigations that are more aspiration than plan.
 
 A credible risk assessment identifies the specific risks in this program, not generic project risks. It quantifies the likelihood and impact where possible. It presents mitigations that have been designed and committed to, not hypothetical ones. And it acknowledges where the mitigation does not eliminate the risk, but only reduces it.
 
