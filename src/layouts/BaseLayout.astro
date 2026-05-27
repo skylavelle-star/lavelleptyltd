@@ -104,14 +104,32 @@ const year = new Date().getFullYear();
           Lavelle
           <span class="brand__sub">Pty&nbsp;Ltd</span>
         </a>
-        <nav class="nav" aria-label="Main">
+        <nav id="site-nav" class="nav" aria-label="Main">
           {navItems.map((item) => (
             <a href={item.href} class:list={[currentNav === item.key && 'active']}>
               {item.label}
             </a>
           ))}
         </nav>
-        <a href="/contact" class="nav__cta">Engage us</a>
+        <div class="site-header__actions">
+          <a href="/contact" class="nav__cta">Engage us</a>
+          <button
+            type="button"
+            class="nav-toggle"
+            aria-label="Open menu"
+            aria-controls="site-nav"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M3 6h18M3 12h18M3 18h18"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -174,6 +192,26 @@ const year = new Date().getFullYear();
         </div>
       </div>
     </footer>
+
+    <script is:inline>
+      (function () {
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+        const setOpen = (open) => {
+          nav.classList.toggle('open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        toggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+        nav.addEventListener('click', (e) => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false);
+        });
+      })();
+    </script>
 
     {gaId && (
       <script is:inline>
