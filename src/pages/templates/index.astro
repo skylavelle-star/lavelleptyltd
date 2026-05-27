@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import templatesImage from "../../assets/images/templates.jpg";
+import engageImage from "../../assets/images/engage-boardroom.jpg";
 import { site, products } from "../../config/site";
 
 const library = products.completePractitionerLibrary;
@@ -212,7 +213,7 @@ const additionalTemplates = [
     </div>
   </section>
 
-  <section>
+  <section style="background:var(--bone-deep);">
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -367,7 +368,18 @@ const additionalTemplates = [
     </div>
   </section>
 
-  <section class="engage">
+  <section class="engage engage--imaged">
+    <figure class="engage__bg" aria-hidden="true">
+      <Image
+        src={engageImage}
+        alt=""
+        widths={[960, 1440, 1920, 2400]}
+        sizes="100vw"
+        loading="lazy"
+        decoding="async"
+        class="engage__bg-img"
+      />
+    </figure>
     <div class="wrap">
       <div class="engage__grid">
         <div>

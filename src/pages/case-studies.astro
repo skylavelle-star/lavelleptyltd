@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import caseImage from "../assets/images/case-studies-collaboration.jpg";
+import engageImage from "../assets/images/engage-boardroom.jpg";
 ---
 
 <BaseLayout
   title="Case Studies - Lavelle Pty Ltd"
   description="Recent engagements: enterprise transformation at a national public broadcaster, an award-winning WCMS recovery at a major Australian research university, a headless CMS replacement at a multi-campus regional university, security and CRM uplift at a federally-funded research centre, and more."
+  currentNav="case-studies"
 >
   <!-- SUB-PAGE HERO -->
   <section class="subhero">
@@ -54,6 +58,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </div>
   </section>
+
+  <!-- FEATURED IMAGE -->
+  <figure class="image-band">
+    <Image
+      src={caseImage}
+      alt="Senior professionals in working session around a meeting table - the rhythm of an engagement in delivery"
+      widths={[640, 960, 1280, 1600]}
+      sizes="100vw"
+      loading="lazy"
+      decoding="async"
+      class="image-band__img"
+    />
+  </figure>
 
   <!-- CASE 01 - WCMS recovery at an Australian research university -->
   <section id="case-01" class="case-section">
@@ -168,7 +185,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- CASE 02 - National broadcaster, audience analytics migration -->
-  <section id="case-02" class="case-section">
+  <section id="case-02" class="case-section" style="background:var(--bone-deep);">
     <div class="wrap">
       <div class="case-header">
         <div class="case-num">02</div>
@@ -389,7 +406,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- CASE 04 - Regional multi-campus university, headless CMS -->
-  <section id="case-04" class="case-section">
+  <section id="case-04" class="case-section" style="background:var(--bone-deep);">
     <div class="wrap">
       <div class="case-header">
         <div class="case-num">04</div>
@@ -596,7 +613,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- ENGAGE -->
-  <section class="engage">
+  <section class="engage engage--imaged">
+    <figure class="engage__bg" aria-hidden="true">
+      <Image
+        src={engageImage}
+        alt=""
+        widths={[960, 1440, 1920, 2400]}
+        sizes="100vw"
+        loading="lazy"
+        decoding="async"
+        class="engage__bg-img"
+      />
+    </figure>
     <div class="wrap">
       <div class="engage__grid">
         <div>
@@ -629,20 +657,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <ul class="engage__list">
           <li>
-            <a href="/contact?topic=brief"
-              ><span>Submit a brief (RFP / EOI)</span><span>→</span></a>
+            <a href="/contact?topic=brief">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              </span>
+              <span>Submit a brief (RFP / EOI)</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=call"
-              ><span>Book a 30-minute call with Sky</span><span>→</span></a>
+            <a href="/contact?topic=call">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg>
+              </span>
+              <span>Book a 30-minute call with Sky</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=capability"
-              ><span>Request a capability statement</span><span>→</span></a>
+            <a href="/contact?topic=capability">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+              </span>
+              <span>Request a capability statement</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=panel"
-              ><span>Government panel listing</span><span>→</span></a>
+            <a href="/contact?topic=panel">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+              </span>
+              <span>Government panel listing</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
         </ul>
       </div>

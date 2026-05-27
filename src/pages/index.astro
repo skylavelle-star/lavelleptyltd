@@ -3,6 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import heroImage from "../assets/images/hero.jpg";
+import caseStudyImage from "../assets/images/case-study-quadrangle.jpg";
+import templatesImage from "../assets/images/templates-flatlay.jpg";
+import engageImage from "../assets/images/engage-boardroom.jpg";
 import { site, products } from "../config/site";
 
 const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
@@ -132,6 +135,9 @@ const featuredThinking = (await getCollection("thinking"))
 
       <div class="capabilities" data-reveal data-reveal-stagger>
         <article class="cap">
+          <div class="cap__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          </div>
           <div class="cap__num">01 / Recovery</div>
           <h3 class="cap__title">Project recovery</h3>
           <p class="cap__desc">
@@ -144,6 +150,9 @@ const featuredThinking = (await getCollection("thinking"))
         </article>
 
         <article class="cap">
+          <div class="cap__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
           <div class="cap__num">02 / Governance</div>
           <h3 class="cap__title">PMO stand-up &amp; uplift</h3>
           <p class="cap__desc">
@@ -157,6 +166,9 @@ const featuredThinking = (await getCollection("thinking"))
         </article>
 
         <article class="cap">
+          <div class="cap__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>
+          </div>
           <div class="cap__num">03 / Investment</div>
           <h3 class="cap__title">Business case development</h3>
           <p class="cap__desc">
@@ -170,6 +182,9 @@ const featuredThinking = (await getCollection("thinking"))
         </article>
 
         <article class="cap">
+          <div class="cap__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+          </div>
           <div class="cap__num">04 / Sourcing</div>
           <h3 class="cap__title">Procurement &amp; RFP advisory</h3>
           <p class="cap__desc">
@@ -183,6 +198,9 @@ const featuredThinking = (await getCollection("thinking"))
         </article>
 
         <article class="cap">
+          <div class="cap__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
           <div class="cap__num">05 / Assurance</div>
           <h3 class="cap__title">Steering committee governance</h3>
           <p class="cap__desc">
@@ -196,6 +214,9 @@ const featuredThinking = (await getCollection("thinking"))
         </article>
 
         <article class="cap">
+          <div class="cap__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
           <div class="cap__num">06 / Independence</div>
           <h3 class="cap__title">Delivery assurance</h3>
           <p class="cap__desc">
@@ -211,42 +232,8 @@ const featuredThinking = (await getCollection("thinking"))
     </div>
   </section>
 
-  <!-- FEATURED THINKING -->
-  <section class="thinking" data-reveal>
-    <div class="wrap">
-      <header class="section__head">
-        <div>
-          <div class="eyebrow">Featured thinking</div>
-          <h2 class="section__title" style="margin-top:1.25rem;">
-            Field notes from<br />the <em>delivery floor.</em>
-          </h2>
-        </div>
-        <p class="lead">
-          Practical writing for the people doing the work. No frameworks for
-          their own sake - only the patterns, artefacts and decisions that hold
-          up under board scrutiny.
-        </p>
-      </header>
-
-      <div class="thinking__grid" data-reveal data-reveal-stagger>
-        {
-          featuredThinking.map((article) => (
-            <a href={`/thinking/${article.id}`} class="think-card">
-              <div class="think-card__kicker">{article.data.category}</div>
-              <h3 class="think-card__title">{article.data.title}.</h3>
-              <p class="think-card__desc">{article.data.description}</p>
-              <div class="think-card__meta">
-                Article · {article.data.readTime} min read
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
   <!-- CASE STUDY / QUOTE -->
-  <section class="case" data-reveal>
+  <section class="case case--imaged" data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -262,6 +249,18 @@ const featuredThinking = (await getCollection("thinking"))
           Four more are documented in the case study library.
         </p>
       </header>
+
+      <figure class="case__image" data-reveal>
+        <Image
+          src={caseStudyImage}
+          alt="A sandstone university building with a clock tower - the kind of institutional setting where the WCMS recovery played out"
+          widths={[640, 960, 1280, 1800]}
+          sizes="(min-width: 1080px) 1100px, 100vw"
+          loading="lazy"
+          decoding="async"
+          class="case__image-img"
+        />
+      </figure>
 
       <div class="case__grid">
         <div>
@@ -317,8 +316,42 @@ const featuredThinking = (await getCollection("thinking"))
     </div>
   </section>
 
+  <!-- FEATURED THINKING -->
+  <section class="thinking" data-reveal>
+    <div class="wrap">
+      <header class="section__head">
+        <div>
+          <div class="eyebrow">Featured thinking</div>
+          <h2 class="section__title" style="margin-top:1.25rem;">
+            Field notes from<br />the <em>delivery floor.</em>
+          </h2>
+        </div>
+        <p class="lead">
+          Practical writing for the people doing the work. No frameworks for
+          their own sake - only the patterns, artefacts and decisions that hold
+          up under board scrutiny.
+        </p>
+      </header>
+
+      <div class="thinking__grid" data-reveal data-reveal-stagger>
+        {
+          featuredThinking.map((article) => (
+            <a href={`/thinking/${article.id}`} class="think-card">
+              <div class="think-card__kicker">{article.data.category}</div>
+              <h3 class="think-card__title">{article.data.title}.</h3>
+              <p class="think-card__desc">{article.data.description}</p>
+              <div class="think-card__meta">
+                Article · {article.data.readTime} min read
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- PMO RESOURCES TEASER -->
-  <section data-reveal>
+  <section class="products-section" data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -333,6 +366,18 @@ const featuredThinking = (await getCollection("thinking"))
           something solid in front of the steering committee by Monday.
         </p>
       </header>
+
+      <figure class="products-section__image" data-reveal>
+        <Image
+          src={templatesImage}
+          alt="A flat-lay of a notebook and pen on a neutral surface - the simple artefacts of project work"
+          widths={[640, 960, 1280, 1800]}
+          sizes="(min-width: 1080px) 1100px, 100vw"
+          loading="lazy"
+          decoding="async"
+          class="products-section__image-img"
+        />
+      </figure>
 
       <div class="products" data-reveal data-reveal-stagger>
         <article class="product">
@@ -549,7 +594,18 @@ const featuredThinking = (await getCollection("thinking"))
   </section>
 
   <!-- ENGAGE / FINAL CTA -->
-  <section class="engage" data-reveal>
+  <section class="engage engage--imaged" data-reveal>
+    <figure class="engage__bg" aria-hidden="true">
+      <Image
+        src={engageImage}
+        alt=""
+        widths={[960, 1440, 1920, 2400]}
+        sizes="100vw"
+        loading="lazy"
+        decoding="async"
+        class="engage__bg-img"
+      />
+    </figure>
     <div class="wrap">
       <div class="engage__grid">
         <div>
@@ -574,25 +630,49 @@ const featuredThinking = (await getCollection("thinking"))
 
         <ul class="engage__list" data-reveal data-reveal-stagger>
           <li>
-            <a href="/contact?topic=brief"
-              ><span>Submit a brief (RFP / EOI)</span><span>→</span></a>
+            <a href="/contact?topic=brief">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              </span>
+              <span>Submit a brief (RFP / EOI)</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=call"
-              ><span>Book a 30-minute call with Sky</span><span>→</span></a>
+            <a href="/contact?topic=call">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg>
+              </span>
+              <span>Book a 30-minute call with Sky</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=capability"
-              ><span>Request a capability statement</span><span>→</span></a>
+            <a href="/contact?topic=capability">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </span>
+              <span>Request a capability statement</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=speaking"
-              ><span>Speaking &amp; advisory enquiries</span><span>→</span></a>
+            <a href="/contact?topic=speaking">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              </span>
+              <span>Speaking &amp; advisory enquiries</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/contact?topic=panel"
-              ><span>Government panel &amp; supplier listing</span><span>→</span
-              ></a>
+            <a href="/contact?topic=panel">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+              </span>
+              <span>Government panel &amp; supplier listing</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
         </ul>
       </div>

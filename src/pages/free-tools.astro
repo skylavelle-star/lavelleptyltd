@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import engageImage from "../assets/images/engage-boardroom.jpg";
 import { site } from "../config/site";
 
 // TODO: Framework One-Page asset not yet uploaded.
@@ -285,7 +287,18 @@ const supplementary = [
     </div>
   </section>
 
-  <section class="engage">
+  <section class="engage engage--imaged">
+    <figure class="engage__bg" aria-hidden="true">
+      <Image
+        src={engageImage}
+        alt=""
+        widths={[960, 1440, 1920, 2400]}
+        sizes="100vw"
+        loading="lazy"
+        decoding="async"
+        class="engage__bg-img"
+      />
+    </figure>
     <div class="wrap">
       <div class="engage__grid">
         <div>

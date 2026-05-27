@@ -7,10 +7,12 @@ interface Props {
   description: string;
   currentNav?:
     | 'home'
+    | 'consulting'
+    | 'case-studies'
+    | 'thinking'
     | 'framework'
     | 'templates'
     | 'bundles'
-    | 'consulting'
     | 'free-tools'
     | 'contact'
     | null;
@@ -30,11 +32,10 @@ const {
 
 const navItems = [
   { key: 'consulting', label: 'Consulting', href: '/consulting' },
+  { key: 'case-studies', label: 'Case Studies', href: '/case-studies' },
+  { key: 'thinking', label: 'Thinking', href: '/thinking' },
   { key: 'framework', label: 'Framework', href: '/framework' },
   { key: 'templates', label: 'Templates', href: '/templates' },
-  { key: 'bundles', label: 'Bundles', href: '/bundles' },
-  { key: 'free-tools', label: 'Free Tools', href: '/free-tools' },
-  { key: 'contact', label: 'Contact', href: '/contact' },
 ] as const;
 
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import staircaseImage from "../assets/images/framework-staircase.jpg";
+import engageImage from "../assets/images/engage-boardroom.jpg";
 
 const stages = [
   {
@@ -9,6 +12,7 @@ const stages = [
     produces: "A funded mandate",
     description:
       "Establish sponsor intent, governance structure, funding pathway and approval routes. The work of this stage is to leave with permission to spend money on Discovery.",
+    icon: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/>',
   },
   {
     number: "02",
@@ -17,6 +21,7 @@ const stages = [
     produces: "A defensible recommendation",
     description:
       "Frame the problem, test options, shape the business case and align stakeholders. Discovery ends with a recommendation the executive can defend.",
+    icon: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
   },
   {
     number: "03",
@@ -25,6 +30,7 @@ const stages = [
     produces: "An agreed solution",
     description:
       "Define the solution. Architecture, detailed design and design authority endorsement. The solution is now specific enough to build to.",
+    icon: '<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/>',
   },
   {
     number: "04",
@@ -33,6 +39,7 @@ const stages = [
     produces: "Working capability",
     description:
       "Construct the solution. Configure, integrate and verify against design intent. Duration scales with scope; cadence stays steady.",
+    icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
   },
   {
     number: "05",
@@ -41,6 +48,7 @@ const stages = [
     produces: "Evidence of fit",
     description:
       "Prove the solution. System, integration and user acceptance through to go-live readiness. The test record is what the gate decision rests on.",
+    icon: '<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/>',
   },
   {
     number: "06",
@@ -49,6 +57,7 @@ const stages = [
     produces: "Executed runsheet · evidenced · reversible",
     description:
       "Transition to live. Go/no-go decision, deployment and operational stand-up. Every step is on the runsheet, evidenced and reversible if the rollback is called.",
+    icon: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
   },
   {
     number: "07",
@@ -57,6 +66,7 @@ const stages = [
     produces: "Benefits handed over · finances reconciled · lessons captured",
     description:
       "Closure report, financial close, benefits handover and lessons learned. The work returns to the organisation with the artefacts and accountability in place.",
+    icon: '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
   },
 ];
 
@@ -159,7 +169,7 @@ const gates = [
     </div>
   </section>
 
-  <section>
+  <section class="case--imaged">
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -175,10 +185,36 @@ const gates = [
         </p>
       </header>
 
+      <figure class="case__image">
+        <Image
+          src={staircaseImage}
+          alt="A clean white spiral staircase rising through a light-filled atrium - the seven stages ascend the same way"
+          widths={[640, 960, 1280, 1800]}
+          sizes="(min-width: 1080px) 1100px, 100vw"
+          loading="lazy"
+          decoding="async"
+          class="case__image-img"
+        />
+      </figure>
+
       <div class="stages">
         {
           stages.map((stage) => (
             <article class="stage">
+              <div class="stage__icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={stage.icon}
+                />
+              </div>
               <div class="stage__num">{stage.number}</div>
               <h3 class="stage__title">{stage.name}</h3>
               <div class="stage__meta">
@@ -272,7 +308,18 @@ const gates = [
     </div>
   </section>
 
-  <section class="engage">
+  <section class="engage engage--imaged">
+    <figure class="engage__bg" aria-hidden="true">
+      <Image
+        src={engageImage}
+        alt=""
+        widths={[960, 1440, 1920, 2400]}
+        sizes="100vw"
+        loading="lazy"
+        decoding="async"
+        class="engage__bg-img"
+      />
+    </figure>
     <div class="wrap">
       <div class="engage__grid">
         <div>
@@ -299,20 +346,40 @@ const gates = [
         </div>
         <ul class="engage__list">
           <li>
-            <a href="/consulting"
-              ><span>Consulting capabilities</span><span>→</span></a>
+            <a href="/consulting">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+              </span>
+              <span>Consulting capabilities</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/templates"
-              ><span>Stage-based packs</span><span>→</span></a>
+            <a href="/templates">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+              </span>
+              <span>Stage-based packs</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/bundles"
-              ><span>Tier-based bundles</span><span>→</span></a>
+            <a href="/bundles">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+              </span>
+              <span>Tier-based bundles</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
           <li>
-            <a href="/free-tools"
-              ><span>Free tools &amp; Tailoring Calculator</span><span>→</span></a>
+            <a href="/free-tools">
+              <span class="engage__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M8 12h8"/></svg>
+              </span>
+              <span>Free tools &amp; Tailoring Calculator</span>
+              <span class="engage__arrow">→</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -341,6 +408,11 @@ const gates = [
     border: 1px solid var(--rule);
     border-top: 3px solid var(--ochre);
     padding: 1.75rem;
+  }
+  .stage__icon {
+    color: var(--ochre);
+    margin-bottom: 0.85rem;
+    line-height: 0;
   }
   .stage__num {
     font-family: "DM Sans", sans-serif;
