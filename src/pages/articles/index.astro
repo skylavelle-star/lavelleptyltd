@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import engageImage from "../../assets/images/engage-boardroom.jpg";
 
-const articles = (await getCollection("thinking")).sort(
+const articles = (await getCollection("articles")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
@@ -17,16 +17,16 @@ const formatDate = (date: Date) =>
 ---
 
 <BaseLayout
-  title="Thinking - Lavelle Pty Ltd"
-  description="Practical thinking on project delivery, governance, procurement, business case development and steering committee reporting. Written from real enterprise technology delivery experience."
-  currentNav="thinking"
+  title="Articles - Lavelle Pty Ltd"
+  description="Practical articles on project delivery, governance, procurement, business case development and steering committee reporting. Written from real enterprise technology delivery experience."
+  currentNav="articles"
 >
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
-        <a href="/">Home</a> &nbsp;/&nbsp; <span>Thinking</span>
+        <a href="/">Home</a> &nbsp;/&nbsp; <span>Articles</span>
       </div>
-      <h1>Thinking. <em>Field notes from delivery.</em></h1>
+      <h1>Articles. <em>Field notes from delivery.</em></h1>
       <p class="subhero__lead">
         Practical guidance on project delivery, governance, procurement and the
         senior delivery work that gets enterprise programs across the line.
@@ -52,10 +52,10 @@ const formatDate = (date: Date) =>
                 <span>{article.data.readTime} min read</span>
               </div>
               <h2 class="article-list__title">
-                <a href={`/thinking/${article.id}`}>{article.data.title}</a>
+                <a href={`/articles/${article.id}`}>{article.data.title}</a>
               </h2>
               <p class="article-list__desc">{article.data.description}</p>
-              <a href={`/thinking/${article.id}`} class="article-list__link">
+              <a href={`/articles/${article.id}`} class="article-list__link">
                 Read it <span class="btn__arrow">→</span>
               </a>
             </article>

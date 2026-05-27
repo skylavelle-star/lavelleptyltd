@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const pieces = await getCollection("thinking");
+  const pieces = await getCollection("articles");
   return pieces.map((piece) => ({
     params: { slug: piece.id },
     props: { article: piece },
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  article: CollectionEntry<"thinking">;
+  article: CollectionEntry<"articles">;
 }
 
 const { article } = Astro.props;
@@ -28,12 +28,12 @@ const formattedDate = article.data.pubDate.toLocaleDateString("en-AU", {
 <BaseLayout
   title={`${article.data.title} - Lavelle Pty Ltd`}
   description={article.data.description}
-  currentNav="thinking"
+  currentNav="articles"
 >
   <section class="subhero">
     <div class="wrap" style="max-width:64rem;">
       <div class="subhero__crumb">
-        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/thinking">Thinking</a> &nbsp;/&nbsp;
+        <a href="/">Home</a> &nbsp;/&nbsp; <a href="/articles">Articles</a> &nbsp;/&nbsp;
         <span>{article.data.category}</span>
       </div>
       <div class="article-hero-meta">
@@ -70,8 +70,8 @@ const formattedDate = article.data.pubDate.toLocaleDateString("en-AU", {
       }
 
       <div class="article-back">
-        <a href="/thinking" class="cap__link">
-          <span aria-hidden="true">←</span> All thinking
+        <a href="/articles" class="cap__link">
+          <span aria-hidden="true">←</span> All articles
         </a>
       </div>
     </div>

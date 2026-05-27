@@ -12,7 +12,7 @@ const steeringUrl = products.steeringCommitteePack.checkoutUrl || undefined;
 const recoveryUrl = products.projectRecoveryPack.checkoutUrl || undefined;
 const anyCheckout = Boolean(steeringUrl || recoveryUrl);
 
-const featuredThinking = (await getCollection("thinking"))
+const featuredThinking = (await getCollection("articles"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 ---
@@ -316,12 +316,12 @@ const featuredThinking = (await getCollection("thinking"))
     </div>
   </section>
 
-  <!-- FEATURED THINKING -->
+  <!-- FEATURED ARTICLES -->
   <section class="thinking" data-reveal>
     <div class="wrap">
       <header class="section__head">
         <div>
-          <div class="eyebrow">Featured thinking</div>
+          <div class="eyebrow">Featured articles</div>
           <h2 class="section__title" style="margin-top:1.25rem;">
             Field notes from<br />the <em>delivery floor.</em>
           </h2>
@@ -336,7 +336,7 @@ const featuredThinking = (await getCollection("thinking"))
       <div class="thinking__grid" data-reveal data-reveal-stagger>
         {
           featuredThinking.map((article) => (
-            <a href={`/thinking/${article.id}`} class="think-card">
+            <a href={`/articles/${article.id}`} class="think-card">
               <div class="think-card__kicker">{article.data.category}</div>
               <h3 class="think-card__title">{article.data.title}.</h3>
               <p class="think-card__desc">{article.data.description}</p>

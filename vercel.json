@@ -1,9 +1,9 @@
 {
   "redirects": [
-    { "source": "/articles", "destination": "/thinking", "permanent": true },
+    { "source": "/thinking", "destination": "/articles", "permanent": true },
     {
-      "source": "/articles/:slug*",
-      "destination": "/thinking/:slug*",
+      "source": "/thinking/:slug*",
+      "destination": "/articles/:slug*",
       "permanent": true
     },
     {

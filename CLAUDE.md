@@ -9,7 +9,7 @@ Vercel project: `lavelle-pty-ltd` under `sky-lavelles-projects`
 - **Astro 5** (`^5.7.0`, static output)
 - **Tailwind CSS v4** - CSS-first config in `src/styles/global.css` via `@tailwindcss/vite` plugin, no `tailwind.config.js`
 - **TypeScript** - strict mode
-- **Astro content collections** - `src/content/thinking/` for editorial articles, rendered at `/thinking/[slug]`
+- **Astro content collections** - `src/content/articles/` for editorial articles, rendered at `/articles/[slug]`
 - **Lemon Squeezy** - checkout overlay via `lemon.js`; loaded only on pages with buy buttons. Storefront: `lavelleptyltd.lemonsqueezy.com`
 - **Web3Forms** - contact form handler (key: `21e468ca-496b-45eb-8313-d1b7d5d229c9`)
 - **Google Analytics** - GA4, injected in `BaseLayout.astro` when `PUBLIC_GA_ID` is set
@@ -36,7 +36,7 @@ src/
     StubPack.astro    # shared layout for the seven in-development stub packs (with notify-me form + ROI block)
   config/site.ts      # ALL site config and env var reads — import from here, not import.meta.env
   content/
-    thinking/         # Astro content collection — editorial articles in markdown
+    articles/         # Astro content collection — editorial articles in markdown
   layouts/
     BaseLayout.astro  # base layout (head, header nav, footer all integrated)
   pages/
@@ -47,7 +47,7 @@ src/
     services.astro             # LEGACY / orphan — to be retired via /retire-services
     privacy.astro
     terms.astro
-    thinking/
+    articles/
       index.astro              # article index, sorted by pubDate desc
       [...slug].astro          # individual article renderer
     templates/
@@ -89,7 +89,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes six destinations (Consulting, Framework, Templates, Bundles, Free Tools, Contact) plus a persistent "Engage us" CTA → `/contact`. Brand mark routes to home. Other pages — `/case-studies/`, `/thinking/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
+Header nav exposes six destinations (Consulting, Framework, Templates, Bundles, Free Tools, Contact) plus a persistent "Engage us" CTA → `/contact`. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
 
 ## Config and environment
 
