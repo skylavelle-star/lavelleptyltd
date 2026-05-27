@@ -1,11 +1,10 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!coming-soon|_astro/|favicon\\.svg).*)",
-      "destination": "/coming-soon"
-    }
-  ],
   "redirects": [
+    {
+      "source": "/((?!coming-soon|favicon\\.svg).*)",
+      "destination": "/coming-soon",
+      "permanent": false
+    },
     { "source": "/thinking", "destination": "/articles", "permanent": true },
     {
       "source": "/thinking/:slug*",
