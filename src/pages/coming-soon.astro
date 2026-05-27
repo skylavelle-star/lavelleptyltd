@@ -1,0 +1,110 @@
+---
+// Standalone holding page. Self-contained (inline styles, no BaseLayout,
+// no GA, no nav) so it has zero external dependencies and renders even when
+// the rest of the site is being rewritten to it. Remove the catch-all
+// "rewrites" block in vercel.json to bring the full site back online.
+import { site } from "../config/site";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name} — Coming soon</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content={`${site.name} — our new site is on its way.`}
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bone: #f4efe6;
+        --ink: #181613;
+        --ochre: #b85c2a;
+        --sage: #707262;
+        --rule: #ddd5c5;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bone);
+        color: var(--ink);
+        font-family: "DM Sans", system-ui, sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        padding: 2rem;
+      }
+      main {
+        max-width: 36rem;
+        text-align: center;
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-bottom: 1.75rem;
+      }
+      h1 {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 300;
+        font-variation-settings: "opsz" 144;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        font-size: clamp(2.75rem, 8vw, 5rem);
+        margin-bottom: 1.5rem;
+      }
+      .rule {
+        width: 3rem;
+        height: 1px;
+        background: var(--ochre);
+        margin: 0 auto 1.75rem;
+      }
+      p {
+        font-size: 1.125rem;
+        color: var(--ink);
+        margin-bottom: 0.75rem;
+      }
+      a {
+        color: var(--ochre);
+        text-decoration: none;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 1px;
+      }
+      a:hover {
+        border-color: var(--ochre);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">{site.name}</p>
+      <h1>Coming soon</h1>
+      <div class="rule"></div>
+      <p>Our new site is on its way.</p>
+      <p>
+        In the meantime, reach us at
+        <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </main>
+  </body>
+</html>

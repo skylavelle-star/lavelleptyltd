@@ -1,4 +1,11 @@
 {
+  "comment": "OFFLINE/HOLDING MODE: the rewrites block below sends all traffic to /coming-soon. The full site is intact — to bring it back online, delete the entire \"rewrites\" block (and optionally src/pages/coming-soon.astro), then redeploy.",
+  "rewrites": [
+    {
+      "source": "/((?!coming-soon|_astro/|favicon\\.svg).*)",
+      "destination": "/coming-soon"
+    }
+  ],
   "redirects": [
     { "source": "/thinking", "destination": "/articles", "permanent": true },
     {
