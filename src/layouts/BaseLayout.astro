@@ -11,7 +11,7 @@ interface Props {
     | 'case-studies'
     | 'articles'
     | 'framework'
-    | 'templates'
+    | 'resources'
     | 'bundles'
     | 'free-tools'
     | 'contact'
@@ -35,7 +35,7 @@ const navItems = [
   { key: 'case-studies', label: 'Case Studies', href: '/case-studies' },
   { key: 'articles', label: 'Articles', href: '/articles' },
   { key: 'framework', label: 'Framework', href: '/framework' },
-  { key: 'templates', label: 'Templates', href: '/templates' },
+  { key: 'resources', label: 'Resources', href: '/resources' },
 ] as const;
 
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
@@ -166,7 +166,7 @@ const year = new Date().getFullYear();
             <h4>Method &amp; resources</h4>
             <ul>
               <li><a href="/framework">Framework</a></li>
-              <li><a href="/templates">Templates</a></li>
+              <li><a href="/resources">Resources</a></li>
               <li><a href="/bundles">Bundles</a></li>
               <li><a href="/free-tools">Free tools</a></li>
               <li><a href="/case-studies">Case studies</a></li>

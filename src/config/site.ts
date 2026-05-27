@@ -16,7 +16,7 @@ export const products = {
   steeringCommitteePack: {
     name: "Steering Pack",
     price: "897",
-    href: "/templates/steering-committee-pack",
+    href: "/resources/steering-committee-pack",
     description:
       "Charter, meeting cadence, status report template, RAID summary, financials view and decision log.",
     checkoutUrl: import.meta.env.PUBLIC_LS_STEERING_COMMITTEE_PACK || "",
@@ -24,7 +24,7 @@ export const products = {
   projectRecoveryPack: {
     name: "Project Recovery Pack",
     price: "1,247",
-    href: "/templates/project-recovery-pack",
+    href: "/resources/project-recovery-pack",
     description:
       "For project managers stepping into a program that needs stabilising. Recovery assessment, stakeholder reset, replan and governance artefacts.",
     checkoutUrl: import.meta.env.PUBLIC_LS_PROJECT_RECOVERY_PACK || "",
@@ -32,7 +32,7 @@ export const products = {
   businessCasePack: {
     name: "Business Case Pack",
     price: "1,197",
-    href: "/templates/business-case-pack",
+    href: "/resources/business-case-pack",
     description:
       "End-to-end business case structure. Problem definition, options analysis, benefits, costs, risks and approval routing.",
     checkoutUrl: import.meta.env.PUBLIC_LS_BUSINESS_CASE_PACK || "",
@@ -40,7 +40,7 @@ export const products = {
   procurementPack: {
     name: "Procurement Pack",
     price: "1,197",
-    href: "/templates/procurement-pack",
+    href: "/resources/procurement-pack",
     description:
       "RFP planning, evaluation scoring, BAFO process, recommendation report and delegate approval templates.",
     checkoutUrl: import.meta.env.PUBLIC_LS_PROCUREMENT_PACK || "",
@@ -48,7 +48,7 @@ export const products = {
   projectSetupPack: {
     name: "Project Setup Pack",
     price: "847",
-    href: "/templates/project-setup-pack",
+    href: "/resources/project-setup-pack",
     description:
       "The artefacts a new project manager needs in the first two weeks. Onboarding checklist, project schedule, PMP, scope and high-level requirements, kick-off pack.",
     checkoutUrl: import.meta.env.PUBLIC_LS_PROJECT_SETUP_PACK || "",
@@ -56,7 +56,7 @@ export const products = {
   discoveryPack: {
     name: "Discovery Pack",
     price: "947",
-    href: "/templates/discovery-pack",
+    href: "/resources/discovery-pack",
     description:
       "BA Discovery Assessment, Change Impact Assessment, Project Approach Selector, Project Assurance Checklist and the Project Tailoring Calculator.",
     checkoutUrl: import.meta.env.PUBLIC_LS_DISCOVERY_PACK || "",
@@ -64,7 +64,7 @@ export const products = {
   requirementsDesignPack: {
     name: "Requirements & Design Pack",
     price: "947",
-    href: "/templates/requirements-design-pack",
+    href: "/resources/requirements-design-pack",
     description:
       "Screens, workflow, use cases, service analysis, gap analysis and a working traceability matrix for the Design stage.",
     checkoutUrl: import.meta.env.PUBLIC_LS_REQUIREMENTS_DESIGN_PACK || "",
@@ -72,7 +72,7 @@ export const products = {
   financialControlPack: {
     name: "Financial Control Pack",
     price: "1,247",
-    href: "/templates/financial-control-pack",
+    href: "/resources/financial-control-pack",
     description:
       "Cost estimate, estimation guidelines, budget phasing, financial control tracker, contingency calculator and supporting workbooks.",
     checkoutUrl: import.meta.env.PUBLIC_LS_FINANCIAL_CONTROL_PACK || "",
@@ -80,7 +80,7 @@ export const products = {
   testingPack: {
     name: "Testing Pack",
     price: "747",
-    href: "/templates/testing-pack",
+    href: "/resources/testing-pack",
     description:
       "Quality Management Approach, Quality Plan, Product Status Account and Quality Inspection Sheet - the test stage artefact set.",
     checkoutUrl: import.meta.env.PUBLIC_LS_TESTING_PACK || "",
@@ -88,7 +88,7 @@ export const products = {
   cutoverPack: {
     name: "Cutover Pack",
     price: "747",
-    href: "/templates/cutover-pack",
+    href: "/resources/cutover-pack",
     description:
       "Release Plan Runsheet and Go / No-Go Checklist - every cutover step evidenced and reversible.",
     checkoutUrl: import.meta.env.PUBLIC_LS_CUTOVER_PACK || "",
@@ -96,7 +96,7 @@ export const products = {
   trainingChangePack: {
     name: "Training / Change Pack",
     price: "747",
-    href: "/templates/training-change-pack",
+    href: "/resources/training-change-pack",
     description:
       "Communication & Training Approach, Operational Acceptance Criteria and Change Control Approach Review for the Cutover-to-Closure transition.",
     checkoutUrl: import.meta.env.PUBLIC_LS_TRAINING_CHANGE_PACK || "",
@@ -104,7 +104,7 @@ export const products = {
   completePractitionerLibrary: {
     name: "Complete Practitioner Library",
     price: "12,997",
-    href: "/templates/complete-practitioner-library",
+    href: "/resources/complete-practitioner-library",
     description:
       "The entire opinionated library in a single transaction. Every stage pack, every bundle, the Framework documentation and twelve months of artefact updates - single named user.",
     checkoutUrl: import.meta.env.PUBLIC_LS_COMPLETE_LIBRARY || "",

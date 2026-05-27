@@ -16,9 +16,15 @@
       "destination": "/bundles",
       "permanent": true
     },
+    { "source": "/templates", "destination": "/resources", "permanent": true },
+    {
+      "source": "/templates/:slug*",
+      "destination": "/resources/:slug*",
+      "permanent": true
+    },
     {
       "source": "/pmo-resources",
-      "destination": "/templates",
+      "destination": "/resources",
       "permanent": true
     }
   ],

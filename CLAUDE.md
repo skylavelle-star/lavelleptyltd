@@ -50,7 +50,7 @@ src/
     articles/
       index.astro              # article index, sorted by pubDate desc
       [...slug].astro          # individual article renderer
-    templates/
+    resources/         # section labelled "Resources" in nav; route /resources (was /templates)
       index.astro                            # browse: flagship + nine stage packs + additional packs + standalone
       complete-practitioner-library.astro    # $12,997 flagship (uses PackPage)
       business-case-pack.astro               # live PackPage
@@ -89,7 +89,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes six destinations (Consulting, Framework, Templates, Bundles, Free Tools, Contact) plus a persistent "Engage us" CTA → `/contact`. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
+Header nav exposes six destinations (Consulting, Framework, Resources, Bundles, Free Tools, Contact) plus a persistent "Engage us" CTA → `/contact`. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
 
 ## Config and environment
 
@@ -139,7 +139,7 @@ Web3Forms handles contact form submissions. Access key: `21e468ca-496b-45eb-8313
 Pages that conditionally load `lemon.js`:
 
 - `src/pages/index.astro` (homepage product teasers)
-- The five PackPage users: `templates/business-case-pack.astro`, `procurement-pack.astro`, `project-recovery-pack.astro`, `steering-committee-pack.astro`, `complete-practitioner-library.astro`
+- The five PackPage users: `resources/business-case-pack.astro`, `procurement-pack.astro`, `project-recovery-pack.astro`, `steering-committee-pack.astro`, `complete-practitioner-library.astro`
 - The four bundle pages: `bundles/tier-1-major.astro`, `tier-2-standard.astro`, `tier-3-light.astro`, `project-recovery-bundle.astro` — each gated on its own `PUBLIC_LS_*` variable
 
 The PackPage component (`src/components/PackPage.astro`) takes price, audience, helpsWith, included artefacts, FAQ, ROI block and CTA props. The seven in-development stub packs render through `src/components/StubPack.astro` instead — same visual shape, but with a Web3Forms notify-me form in place of the buy button.

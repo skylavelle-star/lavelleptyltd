@@ -92,6 +92,6 @@ A controlled termination - one that preserves what value has been created, docum
 
 ---
 
-The Lavelle Pty Ltd Project Recovery Pack includes structured templates for stakeholder reset communications, reporting recalibration and governance changes that hold. See the [Project Recovery Pack](/templates/project-recovery-pack) for details.
+The Lavelle Pty Ltd Project Recovery Pack includes structured templates for stakeholder reset communications, reporting recalibration and governance changes that hold. See the [Project Recovery Pack](/resources/project-recovery-pack) for details.
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.
