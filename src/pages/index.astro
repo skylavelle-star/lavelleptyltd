@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import heroImage from "../assets/images/hero.jpg";
 import caseStudyImage from "../assets/images/case-study-quadrangle.jpg";
-import templatesImage from "../assets/images/templates-flatlay.jpg";
+import templatesImage from "../assets/images/templates-blueprint.jpg";
 import engageImage from "../assets/images/engage-boardroom.jpg";
 import { site, products } from "../config/site";
 
@@ -370,7 +370,7 @@ const featuredThinking = (await getCollection("thinking"))
       <figure class="products-section__image" data-reveal>
         <Image
           src={templatesImage}
-          alt="A flat-lay of a notebook and pen on a neutral surface - the simple artefacts of project work"
+          alt="A hand drafting on a technical blueprint with ruler and pencil - the precision behind project artefacts"
           widths={[640, 960, 1280, 1800]}
           sizes="(min-width: 1080px) 1100px, 100vw"
           loading="lazy"
