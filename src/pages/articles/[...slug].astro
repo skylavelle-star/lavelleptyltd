@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import { site } from "../../config/site";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
@@ -23,13 +25,51 @@ const formattedDate = article.data.pubDate.toLocaleDateString("en-AU", {
   month: "long",
   year: "numeric",
 });
+
+const articleUrl = new URL(`/articles/${article.id}`, site.url).toString();
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: article.data.title,
+  description: article.data.description,
+  datePublished: article.data.pubDate.toISOString(),
+  articleSection: article.data.category,
+  keywords: article.data.tags.join(", "),
+  inLanguage: "en-AU",
+  author: { "@type": "Person", name: site.founder, url: site.linkedin },
+  publisher: { "@id": `${site.url}/#organization` },
+  mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+  image: new URL(site.defaultOgImage, site.url).toString(),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Articles",
+      item: new URL("/articles", site.url).toString(),
+    },
+    { "@type": "ListItem", position: 3, name: article.data.title, item: articleUrl },
+  ],
+};
 ---
 
 <BaseLayout
   title={`${article.data.title} - Lavelle Pty Ltd`}
   description={article.data.description}
   currentNav="articles"
+  ogType="article"
+  publishedTime={article.data.pubDate.toISOString()}
+  author={site.founder}
+  articleSection={article.data.category}
 >
+  <JsonLd data={articleSchema} />
+  <JsonLd data={breadcrumbSchema} />
   <section class="subhero">
     <div class="wrap" style="max-width:64rem;">
       <div class="subhero__crumb">

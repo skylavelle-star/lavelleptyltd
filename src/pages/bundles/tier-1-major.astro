@@ -1,9 +1,31 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
 import { site, products } from "../../config/site";
 
 const bundle = products.tier1MajorBundle;
 const checkoutUrl = bundle.checkoutUrl || undefined;
+
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: bundle.name,
+  description: bundle.description,
+  brand: { "@type": "Brand", name: site.name },
+  category: "Project management template bundle",
+  url: pageUrl,
+  offers: {
+    "@type": "Offer",
+    price: bundle.price.replace(/[^0-9.]/g, ""),
+    priceCurrency: "AUD",
+    url: pageUrl,
+    availability: checkoutUrl
+      ? "https://schema.org/InStock"
+      : "https://schema.org/PreOrder",
+    seller: { "@id": `${site.url}/#organization` },
+  },
+};
 
 const includedTier2 = [
   "Everything in Tier 2 Standard (Business Case, Project Plan, Scope & High-Level Requirements, RAID Log, SteerCo Charter, Steering Committee Pack, Cost Plan, Stage Plan Budget, Cost Tolerance Tracker)",
@@ -26,6 +48,8 @@ const includedAdditional = [
   title="Tier 1 Major Bundle - Lavelle Pty Ltd"
   description="The full programme artefact set for high-complexity, high-scrutiny delivery. Tailoring score 25-35."
 >
+  <JsonLd data={productSchema} />
+
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">

@@ -12,6 +12,7 @@ interface Props {
 }
 
 import { site } from "../config/site";
+import JsonLd from "./JsonLd.astro";
 
 const {
   packName,
@@ -27,7 +28,30 @@ const {
 
 const eyebrow = `${packName} · ${frameworkStage}`;
 const formId = `notify-${packSlug}`;
+
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: packName,
+  description: subhead,
+  brand: { "@type": "Brand", name: site.name },
+  category: "Project management templates",
+  url: pageUrl,
+  ...(price && {
+    offers: {
+      "@type": "Offer",
+      price: price.replace(/[^0-9.]/g, ""),
+      priceCurrency: "AUD",
+      url: pageUrl,
+      availability: "https://schema.org/PreOrder",
+      seller: { "@id": `${site.url}/#organization` },
+    },
+  }),
+};
 ---
+
+<JsonLd data={productSchema} />
 
 <section class="subhero">
   <div class="wrap">

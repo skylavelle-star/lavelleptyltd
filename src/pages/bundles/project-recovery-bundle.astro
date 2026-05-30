@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
 import { site, products } from "../../config/site";
 
 const bundle = products.projectRecoveryBundle;
@@ -11,6 +12,27 @@ const bundle = products.projectRecoveryBundle;
 const framingDocReady = false;
 const checkoutUrl =
   framingDocReady && bundle.checkoutUrl ? bundle.checkoutUrl : undefined;
+
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: bundle.name,
+  description: bundle.description,
+  brand: { "@type": "Brand", name: site.name },
+  category: "Project management template bundle",
+  url: pageUrl,
+  offers: {
+    "@type": "Offer",
+    price: bundle.price.replace(/[^0-9.]/g, ""),
+    priceCurrency: "AUD",
+    url: pageUrl,
+    availability: checkoutUrl
+      ? "https://schema.org/InStock"
+      : "https://schema.org/PreOrder",
+    seller: { "@id": `${site.url}/#organization` },
+  },
+};
 
 const included = [
   "Recovery framing doc - the opinionated thinking that ties the bundle into a protocol",
@@ -25,6 +47,8 @@ const included = [
   title="Project Recovery Bundle - Lavelle Pty Ltd"
   description="A consulting-led recovery bundle. The opinionated framing doc plus four supporting artefacts that turn a stalled program into a defensible recovery plan."
 >
+  <JsonLd data={productSchema} />
+
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">

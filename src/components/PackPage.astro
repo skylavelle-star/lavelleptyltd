@@ -1,5 +1,6 @@
 ---
 import { site } from "../config/site";
+import JsonLd from "./JsonLd.astro";
 
 interface IncludedItem {
   title: string;
@@ -75,7 +76,46 @@ const sections = [
   { id: "format", label: "Format and delivery" },
   { id: "faq", label: "FAQ" },
 ];
+
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const stripHtml = (s: string) => s.replace(/<[^>]*>/g, "").trim();
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: packName,
+  description: problemStatement[0] ? stripHtml(problemStatement[0]) : packName,
+  brand: { "@type": "Brand", name: site.name },
+  category: "Project management templates",
+  url: pageUrl,
+  offers: {
+    "@type": "Offer",
+    price: price.replace(/[^0-9.]/g, ""),
+    priceCurrency: "AUD",
+    url: pageUrl,
+    availability: checkoutUrl
+      ? "https://schema.org/InStock"
+      : "https://schema.org/PreOrder",
+    seller: { "@id": `${site.url}/#organization` },
+  },
+};
+
+const faqSchema =
+  faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: stripHtml(f.q),
+          acceptedAnswer: { "@type": "Answer", text: stripHtml(f.a) },
+        })),
+      }
+    : null;
 ---
+
+<JsonLd data={productSchema} />
+{faqSchema && <JsonLd data={faqSchema} />}
 
 <!-- AT-A-GLANCE STAT STRIP -->
 <section class="pack-stats">

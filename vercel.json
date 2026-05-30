@@ -31,7 +31,8 @@
       "source": "/pmo-resources",
       "destination": "/resources",
       "permanent": true
-    }
+    },
+    { "source": "/services", "destination": "/consulting", "permanent": true }
   ],
   "headers": [
     {

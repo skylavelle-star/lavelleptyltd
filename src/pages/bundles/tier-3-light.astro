@@ -1,9 +1,31 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
 import { site, products } from "../../config/site";
 
 const bundle = products.tier3LightBundle;
 const checkoutUrl = bundle.checkoutUrl || undefined;
+
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: bundle.name,
+  description: bundle.description,
+  brand: { "@type": "Brand", name: site.name },
+  category: "Project management template bundle",
+  url: pageUrl,
+  offers: {
+    "@type": "Offer",
+    price: bundle.price.replace(/[^0-9.]/g, ""),
+    priceCurrency: "AUD",
+    url: pageUrl,
+    availability: checkoutUrl
+      ? "https://schema.org/InStock"
+      : "https://schema.org/PreOrder",
+    seller: { "@id": `${site.url}/#organization` },
+  },
+};
 
 const included = [
   "Lite Business Case",
@@ -18,6 +40,8 @@ const included = [
   title="Tier 3 Light Bundle - Lavelle Pty Ltd"
   description="The minimum viable artefact set for a small, contained delivery. Tailoring score 7-14."
 >
+  <JsonLd data={productSchema} />
+
   <section class="subhero">
     <div class="wrap">
       <div class="subhero__crumb">
