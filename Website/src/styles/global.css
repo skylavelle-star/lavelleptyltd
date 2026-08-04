@@ -254,7 +254,7 @@ p {
 
 /* ----------- Hero ----------- */
 .hero {
-  padding: clamp(4rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem);
+  padding: clamp(2rem, 4.5vw, 4rem) 0 clamp(1.5rem, 3.5vw, 3rem);
   position: relative;
   overflow: hidden;
 }
@@ -380,7 +380,7 @@ p {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   background: var(--paper);
-  padding: 1.2rem 0;
+  padding: 0.6rem 0;
   overflow: hidden;
 }
 .strip__inner {
@@ -413,14 +413,14 @@ p {
 
 /* ----------- Section base ----------- */
 section {
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
 }
 
 .section__head {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
   align-items: end;
 }
 @media (min-width: 880px) {
@@ -879,7 +879,7 @@ section {
 
 /* ----------- Sub-page hero (consulting / resources) ----------- */
 .subhero {
-  padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 3.5vw, 3rem) 0 clamp(1.25rem, 2.5vw, 2rem);
   border-bottom: 1px solid var(--rule);
 }
 .subhero__crumb {
