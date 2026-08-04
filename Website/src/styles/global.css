@@ -424,13 +424,27 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
   align-items: end;
 }
 @media (min-width: 880px) {
   .section__head {
     grid-template-columns: 0.9fr 1.1fr;
     gap: 4rem;
+  }
+}
+/* The lead sits opposite the section heading, where unmarked body text reads
+   as an orphaned paragraph. The rule borrows the hero panel's treatment so
+   the column registers as a deliberate side note. */
+@media (min-width: 880px) {
+  .section__head .lead {
+    border-left: 1px solid var(--rule);
+    padding-left: clamp(1.25rem, 2.5vw, 2rem);
+  }
+  /* --rule is a light tone; on the ink sections it would out-shine the text
+     it sits beside, so drop it to the same weight as that copy. */
+  .thinking .section__head .lead {
+    border-left-color: rgba(244, 239, 230, 0.28);
   }
 }
 .section__title {
