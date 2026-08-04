@@ -44,9 +44,7 @@ const navItems = [
   { key: 'consulting', label: 'Consulting', href: '/consulting' },
   { key: 'network', label: 'Delivery Network', href: '/network' },
   { key: 'case-studies', label: 'Case Studies', href: '/case-studies' },
-  { key: 'articles', label: 'Articles', href: '/articles' },
   { key: 'framework', label: 'Framework', href: '/framework' },
-  { key: 'resources', label: 'Resources', href: '/resources' },
 ] as const;
 
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();

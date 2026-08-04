@@ -217,9 +217,10 @@ p {
   line-height: 0;
 }
 
-/* Six nav items plus the brand and CTA need roughly 910px. Below that the
-   header crowds, so the hamburger takes over at 1000px rather than 800px. */
-@media (max-width: 1000px) {
+/* Four nav items plus the brand and CTA need roughly 720px. The hamburger
+   takes over at 880px, which leaves headroom and reuses a breakpoint the
+   rest of the sheet already sets. Re-check this if a nav item is added. */
+@media (max-width: 880px) {
   .nav {
     display: none;
   }
