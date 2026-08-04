@@ -13,9 +13,9 @@ import { site } from "../config/site";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.name} — Private preview</title>
+    <title>{site.name} — Password protected</title>
     <meta name="robots" content="noindex, nofollow" />
-    <meta name="description" content={`${site.name} — private preview.`} />
+    <meta name="description" content={`${site.name} — password protected.`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -137,27 +137,14 @@ import { site } from "../config/site";
       .error[data-visible="true"] {
         display: block;
       }
-      .footnote {
-        font-size: 0.85rem;
-        color: var(--sage);
-        margin: 2rem 0 0;
-      }
-      .footnote a {
-        color: var(--ochre);
-        text-decoration: none;
-        border-bottom: 1px solid var(--rule);
-      }
-      .footnote a:hover {
-        border-color: var(--ochre);
-      }
     </style>
   </head>
   <body>
     <main>
       <p class="eyebrow">{site.name}</p>
-      <h1>Private preview</h1>
+      <h1>Password protected</h1>
       <div class="rule"></div>
-      <p>This site is not public yet. Enter the password to continue.</p>
+      <p>This site is not publicly available. Enter the password to continue.</p>
 
       <form method="POST" action="/gate">
         <label for="password">Password</label>
@@ -173,11 +160,6 @@ import { site } from "../config/site";
         <p class="error" id="error">That password is not right. Try again.</p>
         <button type="submit">Continue</button>
       </form>
-
-      <p class="footnote">
-        Need the password? Email
-        <a href={`mailto:${site.email}`}>{site.email}</a>.
-      </p>
     </main>
 
     <script is:inline>
