@@ -105,7 +105,7 @@ const featuredThinking = (await getCollection("articles"))
   </div>
 
   <!-- FEATURED IMAGE -->
-  <figure class="image-band" data-reveal>
+  <figure class="image-band">
     <Image
       src={heroImage}
       alt="An empty boardroom with a long meeting table, floor-to-ceiling windows and morning light - the setting where steering committee decisions are made"
@@ -118,7 +118,7 @@ const featuredThinking = (await getCollection("articles"))
   </figure>
 
   <!-- CAPABILITIES -->
-  <section data-reveal>
+  <section>
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -136,7 +136,7 @@ const featuredThinking = (await getCollection("articles"))
         </p>
       </header>
 
-      <div class="capabilities" data-reveal data-reveal-stagger>
+      <div class="capabilities">
         <article class="cap">
           <div class="cap__icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
@@ -236,7 +236,7 @@ const featuredThinking = (await getCollection("articles"))
   </section>
 
   <!-- CASE STUDY / QUOTE -->
-  <section class="case case--imaged" data-reveal>
+  <section class="case case--imaged">
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -253,7 +253,7 @@ const featuredThinking = (await getCollection("articles"))
         </p>
       </header>
 
-      <figure class="case__image" data-reveal>
+      <figure class="case__image">
         <Image
           src={caseStudyImage}
           alt="A sandstone university building with a clock tower - the kind of institutional setting where the WCMS recovery played out"
@@ -278,7 +278,7 @@ const featuredThinking = (await getCollection("articles"))
             2015-2016
           </div>
         </div>
-        <div class="case__metrics" data-reveal data-reveal-stagger>
+        <div class="case__metrics">
           <div>
             <div class="case__metric-num">
               36<span style="font-size:0.5em;">→12</span>
@@ -320,7 +320,7 @@ const featuredThinking = (await getCollection("articles"))
   </section>
 
   <!-- FEATURED ARTICLES -->
-  <section class="thinking" data-reveal>
+  <section class="thinking">
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -336,7 +336,7 @@ const featuredThinking = (await getCollection("articles"))
         </p>
       </header>
 
-      <div class="thinking__grid" data-reveal data-reveal-stagger>
+      <div class="thinking__grid">
         {
           featuredThinking.map((article) => (
             <a href={`/articles/${article.id}`} class="think-card">
@@ -354,7 +354,7 @@ const featuredThinking = (await getCollection("articles"))
   </section>
 
   <!-- PMO RESOURCES TEASER -->
-  <section class="products-section" data-reveal>
+  <section class="products-section">
     <div class="wrap">
       <header class="section__head">
         <div>
@@ -370,7 +370,7 @@ const featuredThinking = (await getCollection("articles"))
         </p>
       </header>
 
-      <figure class="products-section__image" data-reveal>
+      <figure class="products-section__image">
         <Image
           src={templatesImage}
           alt="A hand drafting on a technical blueprint with ruler and pencil - the precision behind project artefacts"
@@ -382,7 +382,7 @@ const featuredThinking = (await getCollection("articles"))
         />
       </figure>
 
-      <div class="products" data-reveal data-reveal-stagger>
+      <div class="products">
         <article class="product">
           <span class="product__tag">Flagship · ships first</span>
           <h3 class="product__title">Steering Pack</h3>
@@ -597,7 +597,7 @@ const featuredThinking = (await getCollection("articles"))
   </section>
 
   <!-- ENGAGE / FINAL CTA -->
-  <section class="engage engage--imaged" data-reveal>
+  <section class="engage engage--imaged">
     <figure class="engage__bg" aria-hidden="true">
       <Image
         src={engageImage}
@@ -631,7 +631,7 @@ const featuredThinking = (await getCollection("articles"))
           </div>
         </div>
 
-        <ul class="engage__list" data-reveal data-reveal-stagger>
+        <ul class="engage__list">
           <li>
             <a href="/contact?topic=brief">
               <span class="engage__icon" aria-hidden="true">
@@ -777,30 +777,7 @@ const featuredThinking = (await getCollection("articles"))
 </script>
 
 <script>
-  const reveals = document.querySelectorAll<HTMLElement>("[data-reveal]");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (!("IntersectionObserver" in window) || reduce) {
-    reveals.forEach((el) => el.classList.add("is-visible"));
-  } else {
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          const el = entry.target as HTMLElement;
-          if (el.hasAttribute("data-reveal-stagger")) {
-            Array.from(el.children).forEach((child, i) => {
-              (child as HTMLElement).style.transitionDelay = `${i * 80}ms`;
-            });
-          }
-          el.classList.add("is-visible");
-          obs.unobserve(el);
-        }
-      },
-      { rootMargin: "0px 0px -15% 0px", threshold: 0.1 },
-    );
-    reveals.forEach((el) => io.observe(el));
-  }
 
   // Banner parallax: image is rendered at its native aspect ratio (taller
   // than the band), so we slide it vertically by up to `slack` pixels as
