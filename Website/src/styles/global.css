@@ -931,6 +931,18 @@ section {
   margin-bottom: 1.5rem;
   color: var(--ink-soft);
 }
+
+/* Inline text link inside body copy. The global `a` rule strips colour and
+   underline, so links in running prose need this to be visible at all. Matches
+   the article link treatment. */
+.link-inline {
+  color: var(--ochre);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link-inline:hover {
+  color: var(--ochre-deep);
+}
 .prose ul li {
   margin-bottom: 0.5rem;
 }
