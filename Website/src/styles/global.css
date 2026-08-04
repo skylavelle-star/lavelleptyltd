@@ -933,14 +933,24 @@ section {
 }
 
 /* Inline text link inside body copy. The global `a` rule strips colour and
-   underline, so links in running prose need this to be visible at all. Matches
-   the article link treatment. */
-.link-inline {
+   underline, so a link in running prose is invisible unless it is styled.
+   Matches the article link treatment.
+   Apply `.link-inline` explicitly, or rely on the safety net below: any
+   unclassed anchor in a body-copy container picks the same treatment up, while
+   anchors that carry their own class (.btn, .cap__link, .engage__* etc.) keep
+   their own styling untouched. */
+.link-inline,
+.prose a:not([class]),
+.lead a:not([class]),
+.subhero__lead a:not([class]) {
   color: var(--ochre);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.link-inline:hover {
+.link-inline:hover,
+.prose a:not([class]):hover,
+.lead a:not([class]):hover,
+.subhero__lead a:not([class]):hover {
   color: var(--ochre-deep);
 }
 .prose ul li {
