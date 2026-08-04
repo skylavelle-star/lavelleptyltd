@@ -1,6 +1,6 @@
 ---
-title: How to Reset Stakeholder Confidence in a Technology Program
-description: A practical guide to rebuilding executive and steering committee confidence after a technology program has lost credibility. Covers honest assessment, communication strategy and the governance changes that make a reset stick.
+title: How to Reset Stakeholder Confidence in a Technology Programme
+description: A practical guide to rebuilding executive and steering committee confidence after a technology programme has lost credibility. Covers honest assessment, communication strategy and the governance changes that make a reset stick.
 pubDate: 2025-06-23
 category: Recovery
 readTime: 7
@@ -12,7 +12,7 @@ tags:
   - steering committee
 ---
 
-Stakeholder confidence in a technology program does not erode overnight. It erodes through a series of small disappointments that accumulate until the stakeholder decides the delivery team cannot be trusted.
+Stakeholder confidence in a technology programme does not erode overnight. It erodes through a series of small disappointments that accumulate until the stakeholder decides the delivery team cannot be trusted.
 
 By the time the erosion becomes visible - a sponsor who is asking questions they did not used to ask, a steering committee that has become adversarial, an executive who has started going around the delivery team to get information directly from vendors - significant damage has already been done.
 
@@ -34,13 +34,13 @@ Common triggers for confidence loss include:
 
 **Team credibility issues.** A specific incident or pattern that has caused stakeholders to question whether the delivery team has the capability to complete the work.
 
-The response to each of these is different. A generic confidence reset program that does not address the specific cause will not succeed.
+The response to each of these is different. A generic confidence reset programme that does not address the specific cause will not succeed.
 
 ## Have the honest conversation first
 
 The single most important thing in a confidence reset is having an honest conversation with the key stakeholders before any formal communication goes out.
 
-This conversation acknowledges that the program has not delivered what it committed to, that the stakeholder's concerns are valid and that what follows will be an honest account of the current state and a realistic plan for what happens next.
+This conversation acknowledges that the programme has not delivered what it committed to, that the stakeholder's concerns are valid and that what follows will be an honest account of the current state and a realistic plan for what happens next.
 
 This conversation is not easy. Stakeholders who have been receiving filtered information for months will be sceptical and some will be angry. The response to both is to be straightforward: the previous reporting was not as accurate as it should have been, the situation is being presented honestly now and this is what the realistic path forward looks like.
 
@@ -54,7 +54,7 @@ A reporting reset typically involves:
 
 **Redefining the RAG status criteria.** If RAG ratings have been inflated, define new criteria for Red, Amber and Green status and apply them from the reset point forward. The first report under new criteria that shows more Red and Amber than previous reports is, paradoxically, a confidence-building exercise - it demonstrates that the reporting is now calibrated accurately.
 
-**Separating status from explanation.** Effective status reporting leads with the status and follows with the explanation. Ineffective reporting buries the status in the explanation. The steering committee should be able to read the first paragraph of the status report and know the actual state of the program.
+**Separating status from explanation.** Effective status reporting leads with the status and follows with the explanation. Ineffective reporting buries the status in the explanation. The steering committee should be able to read the first paragraph of the status report and know the actual state of the programme.
 
 **Surfacing risks earlier.** One of the most common causes of stakeholder surprise is risks that were on the risk register at Low level for months before they materialised as issues. Re-calibrate the risk register as part of the reset and establish a lower threshold for escalation.
 
@@ -62,17 +62,17 @@ A reporting reset typically involves:
 
 ## What to do about the governance structure
 
-A confidence reset is often also the right moment to review the governance structure of the program. Not because governance structure is the cause of the confidence problem, but because changing the structure signals that the program is being run differently.
+A confidence reset is often also the right moment to review the governance structure of the programme. Not because governance structure is the cause of the confidence problem, but because changing the structure signals that the programme is being run differently.
 
 Governance changes that are commonly useful in a confidence reset:
 
-**Adding a senior advisory role.** Bringing in an independent senior PM or program adviser signals to stakeholders that the program is taking the recovery seriously and that the delivery team has senior support and oversight. This is partly symbolic, but the symbolism matters.
+**Adding a senior advisory role.** Bringing in an independent senior PM or programme adviser signals to stakeholders that the programme is taking the recovery seriously and that the delivery team has senior support and oversight. This is partly symbolic, but the symbolism matters.
 
 **Changing the steering committee reporting format.** As discussed above, changing the format and calibration of the reporting is visible evidence of a change in approach.
 
 **Establishing clearer escalation paths.** If part of the confidence problem has been that issues were not escalated appropriately, establish explicit escalation triggers - specific conditions under which the PM is required to escalate to the sponsor outside of the normal reporting cycle.
 
-**Clarifying decision authority.** Confidence is sometimes eroded because stakeholders are being asked to make decisions that should have been made at a lower level, or are not being asked to make decisions that are properly theirs. Clarifying where different types of decisions are made can reduce the committee's sense that the program is out of control.
+**Clarifying decision authority.** Confidence is sometimes eroded because stakeholders are being asked to make decisions that should have been made at a lower level, or are not being asked to make decisions that are properly theirs. Clarifying where different types of decisions are made can reduce the committee's sense that the programme is out of control.
 
 ## The timeline for confidence recovery
 
@@ -84,11 +84,11 @@ This means the recovery plan needs to be conservative enough that it can be exec
 
 ## When confidence cannot be recovered
 
-Not every confidence reset succeeds. There are situations where the damage is too deep, the stakeholder relationships too broken, or the program's fundamental problems too significant to be addressed through communication and governance changes.
+Not every confidence reset succeeds. There are situations where the damage is too deep, the stakeholder relationships too broken, or the programme's fundamental problems too significant to be addressed through communication and governance changes.
 
-The clearest sign that confidence cannot be recovered is when the sponsor has already decided privately that the program should be stopped and is looking for justification for that decision. In that situation, the honest course is to confirm the assessment and support a controlled termination rather than attempting a recovery that is not genuinely supported.
+The clearest sign that confidence cannot be recovered is when the sponsor has already decided privately that the programme should be stopped and is looking for justification for that decision. In that situation, the honest course is to confirm the assessment and support a controlled termination rather than attempting a recovery that is not genuinely supported.
 
-A controlled termination - one that preserves what value has been created, documents the lessons and treats the vendor and team fairly - is a better outcome than a prolonged and expensive attempt to revive a program that the organisation has already written off.
+A controlled termination - one that preserves what value has been created, documents the lessons and treats the vendor and team fairly - is a better outcome than a prolonged and expensive attempt to revive a programme that the organisation has already written off.
 
 ---
 

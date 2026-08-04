@@ -32,7 +32,7 @@ export const products = {
     price: "1,247",
     href: "/resources/project-recovery-pack",
     description:
-      "For project managers stepping into a program that needs stabilising. Recovery assessment, stakeholder reset, replan and governance artefacts.",
+      "For project managers stepping into a programme that needs stabilising. Recovery assessment, stakeholder reset, replan and governance artefacts.",
     checkoutUrl: import.meta.env.PUBLIC_LS_PROJECT_RECOVERY_PACK || "",
   },
   businessCasePack: {

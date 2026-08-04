@@ -16,7 +16,7 @@ A technology business case has one job: to give the decision-maker the informati
 
 That sounds straightforward, but most business cases fail at this basic test. They are written to justify a decision that has already been made, rather than to inform a genuine choice. They present a preferred option alongside two alternatives that were never seriously considered. They contain a financial model that has been constructed to reach a predetermined conclusion. They understate the implementation risk because acknowledging the risk might result in the case being rejected.
 
-The consequence of a weak business case is not just governance risk. It is delivery risk. Programs that start with a business case that misrepresents the scope, understates the cost or overstates the benefits are set up to fail before they begin.
+The consequence of a weak business case is not just governance risk. It is delivery risk. Programmes that start with a business case that misrepresents the scope, understates the cost or overstates the benefits are set up to fail before they begin.
 
 ## Start with the problem, not the solution
 
@@ -44,7 +44,7 @@ The financial model is the part of the business case that is most likely to be w
 
 A credible financial model covers:
 
-**Capital costs.** Platform licensing or purchase, implementation services, integration development, infrastructure, data migration, testing, training. Include contingency, not a token percentage, but a reasoned estimate based on the complexity and risk profile of the program.
+**Capital costs.** Platform licensing or purchase, implementation services, integration development, infrastructure, data migration, testing, training. Include contingency, not a token percentage, but a reasoned estimate based on the complexity and risk profile of the programme.
 
 **Operating costs.** Ongoing licensing, support and maintenance, hosting, helpdesk uplift, training for new staff. Be clear about what changes relative to the current state.
 
@@ -58,9 +58,9 @@ The financial model needs to be transparent. The assumptions should be documente
 
 Implementation risk is where most technology business cases fall short. The risk section tends to present generic risks such as vendor risk, change management risk and data migration risk without specificity and presents mitigations that are more aspiration than plan.
 
-A credible risk assessment identifies the specific risks in this program, not generic project risks. It quantifies the likelihood and impact where possible. It presents mitigations that have been designed and committed to, not hypothetical ones. And it acknowledges where the mitigation does not eliminate the risk, but only reduces it.
+A credible risk assessment identifies the specific risks in this programme, not generic project risks. It quantifies the likelihood and impact where possible. It presents mitigations that have been designed and committed to, not hypothetical ones. And it acknowledges where the mitigation does not eliminate the risk, but only reduces it.
 
-The risk section should also address delivery capability honestly. Does the organisation have the people, the governance structures and the vendor management capability to deliver this program? If not, what is the plan to address that?
+The risk section should also address delivery capability honestly. Does the organisation have the people, the governance structures and the vendor management capability to deliver this programme? If not, what is the plan to address that?
 
 ## Know your approval audience
 
@@ -78,9 +78,9 @@ Understand the approver's specific requirements before you write:
 
 ## The supplementary business case
 
-When a program has gone over budget or scope has changed significantly, a supplementary business case is required. This is a different document from the original business case and has a different challenge: it must explain what went wrong with the original estimates and why the new estimates should be trusted.
+When a programme has gone over budget or scope has changed significantly, a supplementary business case is required. This is a different document from the original business case and has a different challenge: it must explain what went wrong with the original estimates and why the new estimates should be trusted.
 
-A supplementary business case that does not address this question directly will not succeed. The approver's implicit question is: if the original numbers were wrong by this much, why should I trust the new numbers? The answer requires an honest account of why the original estimates were wrong - not an excuse, but an explanation - and a clear description of what has changed in the approach to estimating and managing the completion of the program.
+A supplementary business case that does not address this question directly will not succeed. The approver's implicit question is: if the original numbers were wrong by this much, why should I trust the new numbers? The answer requires an honest account of why the original estimates were wrong - not an excuse, but an explanation - and a clear description of what has changed in the approach to estimating and managing the completion of the programme.
 
 ---
 

@@ -7,16 +7,16 @@ readTime: 7
 tags:
   - steering committee
   - governance
-  - program reporting
+  - programme reporting
   - executive reporting
   - RAG status
 ---
 
-A steering committee report has one purpose: to give the committee the information it needs to govern the program.
+A steering committee report has one purpose: to give the committee the information it needs to govern the programme.
 
-Most steering committee reports do not do this. They are too long, structured in the wrong order, use RAG ratings that have no consistent definition, bury the important information in narrative text and end with a vague "the program remains on track" conclusion that tells the committee nothing useful.
+Most steering committee reports do not do this. They are too long, structured in the wrong order, use RAG ratings that have no consistent definition, bury the important information in narrative text and end with a vague "the programme remains on track" conclusion that tells the committee nothing useful.
 
-The consequence is that steering committees cannot provide effective governance. They cannot identify problems early because the reporting does not surface them. They cannot make timely decisions because the information they need is not in the report. And they cannot maintain accountability because they cannot tell whether the program is actually delivering what it committed to.
+The consequence is that steering committees cannot provide effective governance. They cannot identify problems early because the reporting does not surface them. They cannot make timely decisions because the information they need is not in the report. And they cannot maintain accountability because they cannot tell whether the programme is actually delivering what it committed to.
 
 ## What a committee needs to know
 
@@ -24,7 +24,7 @@ Before writing a steering committee report, be clear about what the committee is
 
 To do that job, a committee member needs to know:
 
-- Is the program on track to deliver the agreed scope, on time and within budget?
+- Is the programme on track to deliver the agreed scope, on time and within budget?
 - What are the most significant risks and issues and what is being done about them?
 - Are there any decisions the committee needs to make?
 - Are there any matters the committee needs to be aware of that may require future decisions?
@@ -35,7 +35,7 @@ Everything else in the report is supporting detail. The structure should lead wi
 
 A well-structured steering committee report follows this order:
 
-**Overall status.** A single RAG rating and one paragraph summary. What is the overall health of the program? What is driving the current status? This should be readable in 30 seconds.
+**Overall status.** A single RAG rating and one paragraph summary. What is the overall health of the programme? What is driving the current status? This should be readable in 30 seconds.
 
 **Decisions required.** An explicit list of decisions the committee is being asked to make at this meeting. If there are no decisions required, say so. Committees that do not know what they are being asked to decide spend time on the wrong things.
 
@@ -49,27 +49,27 @@ A well-structured steering committee report follows this order:
 
 **Escalations.** Any matters that require committee awareness or action beyond the standard decisions listed at the top.
 
-This structure allows a committee member to read the first page of the report and have an accurate picture of the program state. The following pages provide the detail for items that require it.
+This structure allows a committee member to read the first page of the report and have an accurate picture of the programme state. The following pages provide the detail for items that require it.
 
 ## RAG ratings that mean something
 
-RAG ratings are only useful if they have consistent definitions. A Red status on one program might mean the same as an Amber on another if the criteria have not been defined. When definitions are absent or inconsistently applied, the ratings stop conveying information and start conveying politics.
+RAG ratings are only useful if they have consistent definitions. A Red status on one programme might mean the same as an Amber on another if the criteria have not been defined. When definitions are absent or inconsistently applied, the ratings stop conveying information and start conveying politics.
 
 Define RAG status criteria clearly:
 
-**Green:** The program is tracking to plan. Identified risks are being managed within normal delivery processes. No escalation to the committee is required.
+**Green:** The programme is tracking to plan. Identified risks are being managed within normal delivery processes. No escalation to the committee is required.
 
-**Amber:** The program is experiencing issues that may affect delivery if not addressed. Specific risks or issues require committee awareness. The delivery team has a plan to address them and is tracking to that plan.
+**Amber:** The programme is experiencing issues that may affect delivery if not addressed. Specific risks or issues require committee awareness. The delivery team has a plan to address them and is tracking to that plan.
 
-**Red:** The program is not tracking to plan, so the current trajectory will result in a missed milestone, budget overrun or scope change unless the committee takes action. Specific decisions or support from the committee are required.
+**Red:** The programme is not tracking to plan, so the current trajectory will result in a missed milestone, budget overrun or scope change unless the committee takes action. Specific decisions or support from the committee are required.
 
 Amber is not a softened version of Red. Amber means there is a problem being managed. Red means the problem is not being managed adequately and the committee needs to act.
 
-The common calibration failure is rating programs Amber when they are Red. This happens, due to the cultural discomfort of reporting Red status and because of pressure from program sponsors to present the program positively. The consequence is that the committee cannot respond appropriately because the actual status has been obscured.
+The common calibration failure is rating programmes Amber when they are Red. This happens, due to the cultural discomfort of reporting Red status and because of pressure from programme sponsors to present the programme positively. The consequence is that the committee cannot respond appropriately because the actual status has been obscured.
 
 ## The risk register in a steering committee report
 
-Not every risk on the program risk register belongs in a steering committee report. The operational risk register might have thirty items; the committee should see the five to eight that are at the level of severity and likelihood that require committee awareness or action.
+Not every risk on the programme risk register belongs in a steering committee report. The operational risk register might have thirty items; the committee should see the five to eight that are at the level of severity and likelihood that require committee awareness or action.
 
 The risks that belong in the committee report are:
 
@@ -84,13 +84,13 @@ For each risk in the committee report, include the risk description (specific, n
 
 ## Writing escalations clearly
 
-An escalation is a matter brought to the committee's attention because it requires their decision or awareness outside the normal program reporting. Escalations should be clearly labelled and clearly structured.
+An escalation is a matter brought to the committee's attention because it requires their decision or awareness outside the normal programme reporting. Escalations should be clearly labelled and clearly structured.
 
 A well-written escalation includes:
 
 **The issue.** What is happening? Described specifically, without jargon or euphemism.
 
-**The impact.** What happens if this is not resolved? What does the program miss? What does it cost?
+**The impact.** What happens if this is not resolved? What does the programme miss? What does it cost?
 
 **The options.** What are the realistic options for resolving or mitigating the issue? At least two options, each with its implications.
 
@@ -108,11 +108,11 @@ Design the reporting to be producible in a reasonable time from information the 
 
 **Keeping templates consistent.** A committee that receives a different report format every second meeting cannot build familiarity with the structure or compare status across periods.
 
-**Linking the report to the program plan.** The progress section should come directly from the program schedule. If the schedule is maintained, the report should take an hour to produce, not a day.
+**Linking the report to the programme plan.** The progress section should come directly from the programme schedule. If the schedule is maintained, the report should take an hour to produce, not a day.
 
 **Establishing a clear data collection process.** If the PM needs input from multiple workstream leads or vendors to produce the report, that process needs to be established and run to a consistent schedule.
 
-**Reviewing the reporting framework regularly.** What the committee needs to see will change as the program progresses. A reporting framework that was right at program initiation may not be right during a complex integration phase. Review the format at the end of each major phase.
+**Reviewing the reporting framework regularly.** What the committee needs to see will change as the programme progresses. A reporting framework that was right at programme initiation may not be right during a complex integration phase. Review the format at the end of each major phase.
 
 ---
 
