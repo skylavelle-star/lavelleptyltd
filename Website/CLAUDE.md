@@ -30,8 +30,13 @@ results and away from casual visitors while content is finished.
   repo is public and the password is in `middleware.ts` in plain text.
 - **How it works:** `middleware.ts` runs before the CDN cache. No access cookie
   → 302 to `/gate?next=<path>`. `src/pages/gate.astro` posts the password back to
-  `/gate`; the middleware checks it, sets `lpl_gate=open` (HttpOnly, 90 days) and
-  redirects to the originally requested path.
+  `/gate`; the middleware checks it, sets `lpl_gate=open` and redirects to the
+  originally requested path.
+- **Access lasts one browser session.** The cookie is set with no `Max-Age` and
+  no `Expires`, so the browser drops it on close and the next visit has to
+  re-enter the password. (Caveat outside our control: browsers set to restore
+  the previous session — Chrome's "Continue where you left off" — hold session
+  cookies across a restart.)
 - **Exempt from the gate:** `/_astro/*`, `favicon.svg`, `og-default.jpg`,
   `robots.txt` (crawlers must read it to honour it) and `/_vercel/*`.
 - **Also blocking indexing:** `robots.txt` is `Disallow: /`, the root

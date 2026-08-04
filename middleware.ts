@@ -4,6 +4,8 @@
  * Runs before the CDN cache on every request except static assets and
  * robots.txt. Visitors without the access cookie are redirected to /gate,
  * which posts back here; a correct password sets the cookie and sends them on.
+ * The cookie is a session cookie — no Max-Age, no Expires — so closing the
+ * browser drops it and the next visit has to re-enter the password.
  *
  * This is a soft gate, not security. Its job is to keep the site out of search
  * results and away from casual visitors while the content is being finished.
@@ -17,7 +19,6 @@
 const PASSWORD = "tender";
 const COOKIE_NAME = "lpl_gate";
 const COOKIE_VALUE = "open";
-const MAX_AGE = 60 * 60 * 24 * 90; // 90 days
 const GATE_PATH = "/gate";
 
 export const config = {
@@ -76,7 +77,8 @@ async function handleSubmit(request: Request): Promise<Response> {
     status: 303,
     headers: {
       Location: next,
-      "Set-Cookie": `${COOKIE_NAME}=${COOKIE_VALUE}; Path=/; Max-Age=${MAX_AGE}; HttpOnly; Secure; SameSite=Lax`,
+      // No Max-Age / Expires: a session cookie, gone when the browser closes.
+      "Set-Cookie": `${COOKIE_NAME}=${COOKIE_VALUE}; Path=/; HttpOnly; Secure; SameSite=Lax`,
       "Cache-Control": "no-store",
     },
   });
