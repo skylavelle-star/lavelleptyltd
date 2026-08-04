@@ -1,0 +1,197 @@
+---
+// Password gate. Self-contained (inline styles, no BaseLayout, no GA, no nav)
+// so it renders independently of the rest of the site.
+//
+// The password itself lives in `middleware.ts` at the repo root, never here —
+// this page only posts the form. Vercel Routing Middleware checks the answer,
+// sets the access cookie and redirects. See CLAUDE.md → "Password gate".
+import { site } from "../config/site";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name} — Private preview</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={`${site.name} — private preview.`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bone: #f4efe6;
+        --paper: #fbf8f2;
+        --ink: #181613;
+        --ochre: #b85c2a;
+        --sage: #707262;
+        --rule: #ddd5c5;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bone);
+        color: var(--ink);
+        font-family: "DM Sans", system-ui, sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        padding: 2rem;
+      }
+      main {
+        width: 100%;
+        max-width: 30rem;
+        text-align: center;
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-bottom: 1.75rem;
+      }
+      h1 {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 300;
+        font-variation-settings: "opsz" 144;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        font-size: clamp(2.5rem, 7vw, 4rem);
+        margin-bottom: 1.5rem;
+      }
+      .rule {
+        width: 3rem;
+        height: 1px;
+        background: var(--ochre);
+        margin: 0 auto 1.75rem;
+      }
+      p {
+        font-size: 1.0625rem;
+        margin-bottom: 2rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+        text-align: left;
+      }
+      label {
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--sage);
+      }
+      input[type="password"] {
+        width: 100%;
+        padding: 0.9rem 1.1rem;
+        font: inherit;
+        color: var(--ink);
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        border-radius: 999px;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+      input[type="password"]:focus {
+        border-color: var(--ochre);
+      }
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.95rem 1.6rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        background: var(--ink);
+        color: var(--bone);
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+      button:hover {
+        background: var(--ochre);
+      }
+      .error {
+        display: none;
+        font-size: 0.9rem;
+        color: var(--ochre);
+        text-align: center;
+        margin-bottom: 0;
+      }
+      .error[data-visible="true"] {
+        display: block;
+      }
+      .footnote {
+        font-size: 0.85rem;
+        color: var(--sage);
+        margin: 2rem 0 0;
+      }
+      .footnote a {
+        color: var(--ochre);
+        text-decoration: none;
+        border-bottom: 1px solid var(--rule);
+      }
+      .footnote a:hover {
+        border-color: var(--ochre);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">{site.name}</p>
+      <h1>Private preview</h1>
+      <div class="rule"></div>
+      <p>This site is not public yet. Enter the password to continue.</p>
+
+      <form method="POST" action="/gate">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          autocomplete="current-password"
+          autofocus
+          required
+        />
+        <input type="hidden" id="next" name="next" value="/" />
+        <p class="error" id="error">That password is not right. Try again.</p>
+        <button type="submit">Continue</button>
+      </form>
+
+      <p class="footnote">
+        Need the password? Email
+        <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </main>
+
+    <script is:inline>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var next = params.get("next");
+        // Only same-origin absolute paths — never "//host" or a full URL.
+        if (next && next.startsWith("/") && !next.startsWith("//")) {
+          document.getElementById("next").value = next;
+        }
+        if (params.get("error")) {
+          document.getElementById("error").setAttribute("data-visible", "true");
+        }
+      })();
+    </script>
+  </body>
+</html>

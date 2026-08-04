@@ -1,0 +1,4 @@
+# The site is in private preview behind a password gate.
+# Nothing here should be crawled or indexed yet.
+User-agent: *
+Disallow: /

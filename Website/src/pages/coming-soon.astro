@@ -1,8 +1,12 @@
 ---
-// Standalone holding page. Self-contained (inline styles, no BaseLayout,
-// no GA, no nav) so it has zero external dependencies and renders even when
-// the rest of the site is being rewritten to it. Remove the catch-all
-// "rewrites" block in vercel.json to bring the full site back online.
+// Standalone holding page, kept for reuse. Self-contained (inline styles, no
+// BaseLayout, no GA, no nav) so it has zero external dependencies and renders
+// even when the rest of the site is being redirected to it.
+//
+// Not in use right now: the site is live behind the password gate instead
+// (middleware.ts at the repo root + src/pages/gate.astro). To go back to
+// holding mode, add a catch-all redirect to /coming-soon in the root
+// vercel.json.
 import { site } from "../config/site";
 ---
 

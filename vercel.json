@@ -1,10 +1,8 @@
 {
+  "installCommand": "cd Website && npm ci",
+  "buildCommand": "cd Website && npm run build",
+  "outputDirectory": "Website/dist",
   "redirects": [
-    {
-      "source": "/((?!coming-soon|favicon\\.svg).*)",
-      "destination": "/coming-soon",
-      "permanent": false
-    },
     { "source": "/thinking", "destination": "/articles", "permanent": true },
     {
       "source": "/thinking/:slug*",
@@ -37,9 +35,7 @@
   "headers": [
     {
       "source": "/api/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "no-store, max-age=0" }]
     },
     {
       "source": "/(.*\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|woff|woff2))",
@@ -66,6 +62,7 @@
           "key": "Cache-Control",
           "value": "public, s-maxage=300, stale-while-revalidate=86400"
         },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         {

@@ -28,9 +28,15 @@ yarn-error.log*
 .env*.local
 
 # Local-only working files
+# NOTE: this repo is PUBLIC. Anything private must be listed here.
 .claude/
 SITE_AUDIT.md
-/BUSINESS_PLAN.md
-/pack-roi-blocks.md
-/recovery-framing-doc.md
-/templates/
+BUSINESS_PLAN.md
+pack-roi-blocks.md
+recovery-framing-doc.md
+templates/
+*.docx
+
+# Business folders — resumes, rates, tender material. Never publish these.
+/Contracting/
+/Tenders/

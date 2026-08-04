@@ -1,8 +1,47 @@
 # CLAUDE.md - Lavelle Pty Ltd Website
 
-Project root: `/Users/skylavelle/Claude/Portfolio/Lavelle Pty Ltd`
-Live URL: https://lavelleptyltd.com.au
+Git repo root: `/Users/skylavelle/Claude/Portfolio/Lavelle Pty Ltd`
+Astro app: `Website/` inside that repo
+Live URL: https://lavelleptyltd.com.au (live, behind a password gate — see below)
 Vercel project: `lavelle-pty-ltd` under `sky-lavelles-projects`
+
+## Repo layout — the app is not at the repo root
+
+The repo root holds three sibling folders: `Contracting/` and `Tenders/` (both
+gitignored — the repo is **public**) and `Website/`, the Astro app. Vercel's Root
+Directory setting is still `.`, so three deploy-facing files live at the **repo
+root**, not in `Website/`:
+
+| File            | Why it is at the root                                          |
+| --------------- | -------------------------------------------------------------- |
+| `vercel.json`   | Vercel only reads the one in the Root Directory. Holds the build overrides (`cd Website && npm ci` / `npm run build`, output `Website/dist`) plus all redirects and headers. |
+| `middleware.ts` | Vercel Routing Middleware must sit in the Root Directory.       |
+| `.gitignore`    | Covers the whole repo, including the two private folders.       |
+
+There is deliberately **no `Website/vercel.json`** — a second one there would be
+silently ignored and would drift.
+
+## Password gate
+
+The whole site sits behind a soft password gate so it stays out of search
+results and away from casual visitors while content is finished.
+
+- **Password:** `tender` (case-insensitive, trimmed). Low-value by design — this
+  repo is public and the password is in `middleware.ts` in plain text.
+- **How it works:** `middleware.ts` runs before the CDN cache. No access cookie
+  → 302 to `/gate?next=<path>`. `src/pages/gate.astro` posts the password back to
+  `/gate`; the middleware checks it, sets `lpl_gate=open` (HttpOnly, 90 days) and
+  redirects to the originally requested path.
+- **Exempt from the gate:** `/_astro/*`, `favicon.svg`, `og-default.jpg`,
+  `robots.txt` (crawlers must read it to honour it) and `/_vercel/*`.
+- **Also blocking indexing:** `robots.txt` is `Disallow: /`, the root
+  `vercel.json` sends `X-Robots-Tag: noindex, nofollow` on every response, and
+  `/gate` carries a `noindex, nofollow` meta tag.
+- **`npm run dev` bypasses the gate entirely** — Vercel middleware does not run
+  under `astro dev`. Test the gate against a deployment, not localhost.
+- **To take the gate off:** delete `middleware.ts`, restore `robots.txt` to
+  `Allow: /` plus the sitemap line, drop the `X-Robots-Tag` header from
+  `vercel.json`, and delete `src/pages/gate.astro`.
 
 ## Tech stack
 
@@ -41,6 +80,8 @@ src/
     BaseLayout.astro  # base layout (head, header nav, footer all integrated)
   pages/
     index.astro
+    gate.astro                 # password gate — self-contained, posts to /gate
+    coming-soon.astro          # unused holding page, kept for reuse
     framework.astro            # seven stages, six gates, three paths
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
     case-studies.astro
@@ -168,7 +209,7 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 
 ## Performance — what is already in place
 
-- **HTML CDN cache:** `vercel.json` sets `Cache-Control: s-maxage=300, stale-while-revalidate=86400` on `/(.*)`. The edge revalidates every 5 minutes; visitors never wait for the origin thanks to the 24-hour SWR window. Vercel auto-purges the CDN on every deployment.
+- **HTML CDN cache:** the root `vercel.json` sets `Cache-Control: s-maxage=300, stale-while-revalidate=86400` on `/(.*)`. The edge revalidates every 5 minutes; visitors never wait for the origin thanks to the 24-hour SWR window. Vercel auto-purges the CDN on every deployment.
 - **API routes:** `/api/(.*)` is forced to `no-store, max-age=0`. Lavelle has no API routes today; the rule is defensive insurance.
 - **Fingerprinted bundles:** `/_astro/(.*)` is cached for 1 year (`immutable`). Astro regenerates the hash on every build that changes the source.
 - **Static images and fonts:** anything matching `*.{jpg,jpeg,png,webp,avif,gif,svg,ico,woff,woff2}` is cached for 1 year (`immutable`). **Convention: rename rather than overwrite** any file under `public/` — same filename means the CDN serves the old bytes for up to a year. Add a `-v2` or date suffix, update references.
