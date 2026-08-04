@@ -89,6 +89,7 @@ src/
     coming-soon.astro          # unused holding page, kept for reuse
     framework.astro            # seven stages, six gates, three paths
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
+    network.astro              # delivery network — model, principal, eight role cards
     case-studies.astro
     services.astro             # LEGACY / orphan — to be retired via /retire-services
     privacy.astro
@@ -227,6 +228,22 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 - **`VERCEL_DEPLOY_HOOK_URL` is empty after `vercel env pull`.** It's marked Sensitive in Vercel project settings, which means `vercel env pull --environment=production .env.local` writes it back as an empty string. Paste the hook URL into `.env.local` by hand after every pull. Same caveat applies to any future Sensitive env vars.
 - **Order of `headers` rules in `vercel.json` matters.** `/api/(.*)` sits first; the global `/(.*)` rule sits last and only sets `Cache-Control` for paths that aren't already matched by a more specific rule. Don't reorder without re-checking that asset and HTML cache lifetimes still resolve correctly.
 - **`.claude/` is gitignored.** Slash commands and Claude settings are local-only. Share them by copy-paste, not by committing.
+
+## Delivery network consent gate
+
+`/network` describes the principal-led delivery model. It is **role-based by
+default**: eight seat cards describing what each role delivers, with Sky as the
+only named individual.
+
+No practitioner may be named or pictured on the site until they have signed
+Section 4 (website and marketing consent) of the Lavelle Required Information
+Form. When a named profile is added, the content must trace to that person's
+resume — never invent qualifications, employers or outcomes — and the photo
+comes from `src/assets/images/network/{firstname-lastname}.jpg`. Where no photo
+exists, render the profile without one; no placeholder silhouettes.
+
+No day rates, seat rates or margin language anywhere on the page. Client names
+stay anonymised to sector descriptors, matching the case studies.
 
 ## Writing rules
 

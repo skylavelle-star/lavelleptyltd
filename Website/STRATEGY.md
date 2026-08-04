@@ -67,6 +67,7 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 - /case-studies/ — five recent engagements
 - /thinking/ — editorial articles, the long-form SEO surface
 - /digital-assets/ — anonymous category-level portfolio summary
+- /network/ — the principal-led delivery network: the model, the principal and the eight seats
 - /about/ — company and principal background
 - /privacy/, /terms/ — compliance pages
 
@@ -160,7 +161,7 @@ A seventh offer — **Retained Advisor** — sits across all six capabilities at
 2. **Practical, never theatrical** — governance only counts when it changes behaviour
 3. **Handover beats hand-holding** — every engagement has a defined endpoint; the success metric is whether your people can run the program without us six months later
 
-All consulting is delivered through Sky Lavelle as principal consultant. No subcontracting to junior staff.
+All consulting is principal-led: Sky Lavelle leads every engagement personally, sets the delivery approach and directs and reviews every practitioner on it. Where the scope needs specialist capability under him, network practitioners (business analysis, change, test, senior/mid/junior development, content and UX strategy, copywriting) are engaged per assignment as independent subcontractors through their own companies under Lavelle master agreements, so the client holds one contract and receives one invoice.
 
 Project Recovery sits under this umbrella as a named consulting offer — not a framework stage — and runs through the **Lavelle Recovery Protocol™**, a four-phase methodology (Diagnose → Re-baseline → Re-govern → Re-mobilise) with phase-by-phase artefact mapping from the library. Recovery offers ladder from the free Project Recovery Checklist through the $1,247 Project Recovery Pack, the $2,997 Project Recovery Bundle, a $13,500 fixed-scope Recovery Diagnostic Report (5 days), a $58,000 30-day Recovery Sprint, the $99,000 60-day standard recovery, and the $144,000 90-day deep recovery with hypercare. The Recovery Diagnostic Report is the highest-conversion entry point in the consulting catalogue — aim for 4–6 sales/year converting to follow-on engagements at 70%+. See Bundles → Project Recovery Bundle for the supporting templates.
 
