@@ -164,8 +164,8 @@ import { site } from "../config/site";
 
     <script is:inline>
       (function () {
-        var params = new URLSearchParams(window.location.search);
-        var next = params.get("next");
+        const params = new URLSearchParams(window.location.search);
+        const next = params.get("next");
         // Only same-origin absolute paths — never "//host" or a full URL.
         if (next && next.startsWith("/") && !next.startsWith("//")) {
           document.getElementById("next").value = next;
