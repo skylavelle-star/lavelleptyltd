@@ -217,7 +217,9 @@ p {
   line-height: 0;
 }
 
-@media (max-width: 800px) {
+/* Six nav items plus the brand and CTA need roughly 910px. Below that the
+   header crowds, so the hamburger takes over at 1000px rather than 800px. */
+@media (max-width: 1000px) {
   .nav {
     display: none;
   }

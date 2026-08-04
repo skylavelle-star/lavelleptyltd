@@ -44,6 +44,10 @@ results and away from casual visitors while content is finished.
   `/gate` carries a `noindex, nofollow` meta tag.
 - **`npm run dev` bypasses the gate entirely** — Vercel middleware does not run
   under `astro dev`. Test the gate against a deployment, not localhost.
+- **`/logout`** expires the cookie and returns to the gate. Nothing links to
+  it; it is typed by hand. It lives in a single marked block in
+  `middleware.ts` between `---- LOGOUT` and `---- end LOGOUT` — deleting that
+  block is the only step needed to remove the route.
 - **To take the gate off:** delete `middleware.ts`, restore `robots.txt` to
   `Allow: /` plus the sitemap line, drop the `X-Robots-Tag` header from
   `vercel.json`, and delete `src/pages/gate.astro`.
@@ -136,7 +140,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes six destinations (Consulting, Framework, Resources, Bundles, Free Tools, Contact) plus a persistent "Engage us" CTA → `/contact`. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
+Header nav exposes six destinations (Consulting, Delivery Network, Case Studies, Articles, Framework, Resources) plus a persistent "Engage us" CTA → `/contact`. Six items plus brand and CTA need roughly 910px, so the hamburger takes over at 1000px rather than 800px — adding a seventh item means re-checking that breakpoint. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
 
 ## Config and environment
 

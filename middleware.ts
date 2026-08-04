@@ -32,6 +32,22 @@ export const config = {
 export default async function middleware(request: Request): Promise<Response> {
   const url = new URL(request.url);
 
+  // ---- LOGOUT: delete this block to remove /logout ------------------------
+  // Visiting /logout expires the access cookie and returns to the gate. There
+  // is no link to it anywhere in the site; it is typed by hand. Removing this
+  // block is the only step needed to take the route away.
+  if (url.pathname.replace(/\/$/, "") === "/logout") {
+    return new Response(null, {
+      status: 303,
+      headers: {
+        Location: GATE_PATH,
+        "Set-Cookie": `${COOKIE_NAME}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`,
+        "Cache-Control": "no-store",
+      },
+    });
+  }
+  // ---- end LOGOUT ---------------------------------------------------------
+
   // Match /gate and /gate/ alike — Vercel may add or strip the trailing slash.
   if (url.pathname.replace(/\/$/, "") === GATE_PATH) {
     return request.method === "POST" ? handleSubmit(request) : passThrough();
