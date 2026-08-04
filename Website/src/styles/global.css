@@ -17,7 +17,7 @@
   --paper: #fbf8f2;
 
   /* Type scale */
-  --display-xl: clamp(3rem, 7.5vw, 6.5rem);
+  --display-xl: clamp(2.75rem, 5.6vw, 4.75rem);
   --display-lg: clamp(2.25rem, 5vw, 4.25rem);
   --display-md: clamp(1.75rem, 3vw, 2.625rem);
   --display-sm: clamp(1.375rem, 2vw, 1.75rem);
@@ -342,7 +342,9 @@ p {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  /* Spread the signal, stat and award down the column. Bottom-aligning them
+     left a tall void beside the headline, which reads as dead space. */
+  justify-content: center;
   gap: 1.5rem;
 }
 .hero__stat-num {
