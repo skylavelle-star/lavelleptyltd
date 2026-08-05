@@ -8,68 +8,63 @@ const stages = [
   {
     number: "01",
     name: "Initiation",
-    duration: "1-6 weeks",
-    produces: "A funded mandate",
+    produces: "Sponsor, mandate, business case and team in place",
     description:
-      "Establish sponsor intent, governance structure, funding pathway and approval routes. Initiation ends with permission to plan and the money to do it.",
+      "Establish sponsor intent, the mandate and the governance around it, get the business case approved and stand the team up. Initiation ends when there is authority to plan and someone accountable for the outcome.",
     icon: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/>',
   },
   {
     number: "02",
     name: "Planning",
-    duration: "4-16 weeks",
-    produces: "A baseline the board can hold you to",
+    produces: "Project plan, schedule, RAID log and financial model",
     description:
-      "Frame the problem, test the options, write the business case and set the baseline: scope, schedule, cost and the delivery approach. Planning ends with a plan the steering committee has signed rather than noted.",
-    icon: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+      "Build the control baseline: the project plan and schedule, the RAID log and the bottom-up financial model. The delivery goals the team will work to are fixed here, which is what makes the agile layer underneath accountable.",
+    icon: '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
   },
   {
     number: "03",
     name: "Delivery",
-    duration: "Variable",
-    produces: "Working capability, accepted",
+    produces: "Design, build, test and cutover against defined goals",
     description:
-      "The team builds, integrates and tests to defined delivery goals in short cycles, while the governance layer runs to a fixed cadence above it. Delivery ends when the capability is accepted and live.",
+      "The team runs iterative cycles - plan, build, review, refine - against the delivery goals set at Planning, through design, build, test and cutover. The control layer above keeps reporting to its own cadence while the cycles run.",
     icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
   },
   {
     number: "04",
     name: "Monitor",
-    duration: "4-12 weeks",
-    produces: "Evidence the thing works",
+    produces: "Performance, benefits, stability and financial reconciliation",
     description:
-      "Track performance and benefits against what the business case promised, hold hypercare and fix what the first weeks of live running expose. Monitor is where the claim gets tested against reality.",
+      "The traditional monitor-and-control phase, run after Delivery and before Closure. Hypercare, operational acceptance, benefits tracking and the financial reconciliation - the phase where the claim made in the business case gets tested against live running.",
     icon: '<path d="M2 12h4l3-9 4 18 3-9h6"/>',
   },
   {
     number: "05",
     name: "Closure",
-    duration: "2-6 weeks",
-    produces: "Benefits handed over, finances reconciled, lessons captured",
+    produces: "Handover, reconciliation, lessons and formal close",
     description:
-      "Closure report, financial close, benefits handover and lessons learned. The work returns to the organisation with the artefacts and the accountability in place.",
+      "Handover to the business, final reconciliation, lessons captured and the project formally closed. There is no gate out of Closure: it ends with the End Project Report signed off, because closure is the exit rather than another decision to take.",
     icon: '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
   },
 ];
 
 const layers = [
   {
-    name: "Above the line",
-    summary: "PRINCE2 control for the board.",
+    name: "Predictive",
+    summary: "The control layer.",
     bestFor:
-      "Stage boundaries, a signed baseline, exception reporting and a named decider at every gate. Senior leadership gets the predictability and the paper trail that funding and assurance require.",
+      "Tolerances, stage boundaries and a paper trail for senior leadership. Runs the whole length of the project: mandate, business case, scope, estimate, benefits framed, mobilise, then design through go-live, monitor and closure.",
   },
   {
-    name: "Below the line",
-    summary: "Agile inside the team.",
+    name: "Iterative",
+    summary: "The team layer.",
     bestFor:
-      "Short cycles against defined delivery goals, with the team choosing how the work gets done. Scope moves inside a cycle; the commitment for the stage does not.",
+      "Short cycles against the delivery goals fixed at Planning: problem hypothesis, goals set, sprints running, increment reviewed, solution integrity checked, release and deploy, outcomes and next bets.",
   },
   {
-    name: "The join",
-    summary: "Delivery goals, not task lists.",
+    name: "Hybrid",
+    summary: "The Lavelle default.",
     bestFor:
-      "Each stage carries goals the team commits to and the steering committee can check. That is the contract between the two layers, and it is what stops governance turning into supervision.",
+      "PRINCE2 control at the programme layer, agile cadence at the team layer. Senior leadership sees a gated, predictive project. The team inside Delivery works in cycles. Neither has to pretend to be the other.",
   },
 ];
 
@@ -78,40 +73,44 @@ const gates = [
     id: "G1",
     name: "Authorise Planning",
     closes: "Initiation",
+    decider: "Sponsor / deciding body",
     decisions: [
-      "Project Brief sign-off",
-      "Seed Funding Case received",
-      "Governance structure and sponsor confirmed",
+      "Business Case approved",
+      "Scope & HLR sign-off",
+      "SteerCo Charter sign-off",
     ],
   },
   {
     id: "G2",
     name: "Authorise Delivery",
     closes: "Planning",
+    decider: "Steering committee",
     decisions: [
-      "Business Case signed off",
-      "SteerCo Charter sign-off",
-      "Baseline scope, schedule and cost approved",
+      "Project Plan sign-off",
+      "Cost Plan and budget approved",
+      "RAID Log baselined",
     ],
   },
   {
     id: "G3",
-    name: "Authorise Release",
+    name: "Authorise Monitoring",
     closes: "Delivery",
+    decider: "Steering committee / sponsor",
     decisions: [
       "Go No-Go Checklist sign-off",
-      "Release Plan sign-off",
-      "Operational acceptance criteria met",
+      "Release Plan executed",
+      "Deployment verified",
     ],
   },
   {
     id: "G4",
     name: "Authorise Closure",
     closes: "Monitor",
+    decider: "Sponsor + business owner",
     decisions: [
-      "Benefits tracking handed to the business",
-      "Hypercare exited",
-      "End Project Report and Lessons Report accepted",
+      "Operational acceptance signed",
+      "Benefits handover accepted",
+      "Financials reconciled",
     ],
   },
 ];
@@ -119,7 +118,7 @@ const gates = [
 
 <BaseLayout
   title="Framework - Lavelle Pty Ltd"
-  description="The Lavelle Delivery Framework v2.0. Five phases, four gates, one hybrid model: PRINCE2 control for the board, agile delivery inside the team."
+  description="The Lavelle Delivery Framework. Five phases, four gates, one hybrid discipline: PRINCE2 control and tolerances for senior leadership, agile cycles inside the Delivery team."
 >
   <section class="subhero">
     <div class="wrap">
@@ -132,12 +131,12 @@ const gates = [
       </h1>
       <p class="subhero__lead">
         A practical structure for delivering complex technology and business
-        change. Five phases give the work shape. Four gates give it assurance.
-        The model is deliberately hybrid: PRINCE2 governance above the line for
-        senior leadership, agile inside the team below it, joined by delivery
-        goals each stage commits to. The framework is the navigational spine of
-        this site: every template, pack and bundle links back to its phase and
-        gate.
+        change. Five phases give the work shape and four gates give it
+        assurance. The model is a deliberate PRINCE2 + Agile hybrid: predictive
+        stage gates and controls for the steering layer, agile cycles with
+        defined delivery goals inside the team. The framework is the
+        navigational spine of this site: every template, pack and bundle links
+        back to its phase and gate.
       </p>
     </div>
   </section>
@@ -152,9 +151,10 @@ const gates = [
           </h2>
         </div>
         <p class="lead">
-          Initiation and Planning set the work up and get it funded. Delivery
-          builds it. Monitor proves it works, and Closure returns it to the
-          organisation with the artefacts and the accountability in place.
+          Initiation puts the sponsor, mandate, case and team in place.
+          Planning builds the baseline. Delivery does the work. Monitor proves
+          it holds in live running, and Closure hands it over and shuts the
+          project down on purpose.
         </p>
       </header>
 
@@ -191,8 +191,6 @@ const gates = [
               <div class="stage__num">{stage.number}</div>
               <h3 class="stage__title">{stage.name}</h3>
               <div class="stage__meta">
-                <span class="stage__duration">{stage.duration}</span>
-                <span aria-hidden="true">·</span>
                 <span class="stage__produces">Produces: {stage.produces}</span>
               </div>
               <p class="stage__desc">{stage.description}</p>
@@ -222,13 +220,14 @@ const gates = [
         <div>
           <div class="eyebrow">The hybrid model</div>
           <h2 class="section__title" style="margin-top:1.25rem;">
-            Waterfall above. <em>Agile below.</em>
+            Five phases. <em>One hybrid discipline.</em>
           </h2>
         </div>
         <p class="lead">
-          Enterprise delivery fails at the seam between what the board needs
-          and how a team actually works. This model runs both at once rather
-          than forcing one to win.
+          Waterfall on the outside, agile on the inside. Senior leadership
+          sees a predictive, gated project with tolerances and a paper trail,
+          while the team inside Delivery runs iterative cycles toward the
+          delivery goals fixed at Planning.
         </p>
       </header>
 
@@ -257,9 +256,10 @@ const gates = [
         </div>
         <p class="lead">
           Each gate is a named decision with a named decider, and each one
-          closes a phase. Gates exist to confirm the work is fit to continue -
-          not to slow it down. They sit above the line, so the team keeps
-          working to its cycle while the decision is taken.
+          closes a phase. There is no gate out of Closure - the project ends
+          with the End Project Report signed off, because closure is the exit
+          rather than another decision to take. Gates sit in the control layer,
+          so the team keeps working to its cycle while the decision is taken.
         </p>
       </header>
 
@@ -271,7 +271,9 @@ const gates = [
                 <span class="gate__id">{gate.id}</span>
                 <span class="gate__name">{gate.name}</span>
               </div>
-              <div class="gate__closes">Closes {gate.closes}</div>
+              <div class="gate__closes">
+                Closes {gate.closes} · {gate.decider}
+              </div>
               <ul class="gate__decisions">
                 {gate.decisions.map((d) => (
                   <li>{d}</li>
