@@ -97,7 +97,7 @@ src/
                                # Never invent phase durations, gate evidence or
                                # artefact anchors - read them from those files.
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
-    network.astro              # delivery network — model, principal, eight role cards
+    network.astro              # delivery team — model, principal, eight role cards
     case-studies.astro
     services.astro             # LEGACY / orphan — to be retired via /retire-services
     privacy.astro
@@ -144,7 +144,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes four destinations (Consulting, Delivery Network, Case Studies, Framework) plus a persistent "Engage us" CTA → `/contact`. Articles and Resources sit in the footer only. Four items plus brand and CTA need roughly 720px, so the hamburger takes over at 880px — adding a nav item means re-checking that breakpoint. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
+Header nav exposes four destinations (Consulting, Delivery Team, Case Studies, Framework) plus a persistent "Engage us" CTA → `/contact`. Articles and Resources sit in the footer only. Four items plus brand and CTA need roughly 720px, so the hamburger takes over at 880px — adding a nav item means re-checking that breakpoint. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
 
 ## Config and environment
 
@@ -237,7 +237,7 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 - **Order of `headers` rules in `vercel.json` matters.** `/api/(.*)` sits first; the global `/(.*)` rule sits last and only sets `Cache-Control` for paths that aren't already matched by a more specific rule. Don't reorder without re-checking that asset and HTML cache lifetimes still resolve correctly.
 - **`.claude/` is gitignored.** Slash commands and Claude settings are local-only. Share them by copy-paste, not by committing.
 
-## Delivery network consent gate
+## Delivery team consent gate
 
 `/network` describes the principal-led delivery model. It is **role-based by
 default**: eight seat cards describing what each role delivers, with Sky as the
@@ -248,7 +248,7 @@ pictured on the site, and named in tender documentation, once they have signed
 Section 4 (website and tender consent) of the Lavelle Required Information Form.
 That signature is the sole precondition.
 
-**Explicitly not preconditions.** Network practitioners are independent
+**Explicitly not preconditions.** Team practitioners are independent
 subcontractors engaged per assignment, not employees. An employment contract, a
 sole-trader agreement and an agreed engagement rate are commercial matters
 settled per assignment and have no bearing on the publishing decision. Do not
