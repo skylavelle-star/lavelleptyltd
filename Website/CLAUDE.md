@@ -97,7 +97,7 @@ src/
                                # Never invent phase durations, gate evidence or
                                # artefact anchors - read them from those files.
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
-    network.astro              # delivery team — model, principal, eight role cards
+    delivery-team.astro        # delivery team — model, principal, eight role cards
     case-studies.astro
     services.astro             # LEGACY / orphan — to be retired via /retire-services
     privacy.astro
