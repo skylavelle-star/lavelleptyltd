@@ -97,7 +97,7 @@ src/
                                # Never invent phase durations, gate evidence or
                                # artefact anchors - read them from those files.
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
-    delivery-team.astro        # delivery team — model, principal, eight role cards
+    delivery-team.astro        # delivery team — model, principal, nine role cards
     case-studies.astro
     services.astro             # LEGACY / orphan — to be retired via /retire-services
     privacy.astro
@@ -240,7 +240,7 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 ## Delivery team consent gate
 
 `/network` describes the principal-led delivery model. It is **role-based by
-default**: eight role cards describing what each role delivers, with Sky as the
+default**: nine role cards describing what each role delivers, with Sky as the
 only named individual.
 
 **The gate is consent, and only consent.** A practitioner may be named and
