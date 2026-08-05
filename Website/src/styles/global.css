@@ -426,15 +426,16 @@ section {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
-  /* Top-aligned, so the lead and its rule start level with the eyebrow.
-     Bottom-aligning them sank the lead to the foot of a tall heading and
-     left the rule floating mid-column against nothing. */
-  align-items: start;
+  /* Bottom-aligned: the lead sits at the foot of the heading, reading as a
+     margin note against it. */
+  align-items: end;
 }
 @media (min-width: 880px) {
   .section__head {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 4rem;
+    /* The heading takes the wider column so the lead starts further right and
+       sits clear of it, rather than butting up against the headline. */
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(4rem, 6vw, 7rem);
   }
 }
 /* The lead sits opposite the section heading, where unmarked body text reads
