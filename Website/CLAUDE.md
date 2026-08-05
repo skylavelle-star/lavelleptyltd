@@ -99,7 +99,6 @@ src/
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
     delivery-team.astro        # delivery team — model, principal, nine role cards
     case-studies.astro
-    services.astro             # LEGACY / orphan — to be retired via /retire-services
     privacy.astro
     terms.astro
     articles/
@@ -144,7 +143,7 @@ public/
   robots.txt
 ```
 
-Header nav exposes four destinations (Consulting, Delivery Team, Case Studies, Framework) plus a persistent "Engage us" CTA → `/contact`. Articles and Resources sit in the footer only. Four items plus brand and CTA need roughly 720px, so the hamburger takes over at 880px — adding a nav item means re-checking that breakpoint. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services/` survives as a legacy orphan pending the `/retire-services` cleanup.
+Header nav exposes four destinations (Consulting, Delivery Team, Case Studies, Framework) plus a persistent "Engage us" CTA → `/contact`. Articles and Resources sit in the footer only. Four items plus brand and CTA need roughly 720px, so the hamburger takes over at 880px — adding a nav item means re-checking that breakpoint. The "Resources" section lives at `/resources` (renamed from `/templates`; 301 redirect in `vercel.json`). The packs in it are still called "templates" in product copy — only the section name changed. Brand mark routes to home. Other pages — `/case-studies/`, `/articles/`, `/digital-assets/`, `/about/`, `/privacy/`, `/terms/` — are reached via footer or in-page CTAs. `/services` and `/network` are retired routes, 301'd in `vercel.json` to `/consulting` and `/delivery-team`.
 
 ## Config and environment
 
@@ -239,7 +238,7 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 
 ## Delivery team consent gate
 
-`/network` describes the principal-led delivery model. It is **role-based by
+`/delivery-team` describes the principal-led delivery model. It is **role-based by
 default**: nine role cards describing what each role delivers, with Sky as the
 only named individual.
 
@@ -262,7 +261,7 @@ never fall back to asking for a contract instead.
 
 When a named profile is added, the content must trace to that person's resume —
 never invent qualifications, employers or outcomes — and the photo comes from
-`src/assets/images/network/{firstname-lastname}.jpg`. Where no photo exists,
+`src/assets/images/delivery-team/{firstname-lastname}.jpg`. Where no photo exists,
 render the profile without one; no placeholder silhouettes.
 
 Signed forms are not kept in this repo. Resumes and photos live in
