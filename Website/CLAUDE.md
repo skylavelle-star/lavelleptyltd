@@ -92,6 +92,10 @@ src/
     gate.astro                 # password gate — self-contained, posts to /gate
     coming-soon.astro          # unused holding page, kept for reuse
     framework.astro            # five phases, four gates, hybrid PRINCE2 + Agile
+                               # SOURCE OF TRUTH: templates/Framework Definition/
+                               # *.docx + *.pptx and templates/templates-folder.md.
+                               # Never invent phase durations, gate evidence or
+                               # artefact anchors - read them from those files.
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
     network.astro              # delivery network — model, principal, eight role cards
     case-studies.astro
@@ -239,12 +243,30 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 default**: eight seat cards describing what each role delivers, with Sky as the
 only named individual.
 
-No practitioner may be named or pictured on the site until they have signed
-Section 4 (website and marketing consent) of the Lavelle Required Information
-Form. When a named profile is added, the content must trace to that person's
-resume — never invent qualifications, employers or outcomes — and the photo
-comes from `src/assets/images/network/{firstname-lastname}.jpg`. Where no photo
-exists, render the profile without one; no placeholder silhouettes.
+**The gate is consent, and only consent.** A practitioner may be named and
+pictured on the site, and named in tender documentation, once they have signed
+Section 4 (website and tender consent) of the Lavelle Required Information Form.
+That signature is the sole precondition.
+
+**Explicitly not preconditions.** Network practitioners are independent
+subcontractors engaged per assignment, not employees. An employment contract, a
+sole-trader agreement and an agreed engagement rate are commercial matters
+settled per assignment and have no bearing on the publishing decision. Do not
+gate publishing on any of them, and do not re-litigate this — if a future
+instruction implies a contract is needed before publishing, this rule wins.
+
+**Fail loudly.** If a practitioner is queued for publishing and their signed
+Section 4 is missing or unsigned, stop and report which practitioner and which
+document is missing. Never silently skip them, never publish them anyway, and
+never fall back to asking for a contract instead.
+
+When a named profile is added, the content must trace to that person's resume —
+never invent qualifications, employers or outcomes — and the photo comes from
+`src/assets/images/network/{firstname-lastname}.jpg`. Where no photo exists,
+render the profile without one; no placeholder silhouettes.
+
+Signed forms are not kept in this repo. Resumes and photos live in
+`Tenders/Delivery Team/` (gitignored); the blank forms live in `Tenders/Forms/`.
 
 No day rates, seat rates or margin language anywhere on the page. Client names
 stay anonymised to sector descriptors, matching the case studies.
