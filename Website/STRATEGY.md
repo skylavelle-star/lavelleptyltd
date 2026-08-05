@@ -52,22 +52,20 @@ Productised PMO packs, tier-based bundles, the Complete Practitioner Library and
 
 ### Main Navigation
 
-- Home
-- Framework
-- Templates
-- Bundles
 - Consulting
-- Free Tools
-- Contact
+- Delivery Team
+- Case Studies
+- Framework
+
+Resources, Bundles, Free Tools, Articles and Digital Assets are reached from
+the footer and in-page links.
 
 Framework is the navigational spine. Every template, bundle and free-tool page links back to its phase and gate within the framework. Plus a persistent header CTA (Engage us → /contact) on every page.
 
 ### Secondary destinations (footer and in-page CTAs only)
 
-- /case-studies/ — five recent engagements
 - /thinking/ — editorial articles, the long-form SEO surface
 - /digital-assets/ — anonymous category-level portfolio summary
-- /delivery-team/ — the principal-led delivery team: the model, the principal and the nine roles
 - /about/ — company and principal background
 - /privacy/, /terms/ — compliance pages
 
