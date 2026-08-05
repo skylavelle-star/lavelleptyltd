@@ -51,10 +51,15 @@ import { site } from "../config/site";
         font-family: "DM Sans", system-ui, sans-serif;
         line-height: 1.55;
         -webkit-font-smoothing: antialiased;
-        padding: 2rem;
       }
+      /* Gutter lives on main, not body. Astro scopes the `*` reset to
+         [data-astro-cid-…] (0,1,0) but leaves `body` unscoped (0,0,1), and
+         <body> carries that attribute - so a padding set on body is zeroed by
+         the reset. main is scoped, so it outranks it. */
       main {
-        max-width: 36rem;
+        width: 100%;
+        max-width: 40rem;
+        padding: 0 2rem;
         text-align: center;
       }
       .eyebrow {

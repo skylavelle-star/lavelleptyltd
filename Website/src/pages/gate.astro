@@ -47,17 +47,22 @@ import { site } from "../config/site";
         font-family: "DM Sans", system-ui, sans-serif;
         line-height: 1.55;
         -webkit-font-smoothing: antialiased;
-        padding: 2rem;
       }
-      @media (max-width: 36rem) {
-        body {
-          padding: 3rem 2.5rem;
-        }
-      }
+      /* Gutter lives on main, not body. Astro scopes the `*` reset to
+         [data-astro-cid-…] (0,1,0) but leaves `body` unscoped (0,0,1), and
+         <body> carries that attribute - so any padding set on body is zeroed
+         by the reset, at every breakpoint. main is scoped, so it outranks it. */
       main {
         width: 100%;
-        max-width: 30rem;
+        /* 34rem = the original 30rem content box plus its 2rem gutters. */
+        max-width: 34rem;
+        padding: 2rem;
         text-align: center;
+      }
+      @media (max-width: 36rem) {
+        main {
+          padding: 3rem 2.5rem;
+        }
       }
       h1 {
         font-family: "Fraunces", Georgia, serif;
