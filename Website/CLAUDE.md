@@ -240,7 +240,7 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 ## Delivery team consent gate
 
 `/network` describes the principal-led delivery model. It is **role-based by
-default**: eight seat cards describing what each role delivers, with Sky as the
+default**: eight role cards describing what each role delivers, with Sky as the
 only named individual.
 
 **The gate is consent, and only consent.** A practitioner may be named and

@@ -67,7 +67,7 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 - /case-studies/ — five recent engagements
 - /thinking/ — editorial articles, the long-form SEO surface
 - /digital-assets/ — anonymous category-level portfolio summary
-- /delivery-team/ — the principal-led delivery team: the model, the principal and the eight seats
+- /delivery-team/ — the principal-led delivery team: the model, the principal and the eight roles
 - /about/ — company and principal background
 - /privacy/, /terms/ — compliance pages
 
