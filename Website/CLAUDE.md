@@ -91,7 +91,7 @@ src/
     index.astro
     gate.astro                 # password gate — self-contained, posts to /gate
     coming-soon.astro          # unused holding page, kept for reuse
-    framework.astro            # seven stages, six gates, three paths
+    framework.astro            # five phases, four gates, hybrid PRINCE2 + Agile
     consulting.astro           # six capabilities + Lavelle Recovery Protocol™
     network.astro              # delivery network — model, principal, eight role cards
     case-studies.astro

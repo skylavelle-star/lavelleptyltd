@@ -16,7 +16,7 @@ const stagePacks = [
   {
     name: "Business Case Pack",
     href: "/resources/business-case-pack",
-    stage: "Initiation (G1 → G2)",
+    stage: "Initiation → Planning (G1 → G2)",
     description:
       "Business Case, Lite Business Case, Project Brief, Seed Funding Case, Business Case Workshop Pack.",
     status: "live" as const,
@@ -24,7 +24,7 @@ const stagePacks = [
   {
     name: "Project Setup Pack",
     href: "/resources/project-setup-pack",
-    stage: "Initiation / Mobilisation",
+    stage: "Initiation (G1)",
     description:
       "Project Initiation Checklist, Project Plan Schedule, Project Plan, Scope & High-Level Requirements, Initiation Stage Kick-off Pack.",
     status: "stub" as const,
@@ -32,7 +32,7 @@ const stagePacks = [
   {
     name: "Discovery Pack",
     href: "/resources/discovery-pack",
-    stage: "Discovery (G2 → G3)",
+    stage: "Planning (G2)",
     description:
       "BA Discovery Assessment, Change Impact Assessment, Project Approach Selector, Project Assurance Checklist, Project Tailoring Calculator.",
     status: "stub" as const,
@@ -40,7 +40,7 @@ const stagePacks = [
   {
     name: "Requirements & Design Pack",
     href: "/resources/requirements-design-pack",
-    stage: "Design (G3 → G4)",
+    stage: "Planning into Delivery (G2)",
     description:
       "Product Description - UI, Workflow, Use Case and Service; Product Gap Analysis; Requirements Traceability Matrix.",
     status: "stub" as const,
@@ -48,7 +48,7 @@ const stagePacks = [
   {
     name: "Financial Control Pack",
     href: "/resources/financial-control-pack",
-    stage: "Spans all stages",
+    stage: "Spans all phases",
     description:
       "Cost Plan, Estimation Approach Guide, Stage Plan Budget, Cost Tolerance Tracker, Risk Budget Calculator, Labour Capitalisation Workbook, Configuration Item Register, Finance Journal Request, RAID Log.",
     status: "stub" as const,
@@ -56,7 +56,7 @@ const stagePacks = [
   {
     name: "Testing Pack",
     href: "/resources/testing-pack",
-    stage: "Test (G4 → G5)",
+    stage: "Delivery (G3)",
     description:
       "Quality Management Approach, Quality Plan, Product Status Account, Quality Inspection Sheet.",
     status: "stub" as const,
@@ -64,14 +64,14 @@ const stagePacks = [
   {
     name: "Cutover Pack",
     href: "/resources/cutover-pack",
-    stage: "Cutover (G5)",
+    stage: "Delivery into Monitor (G3)",
     description: "Release Plan Runsheet, Go No-Go Checklist.",
     status: "stub" as const,
   },
   {
     name: "Steering Pack",
     href: "/resources/steering-committee-pack",
-    stage: "Spans all stages",
+    stage: "Spans all phases",
     description:
       "SteerCo Charter, Lite Project Initiation Documentation, Steering Committee Pack, Highlight Report, Portfolio Highlight Report, Request for Change, Report Specification.",
     status: "live" as const,
@@ -79,7 +79,7 @@ const stagePacks = [
   {
     name: "Training / Change Pack",
     href: "/resources/training-change-pack",
-    stage: "Cutover → Closure (G5 → G6)",
+    stage: "Monitor → Closure (G4)",
     description:
       "Communication & Training Approach, Operational Acceptance Criteria, Change Control Approach Review.",
     status: "stub" as const,

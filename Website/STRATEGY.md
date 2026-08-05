@@ -60,7 +60,7 @@ Productised PMO packs, tier-based bundles, the Complete Practitioner Library and
 - Free Tools
 - Contact
 
-Framework is the navigational spine. Every template, bundle and free-tool page links back to its stage and gate within the framework. Plus a persistent header CTA (Engage us → /contact) on every page.
+Framework is the navigational spine. Every template, bundle and free-tool page links back to its phase and gate within the framework. Plus a persistent header CTA (Engage us → /contact) on every page.
 
 ### Secondary destinations (footer and in-page CTAs only)
 
@@ -109,36 +109,28 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 
 ### 1. Framework (Spine)
 
-The Lavelle Delivery Framework v1.0 is the navigational spine of the site. Every template, pack, bundle and free tool links back to its stage and gate.
+The Lavelle Delivery Framework v2.0 is the navigational spine of the site. Every template, pack, bundle and free tool links back to its phase and gate.
 
-**Tagline:** Seven stages. Six gates. Three paths.
+**Tagline:** Five phases. Four gates. One hybrid.
 
-**Seven stages:**
+**The model.** PRINCE2 above the line, Agile below it. Senior leadership gets waterfall-shaped control - a signed baseline, stage boundaries, exception reporting and a named decider at every gate. The delivery team works in short cycles against defined delivery goals and chooses how the work gets done. The delivery goals are the join between the two layers: what the team commits to and what the steering committee can check.
 
-1. Initiation — 1–8 weeks, produces a funded mandate
-2. Discovery — 4–16 weeks, produces a defensible recommendation
-3. Design — 4–24 weeks, an agreed solution
-4. Build — variable, working capability
-5. Test — 4–16 weeks, evidence of fit
-6. Cutover — 1–4 weeks, executed on a runsheet, evidenced and reversible
-7. Closure — 2–6 weeks, benefits handed over, finances reconciled, lessons captured
+**Five phases:**
 
-**Six gates (named decisions, named decider):**
+1. Initiation — 1–6 weeks, produces a funded mandate
+2. Planning — 4–16 weeks, produces a baseline the board can hold you to
+3. Delivery — variable, produces working capability, accepted
+4. Monitor — 4–12 weeks, produces evidence the thing works
+5. Closure — 2–6 weeks, benefits handed over, finances reconciled, lessons captured
 
-- **G1 / Approve:** Concept brief sign-off; tech feasibility; seed funding (if applicable)
-- **G2 / Discover:** High-level plan sign-off; procurement approvals; business case signed off
-- **G3 / Design:** Detailed plan sign-off; design authority endorsement; financial control tracker live
-- **G4 / Build:** Build complete sign-off; integration verified
-- **G5 / Cutover:** Go / No-Go sign-off; transition plan sign-off
-- **G6 / Close:** Closure report sign-off; financial close; project closed
+**Four gates (named decisions, named decider; each closes a phase):**
 
-**Three paths (from the One Page deck):**
+- **G1 / Authorise Planning** *(closes Initiation)*: Project Brief sign-off; seed funding case; governance structure and sponsor confirmed
+- **G2 / Authorise Delivery** *(closes Planning)*: Business Case signed off; SteerCo Charter sign-off; baseline scope, schedule and cost approved
+- **G3 / Authorise Release** *(closes Delivery)*: Go / No-Go sign-off; Release Plan sign-off; operational acceptance criteria met
+- **G4 / Authorise Closure** *(closes Monitor)*: benefits tracking handed to the business; hypercare exited; End Project Report and Lessons Report accepted
 
-- **Predictive** — phase by phase, gated, paper trail. Best where requirements are stable and a paper trail is needed.
-- **Iterative** — short cycles, steady cadence. Best where requirements will move and the team runs to cadence.
-- **Hybrid** — predictive at the programme layer, iterative at the team layer. Best for most enterprise delivery.
-
-Recovery is *not* a stage. It is a consulting offer (see Consulting) and a constructed bundle of existing artefacts (see Bundles).
+Recovery is *not* a phase. It is a consulting offer (see Consulting) and a constructed bundle of existing artefacts (see Bundles).
 
 ### 2. Consulting (Highest-value stream)
 
@@ -171,15 +163,15 @@ Nine packs mirror the framework. Each pack is sold individually at high-end pric
 
 | Pack                       | Framework anchor             | High-end price | Artefacts                                                                                                                                                                                                                          |
 | -------------------------- | ---------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Business Case Pack         | Initiation (G1 → G2)         | **$1,197**     | Business Case Template; Rapid Business Case; Discovery Funding Case; Seed Funding Case; Kick-off Pack — Business Case                                                                                                              |
-| Project Setup Pack         | Initiation / Mobilisation    | **$847**       | Project Manager Onboarding Checklist; Project Schedule; Project Management Plan; Scope & High-Level Requirements; Kick-off Pack — Project                                                                                          |
-| Discovery Pack             | Discovery (G2 → G3)          | **$947**       | BA Discovery Assessment; Change Discovery Assessment; Delivery Methodology Assessment; Project Assurance Checklist; Project Tailoring Calculator                                                                                     |
-| Requirements & Design Pack | Design (G3 → G4)             | **$947**       | Screen Requirements; Workflow Configuration; Use Case Summary; Service Analysis; Solution Gap Analysis; Requirements Traceability Matrix                                                                                           |
-| Financial Control Pack     | Spans all stages             | **$1,247**     | Project Cost Estimate; Estimation Guidelines & Worksheet; Budget Phasing; Financial Control Tracker; Contingency Calculator; Asset Labour Calculations; Minor Assets Register; Journal Template; RAID Register                     |
-| Testing Pack               | Test (G4 → G5)               | **$747**       | Test Strategy; Test Plan; Test Summary Report; Test Script                                                                                                                                                                         |
-| Cutover Pack               | Cutover (G5)                 | **$747**       | Cutover Runsheet; Go No-Go Checklist                                                                                                                                                                                               |
-| Steering Pack              | Spans all stages             | **$897**       | Steering Committee Charter (Detailed); Steering Committee Charter (One Page); Steering Committee Pack; Sponsor Update (One Page); Portfolio Pulse; Project Change Request; Report Specification                                    |
-| Training / Change Pack     | Cutover → Closure (G5 → G6)  | **$747**       | Training Plan; Operational Level Agreement; Change Templates Review                                                                                                                                                                |
+| Business Case Pack         | Initiation → Planning (G1 → G2) | **$1,197**     | Business Case Template; Rapid Business Case; Discovery Funding Case; Seed Funding Case; Kick-off Pack — Business Case                                                                                                              |
+| Project Setup Pack         | Initiation (G1)              | **$847**       | Project Manager Onboarding Checklist; Project Schedule; Project Management Plan; Scope & High-Level Requirements; Kick-off Pack — Project                                                                                          |
+| Discovery Pack             | Planning (G2)                | **$947**       | BA Discovery Assessment; Change Discovery Assessment; Delivery Methodology Assessment; Project Assurance Checklist; Project Tailoring Calculator                                                                                     |
+| Requirements & Design Pack | Planning into Delivery (G2)  | **$947**       | Screen Requirements; Workflow Configuration; Use Case Summary; Service Analysis; Solution Gap Analysis; Requirements Traceability Matrix                                                                                           |
+| Financial Control Pack     | Spans all phases             | **$1,247**     | Project Cost Estimate; Estimation Guidelines & Worksheet; Budget Phasing; Financial Control Tracker; Contingency Calculator; Asset Labour Calculations; Minor Assets Register; Journal Template; RAID Register                     |
+| Testing Pack               | Delivery (G3)                | **$747**       | Test Strategy; Test Plan; Test Summary Report; Test Script                                                                                                                                                                         |
+| Cutover Pack               | Delivery into Monitor (G3)   | **$747**       | Cutover Runsheet; Go No-Go Checklist                                                                                                                                                                                               |
+| Steering Pack              | Spans all phases             | **$897**       | Steering Committee Charter (Detailed); Steering Committee Charter (One Page); Steering Committee Pack; Sponsor Update (One Page); Portfolio Pulse; Project Change Request; Report Specification                                    |
+| Training / Change Pack     | Monitor → Closure (G4)       | **$747**       | Training Plan; Operational Level Agreement; Change Templates Review                                                                                                                                                                |
 
 Plus a standalone **Procurement Pack** at **$1,197** and a consulting-led **Project Recovery Pack** at **$1,247**, both sitting under Templates as "additional packs" alongside the nine framework-anchored packs.
 
