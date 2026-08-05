@@ -4,6 +4,11 @@
   "outputDirectory": "Website/dist",
   "redirects": [
     {
+      "source": "/coming-soon",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/network",
       "destination": "/delivery-team",
       "permanent": true

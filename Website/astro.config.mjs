@@ -6,11 +6,10 @@ export default defineConfig({
   site: "https://lavelleptyltd.com.au",
   integrations: [
     sitemap({
-      // Keep the password gate, the holding page, confirmation pages and the
-      // retired /services orphan out of the sitemap so only canonical,
-      // indexable URLs are submitted.
+      // Keep the password gate and the confirmation pages out of the sitemap
+      // so only canonical, indexable URLs are submitted.
       filter: (page) =>
-        !/\/(gate|coming-soon|thank-you|services)(\/|$)/.test(page) &&
+        !/\/(gate|thank-you)(\/|$)/.test(page) &&
         !page.includes("/free-tools/project-recovery-checklist/thanks"),
     }),
   ],

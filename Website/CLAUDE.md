@@ -90,7 +90,6 @@ src/
   pages/
     index.astro
     gate.astro                 # password gate — self-contained, posts to /gate
-    coming-soon.astro          # unused holding page, kept for reuse
     framework.astro            # five phases, four gates, hybrid PRINCE2 + Agile
                                # SOURCE OF TRUTH: templates/Framework Definition/
                                # *.docx + *.pptx and templates/templates-folder.md.
