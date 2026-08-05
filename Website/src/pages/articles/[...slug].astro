@@ -54,7 +54,12 @@ const breadcrumbSchema = {
       name: "Articles",
       item: new URL("/articles", site.url).toString(),
     },
-    { "@type": "ListItem", position: 3, name: article.data.title, item: articleUrl },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: article.data.title,
+      item: articleUrl,
+    },
   ],
 };
 ---

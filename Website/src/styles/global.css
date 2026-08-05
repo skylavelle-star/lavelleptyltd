@@ -502,7 +502,10 @@ section {
   border: 1px solid var(--rule);
   background: var(--paper);
   color: var(--ochre);
-  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
 }
 .cap:hover .cap__icon {
   background: var(--ochre);
@@ -1240,7 +1243,10 @@ section {
   height: 38px;
   color: var(--ochre);
   border: 1px solid rgba(184, 92, 42, 0.4);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
   flex-shrink: 0;
 }
 .engage__list a:hover .engage__icon {

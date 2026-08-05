@@ -1,0 +1,10 @@
+dist
+node_modules
+.astro
+# Local-only working files, gitignored - not site source.
+templates
+Templates
+
+# prettier-plugin-astro cannot parse the GA snippet's `is:inline define:vars`
+# script and throws a SyntaxError on the whole file. Formatting is hand-kept.
+src/layouts/BaseLayout.astro

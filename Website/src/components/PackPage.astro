@@ -179,7 +179,11 @@ const faqSchema =
               class="pack-buy__form"
               novalidate
             >
-              <input type="hidden" name="access_key" value={site.web3formsKey} />
+              <input
+                type="hidden"
+                name="access_key"
+                value={site.web3formsKey}
+              />
               <input
                 type="hidden"
                 name="subject"
@@ -525,9 +529,9 @@ const faqSchema =
           <div>
             <div class="eyebrow">Tier-based bundles</div>
             <p>
-              The right bundle depends on the complexity of your work. Score
-              the project with the Tailoring Calculator, then choose from Tier
-              3 Light, Tier 2 Standard or Tier 1 Major.
+              The right bundle depends on the complexity of your work. Score the
+              project with the Tailoring Calculator, then choose from Tier 3
+              Light, Tier 2 Standard or Tier 1 Major.
             </p>
           </div>
           <a href="/bundles" class="btn btn--ghost">
@@ -551,8 +555,8 @@ const faqSchema =
         </h2>
         <p class="lead" style="margin-top:1.5rem;">
           If you are in the middle of a recovery, a contested business case or a
-          procurement that has to land - and you would like a senior pair of eyes
-          alongside the pack - start with a thirty-minute call.
+          procurement that has to land - and you would like a senior pair of
+          eyes alongside the pack - start with a thirty-minute call.
         </p>
         <div class="hero__ctas" style="margin-top:1.25rem;">
           <a href="/contact" class="btn btn--primary">
@@ -562,9 +566,7 @@ const faqSchema =
       </div>
       <ul class="engage__list">
         <li>
-          <a href="/resources"
-            ><span>All template packs</span><span>→</span></a
-          >
+          <a href="/resources"><span>All template packs</span><span>→</span></a>
         </li>
         <li>
           <a href="/free-tools"
@@ -1248,11 +1250,9 @@ const faqSchema =
           /* silent */
         }
         if (ok) {
-          form
-            .querySelectorAll("input, button, label")
-            .forEach((el) => {
-              (el as HTMLElement).hidden = true;
-            });
+          form.querySelectorAll("input, button, label").forEach((el) => {
+            (el as HTMLElement).hidden = true;
+          });
           const success = document.getElementById(`notify-success-${id}`);
           if (success) success.hidden = false;
         } else if (btn) {

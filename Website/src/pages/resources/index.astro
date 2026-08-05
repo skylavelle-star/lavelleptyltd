@@ -111,7 +111,10 @@ const additionalTemplates = [
   { name: "Highlight Report", slug: "highlight-report" },
   { name: "SteerCo Charter", slug: "project-initiation-documentation" },
   { name: "Project Plan", slug: "project-plan" },
-  { name: "Benefits Management Approach", slug: "benefits-management-approach" },
+  {
+    name: "Benefits Management Approach",
+    slug: "benefits-management-approach",
+  },
   { name: "End Project Report", slug: "end-project-report" },
 ];
 ---
@@ -155,8 +158,8 @@ const additionalTemplates = [
           </h2>
           <p class="flagship-card__lead">
             Every stage pack, every bundle, the Framework documentation and
-            twelve months of artefact updates. One opinionated artefact set,
-            one named user.
+            twelve months of artefact updates. One opinionated artefact set, one
+            named user.
           </p>
         </div>
         <div class="flagship-card__cta">
@@ -199,7 +202,9 @@ const additionalTemplates = [
               <div class="product__footer">
                 <div>
                   <div class="product__price-sub">
-                    {pack.status === "live" ? "Single user · AUD" : "Notify when shipped"}
+                    {pack.status === "live"
+                      ? "Single user · AUD"
+                      : "Notify when shipped"}
                   </div>
                 </div>
                 <a href={pack.href} class="btn btn--primary">
@@ -242,7 +247,9 @@ const additionalTemplates = [
               <div class="product__footer">
                 <div>
                   <div class="product__price-sub">
-                    {pack.status === "live" ? "Single user · AUD" : "Notify when shipped"}
+                    {pack.status === "live"
+                      ? "Single user · AUD"
+                      : "Notify when shipped"}
                   </div>
                 </div>
                 <a href={pack.href} class="btn btn--primary">
@@ -265,14 +272,15 @@ const additionalTemplates = [
             style="font-family:'Fraunces',serif; font-size:2rem; font-weight:500; line-height:1.05; margin:1rem 0; color:var(--ink);"
           >
             The right bundle for the <em style="color:var(--ochre);"
-              >complexity of the work.</em>
+              >complexity of the work.</em
+            >
           </h2>
           <p
             style="font-size:var(--body); color:var(--ink-soft); margin-bottom:1.5rem; max-width:50ch;"
           >
-            Three tier-based bundles - Tier 3 Light, Tier 2 Standard and Tier
-            1 Major - mirror the Project Tailoring Calculator. Score the
-            project, get the matching bundle.
+            Three tier-based bundles - Tier 3 Light, Tier 2 Standard and Tier 1
+            Major - mirror the Project Tailoring Calculator. Score the project,
+            get the matching bundle.
           </p>
         </div>
         <a href="/bundles" class="btn btn--primary"

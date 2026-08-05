@@ -127,27 +127,27 @@ The Lavelle Delivery Framework v2.0 is the navigational spine of the site. Every
 
 **Four gates (named decisions, named decider; each closes a phase):**
 
-- **G1 / Authorise Planning** *(closes Initiation; sponsor / deciding body)*: Business Case approved; Scope & HLR sign-off; SteerCo Charter sign-off
-- **G2 / Authorise Delivery** *(closes Planning; SteerCo)*: Project Plan sign-off; Cost Plan and budget approved; RAID Log baselined
-- **G3 / Authorise Monitoring** *(closes Delivery; SteerCo / sponsor)*: Go No-Go Checklist sign-off; Release Plan executed; Deployment verified
-- **G4 / Authorise Closure** *(closes Monitor; sponsor + business owner)*: Operational acceptance signed; Benefits handover accepted; Financials reconciled
+- **G1 / Authorise Planning** _(closes Initiation; sponsor / deciding body)_: Business Case approved; Scope & HLR sign-off; SteerCo Charter sign-off
+- **G2 / Authorise Delivery** _(closes Planning; SteerCo)_: Project Plan sign-off; Cost Plan and budget approved; RAID Log baselined
+- **G3 / Authorise Monitoring** _(closes Delivery; SteerCo / sponsor)_: Go No-Go Checklist sign-off; Release Plan executed; Deployment verified
+- **G4 / Authorise Closure** _(closes Monitor; sponsor + business owner)_: Operational acceptance signed; Benefits handover accepted; Financials reconciled
 
 There is **no gate out of Closure**. The project ends with the End Project Report signed off - closure is the exit, not a decision point.
 
-Recovery is *not* a phase. It is a consulting offer (see Consulting) and a constructed bundle of existing artefacts (see Bundles).
+Recovery is _not_ a phase. It is a consulting offer (see Consulting) and a constructed bundle of existing artefacts (see Bundles).
 
 ### 2. Consulting (Highest-value stream)
 
 The strategic centre of the site. Six capabilities, each addressable independently or in combination. Day rate floor $1,500; effective rates on scoped engagements $1,650–$3,200/day.
 
-| #   | Capability                    | Eyebrow      | Indicative pricing                                | Effective rate    |
-| --- | ----------------------------- | ------------ | ------------------------------------------------- | ----------------- |
-| 01  | Project recovery              | Recovery     | $13,500–$144,000 (Lavelle Recovery Protocol™)     | $1,600–$2,700/day |
-| 02  | PMO stand-up & uplift         | Governance   | $36,000–$95,000                                   | $1,800–$2,200/day |
-| 03  | Business case development     | Investment   | $32,000 fixed (10-day sprint)                     | $3,200/day        |
-| 04  | Procurement & RFP advisory    | Sourcing     | $48,000–$120,000                                  | $1,800–$2,400/day |
-| 05  | Steering committee governance | Assurance    | $18,000–$32,000 fixed                             | $2,400–$3,000/day |
-| 06  | Delivery assurance            | Independence | $36,000–$52,000 fixed                             | $2,400–$3,500/day |
+| #   | Capability                    | Eyebrow      | Indicative pricing                            | Effective rate    |
+| --- | ----------------------------- | ------------ | --------------------------------------------- | ----------------- |
+| 01  | Project recovery              | Recovery     | $13,500–$144,000 (Lavelle Recovery Protocol™) | $1,600–$2,700/day |
+| 02  | PMO stand-up & uplift         | Governance   | $36,000–$95,000                               | $1,800–$2,200/day |
+| 03  | Business case development     | Investment   | $32,000 fixed (10-day sprint)                 | $3,200/day        |
+| 04  | Procurement & RFP advisory    | Sourcing     | $48,000–$120,000                              | $1,800–$2,400/day |
+| 05  | Steering committee governance | Assurance    | $18,000–$32,000 fixed                         | $2,400–$3,000/day |
+| 06  | Delivery assurance            | Independence | $36,000–$52,000 fixed                         | $2,400–$3,500/day |
 
 A seventh offer — **Retained Advisor** — sits across all six capabilities at $9,500–$15,000/month (5–9 hours/week, 3-month minimum, billed monthly in advance).
 
@@ -165,17 +165,17 @@ Project Recovery sits under this umbrella as a named consulting offer — not a 
 
 Nine packs mirror the framework. Each pack is sold individually at high-end pricing, benchmarked against one to two days of senior PM time at the $1,500/day consulting floor. The artefact list inside each pack is pulled directly from `/templates/`:
 
-| Pack                       | Framework anchor             | High-end price | Artefacts                                                                                                                                                                                                                          |
-| -------------------------- | ---------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Business Case Pack         | Initiation (G1)              | **$1,197**     | Business Case Template; Rapid Business Case; Discovery Funding Case; Seed Funding Case; Kick-off Pack — Business Case                                                                                                              |
-| Project Setup Pack         | Initiation (G1)              | **$847**       | Project Manager Onboarding Checklist; Project Schedule; Project Management Plan; Scope & High-Level Requirements; Kick-off Pack — Project                                                                                          |
-| Discovery Pack             | Initiation (G1)              | **$947**       | BA Discovery Assessment; Change Discovery Assessment; Delivery Methodology Assessment; Project Assurance Checklist; Project Tailoring Calculator                                                                                     |
-| Requirements & Design Pack | Delivery (G3)                | **$947**       | Screen Requirements; Workflow Configuration; Use Case Summary; Service Analysis; Solution Gap Analysis; Requirements Traceability Matrix                                                                                           |
-| Financial Control Pack     | Planning, tracked to Closure | **$1,247**     | Project Cost Estimate; Estimation Guidelines & Worksheet; Budget Phasing; Financial Control Tracker; Contingency Calculator; Asset Labour Calculations; Minor Assets Register; Journal Template; RAID Register                     |
-| Testing Pack               | Delivery (G3)                | **$747**       | Test Strategy; Test Plan; Test Summary Report; Test Script                                                                                                                                                                         |
-| Cutover Pack               | Delivery (G3)                | **$747**       | Cutover Runsheet; Go No-Go Checklist                                                                                                                                                                                               |
-| Steering Pack              | Spans all phases             | **$897**       | Steering Committee Charter (Detailed); Steering Committee Charter (One Page); Steering Committee Pack; Sponsor Update (One Page); Portfolio Pulse; Project Change Request; Report Specification                                    |
-| Training / Change Pack     | Planning → Closure           | **$747**       | Training Plan; Operational Level Agreement; Change Templates Review                                                                                                                                                                |
+| Pack                       | Framework anchor             | High-end price | Artefacts                                                                                                                                                                                                      |
+| -------------------------- | ---------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Business Case Pack         | Initiation (G1)              | **$1,197**     | Business Case Template; Rapid Business Case; Discovery Funding Case; Seed Funding Case; Kick-off Pack — Business Case                                                                                          |
+| Project Setup Pack         | Initiation (G1)              | **$847**       | Project Manager Onboarding Checklist; Project Schedule; Project Management Plan; Scope & High-Level Requirements; Kick-off Pack — Project                                                                      |
+| Discovery Pack             | Initiation (G1)              | **$947**       | BA Discovery Assessment; Change Discovery Assessment; Delivery Methodology Assessment; Project Assurance Checklist; Project Tailoring Calculator                                                               |
+| Requirements & Design Pack | Delivery (G3)                | **$947**       | Screen Requirements; Workflow Configuration; Use Case Summary; Service Analysis; Solution Gap Analysis; Requirements Traceability Matrix                                                                       |
+| Financial Control Pack     | Planning, tracked to Closure | **$1,247**     | Project Cost Estimate; Estimation Guidelines & Worksheet; Budget Phasing; Financial Control Tracker; Contingency Calculator; Asset Labour Calculations; Minor Assets Register; Journal Template; RAID Register |
+| Testing Pack               | Delivery (G3)                | **$747**       | Test Strategy; Test Plan; Test Summary Report; Test Script                                                                                                                                                     |
+| Cutover Pack               | Delivery (G3)                | **$747**       | Cutover Runsheet; Go No-Go Checklist                                                                                                                                                                           |
+| Steering Pack              | Spans all phases             | **$897**       | Steering Committee Charter (Detailed); Steering Committee Charter (One Page); Steering Committee Pack; Sponsor Update (One Page); Portfolio Pulse; Project Change Request; Report Specification                |
+| Training / Change Pack     | Planning → Closure           | **$747**       | Training Plan; Operational Level Agreement; Change Templates Review                                                                                                                                            |
 
 Plus a standalone **Procurement Pack** at **$1,197** and a consulting-led **Project Recovery Pack** at **$1,247**, both sitting under Templates as "additional packs" alongside the nine framework-anchored packs.
 
@@ -198,12 +198,12 @@ Each pack page must include:
 
 Three bundles mirror the Project Tailoring Calculator's recommended artefact sets, plus a fourth consulting-led bundle. Pricing reflects high-end positioning — each bundle is doing what would otherwise take a senior PM a week or more to assemble from first principles, and is discounted against the equivalent stack of individual packs.
 
-| Bundle                                       | Tailoring score | High-end price | Effective discount vs separate packs | Includes                                                                                                                                                                                                                                                                                                                        |
-| -------------------------------------------- | ------------- | -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tier 3 Light                                 | 7–14          | **$1,997**     | ~30%                                 | Rapid Business Case; Project Schedule (lightweight); Steering Committee Charter (One Page); Sponsor Update (One Page); single-page status                                                                                                                                                                                       |
-| Tier 2 Standard (featured as "most common")  | 15–24         | **$4,497**     | ~35%                                 | Business Case Template; Project Management Plan; Scope & High-Level Requirements; RAID Register; Steering Committee Charter (Detailed); Steering Committee Pack; Project Cost Estimate; Budget Phasing; Financial Control Tracker                                                                                               |
-| Tier 1 Major                                 | 25–35         | **$7,997**     | ~40%                                 | Everything in Tier 2 Standard; plus Project Assurance Checklist; Portfolio Pulse; Cutover Runsheet; Go No-Go Checklist; Test Strategy + Test Plan + Test Summary Report; Contingency Calculator; Asset Labour Calculations                                                                                                       |
-| Project Recovery Bundle (consulting-led)     | n/a           | **$2,997**     | n/a                                  | Project Assurance Checklist; RAID Register; Sponsor Update (One Page); Project Change Request; *recovery framing doc (TODO — not yet built).* Sold alongside the Project Recovery consulting offer; not a framework stage.                                                                                                       |
+| Bundle                                      | Tailoring score | High-end price | Effective discount vs separate packs | Includes                                                                                                                                                                                                                          |
+| ------------------------------------------- | --------------- | -------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tier 3 Light                                | 7–14            | **$1,997**     | ~30%                                 | Rapid Business Case; Project Schedule (lightweight); Steering Committee Charter (One Page); Sponsor Update (One Page); single-page status                                                                                         |
+| Tier 2 Standard (featured as "most common") | 15–24           | **$4,497**     | ~35%                                 | Business Case Template; Project Management Plan; Scope & High-Level Requirements; RAID Register; Steering Committee Charter (Detailed); Steering Committee Pack; Project Cost Estimate; Budget Phasing; Financial Control Tracker |
+| Tier 1 Major                                | 25–35           | **$7,997**     | ~40%                                 | Everything in Tier 2 Standard; plus Project Assurance Checklist; Portfolio Pulse; Cutover Runsheet; Go No-Go Checklist; Test Strategy + Test Plan + Test Summary Report; Contingency Calculator; Asset Labour Calculations        |
+| Project Recovery Bundle (consulting-led)    | n/a             | **$2,997**     | n/a                                  | Project Assurance Checklist; RAID Register; Sponsor Update (One Page); Project Change Request; _recovery framing doc (TODO — not yet built)._ Sold alongside the Project Recovery consulting offer; not a framework stage.        |
 
 The Tailoring Calculator itself is the entry point — a free, email-gated diagnostic that scores the project and recommends the matching bundle. Conversion path: download calculator → enter score → matched bundle CTA, pre-filled with the buyer's own answers. This is a materially higher-conversion path than browsing single packs, and the central commercial reason to ship the Tailoring Calculator scoring logic ahead of any other product work.
 
@@ -229,9 +229,9 @@ Position on the homepage as an entry card alongside the Steering Pack and the Ti
 
 Three free-tool tiers, each with a different gating logic:
 
-- **Framework One-Page** — *free and ungated.* The single-slide visual version of the Lavelle Delivery Framework. The top-of-funnel hook; visitors download it without giving an email and learn what stages, gates and paths the framework names.
-- **Project Tailoring Calculator** — *gated behind email.* The diagnostic; produces a tier recommendation and routes to the matching bundle. The primary lead magnet.
-- **Diagnostic workbooks** (BA Discovery, Change Discovery, Delivery Methodology, Project Assurance Checklist) — *paid;* sit inside the Discovery Pack, not free.
+- **Framework One-Page** — _free and ungated._ The single-slide visual version of the Lavelle Delivery Framework. The top-of-funnel hook; visitors download it without giving an email and learn what stages, gates and paths the framework names.
+- **Project Tailoring Calculator** — _gated behind email._ The diagnostic; produces a tier recommendation and routes to the matching bundle. The primary lead magnet.
+- **Diagnostic workbooks** (BA Discovery, Change Discovery, Delivery Methodology, Project Assurance Checklist) — _paid;_ sit inside the Discovery Pack, not free.
 
 Pattern: never use "Coming Soon" with no fallback. Items not yet shippable must be paired with a notify-me Web3Forms form (the actionable-fallback pattern). See CLAUDE.md writing rules.
 

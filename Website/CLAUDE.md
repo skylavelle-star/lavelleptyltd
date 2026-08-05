@@ -12,11 +12,11 @@ gitignored — the repo is **public**) and `Website/`, the Astro app. Vercel's R
 Directory setting is still `.`, so three deploy-facing files live at the **repo
 root**, not in `Website/`:
 
-| File            | Why it is at the root                                          |
-| --------------- | -------------------------------------------------------------- |
+| File            | Why it is at the root                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vercel.json`   | Vercel only reads the one in the Root Directory. Holds the build overrides (`cd Website && npm ci` / `npm run build`, output `Website/dist`) plus all redirects and headers. |
-| `middleware.ts` | Vercel Routing Middleware must sit in the Root Directory.       |
-| `.gitignore`    | Covers the whole repo, including the two private folders.       |
+| `middleware.ts` | Vercel Routing Middleware must sit in the Root Directory.                                                                                                                    |
+| `.gitignore`    | Covers the whole repo, including the two private folders.                                                                                                                    |
 
 There is deliberately **no `Website/vercel.json`** — a second one there would be
 silently ignored and would drift.
@@ -156,30 +156,30 @@ import { site, products } from "../config/site";
 
 **Current env vars** (set in `.env` and Vercel project settings; `.env.example` documents the shape):
 
-| Variable                              | Notes                                                |
-| ------------------------------------- | ---------------------------------------------------- |
-| `PUBLIC_GA_ID`                        | Google Analytics 4                                   |
-| `PUBLIC_SITE_URL`                     | `https://lavelleptyltd.com.au`                       |
-| **Live packs (Tier 1)**               |                                                      |
-| `PUBLIC_LS_STEERING_COMMITTEE_PACK`   | LS checkout URL — Steering Pack ($897)               |
-| `PUBLIC_LS_PROJECT_RECOVERY_PACK`     | LS checkout URL — Project Recovery Pack ($1,247)     |
-| `PUBLIC_LS_BUSINESS_CASE_PACK`        | LS checkout URL — Business Case Pack ($1,197)        |
-| `PUBLIC_LS_PROCUREMENT_PACK`          | LS checkout URL — Procurement Pack ($1,197)          |
-| **Stage packs (stubs until variants exist)** |                                               |
-| `PUBLIC_LS_PROJECT_SETUP_PACK`        | Project Setup Pack ($847)                            |
-| `PUBLIC_LS_DISCOVERY_PACK`            | Discovery Pack ($947)                                |
-| `PUBLIC_LS_REQUIREMENTS_DESIGN_PACK`  | Requirements & Design Pack ($947)                    |
-| `PUBLIC_LS_FINANCIAL_CONTROL_PACK`    | Financial Control Pack ($1,247)                      |
-| `PUBLIC_LS_TESTING_PACK`              | Testing Pack ($747)                                  |
-| `PUBLIC_LS_CUTOVER_PACK`              | Cutover Pack ($747)                                  |
-| `PUBLIC_LS_TRAINING_CHANGE_PACK`      | Training / Change Pack ($747)                        |
-| **Flagship**                          |                                                      |
-| `PUBLIC_LS_COMPLETE_LIBRARY`          | Complete Practitioner Library ($12,997)              |
-| **Bundles**                           |                                                      |
-| `PUBLIC_LS_TIER_3_LIGHT`              | Tier 3 Light Bundle ($1,997)                         |
-| `PUBLIC_LS_TIER_2_STANDARD`           | Tier 2 Standard Bundle ($4,497)                      |
-| `PUBLIC_LS_TIER_1_MAJOR`              | Tier 1 Major Bundle ($7,997)                         |
-| `PUBLIC_LS_PROJECT_RECOVERY_BUNDLE`   | Project Recovery Bundle ($2,997) — also gated on `framingDocReady` |
+| Variable                                     | Notes                                                              |
+| -------------------------------------------- | ------------------------------------------------------------------ |
+| `PUBLIC_GA_ID`                               | Google Analytics 4                                                 |
+| `PUBLIC_SITE_URL`                            | `https://lavelleptyltd.com.au`                                     |
+| **Live packs (Tier 1)**                      |                                                                    |
+| `PUBLIC_LS_STEERING_COMMITTEE_PACK`          | LS checkout URL — Steering Pack ($897)                             |
+| `PUBLIC_LS_PROJECT_RECOVERY_PACK`            | LS checkout URL — Project Recovery Pack ($1,247)                   |
+| `PUBLIC_LS_BUSINESS_CASE_PACK`               | LS checkout URL — Business Case Pack ($1,197)                      |
+| `PUBLIC_LS_PROCUREMENT_PACK`                 | LS checkout URL — Procurement Pack ($1,197)                        |
+| **Stage packs (stubs until variants exist)** |                                                                    |
+| `PUBLIC_LS_PROJECT_SETUP_PACK`               | Project Setup Pack ($847)                                          |
+| `PUBLIC_LS_DISCOVERY_PACK`                   | Discovery Pack ($947)                                              |
+| `PUBLIC_LS_REQUIREMENTS_DESIGN_PACK`         | Requirements & Design Pack ($947)                                  |
+| `PUBLIC_LS_FINANCIAL_CONTROL_PACK`           | Financial Control Pack ($1,247)                                    |
+| `PUBLIC_LS_TESTING_PACK`                     | Testing Pack ($747)                                                |
+| `PUBLIC_LS_CUTOVER_PACK`                     | Cutover Pack ($747)                                                |
+| `PUBLIC_LS_TRAINING_CHANGE_PACK`             | Training / Change Pack ($747)                                      |
+| **Flagship**                                 |                                                                    |
+| `PUBLIC_LS_COMPLETE_LIBRARY`                 | Complete Practitioner Library ($12,997)                            |
+| **Bundles**                                  |                                                                    |
+| `PUBLIC_LS_TIER_3_LIGHT`                     | Tier 3 Light Bundle ($1,997)                                       |
+| `PUBLIC_LS_TIER_2_STANDARD`                  | Tier 2 Standard Bundle ($4,497)                                    |
+| `PUBLIC_LS_TIER_1_MAJOR`                     | Tier 1 Major Bundle ($7,997)                                       |
+| `PUBLIC_LS_PROJECT_RECOVERY_BUNDLE`          | Project Recovery Bundle ($2,997) — also gated on `framingDocReady` |
 
 Lemon Squeezy URL format: `https://lavelleptyltd.lemonsqueezy.com/checkout/buy/{variant_id}`. When a variable is unset, the page renders a notify-me Web3Forms fallback instead of a buy button. Keep `.env.example` in sync when adding new variables.
 

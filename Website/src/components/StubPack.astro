@@ -62,13 +62,7 @@ const productSchema = {
     </div>
     <div class="eyebrow">{eyebrow}</div>
     <h1 style="margin-top:1rem;">
-      {
-        tagline ? (
-          <Fragment set:html={tagline} />
-        ) : (
-          <em>Tagline pending.</em>
-        )
-      }
+      {tagline ? <Fragment set:html={tagline} /> : <em>Tagline pending.</em>}
     </h1>
     <p class="subhero__lead">{subhead}</p>
   </div>
@@ -102,8 +96,8 @@ const productSchema = {
 
       <div class="eyebrow">In production</div>
       <p>
-        This pack is being finalised. Use the notify form below - or talk to
-        Sky directly if you have an immediate need.
+        This pack is being finalised. Use the notify form below - or talk to Sky
+        directly if you have an immediate need.
       </p>
       <form data-notify-form={formId} class="stub-form" novalidate>
         <input type="hidden" name="access_key" value={site.web3formsKey} />
@@ -129,7 +123,8 @@ const productSchema = {
           tabindex="-1"
           autocomplete="off"
         />
-        <label class="visually-hidden" for={`${formId}-email`}>Your email</label>
+        <label class="visually-hidden" for={`${formId}-email`}>Your email</label
+        >
         <input
           id={`${formId}-email`}
           type="email"
@@ -141,18 +136,15 @@ const productSchema = {
         <button type="submit" class="btn btn--primary">
           Notify me <span class="btn__arrow">→</span>
         </button>
-        <p
-          id={`notify-success-${formId}`}
-          class="stub-form__success"
-          hidden
-        >
+        <p id={`notify-success-${formId}`} class="stub-form__success" hidden>
           Done - we will email you when it ships.
         </p>
       </form>
     </div>
 
     <div class="stub-framework">
-      <strong>Framework anchor:</strong> {frameworkStage}, exiting through
+      <strong>Framework anchor:</strong>
+      {frameworkStage}, exiting through
       <strong>{frameworkGate}</strong>.
       <a href="/framework">See the framework →</a>
     </div>
