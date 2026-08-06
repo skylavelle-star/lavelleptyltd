@@ -10,7 +10,7 @@ export const site = {
   web3formsKey: "21e468ca-496b-45eb-8313-d1b7d5d229c9",
   // Default social-share image (Open Graph / Twitter). Absolute path under public/.
   defaultOgImage: "/og-default.jpg",
-  logo: "/favicon.svg",
+  logo: "/favicon-vm.png",
   abn: "27 651 199 414",
   founder: "Sky Lavelle",
   areaServed: ["Brisbane", "Australia", "Asia-Pacific"],

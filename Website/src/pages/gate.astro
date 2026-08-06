@@ -6,6 +6,8 @@
 // this page only posts the form. Vercel Routing Middleware checks the answer,
 // sets the access cookie and redirects. See CLAUDE.md → "Password gate".
 import { site } from "../config/site";
+import { Image } from "astro:assets";
+import logoFull from "../assets/images/logo-full.png";
 ---
 
 <!doctype html>
@@ -16,7 +18,7 @@ import { site } from "../config/site";
     <title>{site.name} — Password protected</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={`${site.name} — password protected.`} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-vm.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -64,31 +66,13 @@ import { site } from "../config/site";
           padding: 3rem 2.5rem;
         }
       }
-      /* Wordmark lockup, matching the site header: Fraunces for the first
-         word, letterspaced small caps for the second, sharing a baseline. */
-      h1 {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 0.5rem;
-        line-height: 1.05;
-        margin-bottom: 1.5rem;
-        font-size: clamp(2rem, 5.5vw, 3.25rem);
+      .mark {
+        margin: 0 auto 1.5rem;
+        max-width: 17.5rem;
       }
-      .mark__name {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 500;
-        font-variation-settings: "opsz" 144;
-        letter-spacing: -0.015em;
-        color: var(--ink);
-      }
-      .mark__sub {
-        font-family: "DM Sans", system-ui, sans-serif;
-        font-size: 0.34em;
-        font-weight: 500;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--ink);
+      .mark img {
+        width: 100%;
+        height: auto;
       }
       .rule {
         width: 3rem;
@@ -161,10 +145,14 @@ import { site } from "../config/site";
   </head>
   <body>
     <main>
-      <h1>
-        <span class="mark__name">Vantage</span><span class="mark__sub"
-          >Meridian</span
-        >
+      <h1 class="mark">
+        <Image
+          src={logoFull}
+          alt={site.name}
+          widths={[280, 469]}
+          sizes="(min-width: 30rem) 280px, 70vw"
+          loading="eager"
+        />
       </h1>
       <div class="rule"></div>
       <p>

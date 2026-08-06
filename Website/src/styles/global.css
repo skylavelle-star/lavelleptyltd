@@ -153,14 +153,14 @@ p {
   align-items: baseline;
   gap: 0.45rem;
 }
+/* Compass mark from the company logo, in place of the old ochre dot.
+   Sized to the cap height of the Fraunces wordmark beside it. */
 .brand__mark {
-  width: 10px;
-  height: 10px;
-  background: var(--ochre);
-  border-radius: 50%;
-  display: inline-block;
+  height: 34px;
+  width: auto;
   align-self: center;
-  margin-right: 0.45rem;
+  margin-right: 0.5rem;
+  flex: none;
 }
 .brand__sub {
   font-family: "DM Sans", sans-serif;
@@ -866,10 +866,8 @@ section {
   margin-bottom: 0.5rem;
 }
 .footer__mark-dot {
-  width: 10px;
-  height: 10px;
-  background: var(--ochre);
-  border-radius: 50%;
+  height: 40px;
+  width: auto;
   align-self: center;
   flex: none;
 }
