@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://lavelleptyltd.com.au",
+  site: "https://vantagemeridian.com.au",
   integrations: [
     sitemap({
       // Keep the password gate and the confirmation pages out of the sitemap

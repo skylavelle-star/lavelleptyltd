@@ -2,7 +2,7 @@
 
 Git repo root: `/Users/skylavelle/Claude/Portfolio/Vantage Meridian`
 Astro app: `Website/` inside that repo
-Live URL: https://lavelleptyltd.com.au (live, behind a password gate — see below)
+Live URL: https://vantagemeridian.com.au (live, behind a password gate — see below)
 Vercel project: `lavelle-pty-ltd` under `sky-lavelles-projects`
 
 ## Repo layout — the app is not at the repo root
@@ -157,7 +157,7 @@ import { site, products } from "../config/site";
 | Variable                                     | Notes                                                              |
 | -------------------------------------------- | ------------------------------------------------------------------ |
 | `PUBLIC_GA_ID`                               | Google Analytics 4                                                 |
-| `PUBLIC_SITE_URL`                            | `https://lavelleptyltd.com.au`                                     |
+| `PUBLIC_SITE_URL`                            | `https://vantagemeridian.com.au` (unset; code falls back to it)    |
 | **Live packs (Tier 1)**                      |                                                                    |
 | `PUBLIC_LS_STEERING_COMMITTEE_PACK`          | LS checkout URL — Steering Pack ($897)                             |
 | `PUBLIC_LS_PROJECT_RECOVERY_PACK`            | LS checkout URL — Project Recovery Pack ($1,247)                   |
@@ -215,7 +215,7 @@ When both are true: flip `framingDocReady` to `true`, set `PUBLIC_LS_PROJECT_REC
 | Local directory | `/Users/skylavelle/Claude/Portfolio/Vantage Meridian` |
 | GitHub repo     | `github.com/skylavelle-star/lavelleptyltd`            |
 | Vercel project  | `lavelle-pty-ltd`                                     |
-| Live site       | `https://lavelleptyltd.com.au`                        |
+| Live site       | `https://vantagemeridian.com.au`                      |
 
 Deploy by committing changes and running `git push origin main`. Vercel builds and publishes automatically (~9s). Never use `vercel --prod --yes` — the GitHub integration handles all deploys.
 

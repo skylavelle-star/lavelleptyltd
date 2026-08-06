@@ -1,5 +1,5 @@
 export const site = {
-  url: import.meta.env.PUBLIC_SITE_URL || "https://lavelleptyltd.com.au",
+  url: import.meta.env.PUBLIC_SITE_URL || "https://vantagemeridian.com.au",
   name: "Vantage Meridian",
   description:
     "Vantage Meridian provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance and clearer project control.",
