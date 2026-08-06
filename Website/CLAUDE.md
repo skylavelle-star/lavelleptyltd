@@ -1,6 +1,6 @@
-# CLAUDE.md - Lavelle Pty Ltd Website
+# CLAUDE.md - Vantage Meridian Website
 
-Git repo root: `/Users/skylavelle/Claude/Portfolio/Lavelle Pty Ltd`
+Git repo root: `/Users/skylavelle/Claude/Portfolio/Vantage Meridian`
 Astro app: `Website/` inside that repo
 Live URL: https://lavelleptyltd.com.au (live, behind a password gate — see below)
 Vercel project: `lavelle-pty-ltd` under `sky-lavelles-projects`
@@ -95,7 +95,7 @@ src/
                                # *.docx + *.pptx and templates/templates-folder.md.
                                # Never invent phase durations, gate evidence or
                                # artefact anchors - read them from those files.
-    consulting.astro           # six capabilities + Lavelle Recovery Protocol™
+    consulting.astro           # six capabilities + Vantage Meridian Recovery Protocol™
     delivery-team.astro        # delivery team — model, principal, nine role cards
     case-studies.astro
     privacy.astro
@@ -210,19 +210,19 @@ When both are true: flip `framingDocReady` to `true`, set `PUBLIC_LS_PROJECT_REC
 
 **Pipeline:** Local → GitHub → Vercel → Live
 
-| Step            | Value                                                |
-| --------------- | ---------------------------------------------------- |
-| Local directory | `/Users/skylavelle/Claude/Portfolio/Lavelle Pty Ltd` |
-| GitHub repo     | `github.com/skylavelle-star/lavelleptyltd`           |
-| Vercel project  | `lavelle-pty-ltd`                                    |
-| Live site       | `https://lavelleptyltd.com.au`                       |
+| Step            | Value                                                 |
+| --------------- | ----------------------------------------------------- |
+| Local directory | `/Users/skylavelle/Claude/Portfolio/Vantage Meridian` |
+| GitHub repo     | `github.com/skylavelle-star/lavelleptyltd`            |
+| Vercel project  | `lavelle-pty-ltd`                                     |
+| Live site       | `https://lavelleptyltd.com.au`                        |
 
 Deploy by committing changes and running `git push origin main`. Vercel builds and publishes automatically (~9s). Never use `vercel --prod --yes` — the GitHub integration handles all deploys.
 
 ## Performance — what is already in place
 
 - **HTML CDN cache:** the root `vercel.json` sets `Cache-Control: s-maxage=300, stale-while-revalidate=86400` on `/(.*)`. The edge revalidates every 5 minutes; visitors never wait for the origin thanks to the 24-hour SWR window. Vercel auto-purges the CDN on every deployment.
-- **API routes:** `/api/(.*)` is forced to `no-store, max-age=0`. Lavelle has no API routes today; the rule is defensive insurance.
+- **API routes:** `/api/(.*)` is forced to `no-store, max-age=0`. Vantage Meridian has no API routes today; the rule is defensive insurance.
 - **Fingerprinted bundles:** `/_astro/(.*)` is cached for 1 year (`immutable`). Astro regenerates the hash on every build that changes the source.
 - **Static images and fonts:** anything matching `*.{jpg,jpeg,png,webp,avif,gif,svg,ico,woff,woff2}` is cached for 1 year (`immutable`). **Convention: rename rather than overwrite** any file under `public/` — same filename means the CDN serves the old bytes for up to a year. Add a `-v2` or date suffix, update references.
 - **Async fonts:** `BaseLayout.astro` loads Fraunces + DM Sans via `rel="preload" as="style" onload="..."` so they don't render-block.
@@ -243,7 +243,7 @@ only named individual.
 
 **The gate is consent, and only consent.** A practitioner may be named and
 pictured on the site, and named in tender documentation, once they have signed
-Section 4 (website and tender consent) of the Lavelle Required Information Form.
+Section 4 (website and tender consent) of the Vantage Meridian Required Information Form.
 That signature is the sole precondition.
 
 **Explicitly not preconditions.** Team practitioners are independent
@@ -271,7 +271,7 @@ stay anonymised to sector descriptors, matching the case studies.
 
 ## Writing rules
 
-**Canonical style guide:** `/Users/skylavelle/Claude/Portfolio/Sky_Lavelle_Writing_Style_and_Voice.md` — read this before writing any user-facing copy. It is the source of truth for voice, tone, and style across all Sky Lavelle portfolio projects.
+**Canonical style guide:** `/Users/skylavelle/Claude/Portfolio/Sky_Vantage Meridian_Writing_Style_and_Voice.md` — read this before writing any user-facing copy. It is the source of truth for voice, tone, and style across all Sky Lavelle portfolio projects.
 
 Project-specific additions on top of the canonical guide:
 

@@ -2,12 +2,12 @@
 
 ## Purpose
 
-Lavelle Pty Ltd is the commercial operating company for:
+Vantage Meridian is the commercial operating company for:
 
 1. Senior project delivery consulting (highest-value stream)
 2. Productised PMO resources — stage-based packs, tier-based bundles, and the Complete Practitioner Library flagship SKU
 3. Free tools and lead-generation assets
-4. The Lavelle Delivery Framework as a method asset
+4. The Vantage Meridian Delivery Framework as a method asset
 5. A growing digital asset portfolio (secondary stream)
 
 It is the revenue engine of the wider portfolio. The catalogue is scoped to the individual practitioner, the PMO lead with personal or small-team budget, and small consultancies buying packs as a baseline. Enterprise multi-seat licensing was retired in business plan v5.0; large organisations that would have bought department or agency licences typically have their own standardised artefact bases, and the operational complexity was not justified by the revenue contribution.
@@ -81,7 +81,7 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 
 **Subhead:** We partner with media, higher education and government-adjacent research organisations to recover at-risk programs, strengthen PMO governance, and lead complex enterprise technology delivery — particularly where previous attempts have failed and stakeholder confidence has collapsed.
 
-**Primary CTA:** Engage Lavelle → /contact
+**Primary CTA:** Engage Vantage Meridian → /contact
 
 **Secondary CTA:** Browse Templates → /templates
 
@@ -107,13 +107,13 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 
 ### 1. Framework (Spine)
 
-The Lavelle Delivery Framework v2.0 is the navigational spine of the site. Every template, pack, bundle and free tool links back to its phase and gate.
+The Vantage Meridian Delivery Framework v2.0 is the navigational spine of the site. Every template, pack, bundle and free tool links back to its phase and gate.
 
 **Tagline:** Five phases. Four gates. One hybrid. (Also used: "Five phases. One hybrid discipline.")
 
-**The model.** A deliberate PRINCE2 + Agile hybrid - waterfall on the outside, agile on the inside. Senior leadership sees a predictive, gated project with tolerances and a paper trail (the control layer). The team inside Delivery runs iterative cycles - plan, build, review, refine - toward the delivery goals fixed at Planning (the team layer). Hybrid is the Lavelle default: PRINCE2 control at the programme layer, agile cadence at the team layer.
+**The model.** A deliberate PRINCE2 + Agile hybrid - waterfall on the outside, agile on the inside. Senior leadership sees a predictive, gated project with tolerances and a paper trail (the control layer). The team inside Delivery runs iterative cycles - plan, build, review, refine - toward the delivery goals fixed at Planning (the team layer). Hybrid is the Vantage Meridian default: PRINCE2 control at the programme layer, agile cadence at the team layer.
 
-**Source of truth for framework copy:** `Framework Definition/Lavelle Delivery Framework.docx`, `Framework Definition/Lavelle_Delivery_Framework_Timeline.pptx` and `templates/templates-folder.md`. Corrected 2026-08-05.
+**Source of truth for framework copy:** `Framework Definition/Vantage Meridian Delivery Framework.docx`, `Framework Definition/Vantage Meridian_Delivery_Framework_Timeline.pptx` and `templates/templates-folder.md`. Corrected 2026-08-05.
 
 **Five phases:**
 
@@ -138,14 +138,14 @@ Recovery is _not_ a phase. It is a consulting offer (see Consulting) and a const
 
 The strategic centre of the site. Six capabilities, each addressable independently or in combination. Day rate floor $1,500; effective rates on scoped engagements $1,650–$3,200/day.
 
-| #   | Capability                    | Eyebrow      | Indicative pricing                            | Effective rate    |
-| --- | ----------------------------- | ------------ | --------------------------------------------- | ----------------- |
-| 01  | Project recovery              | Recovery     | $13,500–$144,000 (Lavelle Recovery Protocol™) | $1,600–$2,700/day |
-| 02  | PMO stand-up & uplift         | Governance   | $36,000–$95,000                               | $1,800–$2,200/day |
-| 03  | Business case development     | Investment   | $32,000 fixed (10-day sprint)                 | $3,200/day        |
-| 04  | Procurement & RFP advisory    | Sourcing     | $48,000–$120,000                              | $1,800–$2,400/day |
-| 05  | Steering committee governance | Assurance    | $18,000–$32,000 fixed                         | $2,400–$3,000/day |
-| 06  | Delivery assurance            | Independence | $36,000–$52,000 fixed                         | $2,400–$3,500/day |
+| #   | Capability                    | Eyebrow      | Indicative pricing                                     | Effective rate    |
+| --- | ----------------------------- | ------------ | ------------------------------------------------------ | ----------------- |
+| 01  | Project recovery              | Recovery     | $13,500–$144,000 (Vantage Meridian Recovery Protocol™) | $1,600–$2,700/day |
+| 02  | PMO stand-up & uplift         | Governance   | $36,000–$95,000                                        | $1,800–$2,200/day |
+| 03  | Business case development     | Investment   | $32,000 fixed (10-day sprint)                          | $3,200/day        |
+| 04  | Procurement & RFP advisory    | Sourcing     | $48,000–$120,000                                       | $1,800–$2,400/day |
+| 05  | Steering committee governance | Assurance    | $18,000–$32,000 fixed                                  | $2,400–$3,000/day |
+| 06  | Delivery assurance            | Independence | $36,000–$52,000 fixed                                  | $2,400–$3,500/day |
 
 A seventh offer — **Retained Advisor** — sits across all six capabilities at $9,500–$15,000/month (5–9 hours/week, 3-month minimum, billed monthly in advance).
 
@@ -155,9 +155,9 @@ A seventh offer — **Retained Advisor** — sits across all six capabilities at
 2. **Practical, never theatrical** — governance only counts when it changes behaviour
 3. **Handover beats hand-holding** — every engagement has a defined endpoint; the success metric is whether your people can run the program without us six months later
 
-All consulting is principal-led: Sky Lavelle leads every engagement personally, sets the delivery approach and directs and reviews every practitioner on it. Where the scope needs specialist capability under him, team practitioners (project and programme management, business analysis, change, test and QA, solution architecture, senior/mid/junior development, content and UX strategy) are engaged per assignment as independent subcontractors through their own companies under Lavelle master agreements, so the client holds one contract and receives one invoice.
+All consulting is principal-led: Sky Lavelle leads every engagement personally, sets the delivery approach and directs and reviews every practitioner on it. Where the scope needs specialist capability under him, team practitioners (project and programme management, business analysis, change, test and QA, solution architecture, senior/mid/junior development, content and UX strategy) are engaged per assignment as independent subcontractors through their own companies under Vantage Meridian master agreements, so the client holds one contract and receives one invoice.
 
-Project Recovery sits under this umbrella as a named consulting offer — not a framework stage — and runs through the **Lavelle Recovery Protocol™**, a four-phase methodology (Diagnose → Re-baseline → Re-govern → Re-mobilise) with phase-by-phase artefact mapping from the library. Recovery offers ladder from the free Project Recovery Checklist through the $1,247 Project Recovery Pack, the $2,997 Project Recovery Bundle, a $13,500 fixed-scope Recovery Diagnostic Report (5 days), a $58,000 30-day Recovery Sprint, the $99,000 60-day standard recovery, and the $144,000 90-day deep recovery with hypercare. The Recovery Diagnostic Report is the highest-conversion entry point in the consulting catalogue — aim for 4–6 sales/year converting to follow-on engagements at 70%+. See Bundles → Project Recovery Bundle for the supporting templates.
+Project Recovery sits under this umbrella as a named consulting offer — not a framework stage — and runs through the **Vantage Meridian Recovery Protocol™**, a four-phase methodology (Diagnose → Re-baseline → Re-govern → Re-mobilise) with phase-by-phase artefact mapping from the library. Recovery offers ladder from the free Project Recovery Checklist through the $1,247 Project Recovery Pack, the $2,997 Project Recovery Bundle, a $13,500 fixed-scope Recovery Diagnostic Report (5 days), a $58,000 30-day Recovery Sprint, the $99,000 60-day standard recovery, and the $144,000 90-day deep recovery with hypercare. The Recovery Diagnostic Report is the highest-conversion entry point in the consulting catalogue — aim for 4–6 sales/year converting to follow-on engagements at 70%+. See Bundles → Project Recovery Bundle for the supporting templates.
 
 ### 3. Templates — Stage-based Packs
 
@@ -207,15 +207,15 @@ The Tailoring Calculator itself is the entry point — a free, email-gated diagn
 
 ### 5. Complete Practitioner Library (Flagship SKU)
 
-> **The Lavelle Practitioner Library — $12,997**
-> Every stage pack (9), plus the Procurement Pack and the Project Recovery Bundle. The Lavelle Delivery Framework documentation. Twelve months of artefact updates. Single named user.
+> **The Vantage Meridian Practitioner Library — $12,997**
+> Every stage pack (9), plus the Procurement Pack and the Project Recovery Bundle. The Vantage Meridian Delivery Framework documentation. Twelve months of artefact updates. Single named user.
 
 Designed for the senior PM, PMO lead or independent consultant who wants the entire opinionated library on day one. The Library does four commercial jobs at once:
 
 1. Establishes a high anchor that makes individual pack pricing look modest by comparison
 2. Provides the single highest-margin transaction in the catalogue
 3. Gives committed buyers a frictionless one-purchase path
-4. Resolves the "I want everything" buyer who would otherwise have no clean way to give Lavelle Pty Ltd more than $1,247 in one transaction
+4. Resolves the "I want everything" buyer who would otherwise have no clean way to give Vantage Meridian more than $1,247 in one transaction
 
 **Realistic year-1 volume:** 3–6 sales. The Australian buyer pool for a $13k one-off perpetual library is small — senior independent consultants, PMO leads with personal training budgets, contracting firms standardising a baseline before a tender response. The Library is a **halo SKU, not a volume SKU.** A handful of sales per year is the right expectation.
 
@@ -227,7 +227,7 @@ Position on the homepage as an entry card alongside the Steering Pack and the Ti
 
 Three free-tool tiers, each with a different gating logic:
 
-- **Framework One-Page** — _free and ungated._ The single-slide visual version of the Lavelle Delivery Framework. The top-of-funnel hook; visitors download it without giving an email and learn what stages, gates and paths the framework names.
+- **Framework One-Page** — _free and ungated._ The single-slide visual version of the Vantage Meridian Delivery Framework. The top-of-funnel hook; visitors download it without giving an email and learn what stages, gates and paths the framework names.
 - **Project Tailoring Calculator** — _gated behind email._ The diagnostic; produces a tier recommendation and routes to the matching bundle. The primary lead magnet.
 - **Diagnostic workbooks** (BA Discovery, Change Discovery, Delivery Methodology, Project Assurance Checklist) — _paid;_ sit inside the Discovery Pack, not free.
 
@@ -328,7 +328,7 @@ Long-form SEO surface is the Thinking content collection. Every article must lin
 
 ## Internal Linking Rule
 
-Lavelle Pty Ltd must:
+Vantage Meridian must:
 
 - Link to itself for all products, tools, free downloads and conversion routes
 - Link every template, pack and bundle page back to its stage and gate within the Framework

@@ -1,9 +1,11 @@
 export const site = {
   url: import.meta.env.PUBLIC_SITE_URL || "https://lavelleptyltd.com.au",
-  name: "Lavelle Pty Ltd",
+  name: "Vantage Meridian",
   description:
-    "Lavelle Pty Ltd provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance and clearer project control.",
-  email: "hello@lavelleptyltd.com.au",
+    "Vantage Meridian provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance and clearer project control.",
+  // Not rendered anywhere on the site - enquiries come through the Web3Forms
+  // contact form. Kept so any future use picks up the correct address.
+  email: "enquiries@vantagemeridian.com.au",
   linkedin: "https://linkedin.com/in/skylavelle",
   web3formsKey: "21e468ca-496b-45eb-8313-d1b7d5d229c9",
   // Default social-share image (Open Graph / Twitter). Absolute path under public/.
