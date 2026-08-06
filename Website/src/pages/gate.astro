@@ -15,10 +15,43 @@ import logoFull from "../assets/images/logo-full.png";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.name} — Password protected</title>
+    <title>{site.name}</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={`${site.name} — password protected.`} />
     <link rel="icon" type="image/png" href="/favicon-vm.png" />
+
+    {
+      /* Link-preview (Open Graph / Twitter) card. Un-gated crawlers land on
+        this page, so the shared preview is driven from here: the brand name
+        and logo card, never the "password protected" wording or a stock photo.
+        og-brand.jpg is exempt from the gate in middleware.ts so it can load. */
+    }
+    <meta property="og:title" content={site.name} />
+    <meta
+      property="og:description"
+      content="Senior project delivery consulting, PMO governance and project recovery."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.url} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_AU" />
+    <meta
+      property="og:image"
+      content={new URL("/og-brand.jpg", site.url).toString()}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.name} logo`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={site.name} />
+    <meta
+      name="twitter:description"
+      content="Senior project delivery consulting, PMO governance and project recovery."
+    />
+    <meta
+      name="twitter:image"
+      content={new URL("/og-brand.jpg", site.url).toString()}
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

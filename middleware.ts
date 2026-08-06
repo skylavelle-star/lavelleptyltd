@@ -29,10 +29,11 @@ const RETIRED_HOSTS = ["lavelleptyltd.com.au", "www.lavelleptyltd.com.au"];
 
 export const config = {
   // Everything except fingerprinted bundles, any /favicon* file, the social
-  // image and robots.txt — crawlers must be able to read robots.txt to honour
-  // it, and a gated favicon simply fails to load in the browser tab.
+  // share images (og-*.jpg) and robots.txt — crawlers must be able to read
+  // robots.txt to honour it, must be able to fetch the og image to render a
+  // link preview, and a gated favicon simply fails to load in the browser tab.
   matcher: [
-    "/((?!_astro/|favicon|robots\\.txt|og-default\\.jpg|_vercel/).*)",
+    "/((?!_astro/|favicon|robots\\.txt|og-[a-z-]+\\.jpg|_vercel/).*)",
   ],
 };
 
