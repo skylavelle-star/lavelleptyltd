@@ -271,7 +271,7 @@ stay anonymised to sector descriptors, matching the case studies.
 
 ## Writing rules
 
-**Canonical style guide:** `/Users/skylavelle/Claude/Portfolio/Sky_Vantage Meridian_Writing_Style_and_Voice.md` — read this before writing any user-facing copy. It is the source of truth for voice, tone, and style across all Sky Lavelle portfolio projects.
+**Canonical style guide:** `/Users/skylavelle/Claude/Portfolio/Sky_Lavelle_Writing_Style_and_Voice.md` — read this before writing any user-facing copy. It is the source of truth for voice, tone, and style across all Sky Lavelle portfolio projects.
 
 Project-specific additions on top of the canonical guide:
 
