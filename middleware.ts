@@ -21,6 +21,12 @@ const COOKIE_NAME = "lpl_gate";
 const COOKIE_VALUE = "open";
 const GATE_PATH = "/gate";
 
+// The company renamed to Vantage Meridian. The old domain stays registered and
+// attached to the project because its DNS zone holds the Google Workspace mail
+// records - deleting it would kill email. Web traffic moves; mail does not.
+const CANONICAL_HOST = "vantagemeridian.com.au";
+const RETIRED_HOSTS = ["lavelleptyltd.com.au", "www.lavelleptyltd.com.au"];
+
 export const config = {
   // Everything except fingerprinted bundles, the favicon, the social image and
   // robots.txt — crawlers must be able to read robots.txt to honour it.
@@ -31,6 +37,22 @@ export const config = {
 
 export default async function middleware(request: Request): Promise<Response> {
   const url = new URL(request.url);
+
+  // ---- RETIRED DOMAIN --------------------------------------------------
+  // Send the old domain to the new one, path and query intact, before the
+  // gate runs so the redirect works whether or not the visitor is unlocked.
+  // Preview and *.vercel.app hosts are untouched.
+  const host = request.headers.get("host")?.toLowerCase() ?? "";
+  if (RETIRED_HOSTS.includes(host)) {
+    return new Response(null, {
+      status: 308,
+      headers: {
+        Location: `https://${CANONICAL_HOST}${url.pathname}${url.search}`,
+        "Cache-Control": "no-store",
+      },
+    });
+  }
+  // ---- end RETIRED DOMAIN ----------------------------------------------
 
   // ---- LOGOUT: delete this block to remove /logout ------------------------
   // Visiting /logout expires the access cookie and returns to the gate. There
