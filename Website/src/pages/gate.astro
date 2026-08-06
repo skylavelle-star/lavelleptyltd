@@ -64,14 +64,31 @@ import { site } from "../config/site";
           padding: 3rem 2.5rem;
         }
       }
+      /* Wordmark lockup, matching the site header: Fraunces for the first
+         word, letterspaced small caps for the second, sharing a baseline. */
       h1 {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.5rem;
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+        font-size: clamp(2rem, 5.5vw, 3.25rem);
+      }
+      .mark__name {
         font-family: "Fraunces", Georgia, serif;
-        font-weight: 400;
+        font-weight: 500;
         font-variation-settings: "opsz" 144;
         letter-spacing: -0.015em;
-        line-height: 1.05;
-        font-size: clamp(2rem, 5.5vw, 3.25rem);
-        margin-bottom: 1.5rem;
+        color: var(--ink);
+      }
+      .mark__sub {
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 0.34em;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink);
       }
       .rule {
         width: 3rem;
@@ -144,7 +161,11 @@ import { site } from "../config/site";
   </head>
   <body>
     <main>
-      <h1>{site.name}</h1>
+      <h1>
+        <span class="mark__name">Vantage</span><span class="mark__sub"
+          >Meridian</span
+        >
+      </h1>
       <div class="rule"></div>
       <p>
         This site is not publicly available. Enter the password to continue.
