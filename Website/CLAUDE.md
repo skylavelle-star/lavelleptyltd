@@ -3,7 +3,7 @@
 Git repo root: `/Users/skylavelle/Claude/Portfolio/Vantage Meridian`
 Astro app: `Website/` inside that repo
 Live URL: https://vantagemeridian.com.au (live, behind a password gate — see below)
-Vercel project: `lavelle-pty-ltd` under `sky-lavelles-projects`
+Vercel project: `vantage-meridian` under `sky-lavelles-projects`
 
 ## Repo layout — the app is not at the repo root
 
@@ -213,8 +213,8 @@ When both are true: flip `framingDocReady` to `true`, set `PUBLIC_LS_PROJECT_REC
 | Step            | Value                                                 |
 | --------------- | ----------------------------------------------------- |
 | Local directory | `/Users/skylavelle/Claude/Portfolio/Vantage Meridian` |
-| GitHub repo     | `github.com/skylavelle-star/lavelleptyltd`            |
-| Vercel project  | `lavelle-pty-ltd`                                     |
+| GitHub repo     | `github.com/skylavelle-star/vantage-meridian`         |
+| Vercel project  | `vantage-meridian`                                    |
 | Live site       | `https://vantagemeridian.com.au`                      |
 
 Deploy by committing changes and running `git push origin main`. Vercel builds and publishes automatically (~9s). Never use `vercel --prod --yes` — the GitHub integration handles all deploys.
