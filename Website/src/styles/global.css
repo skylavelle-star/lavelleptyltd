@@ -856,11 +856,36 @@ section {
   }
 }
 
+/* Footer wordmark, same lockup as the header and the password gate:
+   Fraunces for the first word, letterspaced caps for the second. */
 .footer__brand h3 {
-  font-family: "Fraunces", serif;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
   font-size: 1.5rem;
-  font-weight: 500;
   margin-bottom: 0.5rem;
+}
+.footer__mark-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--ochre);
+  border-radius: 50%;
+  align-self: center;
+  flex: none;
+}
+.footer__mark-name {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.footer__mark-sub {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 .footer__brand p {
   font-size: var(--body-sm);
