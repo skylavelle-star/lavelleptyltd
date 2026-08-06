@@ -195,6 +195,7 @@ p {
   padding: 0.55rem 1.1rem;
   border: 1px solid var(--ink);
   border-radius: 999px;
+  white-space: nowrap;
   transition: all 0.2s;
 }
 .nav__cta:hover {
@@ -252,6 +253,24 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+/* On phones the brand, the single-line "Engage us" pill and the hamburger
+   run out of room together, which used to force the pill to wrap into an
+   oversized oval. Drop the "Meridian" tagline here — the compass mark plus
+   the Vantage wordmark still carry the brand — to give the pill its width. */
+@media (max-width: 480px) {
+  .brand__sub {
+    display: none;
+  }
+}
+
+/* Very narrow legacy phones (~320px): trim the pill's padding a touch so it
+   keeps clear of the wordmark. Modern phones (360px+) keep the fuller pill. */
+@media (max-width: 359px) {
+  .nav__cta {
+    padding: 0.5rem 0.85rem;
   }
 }
 
