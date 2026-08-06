@@ -28,10 +28,11 @@ const CANONICAL_HOST = "vantagemeridian.com.au";
 const RETIRED_HOSTS = ["lavelleptyltd.com.au", "www.lavelleptyltd.com.au"];
 
 export const config = {
-  // Everything except fingerprinted bundles, the favicon, the social image and
-  // robots.txt — crawlers must be able to read robots.txt to honour it.
+  // Everything except fingerprinted bundles, any /favicon* file, the social
+  // image and robots.txt — crawlers must be able to read robots.txt to honour
+  // it, and a gated favicon simply fails to load in the browser tab.
   matcher: [
-    "/((?!_astro/|favicon\\.svg|robots\\.txt|og-default\\.jpg|_vercel/).*)",
+    "/((?!_astro/|favicon|robots\\.txt|og-default\\.jpg|_vercel/).*)",
   ],
 };
 
