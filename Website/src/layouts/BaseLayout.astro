@@ -62,6 +62,7 @@ const organizationSchema = {
   '@type': 'ProfessionalService',
   '@id': `${site.url}/#organization`,
   name: site.name,
+  legalName: site.legalName,
   url: site.url,
   logo: new URL(site.logo, site.url).toString(),
   image: fullOgImage,
@@ -238,7 +239,10 @@ const organizationSchema = {
           </div>
         </div>
         <div class="footer__bottom">
-          <div>&copy; {year} Vantage Meridian · ABN 27 651 199 414</div>
+          <div>
+            &copy; {year} {site.name} · a trading name of {site.legalName}
+            · ABN {site.abn}
+          </div>
           <div>Brisbane · serving Australia &amp; APAC</div>
           <div>
             <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
