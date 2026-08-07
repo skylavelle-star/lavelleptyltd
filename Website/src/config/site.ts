@@ -1,9 +1,13 @@
 export const site = {
   url: import.meta.env.PUBLIC_SITE_URL || "https://vantagemeridian.com.au",
-  // Trading name - leads on all branding.
+  // Trading name - leads everywhere on the site, not just on branding.
   name: "Vantage Meridian",
-  // The legal entity behind it. Use wherever the company must be named:
-  // ABN line, terms, privacy, contracts and tender documentation.
+  // The legal entity behind it, and the entity every other Sky Lavelle
+  // business also sits under - so naming it on the site makes Vantage
+  // Meridian look like one of several tenants rather than the business.
+  // Use it ONLY where the law needs the entity identified: the terms and
+  // privacy notices, contracts and tender documentation. Everywhere else
+  // the ABN identifies the entity without spelling out the name.
   legalName: "Lavelle Pty Ltd",
   description:
     "Vantage Meridian provides senior project delivery consulting, practical PMO resources and digital asset development for organisations that need stronger governance and clearer project control.",

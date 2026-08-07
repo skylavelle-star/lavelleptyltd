@@ -63,7 +63,7 @@ const organizationSchema = {
   '@type': 'ProfessionalService',
   '@id': `${site.url}/#organization`,
   name: site.name,
-  legalName: site.legalName,
+  taxID: site.abn,
   url: site.url,
   logo: new URL(site.logo, site.url).toString(),
   image: fullOgImage,
@@ -240,8 +240,7 @@ const organizationSchema = {
         </div>
         <div class="footer__bottom">
           <div>
-            &copy; {year} {site.name} · a trading name of {site.legalName}
-            · ABN {site.abn}
+            &copy; {year} {site.name} · ABN {site.abn}
           </div>
           <div>Brisbane · serving Australia &amp; APAC</div>
           <div>

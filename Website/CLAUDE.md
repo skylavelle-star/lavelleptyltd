@@ -306,3 +306,17 @@ Project-specific additions on top of the canonical guide:
 
 - No "coming soon" text — use actionable fallbacks
 - No fake testimonials
+- **Vantage Meridian leads, always.** Lavelle Pty Ltd is the registered
+  entity that every Sky Lavelle business sits under, so naming it on this
+  site makes Vantage Meridian read as one tenant of a shell rather than as
+  the business. Name it **only** where the law needs the entity identified:
+  the terms and privacy notices, contracts and tender documentation.
+  Everywhere else — footer, About page, meta descriptions, structured data —
+  the ABN (27 651 199 414) identifies the entity without spelling out the
+  name.
+- **The principal is referred to by role, not by name.** "The Director" in
+  body copy and CTAs, "the principal" where the delivery-model language
+  already uses that term. The site does not name him anywhere, including
+  meta descriptions and JSON-LD. The one remaining path to the name is the
+  footer's "About the Director ↗" link, which points at his LinkedIn
+  profile — deliberate, so leave it unless asked.
