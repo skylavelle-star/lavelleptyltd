@@ -9,9 +9,9 @@
 
   Any change to an asset ships as a NEW FILENAME. Never replace a file in
   place, even with "the same" image at a better quality or a corrected colour:
-  every asset here is cached `immutable` for a year by the CDN, so an in-place
-  replacement is served inconsistently for months, and older mail keeps
-  pointing at whatever the file becomes.
+  mail already sent keeps pointing at this URL forever, so an in-place
+  replacement silently rewrites the logo in every message a recipient has
+  ever received, including ones sent under a previous brand.
   ============================================================================
 -->
 
@@ -48,5 +48,12 @@ mail clients overwhelmingly render on white.
 
 ## Caching
 
-`vercel.json` caches `*.jpg` under `public/` for one year as `immutable`.
-That is deliberate and is the reason rule 2 exists.
+Currently served as `public, s-maxage=300, stale-while-revalidate=86400` —
+**not** the one-year `immutable` the `*.jpg` rule in `vercel.json` intends.
+Vercel applies the last matching header rule, and the catch-all `/(.*)` rule
+sits after the image rule, so it overrides it for every image and every
+fingerprinted bundle. See CLAUDE.md; the note there claiming the catch-all
+"only sets Cache-Control for paths that aren't already matched" is wrong.
+
+Rule 2 above does not depend on this being fixed. It exists because sent mail
+cannot be updated, which is true at any cache lifetime.
