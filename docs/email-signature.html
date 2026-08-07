@@ -1,0 +1,69 @@
+<!--
+  Vantage Meridian email signature.
+
+  NOT part of the built site. This file lives outside Website/src/pages, so
+  Astro never routes or builds it. It is a template to paste into a mail
+  client's signature editor.
+
+  Constraints this file deliberately respects:
+    - One table. Mail clients strip or mangle flexbox, grid and float.
+    - Inline styles only. No <style> block, no external CSS, no web fonts —
+      Gmail strips <style>, and Outlook renders web fonts as Times New Roman.
+    - The logo carries width, height and border:0. Missing dimensions cause a
+      reflow jump in Outlook; missing border:0 draws a blue link border in
+      older Outlook when the image is wrapped in a link.
+    - The image is hosted at an immutable URL. See Website/public/brand/README.md.
+    - Nothing that matters is inside the image. With images disabled — the
+      default in Outlook and many corporate gateways — every detail below
+      still reads as text.
+
+  TODO before use: fill in the role and phone placeholders.
+-->
+<table
+  cellpadding="0"
+  cellspacing="0"
+  border="0"
+  style="border-collapse: collapse; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #2c2a26;"
+>
+  <tr>
+    <td style="padding: 0 0 10px 0;">
+      <img
+        src="https://vantagemeridian.com.au/brand/vantage-meridian-email.jpg"
+        width="242"
+        height="38"
+        alt="Vantage Meridian"
+        style="display: block; border: 0; outline: none; text-decoration: none;"
+        border="0"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0;">
+      <span style="font-size: 15px; font-weight: 600; color: #181613;"
+        >Sky Lavelle</span
+      ><br />
+      <span style="color: #707262;">TODO: role</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 8px 0 0 0; color: #707262;">
+      Lavelle Pty Ltd trading as Vantage Meridian&nbsp;|&nbsp;ABN 27 651 199
+      414
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 8px 0 0 0;">
+      TODO: phone<br />
+      <a
+        href="mailto:sky@vantagemeridian.com.au"
+        style="color: #b85c2a; text-decoration: none;"
+        >sky@vantagemeridian.com.au</a
+      ><br />
+      <a
+        href="https://vantagemeridian.com.au"
+        style="color: #b85c2a; text-decoration: none;"
+        >vantagemeridian.com.au</a
+      >
+    </td>
+  </tr>
+</table>

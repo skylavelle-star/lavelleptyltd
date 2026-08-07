@@ -28,12 +28,18 @@ const CANONICAL_HOST = "vantagemeridian.com.au";
 const RETIRED_HOSTS = ["lavelleptyltd.com.au", "www.lavelleptyltd.com.au"];
 
 export const config = {
-  // Everything except fingerprinted bundles, any /favicon* file, the social
-  // share images (og-*.jpg) and robots.txt — crawlers must be able to read
-  // robots.txt to honour it, must be able to fetch the og image to render a
-  // link preview, and a gated favicon simply fails to load in the browser tab.
+  // Everything except fingerprinted bundles, /brand/* , any /favicon* file,
+  // the social share images (og-*.jpg) and robots.txt — crawlers must be able
+  // to read robots.txt to honour it, must be able to fetch the og image to
+  // render a link preview, and a gated favicon simply fails to load in the
+  // browser tab.
+  //
+  // /brand/* MUST stay exempt. Those files are hotlinked from email signatures
+  // and external documents; behind the gate they would 302 to /gate and render
+  // as a broken image in every recipient's mail client. See
+  // public/brand/README.md.
   matcher: [
-    "/((?!_astro/|favicon|robots\\.txt|og-[a-z-]+\\.jpg|_vercel/).*)",
+    "/((?!_astro/|brand/|favicon|robots\\.txt|og-[a-z-]+\\.jpg|_vercel/).*)",
   ],
 };
 
