@@ -87,8 +87,7 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 
 **Right-rail trust panel:**
 
-- "Now booking [current quarter] engagements"
-- 20 years of senior delivery across media, higher education and cyber-security research — including the ABC, Griffith University, CQUniversity and the Cyber Security CRC
+- 20+ years of senior delivery across media, higher education and cyber-security research — including the ABC, Griffith University, CQUniversity and the Cyber Security CRC
 - Griffith University Senior Leadership Award
 
 ### Below-fold sections (in order)
