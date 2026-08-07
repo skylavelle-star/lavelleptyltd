@@ -16,7 +16,6 @@ export const site = {
   defaultOgImage: "/og-default.jpg",
   logo: "/favicon-vm.png",
   abn: "27 651 199 414",
-  founder: "Sky Lavelle",
   areaServed: ["Brisbane", "Australia", "Asia-Pacific"],
 } as const;
 

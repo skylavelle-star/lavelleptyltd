@@ -56,7 +56,8 @@ const gaId = analytics.gaId;
 const year = new Date().getFullYear();
 
 // Sitewide organisation graph. Rendered once per page so search engines can
-// associate every URL with the business, its founder and its social profiles.
+// associate every URL with the business and its social profiles. No founder
+// Person is emitted — the site names the Director by role, not by name.
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
@@ -67,7 +68,6 @@ const organizationSchema = {
   logo: new URL(site.logo, site.url).toString(),
   image: fullOgImage,
   description: site.description,
-  founder: { '@type': 'Person', name: site.founder, sameAs: site.linkedin },
   areaServed: site.areaServed,
   sameAs: [site.linkedin],
   knowsAbout: [
