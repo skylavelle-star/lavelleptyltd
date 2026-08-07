@@ -150,7 +150,7 @@ p {
   font-weight: 500;
   letter-spacing: -0.01em;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.45rem;
 }
 /* Compass mark from the company logo, in place of the old ochre dot.
@@ -158,9 +158,17 @@ p {
 .brand__mark {
   height: 34px;
   width: auto;
-  align-self: center;
   margin-right: 0.5rem;
   flex: none;
+}
+/* Wordmark: "Vantage" plus the "Meridian." tagline. Inline on desktop;
+   stacked (tagline under Vantage, as in the official logo) on phones —
+   see the mobile block further down. */
+.brand__word {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  line-height: 1;
 }
 .brand__sub {
   font-family: "DM Sans", sans-serif;
@@ -169,6 +177,18 @@ p {
   text-transform: uppercase;
   color: var(--sage);
   font-weight: 500;
+  /* Keep "Meridian" and its dot together on one line. */
+  white-space: nowrap;
+}
+/* The ochre dot that closes the wordmark in the official logo — always on,
+   desktop and mobile. Sized in em so it tracks the tagline. */
+.brand__dot {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 50%;
+  background: var(--ochre);
+  vertical-align: baseline;
 }
 
 .nav {
@@ -256,21 +276,30 @@ p {
   }
 }
 
-/* On phones the brand, the single-line "Engage us" pill and the hamburger
-   run out of room together, which used to force the pill to wrap into an
-   oversized oval. Drop the "Meridian" tagline here — the compass mark plus
-   the Vantage wordmark still carry the brand — to give the pill its width. */
+/* On phones, stack the "Meridian." tagline under "Vantage", the way the
+   official logo does. Stacking also narrows the brand, which keeps the
+   single-line "Engage us" pill and the hamburger clear of it. */
 @media (max-width: 480px) {
-  .brand__sub {
-    display: none;
+  .brand__word {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
   }
 }
 
-/* Very narrow legacy phones (~320px): trim the pill's padding a touch so it
-   keeps clear of the wordmark. Modern phones (360px+) keep the fuller pill. */
+/* Very narrow legacy phones (~320px): trim the pill's padding a touch and
+   scale the wordmark down so the brand, pill and hamburger all stay clear.
+   Modern phones (360px+) keep the full-size brand and pill. */
 @media (max-width: 359px) {
   .nav__cta {
     padding: 0.5rem 0.85rem;
+  }
+  .brand {
+    font-size: 1.2rem;
+  }
+  .brand__mark {
+    height: 30px;
+    margin-right: 0.35rem;
   }
 }
 
