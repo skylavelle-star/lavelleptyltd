@@ -186,6 +186,10 @@ p {
   display: inline-block;
   width: 0.42em;
   height: 0.42em;
+  /* Sits clear of the N, matching the spacing in the logo artwork. The
+     letterspacing on .brand__sub already adds a gap after the last letter,
+     so this is the remainder rather than the full space. */
+  margin-left: 0.28em;
   border-radius: 50%;
   background: var(--ochre);
   vertical-align: baseline;
