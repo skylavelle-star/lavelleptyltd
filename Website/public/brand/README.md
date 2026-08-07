@@ -48,12 +48,8 @@ mail clients overwhelmingly render on white.
 
 ## Caching
 
-Currently served as `public, s-maxage=300, stale-while-revalidate=86400` —
-**not** the one-year `immutable` the `*.jpg` rule in `vercel.json` intends.
-Vercel applies the last matching header rule, and the catch-all `/(.*)` rule
-sits after the image rule, so it overrides it for every image and every
-fingerprinted bundle. See CLAUDE.md; the note there claiming the catch-all
-"only sets Cache-Control for paths that aren't already matched" is wrong.
+Served `public, max-age=31536000, immutable` — cached for a year by browsers
+and the CDN.
 
-Rule 2 above does not depend on this being fixed. It exists because sent mail
-cannot be updated, which is true at any cache lifetime.
+Rule 2 above does not depend on that. It exists because sent mail cannot be
+updated, which is true at any cache lifetime.

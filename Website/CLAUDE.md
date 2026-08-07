@@ -233,7 +233,7 @@ Deploy by committing changes and running `git push origin main`. Vercel builds a
 ## Things that look weird but are intentional
 
 - **`VERCEL_DEPLOY_HOOK_URL` is empty after `vercel env pull`.** It's marked Sensitive in Vercel project settings, which means `vercel env pull --environment=production .env.local` writes it back as an empty string. Paste the hook URL into `.env.local` by hand after every pull. Same caveat applies to any future Sensitive env vars.
-- **Order of `headers` rules in `vercel.json` matters.** `/api/(.*)` sits first; the global `/(.*)` rule sits last and only sets `Cache-Control` for paths that aren't already matched by a more specific rule. Don't reorder without re-checking that asset and HTML cache lifetimes still resolve correctly.
+- **Order of `headers` rules in `vercel.json` matters — last match wins.** The catch-all `/(.*)` must come **first**, with the specific rules (`/api/(.*)`, `*.jpg|png|…`, `/_astro/(.*)`) after it. It was the other way round until 2026-08-07, which silently served every image and every fingerprinted bundle at `s-maxage=300` instead of a year immutable. Verify with `curl -sI` after any change: images and `_astro` should say `immutable`, HTML should say `s-maxage=300`.
 - **`.claude/` is gitignored.** Slash commands and Claude settings are local-only. Share them by copy-paste, not by committing.
 
 ## Delivery team consent gate
