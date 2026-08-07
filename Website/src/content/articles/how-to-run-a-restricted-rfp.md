@@ -89,6 +89,6 @@ The recommendation should follow from the evaluation. If it does not - if there 
 
 ---
 
-The Vantage Meridian Procurement Pack includes a weighted evaluation scorecard, evaluator guidance, probity checklist, BAFO request template and recommendation report structure. See the [Procurement Pack](/resources/procurement-pack) for details.
+Vantage Meridian runs restricted RFPs end to end - evaluation design, probity-compliant governance and delegate approval. See [procurement advisory](/consulting#sourcing).
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.

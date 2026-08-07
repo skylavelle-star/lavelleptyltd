@@ -4,6 +4,31 @@
   "outputDirectory": "Website/dist",
   "redirects": [
     {
+      "source": "/resources",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/resources/:slug*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/bundles",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/bundles/:slug*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/thank-you/product",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/coming-soon",
       "destination": "/",
       "permanent": true
@@ -30,23 +55,23 @@
     },
     {
       "source": "/templates/bundle",
-      "destination": "/bundles",
-      "permanent": true
+      "destination": "/",
+      "permanent": false
     },
     {
       "source": "/templates",
-      "destination": "/resources",
-      "permanent": true
+      "destination": "/",
+      "permanent": false
     },
     {
       "source": "/templates/:slug*",
-      "destination": "/resources/:slug*",
-      "permanent": true
+      "destination": "/",
+      "permanent": false
     },
     {
       "source": "/pmo-resources",
-      "destination": "/resources",
-      "permanent": true
+      "destination": "/",
+      "permanent": false
     },
     {
       "source": "/services",

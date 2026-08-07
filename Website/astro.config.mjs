@@ -18,7 +18,7 @@ export default defineConfig({
     defaultStrategy: "hover",
   },
   redirects: {
-    "/enterprise-licensing": "/resources/complete-practitioner-library",
+    "/enterprise-licensing": "/consulting",
   },
   vite: {
     plugins: [tailwindcss()],

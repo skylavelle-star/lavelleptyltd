@@ -84,6 +84,6 @@ A supplementary business case that does not address this question directly will 
 
 ---
 
-The Vantage Meridian Business Case Pack includes a full business case template, options analysis framework, financial model and delegate approval checklist. See the [Business Case Pack](/resources/business-case-pack) for details.
+Vantage Meridian writes treasury-grade and ICT business cases that survive scrutiny. See [business case development](/consulting#investment).
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.

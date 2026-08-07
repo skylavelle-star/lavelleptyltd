@@ -79,9 +79,10 @@ npm run format:check # prettier --check .
 ```
 src/
   assets/images/      # hero, about, services, templates etc. (optimised by Astro at build)
+  _parked/            # PARKED: product pages + PackPage/StubPack. Not routed,
+                      # not type-checked. See "Product sales are paused".
   components/
-    PackPage.astro    # shared product-detail layout for the five PackPage users
-    StubPack.astro    # shared layout for the seven in-development stub packs (with notify-me form + ROI block)
+    JsonLd.astro
   config/site.ts      # ALL site config and env var reads — import from here, not import.meta.env
   content/
     articles/         # Astro content collection — editorial articles in markdown
@@ -268,6 +269,34 @@ Signed forms are not kept in this repo. Resumes and photos live in
 
 No day rates, seat rates or margin language anywhere on the page. Client names
 stay anonymised to sector descriptors, matching the case studies.
+
+## Product sales are paused
+
+All paid products - the nine stage packs, the Complete Practitioner Library
+flagship and the four tier bundles - are **switched off until further notice**.
+
+Nothing was deleted. The pages and their two components sit in `src/_parked/`,
+which Astro does not route and `tsconfig.json` does not type-check. Their
+internal import paths are still correct for `src/pages/`, so restoring is a
+`git mv` back plus removing the `src/_parked` exclude.
+
+Also part of the pause:
+
+- `/resources*`, `/bundles*` and `/thank-you/product` are **307** (temporary)
+  redirects to `/` in `vercel.json` - temporary on purpose, because this is a
+  pause rather than a retirement. `/templates*`, `/templates/bundle` and
+  `/pmo-resources` were repointed at `/` for the same reason, and
+  `/enterprise-licensing` in `astro.config.mjs` now goes to `/consulting`.
+- The homepage product teaser section, the Lemon Squeezy `lemon.js` loader and
+  the footer's Resources and Bundles links are gone.
+- The two product rungs were removed from the consulting recovery ladder; the
+  free checklist and the consulting engagements remain.
+- The five articles that closed with a pack promo now point at the matching
+  consulting capability.
+- `terms.astro` no longer carries the pack licence or refunds sections.
+
+The `PUBLIC_LS_*` env vars and `products` in `src/config/site.ts` are untouched,
+so checkout URLs survive for whenever sales resume.
 
 ## Writing rules
 

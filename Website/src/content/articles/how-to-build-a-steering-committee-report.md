@@ -116,6 +116,6 @@ Design the reporting to be producible in a reasonable time from information the 
 
 ---
 
-The Vantage Meridian Steering Committee Pack includes a status report template, executive dashboard format, risk register structure, RAG rating criteria guide and escalation pack template. See the [Steering Committee Pack](/resources/steering-committee-pack) for details.
+Vantage Meridian redesigns steering committee reporting so executive time goes on decisions rather than status. See [steering committee governance](/consulting#assurance).
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.

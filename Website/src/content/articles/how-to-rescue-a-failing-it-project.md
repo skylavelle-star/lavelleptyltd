@@ -99,6 +99,6 @@ These decisions need to be made by people with the authority to make them. The r
 
 ---
 
-The Vantage Meridian Project Recovery Pack includes structured templates for health assessment, stakeholder reset communications, recovery roadmap planning and risk re-baselining. See the [Project Recovery Pack](/resources/project-recovery-pack) for details.
+Vantage Meridian recovers at-risk programmes through the Vantage Meridian Recovery Protocol, a four-phase methodology from diagnosis to re-mobilisation. See [project recovery](/consulting#recovery).
 
 If you are dealing with a situation like the one described in this article, [send an enquiry](/contact). An initial conversation costs nothing.
