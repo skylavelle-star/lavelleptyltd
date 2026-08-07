@@ -108,7 +108,7 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 
 The Vantage Meridian Delivery Framework v2.0 is the navigational spine of the site. Every template, pack, bundle and free tool links back to its phase and gate.
 
-**Tagline:** Five phases. Four gates. One hybrid. (Also used: "Five phases. One hybrid discipline.")
+**Tagline:** Five phases. Four gates. One hybrid model. (Also used: "Five phases. One hybrid discipline.")
 
 **The model.** A deliberate PRINCE2 + Agile hybrid - waterfall on the outside, agile on the inside. Senior leadership sees a predictive, gated project with tolerances and a paper trail (the control layer). The team inside Delivery runs iterative cycles - plan, build, review, refine - toward the delivery goals fixed at Planning (the team layer). Hybrid is the Vantage Meridian default: PRINCE2 control at the programme layer, agile cadence at the team layer.
 
