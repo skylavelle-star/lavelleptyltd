@@ -16,7 +16,7 @@ It is the revenue engine of the wider portfolio. The catalogue is scoped to the 
 
 ## Positioning Statement
 
-Senior project delivery and PMO consulting for media, higher education and government-adjacent research organisations — recovering at-risk programs, strengthening PMO governance and leading complex enterprise technology delivery in environments where previous attempts have failed and stakeholder confidence has collapsed.
+Senior project delivery and PMO consulting for media, higher education, government and research organisations — recovering at-risk programs, strengthening PMO governance and leading complex enterprise technology delivery in environments where previous attempts have failed and stakeholder confidence has collapsed.
 
 Productised PMO packs, tier-based bundles, the Complete Practitioner Library and free practitioner tools run alongside the consulting practice as a secondary revenue layer. All product pricing sits in the high-end band ($747–$12,997), benchmarked against one day of senior PM time at the $1,500/day consulting floor.
 
@@ -36,7 +36,7 @@ Productised PMO packs, tier-based bundles, the Complete Practitioner Library and
 
 **Primary buyers (consulting):**
 
-- C-level / executive sponsors of at-risk technology programs at media organisations, universities and government-adjacent research bodies
+- C-level / executive sponsors of at-risk technology programs at media organisations, universities, government and research bodies
 - PMO leads and program directors in those sectors
 - Senior project managers stepping into stalled or failing programs
 
@@ -79,7 +79,7 @@ Framework is the navigational spine. Every template, bundle and free-tool page l
 
 **Headline:** From stalled programs to shipped outcomes.
 
-**Subhead:** We partner with media, higher education and government-adjacent research organisations to recover at-risk programs, strengthen PMO governance, and lead complex enterprise technology delivery — particularly where previous attempts have failed and stakeholder confidence has collapsed.
+**Subhead:** We partner with media, higher education, government and research organisations to recover at-risk programs, strengthen PMO governance, and lead complex enterprise technology delivery — particularly where previous attempts have failed and stakeholder confidence has collapsed.
 
 **Primary CTA:** Engage Vantage Meridian → /contact
 
